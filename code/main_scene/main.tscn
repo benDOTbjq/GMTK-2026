@@ -1,0 +1,143 @@
+[gd_scene format=3 uid="uid://b6od1t42wl3pp"]
+
+[ext_resource type="Script" uid="uid://dlyl1lbou3041" path="res://code/main_scene/main.gd" id="1_s5rhd"]
+[ext_resource type="Texture2D" uid="uid://2xtfkk7n7bhi" path="res://art/icons/drill.png" id="2_ahlcq"]
+[ext_resource type="Texture2D" uid="uid://v3mo6x3bqbso" path="res://art/icons/heraldic_sun.png" id="3_npxwh"]
+[ext_resource type="Texture2D" uid="uid://d0sad5stbnccr" path="res://art/icons/radar_dish.png" id="4_ec2fc"]
+[ext_resource type="Texture2D" uid="uid://774hujcbhovl" path="res://art/icons/spooky_house.png" id="5_n01rf"]
+[ext_resource type="Texture2D" uid="uid://ciyeaotg7twfk" path="res://art/icons/vending_machine.png" id="6_31uku"]
+[ext_resource type="Texture2D" uid="uid://bxknenw4g7smv" path="res://art/icons/warehouse.png" id="7_b7jr1"]
+[ext_resource type="AudioStream" uid="uid://c2w81865io7sp" path="res://audio/sfx/ui_rattle.wav" id="8_ahlcq"]
+[ext_resource type="Shader" uid="uid://jmje3aqhn864" path="res://code/main_scene/background_shader.gdshader" id="9_ec2fc"]
+[ext_resource type="Texture2D" uid="uid://divqg1uosnnwx" path="res://code/assets/noise.jpg" id="10_n01rf"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_dd5g0"]
+shader = ExtResource("9_ec2fc")
+shader_parameter/noise = ExtResource("10_n01rf")
+
+[node name="Main" type="Control" unique_id=1674827180]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_s5rhd")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=798552453]
+stream = ExtResource("8_ahlcq")
+
+[node name="Background" type="ColorRect" parent="." unique_id=2142971196]
+material = SubResource("ShaderMaterial_dd5g0")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="." unique_id=1128681823]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer" unique_id=1260379620]
+layout_mode = 2
+theme_override_constants/separation = 32
+
+[node name="TopButtonContainer" type="HBoxContainer" parent="CenterContainer/VBoxContainer" unique_id=1350239514]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/separation = 32
+
+[node name="DrillTextureRect" type="TextureRect" parent="CenterContainer/VBoxContainer/TopButtonContainer" unique_id=283809151]
+layout_mode = 2
+offset_transform_enabled = true
+texture = ExtResource("2_ahlcq")
+
+[node name="DrillButton" type="Button" parent="CenterContainer/VBoxContainer/TopButtonContainer/DrillTextureRect" unique_id=1025649710]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+flat = true
+
+[node name="SunTextureRect" type="TextureRect" parent="CenterContainer/VBoxContainer/TopButtonContainer" unique_id=214285703]
+layout_mode = 2
+offset_transform_enabled = true
+texture = ExtResource("3_npxwh")
+
+[node name="SunButton" type="Button" parent="CenterContainer/VBoxContainer/TopButtonContainer/SunTextureRect" unique_id=2123176707]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+flat = true
+
+[node name="RadarTextureRect" type="TextureRect" parent="CenterContainer/VBoxContainer/TopButtonContainer" unique_id=1897722323]
+layout_mode = 2
+offset_transform_enabled = true
+texture = ExtResource("4_ec2fc")
+
+[node name="RadarButton" type="Button" parent="CenterContainer/VBoxContainer/TopButtonContainer/RadarTextureRect" unique_id=1598171709]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+flat = true
+
+[node name="BottomButtonContainer" type="HBoxContainer" parent="CenterContainer/VBoxContainer" unique_id=64029267]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/separation = 32
+
+[node name="SpookyTextureRect" type="TextureRect" parent="CenterContainer/VBoxContainer/BottomButtonContainer" unique_id=805778704]
+layout_mode = 2
+offset_transform_enabled = true
+texture = ExtResource("5_n01rf")
+
+[node name="SpookyButton" type="Button" parent="CenterContainer/VBoxContainer/BottomButtonContainer/SpookyTextureRect" unique_id=828782617]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+flat = true
+
+[node name="VendingTextureRect" type="TextureRect" parent="CenterContainer/VBoxContainer/BottomButtonContainer" unique_id=1228890301]
+layout_mode = 2
+offset_transform_enabled = true
+texture = ExtResource("6_31uku")
+
+[node name="VendingButton" type="Button" parent="CenterContainer/VBoxContainer/BottomButtonContainer/VendingTextureRect" unique_id=221797377]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+flat = true
+
+[node name="WarehouseTextureRect" type="TextureRect" parent="CenterContainer/VBoxContainer/BottomButtonContainer" unique_id=1447290921]
+layout_mode = 2
+offset_transform_enabled = true
+texture = ExtResource("7_b7jr1")
+
+[node name="WarehouseButton" type="Button" parent="CenterContainer/VBoxContainer/BottomButtonContainer/WarehouseTextureRect" unique_id=1286855311]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+flat = true
