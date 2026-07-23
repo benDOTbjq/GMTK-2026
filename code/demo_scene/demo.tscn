@@ -21,10 +21,6 @@ albedo_texture = ExtResource("1_kb3va")
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1117343218]
 environment = SubResource("Environment_dd5g0")
 
-[node name="Camera3D" type="Camera3D" parent="." unique_id=1086524145]
-transform = Transform3D(0.9999863, -0.002045854, 0.0048197303, 0, 0.92050487, 0.39073113, -0.005235964, -0.39072576, 0.92049223, 0.015, 1.3791182, 0.945)
-fov = 50.0
-
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=563508970]
 
 [node name="TextureRect" type="TextureRect" parent="CanvasLayer" unique_id=406833223]
@@ -80,3 +76,7 @@ transform = Transform3D(33.333336, 0, 0, 0, 33.333336, 0, 0, 0, 33.333336, 0, 2.
 light_color = Color(1, 0.7294118, 0, 1)
 light_energy = 0.11
 light_indirect_energy = 0.865
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=1086524145]
+transform = Transform3D(0.9999863, -0.002045854, 0.0048197303, 0, 0.92050487, 0.39073113, -0.005235964, -0.39072576, 0.92049223, 0.015, 1.3791182, 0.945)
+fov = 50.0
