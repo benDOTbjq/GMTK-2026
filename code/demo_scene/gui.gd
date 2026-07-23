@@ -46,5 +46,7 @@ func _test_item(item_id: ID.Item) -> void:
 		-2: label.text = "The demon is\nEmpowered"
 		-1: label.text = "The demon is\nUneffected"
 		0: label.text = "The demon is\nMildly effected"
+		3: label.text = "The demon is\nWeirdly effected"
 		1: label.text = "The demon is\nStrongly effected"
 		2: label.text = "The demon is\nExtremely effected"
+		
