@@ -1,7 +1,11 @@
-extends Control
+class_name GUI extends Control
 
 
 var _current_demon: Dictionary
+
+@onready var menu_button: Button = %MenuButton
+@onready var table_button: Button = %TableButton
+@onready var book_button: Button = %BookButton
 
 @onready var water_button: Button = %WaterButton
 @onready var salt_button: Button = %SaltButton
@@ -16,7 +20,7 @@ func _ready() -> void:
 	_current_demon = DemonManager.get_random_demon()
 	reset_button.pressed.connect(_reset_demon)
 	check_button.pressed.connect(_print_demon)
-
+	
 	water_button.pressed.connect(_test_item.bind(ID.Item.HOLY_WATER))
 	salt_button.pressed.connect(_test_item.bind(ID.Item.SALT))
 	iron_button.pressed.connect(_test_item.bind(ID.Item.IRON))

@@ -52,7 +52,10 @@ static func get_random_demon() -> Dictionary:
 	var demon: Dictionary
 	demon.type_1 = randi_range(0, ID.DemonType.ENUM_COUNT-1)
 	demon.type_2 = randi_range(0, ID.DemonType.ENUM_COUNT-1)
-	demon.item_effectiveness = DEMON_TYPE_EFFECTIVENESS[demon.type_1] + DEMON_TYPE_EFFECTIVENESS[demon.type_2]
+	if demon.type_1 != demon.type_2:
+		demon.item_effectiveness = DEMON_TYPE_EFFECTIVENESS[demon.type_1] + DEMON_TYPE_EFFECTIVENESS[demon.type_2]
+	else:
+		demon.item_effectiveness = DEMON_TYPE_EFFECTIVENESS[demon.type_1]
 	for i: int in range(4):
 		if demon.item_effectiveness[i] == 0 and DEMON_TYPE_EFFECTIVENESS[demon.type_1][i] != 0:
 			demon.item_effectiveness[i] = 3

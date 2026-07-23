@@ -20,3 +20,9 @@ enum Item {
 	PRAYER = 3,
 	ENUM_COUNT = 4
 }
+
+enum CameraMode {
+	TABLE,
+	SHELF,
+	BOOK
+}
