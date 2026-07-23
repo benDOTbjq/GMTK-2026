@@ -9,7 +9,7 @@ const DEMON_TYPE_EFFECTIVENESS : Dictionary[ID.DemonType, Vector4i] = {
 	ID.DemonType.LUCIFERIAN: Vector4i(0, 1, -1, 0),
 	ID.DemonType.CARNAL:Vector4i(0, 1, 0, -1),
 	ID.DemonType.ABYSSAL: Vector4i(-1, 0, 1, 0),
-	ID.DemonType.THAUMIC: Vector4i(0, 0, 1, -1),
+	ID.DemonType.FAEIC: Vector4i(0, 0, 1, -1),
 }
 
 const TYPE_TO_STRING : Dictionary[ID.DemonType, String] = {
@@ -20,7 +20,7 @@ const TYPE_TO_STRING : Dictionary[ID.DemonType, String] = {
 	ID.DemonType.LUCIFERIAN: "LUCIFERIAN",
 	ID.DemonType.CARNAL:"CARNAL",
 	ID.DemonType.ABYSSAL: "ABYSSAL",
-	ID.DemonType.THAUMIC: "THAUMIC",
+	ID.DemonType.FAEIC: "FAEIC",
 }
 
 # 8 demons w/ 4 items = 36
@@ -33,7 +33,7 @@ const EFFECTIVENESS_CHART = [
 	 0,  1, -1,  0, # LUCIFERIAN
 	 0,  1,  0, -1, # CARNAL
 	-1,  0,  1,  0, # ABYSSAL
-	 0,  0,  1, -1, # THAUMIC
+	 0,  0,  1, -1, # FAEIC
 ]
 
 static func check_item_effectivness(item_type: ID.Item, demon_type_1: ID.DemonType, demon_type_2: ID.DemonType = ID.DemonType.NONE) -> int:
