@@ -2,8 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://chr6y6mwyir4g" path="res://art/demo/demo_background.png" id="1_kb3va"]
 [ext_resource type="Texture2D" uid="uid://cuvhx0lhhb7su" path="res://art/demo/demo_table_ortho.png" id="2_g0jli"]
-[ext_resource type="Texture2D" uid="uid://cg3epuw16obey" path="res://art/demo/demo_candle_1.png" id="4_vj5s7"]
-[ext_resource type="Texture2D" uid="uid://cvo5k7157pemm" path="res://art/demo/demo_candle_2.png" id="5_l8igb"]
+[ext_resource type="PackedScene" uid="uid://dajacxx26fmq5" path="res://code/demo_scene/candle.tscn" id="5_vj5s7"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_dd5g0"]
 flip_faces = true
@@ -36,63 +35,18 @@ light_energy = 2.675
 transform = Transform3D(0.9999863, -0.002045854, 0.0048197303, 0, 0.92050487, 0.39073113, -0.005235964, -0.39072576, 0.92049223, 0.015, 1.3791182, 0.945)
 fov = 50.0
 
-[node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=328486633]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.49991593, 0.80703247, 0.08188392)
-light_color = Color(1, 0.7294118, 0, 1)
-light_energy = 0.11
-light_indirect_energy = 0.865
-omni_range = 0.37212723
-metadata/_edit_group_ = true
+[node name="Candle" parent="." unique_id=875324991 instance=ExtResource("5_vj5s7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.428, 0.807, 0.08)
+flickerAdvance = 0.7
 
-[node name="Sprite3D2" type="Sprite3D" parent="OmniLight3D" unique_id=1384934533]
-transform = Transform3D(0.03, 0, 0, 0, 0.03, 0, 0, 0, 0.03, 0, -0.06473714, 0)
-billboard = 2
-texture = ExtResource("4_vj5s7")
-region_enabled = true
-region_rect = Rect2(427.13287, 67.30736, 483.15314, 617.59564)
-
-[node name="OmniLight3D2" type="OmniLight3D" parent="." unique_id=788870177]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.48288733, 0.80703247, 0.08272953)
-light_color = Color(1, 0.7294118, 0, 1)
-light_energy = 0.11
-light_indirect_energy = 0.865
-omni_range = 0.45755905
-metadata/_edit_group_ = true
-
-[node name="Sprite3D3" type="Sprite3D" parent="OmniLight3D2" unique_id=2052860134]
-transform = Transform3D(0.03, 0, 0, 0, 0.03, 0, 0, 0, 0.03, 0, -0.06473714, 0)
-billboard = 2
-texture = ExtResource("5_l8igb")
-region_enabled = true
-region_rect = Rect2(427.13287, 67.30736, 483.15314, 617.59564)
-
-[node name="OmniLight3D3" type="OmniLight3D" parent="." unique_id=243732139]
+[node name="Candle2" parent="." unique_id=1129484098 instance=ExtResource("5_vj5s7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.4283667, 0.80703247, -0.22724003)
-light_color = Color(1, 0.7294118, 0, 1)
-light_energy = 0.11
-light_indirect_energy = 0.865
-omni_range = 0.47439054
-metadata/_edit_group_ = true
+flickerAdvance = 0.308
 
-[node name="Sprite3D3" type="Sprite3D" parent="OmniLight3D3" unique_id=604535719]
-transform = Transform3D(0.03, 0, 0, 0, 0.03, 0, 0, 0, 0.03, 0, -0.06473714, 0)
-billboard = 2
-texture = ExtResource("5_l8igb")
-region_enabled = true
-region_rect = Rect2(427.13287, 67.30736, 483.15314, 617.59564)
-
-[node name="OmniLight3D4" type="OmniLight3D" parent="." unique_id=38297010]
+[node name="Candle3" parent="." unique_id=116191315 instance=ExtResource("5_vj5s7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.479692, 0.80703247, -0.24227887)
-light_color = Color(1, 0.7294118, 0, 1)
-light_energy = 0.11
-light_indirect_energy = 0.865
-omni_range = 0.4369736
-metadata/_edit_group_ = true
+flickerAdvance = 0.514
 
-[node name="Sprite3D2" type="Sprite3D" parent="OmniLight3D4" unique_id=199089074]
-transform = Transform3D(0.03, 0, 0, 0, 0.03, 0, 0, 0, 0.03, 0, -0.06473714, 0)
-flip_h = true
-billboard = 2
-texture = ExtResource("4_vj5s7")
-region_enabled = true
-region_rect = Rect2(427.13287, 67.30736, 483.15314, 617.59564)
+[node name="Candle4" parent="." unique_id=593371254 instance=ExtResource("5_vj5s7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.48288733, 0.80703247, 0.08272953)
+flickerAdvance = 0.053
