@@ -14,10 +14,6 @@ config/name="GMTK-2026-TEST"
 run/main_scene="uid://chd5war7kr7w6"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 
-[autoload]
-
-DemonManager="*uid://b5uyj32rm6w4h"
-
 [display]
 
 window/size/viewport_width=1280

@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://chd5war7kr7w6"]
 
+[ext_resource type="PackedScene" uid="uid://c2pqtofk3wvcv" path="res://code/demo_scene/gui.tscn" id="1_r7dlf"]
 [ext_resource type="Material" uid="uid://cn14b4opohaks" path="res://art/demo/wall_material_3d.tres" id="2_l8igb"]
 [ext_resource type="PackedScene" uid="uid://yuavbd7xvj7g" path="res://art/demo/table.blend" id="4_r7dlf"]
 [ext_resource type="Material" uid="uid://cpuc3ai6intc4" path="res://art/demo/desk_material_3d.tres" id="5_66w8o"]
@@ -15,6 +16,8 @@ size = Vector3(3.41, 2.101255, 3.47)
 size = Vector3(0.13916016, 0.0769043, 0.13232422)
 
 [node name="Demo" type="Node3D" unique_id=1435100903]
+
+[node name="GUI" parent="." unique_id=1104381898 instance=ExtResource("1_r7dlf")]
 
 [node name="Walls" type="MeshInstance3D" parent="." unique_id=1715614772]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0411872, 0)
