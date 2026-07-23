@@ -5,10 +5,6 @@
 [ext_resource type="Texture2D" uid="uid://cg3epuw16obey" path="res://art/demo/demo_candle_1.png" id="4_vj5s7"]
 [ext_resource type="Texture2D" uid="uid://cvo5k7157pemm" path="res://art/demo/demo_candle_2.png" id="5_l8igb"]
 
-[sub_resource type="Environment" id="Environment_dd5g0"]
-background_mode = 3
-background_canvas_max_layer = 1
-
 [sub_resource type="BoxMesh" id="BoxMesh_dd5g0"]
 flip_faces = true
 size = Vector3(3.41, 2.101255, 3.47)
@@ -18,22 +14,9 @@ albedo_texture = ExtResource("1_kb3va")
 
 [node name="Demo" type="Node3D" unique_id=1435100903]
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1117343218]
-environment = SubResource("Environment_dd5g0")
-
-[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=563508970]
-
-[node name="TextureRect" type="TextureRect" parent="CanvasLayer" unique_id=406833223]
-z_index = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("1_kb3va")
-
 [node name="Sprite3D" type="Sprite3D" parent="." unique_id=766264924]
 transform = Transform3D(-0.218, -1.792167e-08, 3.821371e-15, 0, -8.960835e-09, -1, 1.9058165e-08, -0.205, 4.371139e-08, 0.005, 0.65111816, -0.28)
+transparent = false
 shaded = true
 texture_filter = 0
 texture = ExtResource("2_g0jli")
@@ -49,34 +32,63 @@ surface_material_override/0 = SubResource("StandardMaterial3D_dbc33")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.79065263, 2.0022385, 2)
 light_energy = 2.675
 
-[node name="Sprite3D2" type="Sprite3D" parent="." unique_id=1384934533]
-transform = Transform3D(0.03, 0, 0, 0, 0.03, 0, 0, 0, 0.03, -0.412, 0.71201175, -0.129)
+[node name="Camera3D" type="Camera3D" parent="." unique_id=1086524145]
+transform = Transform3D(0.9999863, -0.002045854, 0.0048197303, 0, 0.92050487, 0.39073113, -0.005235964, -0.39072576, 0.92049223, 0.015, 1.3791182, 0.945)
+fov = 50.0
+
+[node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=328486633]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.49991593, 0.80703247, 0.08188392)
+light_color = Color(1, 0.7294118, 0, 1)
+light_energy = 0.11
+light_indirect_energy = 0.865
+metadata/_edit_group_ = true
+
+[node name="Sprite3D2" type="Sprite3D" parent="OmniLight3D" unique_id=1384934533]
+transform = Transform3D(0.03, 0, 0, 0, 0.03, 0, 0, 0, 0.03, 0, -0.06473714, 0)
 billboard = 2
-no_depth_test = true
 texture = ExtResource("4_vj5s7")
 region_enabled = true
 region_rect = Rect2(427.13287, 67.30736, 483.15314, 617.59564)
 
-[node name="OmniLight3D" type="OmniLight3D" parent="Sprite3D2" unique_id=328486633]
-transform = Transform3D(33.333336, 0, 0, 0, 33.333336, 0, 0, 0, 33.333336, 0, 2.1579037, 0)
+[node name="OmniLight3D2" type="OmniLight3D" parent="." unique_id=788870177]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.48288733, 0.80703247, 0.08272953)
 light_color = Color(1, 0.7294118, 0, 1)
 light_energy = 0.11
 light_indirect_energy = 0.865
+metadata/_edit_group_ = true
 
-[node name="Sprite3D3" type="Sprite3D" parent="." unique_id=2052860134]
-transform = Transform3D(0.03, 0, 0, 0, 0.03, 0, 0, 0, 0.03, 0.36217397, 0.71201175, -0.129)
+[node name="Sprite3D3" type="Sprite3D" parent="OmniLight3D2" unique_id=2052860134]
+transform = Transform3D(0.03, 0, 0, 0, 0.03, 0, 0, 0, 0.03, 0, -0.06473714, 0)
 billboard = 2
-no_depth_test = true
 texture = ExtResource("5_l8igb")
 region_enabled = true
 region_rect = Rect2(427.13287, 67.30736, 483.15314, 617.59564)
 
-[node name="OmniLight3D" type="OmniLight3D" parent="Sprite3D3" unique_id=788870177]
-transform = Transform3D(33.333336, 0, 0, 0, 33.333336, 0, 0, 0, 33.333336, 0, 2.1579037, 0)
+[node name="OmniLight3D3" type="OmniLight3D" parent="." unique_id=243732139]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.4283667, 0.80703247, -0.22724003)
 light_color = Color(1, 0.7294118, 0, 1)
 light_energy = 0.11
 light_indirect_energy = 0.865
+metadata/_edit_group_ = true
 
-[node name="Camera3D" type="Camera3D" parent="." unique_id=1086524145]
-transform = Transform3D(0.9999863, -0.002045854, 0.0048197303, 0, 0.92050487, 0.39073113, -0.005235964, -0.39072576, 0.92049223, 0.015, 1.3791182, 0.945)
-fov = 50.0
+[node name="Sprite3D3" type="Sprite3D" parent="OmniLight3D3" unique_id=604535719]
+transform = Transform3D(0.03, 0, 0, 0, 0.03, 0, 0, 0, 0.03, 0, -0.06473714, 0)
+billboard = 2
+texture = ExtResource("5_l8igb")
+region_enabled = true
+region_rect = Rect2(427.13287, 67.30736, 483.15314, 617.59564)
+
+[node name="OmniLight3D4" type="OmniLight3D" parent="." unique_id=38297010]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.479692, 0.80703247, -0.24227887)
+light_color = Color(1, 0.7294118, 0, 1)
+light_energy = 0.11
+light_indirect_energy = 0.865
+metadata/_edit_group_ = true
+
+[node name="Sprite3D2" type="Sprite3D" parent="OmniLight3D4" unique_id=199089074]
+transform = Transform3D(0.03, 0, 0, 0, 0.03, 0, 0, 0, 0.03, 0, -0.06473714, 0)
+flip_h = true
+billboard = 2
+texture = ExtResource("4_vj5s7")
+region_enabled = true
+region_rect = Rect2(427.13287, 67.30736, 483.15314, 617.59564)
