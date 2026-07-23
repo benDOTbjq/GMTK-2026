@@ -3,23 +3,23 @@ class_name DemonManager extends RefCounted
 
 const DEMON_TYPE_EFFECTIVENESS : Dictionary[ID.DemonType, Vector4i] = {
 	ID.DemonType.FERRIC: Vector4i(1, 0, -1, 0),
-	ID.DemonType.CHTHONIC: Vector4i(0, -1, 0, 1),
+	ID.DemonType.CELESTIAL: Vector4i(0, -1, 0, 1),
 	ID.DemonType.INFERNAL: Vector4i(1, -1, 0, 0),
 	ID.DemonType.SPECTRAL: Vector4i(-1, 0, 0, 1),
 	ID.DemonType.LUCIFERIAN: Vector4i(0, 1, -1, 0),
-	ID.DemonType.PUTREFACTIOUS:Vector4i(0, 1, 0, -1),
-	ID.DemonType.HADEL: Vector4i(-1, 0, 1, 0),
+	ID.DemonType.CARNAL:Vector4i(0, 1, 0, -1),
+	ID.DemonType.ABYSSAL: Vector4i(-1, 0, 1, 0),
 	ID.DemonType.THAUMIC: Vector4i(0, 0, 1, -1),
 }
 
 const TYPE_TO_STRING : Dictionary[ID.DemonType, String] = {
 	ID.DemonType.FERRIC: "FERRIC",
-	ID.DemonType.CHTHONIC: "CHTHONIC",
+	ID.DemonType.CELESTIAL: "CELESTIAL",
 	ID.DemonType.INFERNAL: "INFERNAL",
 	ID.DemonType.SPECTRAL: "SPECTRAL",
 	ID.DemonType.LUCIFERIAN: "LUCIFERIAN",
-	ID.DemonType.PUTREFACTIOUS:"PUTREFACTIOUS",
-	ID.DemonType.HADEL: "HADEL",
+	ID.DemonType.CARNAL:"CARNAL",
+	ID.DemonType.ABYSSAL: "ABYSSAL",
 	ID.DemonType.THAUMIC: "THAUMIC",
 }
 
@@ -27,12 +27,12 @@ const TYPE_TO_STRING : Dictionary[ID.DemonType, String] = {
 # 0 = normal; -1 = not effective; 1 = very effective
 const EFFECTIVENESS_CHART = [
 	 1,  0, -1,  0, # FERRIC
-	 0, -1,  0,  1, # CHTHONIC
+	 0, -1,  0,  1, # CELESTIAL
 	 1, -1,  0,  0, # INFERNAL
 	-1,  0,  0,  1, # SPECTRAL
 	 0,  1, -1,  0, # LUCIFERIAN
-	 0,  1,  0, -1, # PUTREFACTIOUS
-	-1,  0,  1,  0, # HADEL
+	 0,  1,  0, -1, # CARNAL
+	-1,  0,  1,  0, # ABYSSAL
 	 0,  0,  1, -1, # THAUMIC
 ]
 
