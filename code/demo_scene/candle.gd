@@ -8,4 +8,3 @@ extends OmniLight3D
 func _ready() -> void:
 	#animationPlayer.advance(randf_range(0.0, 1.0))
 	animationPlayer.advance(flickerAdvance)
-
