@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://dajacxx26fmq5" path="res://code/demo_scene/candle.tscn" id="5_vj5s7"]
 [ext_resource type="PackedScene" uid="uid://gux10n6r380o" path="res://art/demo/shelf.blend" id="6_evhee"]
 [ext_resource type="Texture2D" uid="uid://dqx7pdjk0ow3n" path="res://art/demo/demon2.png" id="6_l8igb"]
+[ext_resource type="PackedScene" uid="uid://chjgxglbqk6av" path="res://code/demo_scene/book.tscn" id="10_j4l0e"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_dd5g0"]
 flip_faces = true
@@ -37,6 +38,7 @@ fov = 50.0
 script = ExtResource("3_66w8o")
 table_rotation = Vector3(-0.40142572, 0.005235988, 0)
 shelf_rotation = Vector3(-0.32383546, 1.3941991, -0.015034148)
+book_rotation = Vector3(-0.7380256, -0.004113991, 0)
 
 [node name="Candle" parent="." unique_id=875324991 instance=ExtResource("5_vj5s7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.428, 0.807, 0.08)
@@ -58,92 +60,92 @@ flickerAdvance = 0.053
 transform = Transform3D(0.07, 0, 0, 0, 0.07, 0, 0, 0, 0.065, 0.73084277, -0.019176781, -0.18600798)
 metadata/_edit_group_ = true
 
-[node name="Camera" parent="table" index="0" unique_id=638748709]
+[node name="Cube" parent="table" index="0" unique_id=743137321]
+material_override = ExtResource("5_66w8o")
+
+[node name="Light" parent="table" index="1" unique_id=769178248]
 visible = false
 
-[node name="Camera_001" parent="table" index="1" unique_id=1554257315]
+[node name="Camera" parent="table" index="2" unique_id=1196353685]
 visible = false
 
-[node name="Cube" parent="table" index="3" unique_id=200511497]
+[node name="Cube_001" parent="table" index="3" unique_id=1142081160]
 material_override = ExtResource("5_66w8o")
 
-[node name="Cube_001" parent="table" index="4" unique_id=1693904513]
+[node name="Cube_002" parent="table" index="4" unique_id=148519236]
 material_override = ExtResource("5_66w8o")
 
-[node name="Cube_002" parent="table" index="5" unique_id=616417925]
+[node name="Cube_003" parent="table" index="5" unique_id=997501974]
 material_override = ExtResource("5_66w8o")
 
-[node name="Cube_003" parent="table" index="6" unique_id=1063589629]
+[node name="Cube_004" parent="table" index="6" unique_id=517472287]
 material_override = ExtResource("5_66w8o")
 
-[node name="Cube_004" parent="table" index="7" unique_id=1592108152]
+[node name="Cube_005" parent="table" index="7" unique_id=304712114]
 material_override = ExtResource("5_66w8o")
 
-[node name="Cube_005" parent="table" index="8" unique_id=546743260]
-material_override = ExtResource("5_66w8o")
-
-[node name="Cube_006" parent="table" index="9" unique_id=168053964]
+[node name="Cube_006" parent="table" index="8" unique_id=1402256961]
 surface_material_override/0 = ExtResource("5_66w8o")
 
-[node name="Cube_007" parent="table" index="10" unique_id=958217297]
-material_override = ExtResource("5_66w8o")
-
-[node name="Cube_008" parent="table" index="11" unique_id=482844367]
-material_override = ExtResource("5_66w8o")
-
-[node name="Cube_010" parent="table" index="13" unique_id=1405029513]
-material_override = ExtResource("5_66w8o")
-
-[node name="Cube_011" parent="table" index="14" unique_id=1679145428]
-material_override = ExtResource("5_66w8o")
-
-[node name="Cube_012" parent="table" index="15" unique_id=1827196899]
-material_override = ExtResource("5_66w8o")
-
-[node name="Light" parent="table" index="16" unique_id=1757852021]
+[node name="Light_001" parent="table" index="9" unique_id=1762413017]
 visible = false
 
-[node name="Light_001" parent="table" index="17" unique_id=242327583]
+[node name="Cube_007" parent="table" index="10" unique_id=652968836]
+material_override = ExtResource("5_66w8o")
+
+[node name="Cube_008" parent="table" index="11" unique_id=2073293429]
+material_override = ExtResource("5_66w8o")
+
+[node name="Cube_010" parent="table" index="13" unique_id=1073569721]
+material_override = ExtResource("5_66w8o")
+
+[node name="Cube_011" parent="table" index="14" unique_id=1859644434]
+material_override = ExtResource("5_66w8o")
+
+[node name="Cube_012" parent="table" index="15" unique_id=2088439098]
+material_override = ExtResource("5_66w8o")
+
+[node name="Camera_001" parent="table" index="16" unique_id=810826122]
 visible = false
 
 [node name="shelf" parent="." unique_id=283854252 instance=ExtResource("6_evhee")]
 transform = Transform3D(-0.03997668, 0, -0.001365762, 0, 0.04, 0, 0.001365762, 0, -0.03997668, -1.2007556, 0.06862593, 0.78559834)
 metadata/_edit_group_ = true
 
-[node name="Camera" parent="shelf" index="0" unique_id=24330502]
+[node name="Cube" parent="shelf" index="0" unique_id=90837047]
+surface_material_override/0 = ExtResource("5_66w8o")
+
+[node name="Light" parent="shelf" index="1" unique_id=466021484]
 visible = false
 
-[node name="Cube" parent="shelf" index="1" unique_id=1014540750]
-surface_material_override/0 = ExtResource("5_66w8o")
-
-[node name="Cube_001" parent="shelf" index="2" unique_id=1566596279]
-surface_material_override/0 = ExtResource("5_66w8o")
-
-[node name="Cube_002" parent="shelf" index="3" unique_id=462678666]
-surface_material_override/0 = ExtResource("5_66w8o")
-
-[node name="Cube_003" parent="shelf" index="4" unique_id=1794131730]
-surface_material_override/0 = ExtResource("5_66w8o")
-
-[node name="Cube_004" parent="shelf" index="5" unique_id=1334408828]
-surface_material_override/0 = ExtResource("5_66w8o")
-
-[node name="Cube_005" parent="shelf" index="6" unique_id=1710932948]
-surface_material_override/0 = ExtResource("5_66w8o")
-
-[node name="Cube_006" parent="shelf" index="7" unique_id=916998628]
-surface_material_override/0 = ExtResource("5_66w8o")
-
-[node name="Cylinder" parent="shelf" index="8" unique_id=1889606387]
-surface_material_override/0 = ExtResource("5_66w8o")
-
-[node name="Cylinder_001" parent="shelf" index="9" unique_id=1039939425]
-surface_material_override/0 = ExtResource("5_66w8o")
-
-[node name="Light" parent="shelf" index="10" unique_id=1612252235]
+[node name="Camera" parent="shelf" index="2" unique_id=398314888]
 visible = false
 
-[node name="NurbsPath" parent="shelf" index="11" unique_id=1351047782]
+[node name="Cube_001" parent="shelf" index="3" unique_id=2075285930]
+surface_material_override/0 = ExtResource("5_66w8o")
+
+[node name="Cube_002" parent="shelf" index="4" unique_id=1570478070]
+surface_material_override/0 = ExtResource("5_66w8o")
+
+[node name="Cube_003" parent="shelf" index="5" unique_id=639352174]
+surface_material_override/0 = ExtResource("5_66w8o")
+
+[node name="Cube_004" parent="shelf" index="6" unique_id=578555246]
+surface_material_override/0 = ExtResource("5_66w8o")
+
+[node name="Cube_005" parent="shelf" index="7" unique_id=1051419433]
+surface_material_override/0 = ExtResource("5_66w8o")
+
+[node name="NurbsPath" parent="shelf" index="8" unique_id=375919325]
+surface_material_override/0 = ExtResource("5_66w8o")
+
+[node name="Cylinder" parent="shelf" index="9" unique_id=110396453]
+surface_material_override/0 = ExtResource("5_66w8o")
+
+[node name="Cylinder_001" parent="shelf" index="10" unique_id=361859392]
+surface_material_override/0 = ExtResource("5_66w8o")
+
+[node name="Cube_006" parent="shelf" index="11" unique_id=2133265654]
 surface_material_override/0 = ExtResource("5_66w8o")
 
 [node name="TheGuySprite3D" type="Sprite3D" parent="." unique_id=1341713532]
@@ -162,6 +164,8 @@ region_rect = Rect2(0, 350.1314, 293, 150.96783)
 [node name="LevelItemProp" type="MeshInstance3D" parent="." unique_id=839630262]
 transform = Transform3D(0.9115173, 0, -0.41126165, 0, 1, 0, 0.41126165, 0, 0.9115173, 0.012630105, 0.6885778, -0.2556213)
 mesh = SubResource("BoxMesh_ba4mq")
+
+[node name="Book" parent="." unique_id=699787762 instance=ExtResource("10_j4l0e")]
 
 [editable path="table"]
 [editable path="shelf"]

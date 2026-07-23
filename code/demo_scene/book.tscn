@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://chjgxglbqk6av"]
+
+[ext_resource type="Script" uid="uid://bgjwv4gj245i0" path="res://code/demo_scene/book.gd" id="1_lhl48"]
+[ext_resource type="PackedScene" uid="uid://cluwapoqqbif4" path="res://art/demo/book_without_bend.blend" id="1_wong1"]
+[ext_resource type="Material" uid="uid://cpuc3ai6intc4" path="res://art/demo/desk_material_3d.tres" id="2_lhl48"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6uyjs"]
+albedo_color = Color(0.91756153, 0.8755043, 0.7629297, 1)
+
+[node name="Book" type="Node3D" unique_id=699787762]
+script = ExtResource("1_lhl48")
+
+[node name="book_without_bend" parent="." unique_id=567025843 instance=ExtResource("1_wong1")]
+unique_name_in_owner = true
+transform = Transform3D(0.12393061, -0.016315775, 0, 0.01613656, 0.122569345, -0.018476175, 0.0024116249, 0.01831811, 0.123626985, 0, 0.94, 0.747)
+
+[node name="BackCover" parent="book_without_bend" index="0" unique_id=1038150817]
+material_override = ExtResource("2_lhl48")
+
+[node name="BackPages" parent="book_without_bend/BackCover" index="0" unique_id=1569051863]
+material_override = SubResource("StandardMaterial3D_6uyjs")
+
+[node name="FrontCover" parent="book_without_bend" index="1" unique_id=1341395973]
+transform = Transform3D(-0.011592839, 1.1768352e-09, 0.910389, 1.110223e-16, 0.013462007, -7.959216e-08, -1.2476524, -1.09348225e-11, -0.008459081, 0.10297604, -0.03287093, -1.1065122)
+material_override = ExtResource("2_lhl48")
+
+[node name="Binder" parent="book_without_bend/FrontCover" index="0" unique_id=821318888]
+material_override = ExtResource("2_lhl48")
+
+[node name="FrontPages" parent="book_without_bend/FrontCover" index="1" unique_id=1977742871]
+material_override = SubResource("StandardMaterial3D_6uyjs")
+
+[node name="BookMark" parent="book_without_bend" index="2" unique_id=132530580]
+visible = false
+
+[editable path="book_without_bend"]
