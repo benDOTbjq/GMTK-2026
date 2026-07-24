@@ -1,16 +1,13 @@
 extends Camera3D
 class_name CameraManager
 
-
 @export var mode_transition_time: float = .75
 @export var table_rotation: Vector3
 @export var shelf_rotation: Vector3
 @export var book_rotation: Vector3
 
-
 func _ready() -> void:
 	update_camera_mode(ID.CameraMode.TABLE)
-
 
 func update_camera_mode(new_mode: ID.CameraMode):
 	var target_rotation

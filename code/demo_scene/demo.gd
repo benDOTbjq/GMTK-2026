@@ -8,7 +8,7 @@ extends Node3D
 @onready var table_sprite: Sprite3D = $DemonTableSprite
 
 @export var test_demon: DemonInfo
-var curr_demon_info : DemonInfo
+var curr_demon_info : DemonInfo = null
 
 var shadow_frame_id: int = 0
 var shadow_frame_time: float = 0
@@ -27,7 +27,6 @@ func _ready() -> void:
 	curr_demon_info = test_demon
 	setup_demon()
 	AudioManager.set_ambience(ID.Ambience.DEFAULT)
-	
 
 func _process(delta: float) -> void:
 	var total = curr_demon_info.shadow_anim.get_frame_count("default")
