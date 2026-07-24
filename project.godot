@@ -14,6 +14,10 @@ config/name="GMTK-2026-TEST"
 run/main_scene="uid://chd5war7kr7w6"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 
+[autoload]
+
+AudioManager="*uid://bg4ukma6shwi2"
+
 [display]
 
 window/size/viewport_width=1280

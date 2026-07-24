@@ -23,6 +23,8 @@ func _ready() -> void:
 	
 	curr_demon_info = test_demon
 	setup_demon()
+	AudioManager.set_ambience(ID.Ambience.DEFAULT)
+	
 
 func setup_demon() -> void:
 	wall_sprite.sprite_frames = curr_demon_info.shadow_anim

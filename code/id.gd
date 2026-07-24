@@ -33,3 +33,8 @@ enum Page {
 	DEMON,
 	TYPE_CHART,
 }
+
+enum Ambience {
+	NULL,
+	DEFAULT,
+}

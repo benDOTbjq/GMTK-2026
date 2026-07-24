@@ -262,7 +262,7 @@ modulate = Color(0, 0, 0, 1)
 sprite_frames = ExtResource("10_7c3sw")
 
 [node name="DemonTableSprite" type="AnimatedSprite3D" parent="." unique_id=790335226]
-transform = Transform3D(-0.239475, 5.8460685e-08, -3.2740108e-08, 1.5224149e-08, -1.6923641e-08, -0.515, -3.615972e-08, -0.38716766, 2.2511365e-08, 0.40010563, 0.653195, -0.0746056)
+transform = Transform3D(-0.239475, 5.8460685e-08, -3.2740108e-08, 1.5224149e-08, -1.6923641e-08, -0.515, -3.615972e-08, -0.38716766, 2.2511365e-08, 0.4001056, 0.02398169, -0.07460557)
 centered = false
 modulate = Color(0, 0, 0, 1)
 sprite_frames = ExtResource("10_7c3sw")
