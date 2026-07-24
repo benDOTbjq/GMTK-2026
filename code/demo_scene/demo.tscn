@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://lgxc7t0ec02q" path="res://code/demo_scene/demo.gd" id="1_evhee"]
 [ext_resource type="PackedScene" uid="uid://c2pqtofk3wvcv" path="res://code/demo_scene/gui.tscn" id="1_r7dlf"]
+[ext_resource type="Resource" uid="uid://cqmqioiv6odkh" path="res://code/assets/Demon1.tres" id="2_j4l0e"]
 [ext_resource type="Material" uid="uid://cn14b4opohaks" path="res://art/demo/wall_material_3d.tres" id="2_l8igb"]
 [ext_resource type="Script" uid="uid://qrf1rlx5jtf0" path="res://camera_manager.gd" id="3_66w8o"]
 [ext_resource type="PackedScene" uid="uid://yuavbd7xvj7g" path="res://art/demo/table.blend" id="4_r7dlf"]
@@ -18,8 +19,105 @@ size = Vector3(3.41, 2.101255, 3.47)
 [sub_resource type="BoxMesh" id="BoxMesh_ba4mq"]
 size = Vector3(0.13916016, 0.0769043, 0.13232422)
 
+[sub_resource type="Animation" id="Animation_l86f5"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("DemonTableSprite:modulate:a")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("DemonTableSprite:region_rect")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Rect2(0, 350.1314, 293, 150.96783)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("DemonWallSprite:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-0.73712057, -0.71418333, -1.734)]
+}
+
+[sub_resource type="Animation" id="Animation_7c3sw"]
+resource_name = "spawn_shadow"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("DemonTableSprite:region_rect")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(0.4204483, 1),
+"update": 0,
+"values": [Rect2(0, 0, 293, 150.968), Rect2(0, 350.1314, 293, 150.96783)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("DemonTableSprite:modulate:a")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.8, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.0, 0.5, 1.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("DemonWallSprite:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(0.4204483, 1),
+"update": 0,
+"values": [Vector3(-0.737, -2.414, -1.734), Vector3(-0.73712057, -0.71418333, -1.734)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("DemonWallSprite:modulate:a")
+tracks/3/interp = 2
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.8, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.0, 0.5, 1.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_48qym"]
+_data = {
+&"RESET": SubResource("Animation_l86f5"),
+&"spawn_shadow": SubResource("Animation_7c3sw")
+}
+
 [node name="Demo" type="Node3D" unique_id=1435100903]
 script = ExtResource("1_evhee")
+test_demon = ExtResource("2_j4l0e")
 
 [node name="GUI" parent="." unique_id=945604540 instance=ExtResource("1_r7dlf")]
 
@@ -157,14 +255,17 @@ visible = false
 [node name="NurbsPath" parent="shelf" index="11" unique_id=1351047782]
 surface_material_override/0 = ExtResource("5_66w8o")
 
-[node name="TheGuySprite3D" type="Sprite3D" parent="." unique_id=1341713532]
-transform = Transform3D(0.515, 3.2740104e-08, 0, -3.2740104e-08, 0.515, 0, 0, 0, 0.515, 0, 0.595, -1.734)
+[node name="DemonWallSprite" type="Sprite3D" parent="." unique_id=1341713532]
+transform = Transform3D(0.515, 3.2740104e-08, 0, -3.2740104e-08, 0.515, 0, 0, 0, 0.515, -0.73712057, -0.71418333, -1.734)
+centered = false
 modulate = Color(0, 0, 0, 1)
 texture = ExtResource("6_l8igb")
-region_rect = Rect2(427.72412, 218.93764, 491.4157, 459.0655)
+region_enabled = true
+region_rect = Rect2(0, 0, 293, 500)
 
-[node name="TheGuysLegsSprite3D" type="Sprite3D" parent="TheGuySprite3D" unique_id=692841091]
-transform = Transform3D(-0.465, 1.5401571e-07, -6.600236e-15, 0, -4.4585615e-08, -1, -7.021305e-08, -1.02, 4.371139e-08, 0.002, 0.113, 2.515)
+[node name="DemonTableSprite" type="Sprite3D" parent="." unique_id=692841091]
+transform = Transform3D(-0.239475, 5.8460685e-08, -3.2740108e-08, 1.5224149e-08, -1.6923641e-08, -0.515, -3.615972e-08, -0.38716766, 2.2511365e-08, 0.34374306, 0.653195, -0.24814072)
+centered = false
 modulate = Color(0, 0, 0, 1)
 texture = ExtResource("6_l8igb")
 region_enabled = true
@@ -175,6 +276,10 @@ transform = Transform3D(0.9115173, 0, -0.41126165, 0, 1, 0, 0.41126165, 0, 0.911
 mesh = SubResource("BoxMesh_ba4mq")
 
 [node name="Book" parent="." unique_id=699787762 instance=ExtResource("10_j4l0e")]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1708346685]
+libraries/ = SubResource("AnimationLibrary_48qym")
+autoplay = &"spawn_shadow"
 
 [editable path="table"]
 [editable path="shelf"]
