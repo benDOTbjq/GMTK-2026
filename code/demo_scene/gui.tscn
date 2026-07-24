@@ -112,3 +112,21 @@ offset_top = 102.0
 offset_right = 1129.0
 offset_bottom = 165.0
 text = "Check"
+
+[node name="BookPrevButton" type="Button" parent="." unique_id=1064589515]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 356.0
+offset_top = 611.0
+offset_right = 452.0
+offset_bottom = 703.0
+text = "Prev"
+
+[node name="BookNextButton" type="Button" parent="." unique_id=1258589381]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 818.0
+offset_top = 610.0
+offset_right = 914.0
+offset_bottom = 702.0
+text = "next"

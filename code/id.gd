@@ -33,6 +33,8 @@ enum Page {
 	DEMON,
 	TYPE_CHART,
 	PENTAGRAM,
+	MULTIPENT,
+	NOISE_DEMON,
 }
 
 enum SFX {

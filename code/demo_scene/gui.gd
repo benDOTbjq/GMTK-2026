@@ -6,6 +6,8 @@ var _current_demon: Dictionary
 @onready var menu_button: Button = %MenuButton
 @onready var table_button: Button = %TableButton
 @onready var book_button: Button = %BookButton
+@onready var book_prev_button: Button = %BookPrevButton
+@onready var book_next_button: Button = %BookNextButton
 
 @onready var water_button: Button = %WaterButton
 @onready var salt_button: Button = %SaltButton

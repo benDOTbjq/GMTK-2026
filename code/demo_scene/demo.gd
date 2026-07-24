@@ -18,6 +18,8 @@ func _ready() -> void:
 	gui.menu_button.pressed.connect(camera_3d.update_camera_mode.bind(ID.CameraMode.SHELF))
 	gui.table_button.pressed.connect(camera_3d.update_camera_mode.bind(ID.CameraMode.TABLE))
 	gui.book_button.pressed.connect(camera_3d.update_camera_mode.bind(ID.CameraMode.BOOK))
+	gui.book_prev_button.pressed.connect(book.prev)
+	gui.book_next_button.pressed.connect(book.next)
 	
 	gui.book_button.pressed.connect(book.open)
 	gui.menu_button.pressed.connect(book.close)
