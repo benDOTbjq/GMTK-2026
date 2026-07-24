@@ -16,9 +16,11 @@ script = ExtResource("1_p28ub")
 demon_info = ExtResource("2_oumg7")
 
 [node name="Area3D" type="Area3D" parent="." unique_id=291581058]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1028492, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=1207200027]
 shape = SubResource("CapsuleShape3D_f1574")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1991364005]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1028492, 0)
 mesh = SubResource("CapsuleMesh_f1574")
