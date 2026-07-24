@@ -1,36 +1,101 @@
 [gd_scene format=3 uid="uid://chjgxglbqk6av"]
 
-[ext_resource type="Script" uid="uid://bgjwv4gj245i0" path="res://code/demo_scene/book.gd" id="1_lhl48"]
+[ext_resource type="Script" uid="uid://bgjwv4gj245i0" path="res://code/demo_scene/book_manager.gd" id="1_lhl48"]
 [ext_resource type="PackedScene" uid="uid://cluwapoqqbif4" path="res://art/demo/book_without_bend.blend" id="1_wong1"]
 [ext_resource type="Material" uid="uid://cpuc3ai6intc4" path="res://art/demo/desk_material_3d.tres" id="2_lhl48"]
+[ext_resource type="Script" uid="uid://drqgkopiaoxok" path="res://code/demo_scene/2d_in_3d_controller.gd" id="4_6uyjs"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6uyjs"]
 albedo_color = Color(0.91756153, 0.8755043, 0.7629297, 1)
 
+[sub_resource type="ViewportTexture" id="ViewportTexture_r63tv"]
+viewport_path = NodePath("RightSubViewport")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_t4vnd"]
+resource_local_to_scene = true
+albedo_texture = SubResource("ViewportTexture_r63tv")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_hf5ca"]
+size = Vector2(0.32, 0.13)
+orientation = 2
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_dd5g0"]
+size = Vector3(1.8078079, 0.04736328, 2.3024025)
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_rpbv3"]
+viewport_path = NodePath("LeftSubViewport")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5yr3x"]
+resource_local_to_scene = true
+albedo_texture = SubResource("ViewportTexture_rpbv3")
+
 [node name="Book" type="Node3D" unique_id=699787762]
 script = ExtResource("1_lhl48")
 
-[node name="book_without_bend" parent="." unique_id=567025843 instance=ExtResource("1_wong1")]
+[node name="book_without_bend" parent="." unique_id=1007140928 instance=ExtResource("1_wong1")]
 unique_name_in_owner = true
-transform = Transform3D(0.12393061, -0.016315775, 0, 0.01613656, 0.122569345, -0.018476175, 0.0024116249, 0.01831811, 0.123626985, 0, 0.94, 0.747)
+transform = Transform3D(0.9963116, -0.08044125, -0.02987361, 0.072798215, 0.97667235, -0.20201904, 0.04542741, 0.19909914, 0.97892594, 0.015, 0.79, 0.679)
 
-[node name="BackCover" parent="book_without_bend" index="0" unique_id=1038150817]
+[node name="BackCover" parent="book_without_bend" index="0" unique_id=1250319587]
 material_override = ExtResource("2_lhl48")
 
-[node name="BackPages" parent="book_without_bend/BackCover" index="0" unique_id=1569051863]
+[node name="BackPages" parent="book_without_bend/BackCover" index="0" unique_id=680765196]
 material_override = SubResource("StandardMaterial3D_6uyjs")
 
-[node name="FrontCover" parent="book_without_bend" index="1" unique_id=1341395973]
-transform = Transform3D(-0.011592839, 1.1768352e-09, 0.910389, 1.110223e-16, 0.013462007, -7.959216e-08, -1.2476524, -1.09348225e-11, -0.008459081, 0.10297604, -0.03287093, -1.1065122)
-material_override = ExtResource("2_lhl48")
-
-[node name="Binder" parent="book_without_bend/FrontCover" index="0" unique_id=821318888]
-material_override = ExtResource("2_lhl48")
-
-[node name="FrontPages" parent="book_without_bend/FrontCover" index="1" unique_id=1977742871]
+[node name="RightPage" parent="book_without_bend/BackCover/BackPages" index="0" unique_id=1079685822]
 material_override = SubResource("StandardMaterial3D_6uyjs")
 
-[node name="BookMark" parent="book_without_bend" index="2" unique_id=132530580]
+[node name="RightContentMesh" type="MeshInstance3D" parent="book_without_bend/BackCover/BackPages/RightPage" index="0" unique_id=1964212754]
+transform = Transform3D(5.9994006, 8.625783e-09, 6.0384897e-10, -1.3067769e-11, -7.6705896e-07, 5.9994016, 4.87229e-09, -17.548264, -1.4303288e-07, 0.9241848, 0.050942913, 0.0064678853)
+material_override = SubResource("StandardMaterial3D_t4vnd")
+mesh = SubResource("PlaneMesh_hf5ca")
+
+[node name="Area3D" type="Area3D" parent="book_without_bend/BackCover/BackPages/RightPage" index="1" unique_id=176915161]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="book_without_bend/BackCover/BackPages/RightPage/Area3D" unique_id=1881921552]
+transform = Transform3D(1.0000001, 8.0768725e-15, 1.110223e-16, 4.3021142e-16, 1.0000007, -2.9802322e-08, -1.3877788e-15, 4.917383e-07, 1, 1.0472288, 0.031229142, -0.013089049)
+shape = SubResource("BoxShape3D_dd5g0")
+
+[node name="FrontCover" parent="book_without_bend" index="1" unique_id=1437763936]
+transform = Transform3D(1.5020085e-08, 0.26991504, -0.7166215, 6.4352214e-08, 0.71662134, 0.2699151, 0.7657683, -6.551633e-08, -8.6265235e-09, -0.0014808737, 0.022822363, -0.177374)
+material_override = ExtResource("2_lhl48")
+
+[node name="Binder" parent="book_without_bend/FrontCover" index="0" unique_id=2005945912]
+material_override = ExtResource("2_lhl48")
+
+[node name="FrontPages" parent="book_without_bend/FrontCover" index="1" unique_id=986245109]
+material_override = SubResource("StandardMaterial3D_6uyjs")
+
+[node name="LeftPage" parent="book_without_bend/FrontCover/FrontPages" index="0" unique_id=285538585]
 visible = false
+material_override = SubResource("StandardMaterial3D_6uyjs")
+
+[node name="LeftContentMesh" type="MeshInstance3D" parent="book_without_bend/FrontCover/FrontPages" index="1" unique_id=1335044380]
+transform = Transform3D(5.9994006, 8.625783e-09, 6.0384897e-10, -1.3067769e-11, -7.6705896e-07, 5.9994016, 4.87229e-09, -17.548264, -1.4303288e-07, -0.94706357, 0.0008111, -0.09457886)
+material_override = SubResource("StandardMaterial3D_5yr3x")
+mesh = SubResource("PlaneMesh_hf5ca")
+
+[node name="Area3D" type="Area3D" parent="book_without_bend/FrontCover/FrontPages" index="2" unique_id=923035483]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="book_without_bend/FrontCover/FrontPages/Area3D" unique_id=1076797762]
+transform = Transform3D(1.0000001, 8.0768725e-15, 1.110223e-16, 4.3021142e-16, 1.0000007, -2.9802322e-08, -1.3877788e-15, 4.917383e-07, 1, -0.9430253, 0.0074386597, -0.09173393)
+shape = SubResource("BoxShape3D_dd5g0")
+
+[node name="BookMark" parent="book_without_bend" index="2" unique_id=2071093577]
+visible = false
+
+[node name="LeftSubViewport" type="SubViewport" parent="." unique_id=532510303 node_paths=PackedStringArray("display_mesh", "display_area")]
+unique_name_in_owner = true
+size = Vector2i(445, 600)
+script = ExtResource("4_6uyjs")
+display_mesh = NodePath("../book_without_bend/FrontCover/FrontPages/LeftContentMesh")
+display_area = NodePath("../book_without_bend/FrontCover/FrontPages/Area3D")
+
+[node name="RightSubViewport" type="SubViewport" parent="." unique_id=909597775 node_paths=PackedStringArray("display_mesh", "display_area")]
+unique_name_in_owner = true
+size = Vector2i(445, 600)
+script = ExtResource("4_6uyjs")
+display_mesh = NodePath("../book_without_bend/BackCover/BackPages/RightPage/RightContentMesh")
+display_area = NodePath("../book_without_bend/BackCover/BackPages/RightPage/Area3D")
 
 [editable path="book_without_bend"]

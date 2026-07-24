@@ -1,0 +1,50 @@
+[gd_scene format=3 uid="uid://cw7bgxc78qxub"]
+
+[ext_resource type="Script" uid="uid://bu2tsat7wjgtj" path="res://code/book_content/book_content.gd" id="1_x6a4i"]
+[ext_resource type="Texture2D" uid="uid://cuvhx0lhhb7su" path="res://art/demo/demo_table_ortho.png" id="2_8f1ai"]
+[ext_resource type="Texture2D" uid="uid://dqx7pdjk0ow3n" path="res://art/demo/demon2.png" id="3_el2mx"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_5yr3x"]
+
+[sub_resource type="Gradient" id="Gradient_gl3ax"]
+offsets = PackedFloat32Array(0.009633476)
+colors = PackedColorArray(0.56, 0, 0, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_rpbv3"]
+gradient = SubResource("Gradient_gl3ax")
+
+[node name="DemonPage" type="Control" unique_id=1729994615]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 445.0
+offset_bottom = 600.0
+script = ExtResource("1_x6a4i")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="." unique_id=998436768]
+modulate = Color(0.22788814, 0.36029342, 0.7671009, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_8f1ai")
+region_rect = Rect2(254.57397, 127.11743, 634.01746, 459.0022)
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=21442704]
+position = Vector2(233, 291)
+texture = ExtResource("3_el2mx")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="." unique_id=107220701]
+position = Vector2(94, 162)
+scale = Vector2(24.527212, 26.500002)
+mesh = SubResource("SphereMesh_5yr3x")
+texture = SubResource("GradientTexture1D_rpbv3")
+
+[node name="Button" type="Button" parent="." unique_id=930202178]
+layout_mode = 0
+offset_left = 313.0
+offset_top = 24.0
+offset_right = 408.0
+offset_bottom = 104.0
+text = "WAWA"

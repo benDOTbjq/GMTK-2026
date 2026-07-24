@@ -26,3 +26,10 @@ enum CameraMode {
 	SHELF,
 	BOOK
 }
+
+enum Page {
+	NULL,
+	CANDLE,
+	DEMON,
+	TYPE_CHART,
+}

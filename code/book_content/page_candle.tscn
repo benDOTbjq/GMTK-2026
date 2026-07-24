@@ -1,0 +1,58 @@
+[gd_scene format=3 uid="uid://dt2vt4lnhrgr7"]
+
+[ext_resource type="Script" uid="uid://bu2tsat7wjgtj" path="res://code/book_content/book_content.gd" id="1_n7jex"]
+[ext_resource type="Texture2D" uid="uid://cuvhx0lhhb7su" path="res://art/demo/demo_table_ortho.png" id="2_1qbct"]
+[ext_resource type="Texture2D" uid="uid://cg3epuw16obey" path="res://art/demo/demo_candle_1.png" id="3_qwl8y"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_dd5g0"]
+
+[sub_resource type="Gradient" id="Gradient_gl3ax"]
+offsets = PackedFloat32Array(0.009633476)
+colors = PackedColorArray(0.56, 0, 0, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_ba4mq"]
+gradient = SubResource("Gradient_gl3ax")
+
+[node name="CandlePage" type="Control" unique_id=1775937355]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 445.0
+offset_bottom = 600.0
+script = ExtResource("1_n7jex")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="." unique_id=1251917766]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_1qbct")
+region_rect = Rect2(254.57397, 127.11743, 634.01746, 459.0022)
+
+[node name="DemoCandle1" type="Sprite2D" parent="." unique_id=423587913]
+position = Vector2(203, 279.00003)
+scale = Vector2(0.5734375, 0.6625)
+texture = ExtResource("3_qwl8y")
+
+[node name="Button" type="Button" parent="." unique_id=575633324]
+layout_mode = 0
+offset_left = 286.0
+offset_top = 28.0
+offset_right = 414.0
+offset_bottom = 149.0
+text = "WAWA"
+
+[node name="Button" type="Button" parent="Button" unique_id=1400295986]
+layout_mode = 0
+offset_left = -242.0
+offset_top = 42.0
+offset_right = -114.0
+offset_bottom = 163.0
+text = "WAWA"
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="." unique_id=1788640765]
+position = Vector2(94, 162)
+scale = Vector2(24.527212, 26.500002)
+mesh = SubResource("SphereMesh_dd5g0")
+texture = SubResource("GradientTexture1D_ba4mq")
