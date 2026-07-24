@@ -4,8 +4,8 @@ extends Node3D
 @onready var camera_3d: CameraManager = $Camera3D
 @onready var book: BookManager = $Book
 
-@onready var wall_sprite: Sprite3D = $DemonWallSprite
-@onready var table_sprite: Sprite3D = $DemonTableSprite
+@onready var wall_sprite: AnimatedSprite3D = $DemonWallSprite
+@onready var table_sprite: AnimatedSprite3D = $DemonTableSprite
 
 @export var test_demon: DemonInfo
 var curr_demon_info : DemonInfo
@@ -25,8 +25,10 @@ func _ready() -> void:
 	setup_demon()
 
 func setup_demon() -> void:
-	wall_sprite.texture = curr_demon_info.shadow_texture
-	table_sprite.texture = curr_demon_info.shadow_texture
+	wall_sprite.sprite_frames = curr_demon_info.shadow_anim
+	table_sprite.sprite_frames = curr_demon_info.shadow_anim
+	wall_sprite.play(&"default")
+	table_sprite.play(&"default")
 	
 	#var tween = get_tree().create_tween()
 	#tween 

@@ -47,7 +47,6 @@ func _mouse_input_event(_camera: Camera3D, event: InputEvent, event_position: Ve
 
 	# Event position in Area3D in world coordinate space.
 	var event_pos3D := event_position
-	print(event_position)
 	# Current time in seconds since engine start.
 	var now := Time.get_ticks_msec() / 1000.0
 

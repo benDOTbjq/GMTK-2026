@@ -9,7 +9,7 @@
 [ext_resource type="Material" uid="uid://cpuc3ai6intc4" path="res://art/demo/desk_material_3d.tres" id="5_66w8o"]
 [ext_resource type="PackedScene" uid="uid://dajacxx26fmq5" path="res://code/demo_scene/candle.tscn" id="5_vj5s7"]
 [ext_resource type="PackedScene" uid="uid://gux10n6r380o" path="res://art/demo/shelf.blend" id="6_evhee"]
-[ext_resource type="Texture2D" uid="uid://dqx7pdjk0ow3n" path="res://art/demo/demon2.png" id="6_l8igb"]
+[ext_resource type="SpriteFrames" uid="uid://bhtaxtkcjko3m" path="res://code/assets/Demon1_sprite.tres" id="10_7c3sw"]
 [ext_resource type="PackedScene" uid="uid://chjgxglbqk6av" path="res://code/demo_scene/book.tscn" id="10_j4l0e"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_dd5g0"]
@@ -148,19 +148,19 @@ shelf_rotation = Vector3(-0.32383546, 1.3941991, -0.015034148)
 book_rotation = Vector3(-0.7380256, -0.004113991, 0)
 
 [node name="Candle" parent="." unique_id=875324991 instance=ExtResource("5_vj5s7")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5047684, 0.807, -0.013808325)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5047684, 0.7864024, -0.013808325)
 flickerAdvance = 0.7
 
 [node name="Candle2" parent="." unique_id=1129484098 instance=ExtResource("5_vj5s7")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.2882496, 0.80703247, -0.46158725)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.2882496, 0.7864349, -0.46158725)
 flickerAdvance = 0.308
 
 [node name="Candle3" parent="." unique_id=116191315 instance=ExtResource("5_vj5s7")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.38275915, 0.80703247, -0.5935726)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.38275915, 0.7864349, -0.5935726)
 flickerAdvance = 0.514
 
 [node name="Candle4" parent="." unique_id=593371254 instance=ExtResource("5_vj5s7")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.31411013, 0.80703247, -0.061416283)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.31411013, 0.7864349, -0.061416283)
 flickerAdvance = 0.053
 
 [node name="table" parent="." unique_id=405966036 instance=ExtResource("4_r7dlf")]
@@ -255,21 +255,17 @@ surface_material_override/0 = ExtResource("5_66w8o")
 [node name="Cube_006" parent="shelf" index="11" unique_id=2133265654]
 surface_material_override/0 = ExtResource("5_66w8o")
 
-[node name="DemonWallSprite" type="Sprite3D" parent="." unique_id=1341713532]
+[node name="DemonWallSprite" type="AnimatedSprite3D" parent="." unique_id=114239268]
 transform = Transform3D(0.515, 3.2740104e-08, 0, -3.2740104e-08, 0.515, 0, 0, 0, 0.515, -0.73712057, -0.71418333, -1.734)
 centered = false
 modulate = Color(0, 0, 0, 1)
-texture = ExtResource("6_l8igb")
-region_enabled = true
-region_rect = Rect2(0, 0, 293, 500)
+sprite_frames = ExtResource("10_7c3sw")
 
-[node name="DemonTableSprite" type="Sprite3D" parent="." unique_id=692841091]
-transform = Transform3D(-0.239475, 5.8460685e-08, -3.2740108e-08, 1.5224149e-08, -1.6923641e-08, -0.515, -3.615972e-08, -0.38716766, 2.2511365e-08, 0.34374306, 0.653195, -0.24814072)
+[node name="DemonTableSprite" type="AnimatedSprite3D" parent="." unique_id=790335226]
+transform = Transform3D(-0.239475, 5.8460685e-08, -3.2740108e-08, 1.5224149e-08, -1.6923641e-08, -0.515, -3.615972e-08, -0.38716766, 2.2511365e-08, 0.40010563, 0.653195, -0.0746056)
 centered = false
 modulate = Color(0, 0, 0, 1)
-texture = ExtResource("6_l8igb")
-region_enabled = true
-region_rect = Rect2(0, 350.1314, 293, 150.96783)
+sprite_frames = ExtResource("10_7c3sw")
 
 [node name="LevelItemProp" type="MeshInstance3D" parent="." unique_id=839630262]
 transform = Transform3D(0.9115173, 0, -0.41126165, 0, 1, 0, 0.41126165, 0, 0.9115173, 0.012630105, 0.6885778, -0.2556213)
