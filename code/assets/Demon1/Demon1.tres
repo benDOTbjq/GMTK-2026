@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="DemonInfo" format=3 uid="uid://cqmqioiv6odkh"]
 
 [ext_resource type="Script" uid="uid://cjjomclguhq3d" path="res://code/demon_info.gd" id="1_3757p"]
-[ext_resource type="SpriteFrames" uid="uid://bhtaxtkcjko3m" path="res://code/assets/Demon1_sprite.tres" id="2_q0rgc"]
+[ext_resource type="SpriteFrames" uid="uid://bhtaxtkcjko3m" path="res://code/assets/Demon1/Demon1_sprite.tres" id="2_q0rgc"]
 
 [resource]
 script = ExtResource("1_3757p")
