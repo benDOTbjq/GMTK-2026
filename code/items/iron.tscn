@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://mw7bq6yywg32"]
+
+[ext_resource type="Script" uid="uid://b8c5vl6vj6qp3" path="res://code/item.gd" id="1_260aw"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_f1574"]
+size = Vector3(1, 0.1807251, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_ustvv"]
+size = Vector3(1, 0.121154785, 1)
+
+[node name="Iron" type="Node3D" unique_id=2142078425]
+script = ExtResource("1_260aw")
+item_type = 2
+
+[node name="Area3D" type="Area3D" parent="." unique_id=1519031076]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=1598683196]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.09628296, 0)
+shape = SubResource("BoxShape3D_f1574")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=596977599]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0.008090211, 0)
+mesh = SubResource("BoxMesh_ustvv")

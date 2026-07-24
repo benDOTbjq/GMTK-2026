@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://bweoovxucfsid"]
+
+[ext_resource type="Script" uid="uid://b8c5vl6vj6qp3" path="res://code/item.gd" id="1_q2c1d"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_f1574"]
+
+[sub_resource type="PrismMesh" id="PrismMesh_f1574"]
+
+[node name="HolyWater" type="Node3D" unique_id=2142078425]
+script = ExtResource("1_q2c1d")
+
+[node name="Area3D" type="Area3D" parent="." unique_id=1519031076]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=1598683196]
+shape = SubResource("BoxShape3D_f1574")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=596977599]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0)
+mesh = SubResource("PrismMesh_f1574")

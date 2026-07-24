@@ -9,8 +9,12 @@
 [ext_resource type="Material" uid="uid://cpuc3ai6intc4" path="res://art/demo/desk_material_3d.tres" id="5_66w8o"]
 [ext_resource type="PackedScene" uid="uid://dajacxx26fmq5" path="res://code/demo_scene/candle.tscn" id="5_vj5s7"]
 [ext_resource type="PackedScene" uid="uid://gux10n6r380o" path="res://art/demo/shelf.blend" id="6_evhee"]
+[ext_resource type="PackedScene" uid="uid://bweoovxucfsid" path="res://code/items/holy_water.tscn" id="7_7c3sw"]
+[ext_resource type="PackedScene" uid="uid://mw7bq6yywg32" path="res://code/items/iron.tscn" id="8_ybmms"]
+[ext_resource type="PackedScene" uid="uid://c6y850mxjcd5b" path="res://code/items/salt.tscn" id="9_62h6r"]
 [ext_resource type="PackedScene" uid="uid://chjgxglbqk6av" path="res://code/demo_scene/book.tscn" id="10_j4l0e"]
 [ext_resource type="Texture2D" uid="uid://dqx7pdjk0ow3n" path="res://art/demo/demon2.png" id="10_l86f5"]
+[ext_resource type="PackedScene" uid="uid://b8o800umenslp" path="res://code/items/prayer.tscn" id="10_yow40"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_dd5g0"]
 flip_faces = true
@@ -149,20 +153,32 @@ shelf_rotation = Vector3(-0.32383546, 1.3941991, -0.015034148)
 book_rotation = Vector3(-0.7380256, -0.004113991, 0)
 
 [node name="Candle" parent="." unique_id=875324991 instance=ExtResource("5_vj5s7")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5047684, 0.7864024, -0.013808325)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.55675685, 0.7864024, -0.0700192)
 flickerAdvance = 0.7
 
 [node name="Candle2" parent="." unique_id=1129484098 instance=ExtResource("5_vj5s7")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.2882496, 0.7864349, -0.46158725)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.29885554, 0.7864348, -0.6544295)
 flickerAdvance = 0.308
 
 [node name="Candle3" parent="." unique_id=116191315 instance=ExtResource("5_vj5s7")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.38275915, 0.7864349, -0.5935726)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.38275915, 0.7864349, -0.7182739)
 flickerAdvance = 0.514
 
 [node name="Candle4" parent="." unique_id=593371254 instance=ExtResource("5_vj5s7")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.31411013, 0.7864349, -0.061416283)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.52278525, 0.7864349, 0.018719092)
 flickerAdvance = 0.053
+
+[node name="HolyWater" parent="." unique_id=2142078425 instance=ExtResource("7_7c3sw")]
+transform = Transform3D(0.82214403, 0, -0.56927955, 0, 1, 0, 0.56927955, 0, 0.82214403, 0.560881, 0.7091613, -0.47056073)
+
+[node name="Iron" parent="." unique_id=130706337 instance=ExtResource("8_ybmms")]
+transform = Transform3D(0.9060377, 0, 0.42319703, 0, 1, 0, -0.42319703, 0, 0.9060377, 0.34599212, 0.6569317, -0.18596372)
+
+[node name="Salt" parent="." unique_id=215769566 instance=ExtResource("9_62h6r")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.48603225, 0.71016115, -0.46004874)
+
+[node name="Prayer" parent="." unique_id=1745770253 instance=ExtResource("10_yow40")]
+transform = Transform3D(0.7294886, 0, -0.683993, 0, 1, 0, 0.683993, 0, 0.7294886, -0.351371, 0.6649166, -0.1681098)
 
 [node name="table" parent="." unique_id=405966036 instance=ExtResource("4_r7dlf")]
 transform = Transform3D(0.07, 0, 0, 0, 0.07, 0, 0, 0, 0.065, 0.73084277, -0.019176781, -0.18600798)

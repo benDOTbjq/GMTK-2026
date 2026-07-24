@@ -60,6 +60,7 @@ text = "Table"
 
 [node name="WaterButton" type="Button" parent="." unique_id=1527504708]
 unique_name_in_owner = true
+visible = false
 layout_mode = 0
 offset_left = 1048.0
 offset_top = 360.0
@@ -69,6 +70,7 @@ text = "Water"
 
 [node name="SaltButton" type="Button" parent="." unique_id=180805009]
 unique_name_in_owner = true
+visible = false
 layout_mode = 0
 offset_left = 1052.0
 offset_top = 540.0
@@ -78,6 +80,7 @@ text = "Salt"
 
 [node name="IronButton" type="Button" parent="." unique_id=612596658]
 unique_name_in_owner = true
+visible = false
 layout_mode = 0
 offset_left = 1051.0
 offset_top = 444.0
@@ -87,6 +90,7 @@ text = "Iron"
 
 [node name="PrayerButton" type="Button" parent="." unique_id=317081698]
 unique_name_in_owner = true
+visible = false
 layout_mode = 0
 offset_left = 1052.0
 offset_top = 631.0
