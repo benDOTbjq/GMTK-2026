@@ -32,6 +32,7 @@ enum Page {
 	CANDLE,
 	DEMON,
 	TYPE_CHART,
+	PENTAGRAM,
 }
 
 enum SFX {

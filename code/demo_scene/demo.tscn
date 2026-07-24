@@ -14,7 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://chjgxglbqk6av" path="res://code/demo_scene/book.tscn" id="10_j4l0e"]
 [ext_resource type="Texture2D" uid="uid://dqx7pdjk0ow3n" path="res://art/demo/demon2.png" id="10_l86f5"]
 [ext_resource type="PackedScene" uid="uid://b8o800umenslp" path="res://code/items/prayer.tscn" id="10_yow40"]
-[ext_resource type="PackedScene" uid="uid://b057xcw0k5vsu" path="res://code/assets/Demon1/demon_1.tscn" id="16_62h6r"]
+[ext_resource type="Texture2D" uid="uid://box5yypbtqhvy" path="res://art/demo/pentagram.png" id="15_yow40"]
 [ext_resource type="PackedScene" uid="uid://b7toxkh2meyy7" path="res://art/models/table_2.blend" id="16_62h6r"]
 [ext_resource type="Texture2D" uid="uid://d0qnre8ct0f4r" path="res://art/models/textures/table texture.png" id="16_yow40"]
 
@@ -130,7 +130,7 @@ albedo_texture = ExtResource("16_yow40")
 albedo_color = Color(0, 0, 0, 1)
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_dd5g0"]
-size = Vector2(3.36, 3.515)
+size = Vector2(3.49, 3.515)
 
 [node name="Demo" type="Node3D" unique_id=1435100903]
 script = ExtResource("1_evhee")
@@ -234,9 +234,6 @@ surface_material_override/0 = ExtResource("5_66w8o")
 [node name="Cube_006" parent="shelf" index="11" unique_id=2133265654]
 surface_material_override/0 = ExtResource("5_66w8o")
 
-[node name="Demon1" parent="." unique_id=382449128 instance=ExtResource("16_62h6r")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.2223257, 1.3337176, 0.8038721)
-
 [node name="DemonWallSprite" type="Sprite3D" parent="." unique_id=832143614]
 transform = Transform3D(0.515, 3.2740104e-08, 0, -3.2740104e-08, 0.515, 0, 0, 0, 0.515, -0.73712057, -0.71418333, -1.734)
 modulate = Color(0, 0, 0, 0)
@@ -311,9 +308,17 @@ visible = false
 [node name="Circle" parent="table_2" index="15" unique_id=1626352673]
 visible = false
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=802155739]
+[node name="Floor" type="MeshInstance3D" parent="." unique_id=802155739]
 material_override = SubResource("StandardMaterial3D_ba4mq")
 mesh = SubResource("PlaneMesh_dd5g0")
+
+[node name="PentagramSprite3D" type="Sprite3D" parent="." unique_id=544607708]
+transform = Transform3D(0.05, 0, 0, 0, 0.011693529, 0.048613388, 0, -0.048613388, 0.011693529, 0.013845459, 0.77483356, -0.22750746)
+cast_shadow = 0
+modulate = Color(1, 0, 0, 1)
+shaded = true
+double_sided = false
+texture = ExtResource("15_yow40")
 
 [editable path="shelf"]
 [editable path="table_2"]

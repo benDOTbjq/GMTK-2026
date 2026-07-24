@@ -6,6 +6,7 @@ extends Node3D
 
 @onready var wall_sprite: Sprite3D = $DemonWallSprite
 @onready var table_sprite: Sprite3D = $DemonTableSprite
+@onready var pentagram_sprite_3d: Sprite3D = $PentagramSprite3D
 
 @export var test_demon: DemonInfo
 var curr_demon_info : DemonInfo = null
@@ -31,6 +32,8 @@ func _process(delta: float) -> void:
 	var total = curr_demon_info.shadow_anim.get_frame_count("default")
 	var curr_frame_time = 0.05#curr_demon_info.shadow_anim.get_frame_duration("default", shadow_frame_id)
 	
+	pentagram_sprite_3d.global_position = Vector3(0.014, 0.775, -0.228) + (delta * Vector3(randf_range(-1, 1), randf_range(-1, 1), randf_range(-1, 1)))
+	pentagram_sprite_3d.rotation.z += delta * 0.5
 	shadow_frame_time += delta
 	if shadow_frame_time > curr_frame_time:
 		shadow_frame_time -= curr_frame_time

@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://c3wknpva8pa1s"]
+
+[ext_resource type="Texture2D" uid="uid://cuvhx0lhhb7su" path="res://art/demo/demo_table_ortho.png" id="1_vo0jo"]
+[ext_resource type="Texture2D" uid="uid://box5yypbtqhvy" path="res://art/demo/pentagram.png" id="2_7qh8y"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_dd5g0"]
+
+[sub_resource type="Gradient" id="Gradient_gl3ax"]
+offsets = PackedFloat32Array(0.009633476)
+colors = PackedColorArray(0.56, 0, 0, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_ba4mq"]
+gradient = SubResource("Gradient_gl3ax")
+
+[node name="PentagramPage" type="Control" unique_id=1775937355]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 445.0
+offset_bottom = 600.0
+
+[node name="NinePatchRect" type="NinePatchRect" parent="." unique_id=1251917766]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_vo0jo")
+region_rect = Rect2(254.57397, 127.11743, 634.01746, 459.0022)
+
+[node name="DemoCandle1" type="Sprite2D" parent="." unique_id=423587913]
+position = Vector2(217, 228.49998)
+scale = Vector2(0.3233333, 0.32583335)
+texture = ExtResource("2_7qh8y")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="." unique_id=1788640765]
+position = Vector2(94, 162)
+scale = Vector2(24.527212, 26.500002)
+mesh = SubResource("SphereMesh_dd5g0")
+texture = SubResource("GradientTexture1D_ba4mq")
