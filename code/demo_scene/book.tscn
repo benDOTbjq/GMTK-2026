@@ -112,13 +112,13 @@ unique_name_in_owner = true
 transform = Transform3D(-0.9659258, -0.25881913, 0, 0.25881913, -0.9659258, 0, 0, 0, 1, -0.003159312, 0.024127405, 6.009941e-09)
 
 [node name="RightMimicMesh" type="MeshInstance3D" parent="book_without_bend/PageHinge" unique_id=780470118]
-transform = Transform3D(-0.99995697, -0.0271767, -1.8626451e-08, 1.8626451e-08, 5.9604645e-07, -0.99999964, 0.009291202, -2.9248786, -1.4901161e-07, 0.1589077, 0.0021791458, -0.1946342)
+transform = Transform3D(-0.99995697, -0.0271767, -1.8626451e-08, 1.8626451e-08, 5.9604645e-07, -0.99999964, 0.009291202, -2.9248786, -1.4901161e-07, 0.1589077, -0.0005363403, -0.1946342)
 visible = false
 material_override = SubResource("StandardMaterial3D_g607h")
 mesh = SubResource("PlaneMesh_hf5ca")
 
 [node name="LeftMimicMesh" type="MeshInstance3D" parent="book_without_bend/PageHinge" unique_id=1094196903]
-transform = Transform3D(0.99999034, 9.3877316e-07, 0.004342273, -0.004342273, -5.9604645e-08, 0.99999017, 3.3155084e-07, -2.925003, -2.9802322e-08, 0.15790519, -0.0010346378, -0.19215214)
+transform = Transform3D(0.99999034, 1.0459336e-06, 0.0043398743, -0.004339875, -5.957204e-08, 0.99999017, 3.576687e-07, -2.925003, -1.8814422e-08, 0.15790519, -0.0010346378, -0.19215214)
 visible = false
 material_override = SubResource("StandardMaterial3D_ksfum")
 mesh = SubResource("PlaneMesh_6uyjs")

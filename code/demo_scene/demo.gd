@@ -18,12 +18,13 @@ func _ready() -> void:
 	gui.menu_button.pressed.connect(camera_3d.update_camera_mode.bind(ID.CameraMode.SHELF))
 	gui.table_button.pressed.connect(camera_3d.update_camera_mode.bind(ID.CameraMode.TABLE))
 	gui.book_button.pressed.connect(camera_3d.update_camera_mode.bind(ID.CameraMode.BOOK))
+	gui.book_prev_button.pressed.connect(book.prev)
+	gui.book_next_button.pressed.connect(book.next)
 	
 	gui.book_button.pressed.connect(book.open)
 	gui.menu_button.pressed.connect(book.close)
 	gui.table_button.pressed.connect(book.close)
 	
-	book.set_content(ID.Page.TYPE_CHART, ID.Page.DEMON)
 	curr_demon_info = test_demon
 	setup_demon()
 	AudioManager.set_ambience(ID.Ambience.DEFAULT)
@@ -32,8 +33,10 @@ func _process(delta: float) -> void:
 	var total = curr_demon_info.shadow_anim.get_frame_count("default")
 	var curr_frame_time = 0.05#curr_demon_info.shadow_anim.get_frame_duration("default", shadow_frame_id)
 	
-	pentagram_sprite_3d.global_position = Vector3(0.014, 0.775, -0.228) + (delta * Vector3(randf_range(-1, 1), randf_range(-1, 1), randf_range(-1, 1)))
-	pentagram_sprite_3d.rotation.z += delta * 0.5
+	pentagram_sprite_3d.global_position = (
+		Vector3(0.014, 0.775, -0.228) + 
+		(delta * Vector3(randf_range(-1, 1), randf_range(-1, 1), randf_range(-1, 1)) * 0.2))
+	pentagram_sprite_3d.rotation.z += delta * 0.1
 	shadow_frame_time += delta
 	if shadow_frame_time > curr_frame_time:
 		shadow_frame_time -= curr_frame_time

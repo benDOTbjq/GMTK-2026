@@ -1,0 +1,44 @@
+[gd_scene format=3 uid="uid://2kxxg7p7qw3d"]
+
+[ext_resource type="Texture2D" uid="uid://cuvhx0lhhb7su" path="res://art/demo/demo_table_ortho.png" id="1_3hfg4"]
+[ext_resource type="Texture2D" uid="uid://box5yypbtqhvy" path="res://art/demo/pentagram.png" id="2_vo2mm"]
+
+[node name="MultiPentPage" type="Control" unique_id=1775937355]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 445.0
+offset_bottom = 600.0
+
+[node name="NinePatchRect" type="NinePatchRect" parent="." unique_id=1251917766]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_3hfg4")
+region_rect = Rect2(254.57397, 127.11743, 634.01746, 459.0022)
+
+[node name="DemoCandle1" type="Sprite2D" parent="NinePatchRect" unique_id=1973600904]
+position = Vector2(326.99997, 434.00006)
+rotation = -0.8778672
+scale = Vector2(0.09371758, 0.09444222)
+texture = ExtResource("2_vo2mm")
+
+[node name="DemoCandle1" type="Sprite2D" parent="." unique_id=423587913]
+position = Vector2(116, 114.999985)
+rotation = -0.31608132
+scale = Vector2(0.12771861, 0.12870616)
+texture = ExtResource("2_vo2mm")
+
+[node name="DemoCandle2" type="Sprite2D" parent="." unique_id=134742565]
+position = Vector2(126, 447)
+rotation = 0.26338407
+scale = Vector2(0.18333332, 0.18475088)
+texture = ExtResource("2_vo2mm")
+
+[node name="DemoCandle3" type="Sprite2D" parent="." unique_id=1948272193]
+position = Vector2(294.99997, 228.00003)
+rotation = -0.005697012
+scale = Vector2(0.22997853, 0.23977304)
+texture = ExtResource("2_vo2mm")

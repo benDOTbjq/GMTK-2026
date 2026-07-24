@@ -2,7 +2,7 @@ extends Node
 
 
 const IS_PRINT_DEBUG := false
-const INCLUSION_FREQUENCY_RANGE := Vector2(2.5, 10.0) # seconds
+const INCLUSION_FREQUENCY_RANGE := Vector2(10, 300) # seconds
 
 const AMB_MAIN_01: AudioStream = preload("uid://csdd2e7l3pyhe")
 const AMB_BICYCLE_CREAK: AudioStream = preload("uid://cbxyntt4q036w")
