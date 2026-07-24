@@ -14,6 +14,7 @@ const PAGE_CANDLE = preload("uid://dt2vt4lnhrgr7")
 const PAGE_TYPE_CHART = preload("uid://da2kt5b4ih837")
 
 var _pages: Dictionary[ID.Page, Node]
+var _is_closed := true
 
 @onready var _curr_left_id := ID.Page.NULL
 @onready var _curr_right_id := ID.Page.NULL
@@ -33,19 +34,25 @@ func _ready() -> void:
 
 
 func open() -> void:
+	if _is_closed:
+		AudioManager.oneshot(ID.SFX.BOOK_OPEN)
 	var t:= create_tween()
 	t.set_ease(Tween.EASE_IN_OUT).set_trans(Tween.TRANS_CUBIC)
 	t.tween_property(front_cover, "rotation:x", COVER_OPEN_ROT, TRANSITON_TIME)
 	t.parallel()
 	t.tween_property(book_without_bend, "rotation", OPEN_ROT, TRANSITON_TIME)
+	_is_closed = false
 
 
 func close() -> void:
+	if not _is_closed:
+		AudioManager.oneshot(ID.SFX.BOOK_CLOSE)
 	var t:= create_tween()
 	t.set_ease(Tween.EASE_IN_OUT).set_trans(Tween.TRANS_CUBIC)
 	t.tween_property(front_cover, "rotation:x", 0.0, TRANSITON_TIME)
 	t.parallel()
 	t.tween_property(book_without_bend, "rotation", CLOSED_ROT, TRANSITON_TIME)
+	_is_closed = true
 
 
 func set_content(left: ID.Page, right: ID.Page) -> void:

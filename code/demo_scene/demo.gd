@@ -18,12 +18,11 @@ func _ready() -> void:
 	gui.table_button.pressed.connect(camera_3d.update_camera_mode.bind(ID.CameraMode.TABLE))
 	gui.book_button.pressed.connect(camera_3d.update_camera_mode.bind(ID.CameraMode.BOOK))
 	
-	gui.book_button.pressed.connect(func() -> void:
-		book.set_content(ID.Page.TYPE_CHART, ID.Page.DEMON)
-		book.open())
+	gui.book_button.pressed.connect(book.open)
 	gui.menu_button.pressed.connect(book.close)
 	gui.table_button.pressed.connect(book.close)
 	
+	book.set_content(ID.Page.TYPE_CHART, ID.Page.DEMON)
 	curr_demon_info = test_demon
 	setup_demon()
 	AudioManager.set_ambience(ID.Ambience.DEFAULT)
