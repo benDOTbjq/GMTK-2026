@@ -7,7 +7,7 @@ class_name CameraManager
 @export var book_rotation: Vector3
 @export var title_rotation: Vector3
 
-var _title_position := Vector3(0.007, 1.573, -0.297)
+var _title_position := Vector3(0.007, 1.573, -0.252)
 var _default_position := Vector3(0.015, 1.379, 0.945)
 
 

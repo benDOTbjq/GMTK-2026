@@ -9,6 +9,7 @@ class_name Level
 @onready var table_sprite: Sprite3D = $DemonTableSprite
 @onready var pentagram_sprite_3d: Sprite3D = $PentagramSprite3D
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
+@onready var title_label_3d: Label3D = %TitleLabel3D
 
 var curr_demon_info: DemonInfo = null
 var shadow_frame_id: int = 0
@@ -24,12 +25,11 @@ func _ready() -> void:
 	gui.book_button.pressed.connect(camera_3d.update_camera_mode.bind(ID.CameraMode.BOOK))
 	gui.book_prev_button.pressed.connect(book.prev)
 	gui.book_next_button.pressed.connect(book.next)
+	gui.title_button.pressed.connect(_exit_title)
 	
 	gui.book_button.pressed.connect(book.open)
 	gui.menu_button.pressed.connect(book.close)
 	gui.table_button.pressed.connect(book.close)
-	gui.table_button.pressed.connect(AudioManager.set_ambience.bind(ID.Ambience.DEFAULT))
-	gui.table_button.pressed.connect(AudioManager.set_music.bind(ID.Music.NULL))
 	
 	book.set_content(ID.Page.TYPE_CHART, ID.Page.DEMON)
 	book.close()
@@ -109,3 +109,15 @@ func clear_curr_demon() -> void:
 func show_dialog(text: String) -> void:
 	%DialogBox.visible = true
 	%BubbleText.text = text
+
+
+func _exit_title() -> void:
+	var t = create_tween()
+	t.set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_QUAD)
+	t.tween_property(title_label_3d, "modulate:a", 0.0, 0.5)
+	gui.title_button.queue_free()
+	AudioManager.set_ambience(ID.Ambience.DEFAULT)
+	AudioManager.set_music(ID.Music.NULL)
+	camera_3d.update_camera_mode(ID.CameraMode.TABLE)
+	await t.finished
+	title_label_3d.queue_free()

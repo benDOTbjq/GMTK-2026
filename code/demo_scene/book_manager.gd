@@ -62,6 +62,7 @@ func _ready() -> void:
 	_pages[ID.Page.NOISE_DEMON] = PAGE_NOISE_DEMON.instantiate()
 	
 	front_cover.rotation_degrees = Vector3(0, 90, 180)
+	@warning_ignore("int_as_enum_without_cast")
 	set_content(PAGE_ORDER[0][0], PAGE_ORDER[0][1])
 
 

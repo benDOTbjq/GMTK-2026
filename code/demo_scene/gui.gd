@@ -3,16 +3,13 @@ class_name GUI extends Control
 
 var _current_demon: Dictionary
 
-@onready var menu_button: Button = %MenuButton
-@onready var table_button: Button = %TableButton
-@onready var book_button: Button = %BookButton
+@onready var menu_button: TextureButton = %MenuButton
+@onready var table_button: TextureButton = %TableButton
+@onready var book_button: TextureButton = %BookButton
 @onready var book_prev_button: TextureButton = %BookPrevButton
 @onready var book_next_button: TextureButton = %BookNextButton
+@onready var title_button: TextureButton = $TitleButton
 
-@onready var water_button: Button = %WaterButton
-@onready var salt_button: Button = %SaltButton
-@onready var iron_button: Button = %IronButton
-@onready var prayer_button: Button = %PrayerButton
 @onready var reset_button: Button = %ResetButton
 @onready var check_button: Button = %CheckButton
 @onready var label: Label = %Label
@@ -22,7 +19,6 @@ func _ready() -> void:
 	_current_demon = DemonManager.get_random_demon()
 	reset_button.pressed.connect(_reset_demon)
 	check_button.pressed.connect(_test_demon)
-	
 
 
 func _reset_demon() -> void:
