@@ -13,6 +13,7 @@ class_name Level
 
 @export var candles: Array[Candle] = []
 
+var curr_artifact: Artifact = null
 var curr_demon_info: DemonInfo = null
 var shadow_frame_id: int = 0
 var shadow_frame_time: float = 0
@@ -60,6 +61,7 @@ func _process(delta: float) -> void:
 
 
 func setup_demon(artifact: Artifact) -> void:
+	curr_artifact = artifact
 	curr_demon_info = artifact.demon_info
 	curr_actions = curr_demon_info.actions
 	shadow_frame_id = 0
@@ -93,6 +95,11 @@ func use_item(item: ID.Item) -> void:
 			1: show_dialog("The demon is weakened")
 			2: show_dialog("The demon is extremely weakened")
 	
+	if effectiveness == -1:
+		camera_3d.shake_camera(0.1)
+	elif effectiveness == -2:
+		camera_3d.shake_camera(0.2)
+	
 	curr_actions += effectiveness - 1
 	items_used.append(item)
 	
@@ -103,12 +110,15 @@ func use_item(item: ID.Item) -> void:
 		if i < curr_actions: candles[i].turn_on()
 		else: candles[i].turn_off()
 
-
 func guess_demon(type1: ID.DemonType, type2: ID.DemonType) -> void:
 	if type1 == curr_demon_info.type1 and type2 == curr_demon_info.type2:
 		animation_player.play_backwards("spawn_shadow")
+		curr_artifact.despawn()
+		curr_artifact = null
+		curr_demon_info = null
 	else:
 		curr_actions -= 2
+		camera_3d.shake_camera(0.2)
 
 
 func clear_curr_demon() -> void:

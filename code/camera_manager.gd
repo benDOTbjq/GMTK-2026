@@ -7,6 +7,9 @@ class_name CameraManager
 @export var book_rotation: Vector3
 @export var title_rotation: Vector3
 
+var shake_fade: float = 5.0
+var curr_shake_strengh: float = 0.0
+
 var _title_position := Vector3(0.007, 1.573, -0.252)
 var _default_position := Vector3(0.015, 1.379, 0.945)
 
@@ -16,6 +19,15 @@ func _ready() -> void:
 	rotation_degrees = title_rotation
 	position = _title_position
 
+func _process(delta: float) -> void:
+	if curr_shake_strengh > 0:
+		curr_shake_strengh = lerpf(curr_shake_strengh, 0 , delta * shake_fade)
+		position = _default_position + Vector3(randf_range(-curr_shake_strengh, curr_shake_strengh), 
+												randf_range(-curr_shake_strengh, curr_shake_strengh), 
+												randf_range(-curr_shake_strengh, curr_shake_strengh))
+
+func shake_camera(strength: float) -> void:
+	curr_shake_strengh = strength
 
 func update_camera_mode(new_mode: ID.CameraMode):
 	if new_mode == _last_mode:

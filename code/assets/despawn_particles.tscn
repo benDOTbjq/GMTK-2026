@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://b0bstieegqvxr"]
+
+[ext_resource type="Texture2D" uid="uid://c0ce8pkrpn68t" path="res://art/demo/smoke-texture-particle.png" id="1_s521q"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ie5d1"]
+transparency = 1
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("1_s521q")
+emission = Color(1, 0.58150005, 0.19, 1)
+emission_energy_multiplier = 2.0
+billboard_mode = 1
+
+[sub_resource type="QuadMesh" id="QuadMesh_t86wq"]
+material = SubResource("StandardMaterial3D_ie5d1")
+size = Vector2(0.15, 0.15)
+
+[sub_resource type="Gradient" id="Gradient_ep5g2"]
+colors = PackedColorArray(0, 0, 0, 1, 1, 1, 1, 0)
+
+[node name="DespawnParticles" type="CPUParticles3D" unique_id=1660351049]
+emitting = false
+amount = 30
+lifetime = 0.5
+one_shot = true
+mesh = SubResource("QuadMesh_t86wq")
+emission_shape = 1
+emission_sphere_radius = 0.1
+gravity = Vector3(0, 1, 0)
+color_ramp = SubResource("Gradient_ep5g2")

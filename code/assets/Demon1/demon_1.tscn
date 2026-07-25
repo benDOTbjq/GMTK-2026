@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://daso0pu1o4uts" path="res://code/assets/artifact.gd" id="1_p28ub"]
 [ext_resource type="Resource" uid="uid://cqmqioiv6odkh" path="res://code/assets/Demon1/Demon1.tres" id="2_oumg7"]
+[ext_resource type="PackedScene" uid="uid://b0bstieegqvxr" path="res://code/assets/despawn_particles.tscn" id="3_msrov"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_f1574"]
 radius = 0.05
@@ -24,3 +25,5 @@ shape = SubResource("CapsuleShape3D_f1574")
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1991364005]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1028492, 0)
 mesh = SubResource("CapsuleMesh_f1574")
+
+[node name="DespawnParticles" parent="." unique_id=1660351049 instance=ExtResource("3_msrov")]

@@ -10,7 +10,7 @@
 albedo_color = Color(0.31, 0.024799995, 0.024799995, 1)
 roughness = 0.35
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ie5d1"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_noadq"]
 transparency = 1
 vertex_color_use_as_albedo = true
 albedo_texture = ExtResource("4_c4y7q")
@@ -20,7 +20,7 @@ emission_energy_multiplier = 2.0
 billboard_mode = 1
 
 [sub_resource type="QuadMesh" id="QuadMesh_f1574"]
-material = SubResource("StandardMaterial3D_ie5d1")
+material = SubResource("StandardMaterial3D_noadq")
 size = Vector2(0.03, 0.03)
 
 [sub_resource type="Gradient" id="Gradient_ub53g"]

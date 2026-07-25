@@ -3,6 +3,9 @@ class_name Artifact
 
 @export var demon_info : DemonInfo
 
+@onready var despawn_particles: CPUParticles3D = $DespawnParticles
+@onready var mesh: MeshInstance3D = $MeshInstance3D
+
 func _ready() -> void:
 	$Area3D.input_event.connect(_on_area_3d_input_event)
 	$Area3D.mouse_entered.connect(_on_area_3d_mouse_entered)
@@ -23,3 +26,9 @@ func _on_area_3d_input_event(_camera: Node, event: InputEvent, _event_position: 
 		t.set_ease(Tween.EASE_IN_OUT)
 		t.tween_callback(get_parent().setup_demon.bind(self))
 		%Camera3D.update_camera_mode(ID.CameraMode.TABLE)
+
+func despawn() -> void:
+	despawn_particles.emitting = true
+	mesh.hide()
+	await get_tree().create_timer(1.5).timeout
+	queue_free()
