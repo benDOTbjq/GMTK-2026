@@ -20,9 +20,12 @@ const PAGE_TYPE_CHART = preload("uid://da2kt5b4ih837")
 const PAGE_PENTAGRAM = preload("uid://c3wknpva8pa1s")
 const PAGE_MULTI_PENT = preload("uid://2kxxg7p7qw3d")
 const PAGE_NOISE_DEMON = preload("uid://dqieqksa3l20y")
+const PAGE_ITEMS_LEFT = preload("uid://b6vi4dhin2lw1")
+const PAGE_ITEMS_RIGHT = preload("uid://br53hbh38f47v")
 
 const PAGE_ORDER: Array[Array] = [
 	[ID.Page.TYPE_CHART, ID.Page.DEMON],
+	[ID.Page.ITEMS_RIGHT, ID.Page.ITEMS_LEFT],
 	[ID.Page.MULTIPENT, ID.Page.PENTAGRAM],
 	[ID.Page.CANDLE, ID.Page.NOISE_DEMON],
 ]
@@ -60,6 +63,8 @@ func _ready() -> void:
 	_pages[ID.Page.PENTAGRAM] = PAGE_PENTAGRAM.instantiate()
 	_pages[ID.Page.MULTIPENT] = PAGE_MULTI_PENT.instantiate()
 	_pages[ID.Page.NOISE_DEMON] = PAGE_NOISE_DEMON.instantiate()
+	_pages[ID.Page.ITEMS_RIGHT] = PAGE_ITEMS_RIGHT.instantiate()
+	_pages[ID.Page.ITEMS_LEFT] = PAGE_ITEMS_LEFT.instantiate()
 	
 	front_cover.rotation_degrees = Vector3(0, 90, 180)
 	@warning_ignore("int_as_enum_without_cast")

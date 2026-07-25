@@ -8,8 +8,8 @@
 [ext_resource type="Texture2D" uid="uid://ra283o5h0awc" path="res://art/krita/dash.png" id="5_vepob"]
 [ext_resource type="Texture2D" uid="uid://ct45gtaddtpqn" path="res://art/krita/cross.png" id="6_gebbs"]
 [ext_resource type="Texture2D" uid="uid://bvty8ppmda4cu" path="res://art/krita/iron.png" id="8_mctmo"]
-[ext_resource type="Texture2D" uid="uid://dnbaqay13grud" path="res://art/krita/prayer_2.png" id="9_gebbs"]
-[ext_resource type="Texture2D" uid="uid://ccwu4aufb21fh" path="res://art/krita/water.png" id="10_mctmo"]
+[ext_resource type="Texture2D" uid="uid://bibw601528uir" path="res://art/krita/prayer_3.png" id="9_gebbs"]
+[ext_resource type="Texture2D" uid="uid://blpkdtidcwe3c" path="res://art/krita/faucet.png" id="10_mctmo"]
 
 [sub_resource type="GDScript" id="GDScript_3qlbe"]
 
@@ -699,6 +699,6 @@ scale = Vector2(0.14499998, 0.14499998)
 texture = ExtResource("9_gebbs")
 
 [node name="Salt4" type="Sprite2D" parent="." unique_id=1578629318]
-position = Vector2(151, 99)
-scale = Vector2(0.17000003, 0.17000003)
+position = Vector2(157.00002, 94)
+scale = Vector2(0.12900002, 0.12900002)
 texture = ExtResource("10_mctmo")

@@ -1,5 +1,6 @@
 class_name ID extends RefCounted
 
+
 enum DemonType {
 	FERRIC = 0,
 	CELESTIAL = 1,
@@ -36,6 +37,8 @@ enum Page {
 	PENTAGRAM,
 	MULTIPENT,
 	NOISE_DEMON,
+	ITEMS_LEFT,
+	ITEMS_RIGHT,
 }
 
 enum SFX {
@@ -46,6 +49,14 @@ enum SFX {
 	PAGE_RIGHT,
 	WOOSH,
 	VOICE,
+	SUMMON,
+	NAME_HOVER,
+	NAME_SELECT,
+}
+
+enum SFXLoop {
+	NULL,
+	PENAGRAM,
 }
 
 enum Ambience {

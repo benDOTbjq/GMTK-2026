@@ -127,6 +127,7 @@ func _ready() -> void:
 			var t := create_tween()
 			t.set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_QUAD)
 			t.tween_property(button, "offset_transform_scale", Vector2.ONE, 0.1)
+			AudioManager.oneshot(ID.SFX.NAME_HOVER)
 		)
 		button.pressed.connect(func() -> void:
 			if button.button_pressed:
@@ -134,6 +135,7 @@ func _ready() -> void:
 					button.button_pressed = false
 					return
 				_selected_buttons[button] = _button_types[button]
+				AudioManager.oneshot(ID.SFX.NAME_SELECT)
 			else:
 				_selected_buttons.erase(button)
 			update_name()

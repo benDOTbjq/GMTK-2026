@@ -1,6 +1,9 @@
 [gd_resource type="StandardMaterial3D" format=3 uid="uid://cn14b4opohaks"]
 
-[ext_resource type="Texture2D" uid="uid://chr6y6mwyir4g" path="res://art/demo/demo_background.png" id="1_a00nd"]
+[ext_resource type="Texture2D" uid="uid://b6yxwra3j3qjp" path="res://art/krita/wall.png" id="1_fgsn3"]
 
 [resource]
-albedo_texture = ExtResource("1_a00nd")
+albedo_texture = ExtResource("1_fgsn3")
+uv1_scale = Vector3(4, 4, 4)
+grow_amount = -0.32
+point_size = 128.0

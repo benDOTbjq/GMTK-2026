@@ -36,7 +36,7 @@ func _ready() -> void:
 	
 	book.set_content(ID.Page.TYPE_CHART, ID.Page.DEMON)
 	book.close()
-	AudioManager.set_music(ID.Music.TITLE)
+	AudioManager.set_music(ID.Music.TITLE, 0.0)
 
 
 func _process(delta: float) -> void:
@@ -72,10 +72,13 @@ func setup_demon(artifact: Artifact) -> void:
 	table_sprite.texture = frame
 	animation_player.play("spawn_shadow")
 	AudioManager.set_music(ID.Music.DEFAULT)
+	AudioManager.loop(ID.SFXLoop.PENAGRAM)
+	AudioManager.oneshot(ID.SFX.SUMMON)
 	
 	for i in candles.size():
 		if i < curr_actions: candles[i].turn_on()
 		else: candles[i].turn_off()
+	
 
 
 func use_item(item: ID.Item) -> void:
@@ -116,6 +119,8 @@ func guess_demon(type1: ID.DemonType, type2: ID.DemonType) -> void:
 		curr_artifact.despawn()
 		curr_artifact = null
 		curr_demon_info = null
+		AudioManager.set_music(ID.Music.NULL)
+		AudioManager.loop(ID.SFXLoop.PENAGRAM, false)
 	else:
 		curr_actions -= 2
 		camera_3d.shake_camera(0.2)

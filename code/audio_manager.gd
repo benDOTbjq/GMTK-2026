@@ -43,6 +43,12 @@ const UI_SIDE_WHOOSH_03: AudioStream = preload("uid://bwgaa5uycbquj")
 const UI_SIDE_WHOOSH_04: AudioStream = preload("uid://cap12bckduird")
 const UI_DIALOGUE_01: AudioStream = preload("uid://bpthv82l2noyy")
 const UI_DIALOGUE_02: AudioStream = preload("uid://ckmlrc3sc01cc")
+const UI_PENTAGRAM: AudioStream = preload("uid://bg4d1yftwo1pa")
+const UI_SUMMON_01: AudioStream = preload("uid://dys3hxiqexcf3")
+const UI_SUMMON_02: AudioStream = preload("uid://bscwkfxlj6es1")
+const UI_SUMMON_03: AudioStream = preload("uid://dkjxq8jsojism")
+const UI_NAME_HOVER: AudioStream = preload("uid://d1one3gjcmesg")
+const UI_NAME_SELECT: AudioStream = preload("uid://bstltd1aiuioh")
 
 const SFX_LU: Dictionary[ID.SFX, Array] = {
 	ID.SFX.BOOK_OPEN: [UI_BOOK_OPEN],
@@ -51,6 +57,13 @@ const SFX_LU: Dictionary[ID.SFX, Array] = {
 	ID.SFX.PAGE_RIGHT: [UI_FLIP_PAGE_RIGHT_01, UI_FLIP_PAGE_RIGHT_02, UI_FLIP_PAGE_RIGHT_03],
 	ID.SFX.WOOSH: [UI_SIDE_WHOOSH_01, UI_SIDE_WHOOSH_02, UI_SIDE_WHOOSH_03, UI_SIDE_WHOOSH_04],
 	ID.SFX.VOICE: [UI_DIALOGUE_01, UI_DIALOGUE_02],
+	ID.SFX.SUMMON: [UI_SUMMON_01, UI_SUMMON_02, UI_SUMMON_03],
+	ID.SFX.NAME_HOVER: [UI_NAME_HOVER],
+	ID.SFX.NAME_SELECT: [UI_NAME_SELECT],
+}
+
+const SFX_LOOP_LU: Dictionary[ID.SFXLoop, AudioStream] = {
+	ID.SFXLoop.PENAGRAM: UI_PENTAGRAM
 }
 
 const MUSIC_MAIN: AudioStream = preload("uid://021ktgycle2k")
@@ -70,7 +83,30 @@ var _music_loop_player: AudioStreamPlayer
 var _ambience_inclusion_timer: Timer
 var _current_ambience_id := ID.Ambience.NULL
 var _current_music_id := ID.Music.NULL
+var _current_sfx_loops: Dictionary[ID.SFXLoop, AudioStreamPlayer]
 
+
+func loop(id: ID.SFXLoop, start := true) -> void:
+	if IS_PRINT_DEBUG:
+		print("loop():", ID.SFX_STRING[id])
+	if start:
+		if _current_sfx_loops.has(id):
+			return
+		var player = AudioStreamPlayer.new()
+		player.stream = SFX_LOOP_LU[id]
+		player.bus = &"UI"
+		player.volume_linear = MAX_VOL_UI
+		add_child(player)
+		player.play()
+		_current_sfx_loops[id] = player
+	else:
+		if not _current_sfx_loops.has(id):
+			return
+		var t := create_tween()
+		t.tween_property(_current_sfx_loops[id], "volume_linear", 0.0, 2.0)
+		await t.finished
+		_current_sfx_loops[id].queue_free()
+		_current_sfx_loops[id] = null
 
 
 func oneshot(id: ID.SFX) -> void:
