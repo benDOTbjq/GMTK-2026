@@ -11,7 +11,6 @@
 [ext_resource type="PackedScene" uid="uid://mw7bq6yywg32" path="res://code/items/iron.tscn" id="8_ybmms"]
 [ext_resource type="PackedScene" uid="uid://c6y850mxjcd5b" path="res://code/items/salt.tscn" id="9_62h6r"]
 [ext_resource type="PackedScene" uid="uid://chjgxglbqk6av" path="res://code/demo_scene/book.tscn" id="10_j4l0e"]
-[ext_resource type="Texture2D" uid="uid://dqx7pdjk0ow3n" path="res://art/demo/demon2.png" id="10_l86f5"]
 [ext_resource type="PackedScene" uid="uid://b8o800umenslp" path="res://code/items/prayer.tscn" id="10_yow40"]
 [ext_resource type="PackedScene" uid="uid://cfgapcpo22lvr" path="res://code/assets/Demon2/demon_2.tscn" id="13_itnku"]
 [ext_resource type="PackedScene" uid="uid://ckvmbxhcp0htg" path="res://code/assets/Demon3/demon_3.tscn" id="16_0qsy3"]
@@ -88,7 +87,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 1.5),
 "transitions": PackedFloat32Array(0.4204483, 1),
 "update": 0,
-"values": [Rect2(0, 0, 293, 150.968), Rect2(167.965, 352.761, 285.82, 146.968)]
+"values": [Rect2(0, 0, 626, 195), Rect2(0, 305, 626, 195)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -174,19 +173,19 @@ book_rotation = Vector3(-0.7380256, -0.004113991, 0)
 title_rotation = Vector3(-90, 0, 0)
 
 [node name="Candle" parent="." unique_id=875324991 instance=ExtResource("5_vj5s7")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5655175, 0.7864024, -0.4403525)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5655175, 0.7911453, -0.4403525)
 flickerAdvance = 0.7
 
 [node name="Candle2" parent="." unique_id=1129484098 instance=ExtResource("5_vj5s7")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.3304454, 0.7864348, -0.5869655)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.3304454, 0.79117775, -0.5869655)
 flickerAdvance = 0.308
 
 [node name="Candle3" parent="." unique_id=116191315 instance=ExtResource("5_vj5s7")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.35633466, 0.7864349, -0.621143)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.35633466, 0.7911778, -0.621143)
 flickerAdvance = 0.514
 
 [node name="Candle4" parent="." unique_id=593371254 instance=ExtResource("5_vj5s7")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.56099594, 0.7864349, -0.44232655)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.56099594, 0.7911778, -0.44232655)
 flickerAdvance = 0.053
 
 [node name="HolyWater" parent="." unique_id=2142078425 instance=ExtResource("7_7c3sw")]
@@ -307,11 +306,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.1960418, 0.48922306, 1.099
 
 [node name="DemonWallSprite" type="Sprite3D" parent="." unique_id=832143614]
 transform = Transform3D(0.515, 3.2740104e-08, 0, -3.2740104e-08, 0.515, 0, 0, 0, 0.515, -0.73712057, -0.71418333, -1.734)
-modulate = Color(0, 0, 0, 0)
-texture = ExtResource("10_l86f5")
+modulate = Color(0, 0, 0, 1)
 
 [node name="DemonTableSprite" type="Sprite3D" parent="." unique_id=182461250]
-transform = Transform3D(-0.235, 6.3277525e-08, -3.3661204e-15, 0, -1.831805e-08, -0.51, -3.5484014e-08, -0.41906813, 2.2292808e-08, 0.37744203, 0.653195, -0.19590388)
+transform = Transform3D(-0.11, 5.571745e-08, -1.3530484e-15, 0, -1.6129501e-08, -0.205, -1.6609539e-08, -0.369, 8.960835e-09, 0.38255274, 0.653195, -0.109095216)
 centered = false
 flip_h = true
 modulate = Color(0, 0, 0, 1)

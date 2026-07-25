@@ -75,7 +75,7 @@ metadata/_edit_group_ = true
 [node name="candle" parent="." unique_id=1991816619 instance=ExtResource("2_r81kk")]
 transform = Transform3D(0.032, 0, 0, 0, 0.032, 0, 0, 0, 0.032, 0, -0.14444715, 0.00994122)
 
-[node name="Cylinder" parent="candle" index="0" unique_id=668304103]
+[node name="Cylinder" parent="candle" index="0" unique_id=815465096]
 surface_material_override/0 = SubResource("StandardMaterial3D_c4y7q")
 
 [node name="Sprite3D2" type="Sprite3D" parent="." unique_id=1673124366]
@@ -100,7 +100,7 @@ libraries/ = SubResource("AnimationLibrary_r81kk")
 autoplay = &"flicker"
 
 [node name="PentagramSprite3D2" type="Sprite3D" parent="." unique_id=194701608]
-transform = Transform3D(0.02, 0, 0, 0, -8.7422775e-10, 0.02, 0, -0.02, -8.7422775e-10, 0, -0.12518361, 5.47195e-09)
+transform = Transform3D(0.02, 0, 0, 0, -8.7422775e-10, 0.02, 0, -0.02, -8.7422775e-10, 0, -0.13847841, 5.47195e-09)
 cast_shadow = 0
 modulate = Color(1, 0, 0, 1)
 shaded = true
