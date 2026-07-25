@@ -5,9 +5,8 @@ var _current_demon: Dictionary
 
 @onready var menu_button: TextureButton = %MenuButton
 @onready var table_button: TextureButton = %TableButton
-@onready var book_button: TextureButton = %BookButton
-@onready var book_prev_button: TextureButton = %BookPrevButton
-@onready var book_next_button: TextureButton = %BookNextButton
+@onready var book_open_button: TextureButton = %BookOpenButton
+@onready var book_close_button: TextureButton = %BookCloseButton
 @onready var title_button: TextureButton = $TitleButton
 
 @onready var reset_button: Button = %ResetButton
@@ -19,7 +18,10 @@ func _ready() -> void:
 	_current_demon = DemonManager.get_random_demon()
 	reset_button.pressed.connect(_reset_demon)
 	check_button.pressed.connect(_test_demon)
-
+	book_open_button.pressed.connect(book_open_button.set.bind(&"visible", false))
+	book_open_button.pressed.connect(book_close_button.set.bind(&"visible", true))
+	book_close_button.pressed.connect(book_close_button.set.bind(&"visible", false))
+	book_close_button.pressed.connect(book_open_button.set.bind(&"visible", true))
 
 func _reset_demon() -> void:
 	_current_demon = DemonManager.get_random_demon()

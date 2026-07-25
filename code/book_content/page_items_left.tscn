@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://b6vi4dhin2lw1"]
 
 [ext_resource type="Texture2D" uid="uid://ba5726xsa4ogm" path="res://art/demo/paper.png" id="1_2mrpo"]
+[ext_resource type="Script" uid="uid://c8msnl5jm2kan" path="res://code/book_content/page.gd" id="1_sp3pe"]
 [ext_resource type="Texture2D" uid="uid://dg0jl46u7t3k5" path="res://art/krita/book_border.png" id="2_itj5h"]
 [ext_resource type="Texture2D" uid="uid://obcu3jsir058" path="res://art/krita/salt.png" id="3_enlpp"]
 [ext_resource type="FontFile" uid="uid://cp0kxlhni6f60" path="res://art/fonts/LittleTroubleGirlBv-EVg.ttf" id="4_et5aa"]
@@ -11,6 +12,7 @@ layout_mode = 3
 anchors_preset = 0
 offset_right = 445.0
 offset_bottom = 600.0
+script = ExtResource("1_sp3pe")
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=1002869572]
 layout_mode = 0
@@ -183,3 +185,13 @@ text = "SUSEPTABLE DEMONS:
 FAEIC
 ABYSSAL"
 horizontal_alignment = 1
+
+[node name="NextButton" type="TextureButton" parent="." unique_id=1573386459]
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -94.0
+grow_horizontal = 0
+grow_vertical = 2

@@ -25,14 +25,18 @@ var items_used: Array[ID.Item]
 func _ready() -> void:
 	gui.menu_button.pressed.connect(camera_3d.update_camera_mode.bind(ID.CameraMode.SHELF))
 	gui.table_button.pressed.connect(camera_3d.update_camera_mode.bind(ID.CameraMode.TABLE))
-	gui.book_button.pressed.connect(camera_3d.update_camera_mode.bind(ID.CameraMode.BOOK))
-	gui.book_prev_button.pressed.connect(book.prev)
-	gui.book_next_button.pressed.connect(book.next)
-	gui.title_button.pressed.connect(_exit_title)
 	
-	gui.book_button.pressed.connect(book.open)
-	gui.menu_button.pressed.connect(book.close)
+	gui.book_open_button.pressed.connect(camera_3d.update_camera_mode.bind(ID.CameraMode.BOOK))
+	gui.book_close_button.pressed.connect(camera_3d.update_camera_mode.bind(ID.CameraMode.TABLE))
+	gui.book_close_button.pressed.connect(book.close)
+	gui.title_button.pressed.connect(_exit_title)
 	gui.table_button.pressed.connect(book.close)
+	
+	
+	gui.book_open_button.pressed.connect(book.open)
+	gui.menu_button.pressed.connect(book.close)
+	
+	
 	
 	book.set_content(ID.Page.TYPE_CHART, ID.Page.DEMON)
 	book.close()

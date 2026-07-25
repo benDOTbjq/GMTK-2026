@@ -15,7 +15,7 @@ const LEFTMOST_PAGE_MIMIC_ROT = Vector3(0.0, 0.0, deg_to_rad(165))
 const RIGHTMOST_PAGE_MIMIC_ROT = Vector3.ZERO
 
 const PAGE_DEMON = preload("uid://cw7bgxc78qxub")
-const PAGE_CANDLE = preload("uid://dt2vt4lnhrgr7")
+const PAGE_NAME = preload("uid://dt2vt4lnhrgr7")
 const PAGE_TYPE_CHART = preload("uid://da2kt5b4ih837")
 const PAGE_PENTAGRAM = preload("uid://c3wknpva8pa1s")
 const PAGE_MULTI_PENT = preload("uid://2kxxg7p7qw3d")
@@ -27,7 +27,7 @@ const PAGE_ORDER: Array[Array] = [
 	[ID.Page.TYPE_CHART, ID.Page.DEMON],
 	[ID.Page.ITEMS_RIGHT, ID.Page.ITEMS_LEFT],
 	[ID.Page.MULTIPENT, ID.Page.PENTAGRAM],
-	[ID.Page.CANDLE, ID.Page.NOISE_DEMON],
+	[ID.Page.NOISE_DEMON, ID.Page.NAME],
 ]
 
 var _book_index := 0
@@ -57,7 +57,7 @@ var _prev_right_texture: Texture
 
 
 func _ready() -> void:
-	_pages[ID.Page.CANDLE] = PAGE_CANDLE.instantiate()
+	_pages[ID.Page.NAME] = PAGE_NAME.instantiate()
 	_pages[ID.Page.DEMON] = PAGE_DEMON.instantiate()
 	_pages[ID.Page.TYPE_CHART] = PAGE_TYPE_CHART.instantiate()
 	_pages[ID.Page.PENTAGRAM] = PAGE_PENTAGRAM.instantiate()
@@ -65,6 +65,9 @@ func _ready() -> void:
 	_pages[ID.Page.NOISE_DEMON] = PAGE_NOISE_DEMON.instantiate()
 	_pages[ID.Page.ITEMS_RIGHT] = PAGE_ITEMS_RIGHT.instantiate()
 	_pages[ID.Page.ITEMS_LEFT] = PAGE_ITEMS_LEFT.instantiate()
+	
+	Bus.book_next.connect(next)
+	Bus.book_back.connect(back)
 	
 	front_cover.rotation_degrees = Vector3(0, 90, 180)
 	@warning_ignore("int_as_enum_without_cast")
@@ -78,7 +81,7 @@ func next() -> void:
 	flip_right(PAGE_ORDER[_book_index][0], PAGE_ORDER[_book_index][1])
 
 
-func prev() -> void:
+func back() -> void:
 	if _is_closed or _is_mid_turn or _book_index <= 0:
 		return
 	_book_index -= 1

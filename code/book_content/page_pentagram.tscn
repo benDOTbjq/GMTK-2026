@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://c3wknpva8pa1s"]
 
 [ext_resource type="Texture2D" uid="uid://ba5726xsa4ogm" path="res://art/demo/paper.png" id="1_267v8"]
+[ext_resource type="Script" uid="uid://c8msnl5jm2kan" path="res://code/book_content/page.gd" id="1_nxrm6"]
 [ext_resource type="Texture2D" uid="uid://box5yypbtqhvy" path="res://art/demo/pentagram.png" id="2_7qh8y"]
 [ext_resource type="Texture2D" uid="uid://dg0jl46u7t3k5" path="res://art/krita/book_border.png" id="2_yq7sq"]
 [ext_resource type="Texture2D" uid="uid://ncfl4vlcjdnc" path="res://art/krita/arrow.png" id="4_yq7sq"]
@@ -11,6 +12,7 @@ layout_mode = 3
 anchors_preset = 0
 offset_right = 445.0
 offset_bottom = 600.0
+script = ExtResource("1_nxrm6")
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=672408210]
 layout_mode = 0
@@ -89,3 +91,14 @@ position = Vector2(223.99995, 403)
 rotation = -0.7055034
 scale = Vector2(0.118, 0.124)
 texture = ExtResource("2_7qh8y")
+
+[node name="NextButton" type="TextureButton" parent="." unique_id=455211487]
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -94.0
+offset_right = -1.0
+grow_horizontal = 0
+grow_vertical = 2

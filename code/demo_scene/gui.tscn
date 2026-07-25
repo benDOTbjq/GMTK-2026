@@ -35,13 +35,22 @@ offset_top = 11.0
 offset_right = 116.0
 offset_bottom = 708.0
 
-[node name="BookButton" type="TextureButton" parent="." unique_id=925750776]
+[node name="BookOpenButton" type="TextureButton" parent="." unique_id=925750776]
 unique_name_in_owner = true
 layout_mode = 0
-offset_left = 458.0
+offset_left = 184.0
 offset_top = 622.0
-offset_right = 798.0
+offset_right = 1142.0
 offset_bottom = 714.0
+
+[node name="BookCloseButton" type="TextureButton" parent="." unique_id=597553540]
+unique_name_in_owner = true
+visible = false
+layout_mode = 0
+offset_left = 184.0
+offset_top = 2.0
+offset_right = 1142.0
+offset_bottom = 183.0
 
 [node name="TableButton" type="TextureButton" parent="." unique_id=939871928]
 unique_name_in_owner = true
@@ -71,22 +80,6 @@ offset_top = 102.0
 offset_right = 1129.0
 offset_bottom = 165.0
 text = "Check"
-
-[node name="BookPrevButton" type="TextureButton" parent="." unique_id=1827772154]
-unique_name_in_owner = true
-layout_mode = 0
-offset_left = 141.0
-offset_top = 566.0
-offset_right = 291.0
-offset_bottom = 716.0
-
-[node name="BookNextButton" type="TextureButton" parent="." unique_id=185299805]
-unique_name_in_owner = true
-layout_mode = 0
-offset_left = 957.04
-offset_top = 571.3
-offset_right = 1107.0402
-offset_bottom = 721.3
 
 [node name="TitleButton" type="TextureButton" parent="." unique_id=1524777345]
 layout_mode = 0

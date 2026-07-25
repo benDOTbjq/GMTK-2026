@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://2kxxg7p7qw3d"]
 
+[ext_resource type="Script" uid="uid://c8msnl5jm2kan" path="res://code/book_content/page.gd" id="1_2olhy"]
 [ext_resource type="Texture2D" uid="uid://ba5726xsa4ogm" path="res://art/demo/paper.png" id="1_vo2mm"]
 [ext_resource type="Texture2D" uid="uid://dg0jl46u7t3k5" path="res://art/krita/book_border.png" id="2_mhgwa"]
 [ext_resource type="Texture2D" uid="uid://ncfl4vlcjdnc" path="res://art/krita/arrow.png" id="4_mhgwa"]
@@ -12,6 +13,7 @@ layout_mode = 3
 anchors_preset = 0
 offset_right = 445.0
 offset_bottom = 600.0
+script = ExtResource("1_2olhy")
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=702883372]
 layout_mode = 0
@@ -73,3 +75,10 @@ modulate = Color(0, 0, 0, 1)
 position = Vector2(271, 466)
 scale = Vector2(0.1, 0.1)
 texture = ExtResource("7_ffa7t")
+
+[node name="BackButton" type="TextureButton" parent="." unique_id=546218795]
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_right = 94.0
+grow_vertical = 2

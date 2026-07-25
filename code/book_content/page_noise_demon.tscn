@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://dqieqksa3l20y"]
 
 [ext_resource type="Texture2D" uid="uid://ba5726xsa4ogm" path="res://art/demo/paper.png" id="1_bjqdn"]
+[ext_resource type="Script" uid="uid://c8msnl5jm2kan" path="res://code/book_content/page.gd" id="1_nvre0"]
 [ext_resource type="Texture2D" uid="uid://dg0jl46u7t3k5" path="res://art/krita/book_border.png" id="2_0pha8"]
 
 [node name="NoiseDemonPage" type="Control" unique_id=1729994615]
@@ -8,6 +9,7 @@ layout_mode = 3
 anchors_preset = 0
 offset_right = 445.0
 offset_bottom = 600.0
+script = ExtResource("1_nvre0")
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=1002869572]
 layout_mode = 0
@@ -31,3 +33,10 @@ patch_margin_right = 42
 patch_margin_bottom = 129
 axis_stretch_horizontal = 2
 axis_stretch_vertical = 2
+
+[node name="BackButton" type="TextureButton" parent="." unique_id=1556647009]
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_right = 94.0
+grow_vertical = 2

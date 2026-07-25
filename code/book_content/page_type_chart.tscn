@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://da2kt5b4ih837"]
 
 [ext_resource type="Texture2D" uid="uid://ba5726xsa4ogm" path="res://art/demo/paper.png" id="1_jh1fo"]
+[ext_resource type="Script" uid="uid://c8msnl5jm2kan" path="res://code/book_content/page.gd" id="1_mctmo"]
 [ext_resource type="Texture2D" uid="uid://dg0jl46u7t3k5" path="res://art/krita/book_border.png" id="2_m11b2"]
 [ext_resource type="FontFile" uid="uid://cp0kxlhni6f60" path="res://art/fonts/LittleTroubleGirlBv-EVg.ttf" id="3_m11b2"]
 [ext_resource type="Texture2D" uid="uid://obcu3jsir058" path="res://art/krita/salt.png" id="4_6b2lx"]
@@ -11,14 +12,12 @@
 [ext_resource type="Texture2D" uid="uid://bibw601528uir" path="res://art/krita/prayer_3.png" id="9_gebbs"]
 [ext_resource type="Texture2D" uid="uid://blpkdtidcwe3c" path="res://art/krita/faucet.png" id="10_mctmo"]
 
-[sub_resource type="GDScript" id="GDScript_3qlbe"]
-
 [node name="TypeChartPage" type="Control" unique_id=1729994615]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 445.0
 offset_bottom = 600.0
-script = SubResource("GDScript_3qlbe")
+script = ExtResource("1_mctmo")
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=1383326906]
 layout_mode = 0

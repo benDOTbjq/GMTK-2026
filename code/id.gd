@@ -31,7 +31,7 @@ enum CameraMode {
 
 enum Page {
 	NULL,
-	CANDLE,
+	NAME,
 	DEMON,
 	TYPE_CHART,
 	PENTAGRAM,

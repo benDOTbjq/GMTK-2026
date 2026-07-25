@@ -68,6 +68,7 @@ const DEMON_NAMES_LU: Dictionary[int, String] = {
 @onready var fer_button: TextureButton = $FerButton
 
 @onready var name_label: Label = $NinePatchRect2/NameLabel
+@onready var name_button: TextureButton = $NinePatchRect2/NameButton
 
 @onready var _start_positions: Dictionary[TextureButton, Vector2] = {
 	inf_button: inf_button.position,
@@ -97,14 +98,14 @@ const DEMON_NAMES_LU: Dictionary[int, String] = {
 @export var amplitude: float = 20
 
 var _noise_y := 0.0
-
+var _last_combined_type_id := 0
 
 func update_name() -> void:
 	
-	var combined_type_id := 0
+	_last_combined_type_id = 0
 	for demon in _selected_buttons.values():
-		combined_type_id |= demon
-	var next_name = DEMON_NAMES_LU.get(combined_type_id, "")
+		_last_combined_type_id |= demon
+	var next_name = DEMON_NAMES_LU.get(_last_combined_type_id, "")
 	var t1 := create_tween()
 	t1.set_ease(Tween.EASE_IN).set_trans(Tween.TRANS_QUAD).set_parallel()
 	t1.tween_property(name_label, "offset_transform_scale", Vector2.ONE*0.5, 0.1)
@@ -116,6 +117,8 @@ func update_name() -> void:
 	t2.set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_QUAD).set_parallel()
 	t2.tween_property(name_label, "offset_transform_scale", Vector2.ONE, 0.3)
 	t2.tween_property(name_label, "modulate:a", 1.0, 0.6)
+	
+	name_button.pressed.connect(Bus.name_selected.emit.bind(_last_combined_type_id))
 	
 	
 func _ready() -> void:

@@ -3,7 +3,6 @@
 [ext_resource type="Script" uid="uid://crott6oclptni" path="res://code/book_content/page_type_selector.gd" id="1_58hv5"]
 [ext_resource type="Texture2D" uid="uid://ba5726xsa4ogm" path="res://art/demo/paper.png" id="2_tovg8"]
 [ext_resource type="Texture2D" uid="uid://dg0jl46u7t3k5" path="res://art/krita/book_border.png" id="3_bin24"]
-[ext_resource type="Texture2D" uid="uid://ncfl4vlcjdnc" path="res://art/krita/arrow.png" id="4_vn6tn"]
 [ext_resource type="FontFile" uid="uid://cp0kxlhni6f60" path="res://art/fonts/LittleTroubleGirlBv-EVg.ttf" id="5_qe8ij"]
 [ext_resource type="FontFile" uid="uid://ygfruv4fno1r" path="res://art/fonts/PentagramsSalemica-B978.ttf" id="6_77adb"]
 
@@ -39,11 +38,6 @@ patch_margin_right = 42
 patch_margin_bottom = 129
 axis_stretch_horizontal = 2
 axis_stretch_vertical = 2
-
-[node name="Arrow" type="Sprite2D" parent="." unique_id=1038585223]
-position = Vector2(79, 536)
-scale = Vector2(-0.414, 0.414)
-texture = ExtResource("4_vn6tn")
 
 [node name="InfButton" type="TextureButton" parent="." unique_id=1546444223]
 layout_mode = 1
@@ -320,3 +314,14 @@ text = "tharexal"
 horizontal_alignment = 1
 vertical_alignment = 1
 uppercase = true
+
+[node name="NameButton" type="TextureButton" parent="NinePatchRect2" unique_id=489170100]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+offset_transform_enabled = true
+offset_transform_scale = Vector2(0.8, 0.8)
+toggle_mode = true
