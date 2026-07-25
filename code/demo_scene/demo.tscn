@@ -138,8 +138,9 @@ albedo_color = Color(0, 0, 0, 1)
 [sub_resource type="PlaneMesh" id="PlaneMesh_dd5g0"]
 size = Vector2(3.49, 3.515)
 
-[node name="Demo" type="Node3D" unique_id=1435100903]
+[node name="Demo" type="Node3D" unique_id=1435100903 node_paths=PackedStringArray("candles")]
 script = ExtResource("1_evhee")
+candles = [NodePath("Candle1"), NodePath("Candle2"), NodePath("Candle3"), NodePath("Candle4"), NodePath("Candle5")]
 
 [node name="GUI" parent="." unique_id=945604540 instance=ExtResource("1_r7dlf")]
 unique_name_in_owner = true
@@ -172,21 +173,25 @@ shelf_rotation = Vector3(-0.32383546, 1.3941991, -0.015034148)
 book_rotation = Vector3(-0.7380256, -0.004113991, 0)
 title_rotation = Vector3(-90, 0, 0)
 
-[node name="Candle" parent="." unique_id=875324991 instance=ExtResource("5_vj5s7")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5655175, 0.7911453, -0.4403525)
+[node name="Candle1" parent="." unique_id=875324991 instance=ExtResource("5_vj5s7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.63987017, 0.7911453, -0.724443)
 flickerAdvance = 0.7
 
 [node name="Candle2" parent="." unique_id=1129484098 instance=ExtResource("5_vj5s7")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.3304454, 0.79117775, -0.5869655)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.24484622, 0.79117775, -0.64468783)
 flickerAdvance = 0.308
 
 [node name="Candle3" parent="." unique_id=116191315 instance=ExtResource("5_vj5s7")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.35633466, 0.7911778, -0.621143)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.42065936, 0.7911778, -0.38589415)
 flickerAdvance = 0.514
 
 [node name="Candle4" parent="." unique_id=593371254 instance=ExtResource("5_vj5s7")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.56099594, 0.7911778, -0.44232655)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.62151325, 0.7911778, -0.6880302)
 flickerAdvance = 0.053
+
+[node name="Candle5" parent="." unique_id=140451971 instance=ExtResource("5_vj5s7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.53861666, 0.7911453, -0.37638864)
+flickerAdvance = 0.7
 
 [node name="HolyWater" parent="." unique_id=2142078425 instance=ExtResource("7_7c3sw")]
 transform = Transform3D(0.82214403, 0, -0.56927955, 0, 1, 0, 0.56927955, 0, 0.82214403, 0.58649147, 0.7091613, -0.10521427)

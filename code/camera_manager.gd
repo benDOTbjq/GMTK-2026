@@ -10,7 +10,6 @@ class_name CameraManager
 var _title_position := Vector3(0.007, 1.573, -0.252)
 var _default_position := Vector3(0.015, 1.379, 0.945)
 
-
 var _last_mode := ID.CameraMode.TITLE
 
 func _ready() -> void:
@@ -19,11 +18,13 @@ func _ready() -> void:
 
 
 func update_camera_mode(new_mode: ID.CameraMode):
-	var target_rotation
+	if new_mode == _last_mode:
+		return
 	
 	if _last_mode != ID.CameraMode.BOOK and new_mode != ID.CameraMode.BOOK:
 		AudioManager.oneshot(ID.SFX.WOOSH)
 	
+	var target_rotation
 	match new_mode:
 		ID.CameraMode.TABLE: target_rotation = Basis.from_euler(table_rotation)
 		ID.CameraMode.SHELF: target_rotation = Basis.from_euler(shelf_rotation)

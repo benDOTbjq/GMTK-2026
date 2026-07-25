@@ -11,6 +11,8 @@ class_name Level
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var title_label_3d: Label3D = %TitleLabel3D
 
+@export var candles: Array[Candle] = []
+
 var curr_demon_info: DemonInfo = null
 var shadow_frame_id: int = 0
 var shadow_frame_time: float = 0
@@ -68,6 +70,10 @@ func setup_demon(artifact: Artifact) -> void:
 	table_sprite.texture = frame
 	animation_player.play("spawn_shadow")
 	AudioManager.set_music(ID.Music.DEFAULT)
+	
+	for i in candles.size():
+		if i < curr_actions: candles[i].turn_on()
+		else: candles[i].turn_off()
 
 
 func use_item(item: ID.Item) -> void:
@@ -92,6 +98,10 @@ func use_item(item: ID.Item) -> void:
 	
 	if curr_actions <= 0:
 		show_dialog("you lost")
+	
+	for i in candles.size():
+		if i < curr_actions: candles[i].turn_on()
+		else: candles[i].turn_off()
 
 
 func guess_demon(type1: ID.DemonType, type2: ID.DemonType) -> void:
