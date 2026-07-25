@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="DemonInfo" format=3 uid="uid://ds3d08uwqcu8u"]
+
+[ext_resource type="Script" uid="uid://cjjomclguhq3d" path="res://code/demon_info.gd" id="1_qfpfu"]
+[ext_resource type="SpriteFrames" uid="uid://c6y0npd0ud4vc" path="res://code/assets/Demon6/Demon6_sprite.tres" id="2_6hwtj"]
+
+[resource]
+script = ExtResource("1_qfpfu")
+name = "Mask"
+type1 = 6
+type2 = 7
+actions = 5
+shadow_anim = ExtResource("2_6hwtj")
+metadata/_custom_type_script = "uid://cjjomclguhq3d"

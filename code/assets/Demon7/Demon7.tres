@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="DemonInfo" format=3 uid="uid://d3yf2baorrjdv"]
+
+[ext_resource type="Script" uid="uid://cjjomclguhq3d" path="res://code/demon_info.gd" id="1_14hwm"]
+[ext_resource type="SpriteFrames" uid="uid://cbrafqnyrp66" path="res://code/assets/Demon7/Demon7_sprite.tres" id="2_65hm6"]
+
+[resource]
+script = ExtResource("1_14hwm")
+name = "Sun"
+type1 = 1
+type2 = 2
+actions = 5
+shadow_anim = ExtResource("2_65hm6")
+metadata/_custom_type_script = "uid://cjjomclguhq3d"

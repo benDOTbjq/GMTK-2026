@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="DemonInfo" format=3 uid="uid://bt47ldhlo5gj6"]
+
+[ext_resource type="Script" uid="uid://cjjomclguhq3d" path="res://code/demon_info.gd" id="1_n3clw"]
+[ext_resource type="SpriteFrames" uid="uid://dir27nqe8x42e" path="res://code/assets/Demon8/Demon8_sprite.tres" id="2_rkhse"]
+
+[resource]
+script = ExtResource("1_n3clw")
+name = "Knight"
+type1 = 0
+type2 = 3
+actions = 5
+shadow_anim = ExtResource("2_rkhse")
+metadata/_custom_type_script = "uid://cjjomclguhq3d"

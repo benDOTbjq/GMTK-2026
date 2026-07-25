@@ -83,9 +83,9 @@ func use_item(item: ID.Item) -> void:
 		match effectiveness:
 			-2: show_dialog("The demon is extremely empowered")
 			-1: show_dialog("The demon is empowered")
-			0: show_dialog("The demon is uneffected")
-			1: show_dialog("The demon is weakned")
-			2: show_dialog("The demon is extremely weakned")
+			0: show_dialog("The demon is unaffected")
+			1: show_dialog("The demon is weakened")
+			2: show_dialog("The demon is extremely weakened")
 	
 	curr_actions += effectiveness - 1
 	items_used.append(item)

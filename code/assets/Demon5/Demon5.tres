@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="DemonInfo" format=3 uid="uid://bmgs53of7sawh"]
+
+[ext_resource type="Script" uid="uid://cjjomclguhq3d" path="res://code/demon_info.gd" id="1_031hp"]
+[ext_resource type="SpriteFrames" uid="uid://bhnk3i2ey2f4r" path="res://code/assets/Demon5/Demon5_sprite.tres" id="2_nbv6r"]
+
+[resource]
+script = ExtResource("1_031hp")
+name = "Dog"
+type1 = 0
+type2 = 5
+actions = 5
+shadow_anim = ExtResource("2_nbv6r")
+metadata/_custom_type_script = "uid://cjjomclguhq3d"

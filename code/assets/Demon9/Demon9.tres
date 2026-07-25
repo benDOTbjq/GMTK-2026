@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="DemonInfo" format=3 uid="uid://ci6quuot5jog4"]
+
+[ext_resource type="Script" uid="uid://cjjomclguhq3d" path="res://code/demon_info.gd" id="1_dluav"]
+[ext_resource type="SpriteFrames" uid="uid://dl5pe01hj5hdg" path="res://code/assets/Demon9/Demon9_sprite.tres" id="2_idp2j"]
+
+[resource]
+script = ExtResource("1_dluav")
+name = "Mummy"
+type1 = 2
+type2 = 5
+actions = 5
+shadow_anim = ExtResource("2_idp2j")
+metadata/_custom_type_script = "uid://cjjomclguhq3d"
