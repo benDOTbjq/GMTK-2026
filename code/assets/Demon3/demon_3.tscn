@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://d372fmd87nmrg" path="res://art/models/Book.blend" id="4_468fy"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_pyx55"]
-size = Vector3(0.35742188, 0.23840332, 0.27539063)
+size = Vector3(0.23168945, 0.092666626, 0.17425537)
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_f1574"]
 radius = 0.05
@@ -20,7 +20,7 @@ demon_info = ExtResource("2_svxga")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1028492, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=1207200027]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.03314209, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.004760742, -0.09938812, 0.010406494)
 shape = SubResource("BoxShape3D_pyx55")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1991364005]
@@ -33,10 +33,10 @@ mesh = SubResource("CapsuleMesh_f1574")
 [node name="Book" parent="." unique_id=845276988 instance=ExtResource("4_468fy")]
 transform = Transform3D(0.045, 0, 0, 0, 0.045, 0, 0, 0, 0.045, -0.014499013, 0, -0.020696478)
 
-[node name="Light" parent="Book" index="1" unique_id=537722457]
+[node name="Camera" parent="Book" index="0" unique_id=2122751683]
 visible = false
 
-[node name="Camera" parent="Book" index="2" unique_id=26901549]
+[node name="Light" parent="Book" index="2" unique_id=1960077634]
 visible = false
 
 [editable path="Book"]

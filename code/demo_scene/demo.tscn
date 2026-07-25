@@ -26,7 +26,6 @@
 [ext_resource type="PackedScene" uid="uid://btjr8y1a0l4de" path="res://code/assets/Demon8/demon_8.tscn" id="21_2whko"]
 [ext_resource type="FontFile" uid="uid://ygfruv4fno1r" path="res://art/fonts/PentagramsSalemica-B978.ttf" id="21_tlgjb"]
 [ext_resource type="PackedScene" uid="uid://52h1antwm00j" path="res://code/assets/Demon9/demon_9.tscn" id="22_e0yoc"]
-[ext_resource type="Texture2D" uid="uid://d1xqjie5lp2v0" path="res://code/assets/frame0000.png" id="23_hik4w"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_dd5g0"]
 flip_faces = true
@@ -284,13 +283,13 @@ surface_material_override/0 = ExtResource("5_66w8o")
 visible = false
 
 [node name="Demon1" parent="." unique_id=2101668566 instance=ExtResource("17_yow40")]
-transform = Transform3D(0.08181199, 0, -0.9966477, 0, 1, 0, 0.9966477, 0, 0.08181199, -1.2436424, 1.2512342, 0.33401012)
+transform = Transform3D(0.08181199, 0, -0.9966477, 0, 1, 0, 0.9966477, 0, 0.08181199, -1.2436424, 1.2512342, 0.2732495)
 
 [node name="Demon2" parent="." unique_id=382449128 instance=ExtResource("13_itnku")]
-transform = Transform3D(0.7704235, -0.02201888, 0.6371519, 0.028568557, 0.9995918, -9.313226e-10, -0.63689184, 0.018202515, 0.77073807, -1.2482144, 1.2465922, 0.7033131)
+transform = Transform3D(0.11781745, -0.0033672485, 0.7406806, 0.021426424, 0.7496939, -1.6053315e-09, -0.74037826, 0.021160182, 0.11786556, -1.2320613, 1.2465922, 0.676515)
 
 [node name="Demon3" parent="." unique_id=1066151336 instance=ExtResource("16_0qsy3")]
-transform = Transform3D(0.9593641, 0, -0.28217116, 0, 1, 0, 0.28217116, 0, 0.9593641, -1.2223879, 1.282299, 1.0636308)
+transform = Transform3D(0.8212655, 0, 0.57054615, 0, 1, 0, -0.57054615, 0, 0.8212655, -1.2223879, 1.282299, 1.0636308)
 
 [node name="Demon4" parent="." unique_id=1730033789 instance=ExtResource("17_hik4w")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.2837745, 0.8454546, 0.2915734)
