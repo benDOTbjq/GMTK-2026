@@ -3,10 +3,10 @@
 [ext_resource type="Script" uid="uid://daso0pu1o4uts" path="res://code/assets/artifact.gd" id="1_20ff2"]
 [ext_resource type="Resource" uid="uid://jvekk8d743e7" path="res://code/assets/Demon3/Demon3.tres" id="2_svxga"]
 [ext_resource type="PackedScene" uid="uid://b0bstieegqvxr" path="res://code/assets/despawn_particles.tscn" id="3_bfnpy"]
+[ext_resource type="PackedScene" uid="uid://d372fmd87nmrg" path="res://art/models/Book.blend" id="4_468fy"]
 
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_f1574"]
-radius = 0.05
-height = 0.2
+[sub_resource type="BoxShape3D" id="BoxShape3D_pyx55"]
+size = Vector3(0.35742188, 0.23840332, 0.27539063)
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_f1574"]
 radius = 0.05
@@ -20,10 +20,23 @@ demon_info = ExtResource("2_svxga")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1028492, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=1207200027]
-shape = SubResource("CapsuleShape3D_f1574")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.03314209, 0)
+shape = SubResource("BoxShape3D_pyx55")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1991364005]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1028492, 0)
+visible = false
 mesh = SubResource("CapsuleMesh_f1574")
 
 [node name="DespawnParticles" parent="." unique_id=1660351049 instance=ExtResource("3_bfnpy")]
+
+[node name="Book" parent="." unique_id=845276988 instance=ExtResource("4_468fy")]
+transform = Transform3D(0.045, 0, 0, 0, 0.045, 0, 0, 0, 0.045, -0.014499013, 0, -0.020696478)
+
+[node name="Light" parent="Book" index="1" unique_id=537722457]
+visible = false
+
+[node name="Camera" parent="Book" index="2" unique_id=26901549]
+visible = false
+
+[editable path="Book"]

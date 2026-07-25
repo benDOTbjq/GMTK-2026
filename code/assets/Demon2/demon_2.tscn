@@ -3,10 +3,10 @@
 [ext_resource type="Script" uid="uid://daso0pu1o4uts" path="res://code/assets/artifact.gd" id="1_nbwyu"]
 [ext_resource type="Resource" uid="uid://buup5x4bgcx04" path="res://code/assets/Demon2/Demon2.tres" id="2_nsjmk"]
 [ext_resource type="PackedScene" uid="uid://b0bstieegqvxr" path="res://code/assets/despawn_particles.tscn" id="3_sg8d7"]
+[ext_resource type="PackedScene" uid="uid://g7b4lxwsdbwe" path="res://art/models/Horn.blend" id="4_pyx55"]
 
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_f1574"]
-radius = 0.05
-height = 0.2
+[sub_resource type="BoxShape3D" id="BoxShape3D_t86wq"]
+size = Vector3(0.3154297, 0.19628906, 0.31347656)
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_f1574"]
 radius = 0.05
@@ -20,10 +20,25 @@ demon_info = ExtResource("2_nsjmk")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1028492, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=1207200027]
-shape = SubResource("CapsuleShape3D_f1574")
+shape = SubResource("BoxShape3D_t86wq")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1991364005]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1028492, 0)
+visible = false
 mesh = SubResource("CapsuleMesh_f1574")
 
 [node name="DespawnParticles" parent="." unique_id=1660351049 instance=ExtResource("3_sg8d7")]
+
+[node name="Horn" parent="." unique_id=986861143 instance=ExtResource("4_pyx55")]
+transform = Transform3D(0.044698115, 0.002378499, 0.00462837, 0.0051832716, -0.016802108, -0.04142249, -0.00046126597, 0.041677713, -0.016963352, 0, 0.06293361, 0.019341469)
+
+[node name="Light" parent="Horn" index="0" unique_id=350268854]
+visible = false
+
+[node name="Camera" parent="Horn" index="1" unique_id=229928123]
+visible = false
+
+[node name="Cylinder" parent="Horn" index="2" unique_id=1238992503]
+transform = Transform3D(-0.45615554, 0.8655498, -0.20675245, -0.88144404, -0.47141054, -0.028795958, -0.122389436, 0.16910529, 0.9779698, -0.84241766, 0.48679808, 0.2224015)
+
+[editable path="Horn"]

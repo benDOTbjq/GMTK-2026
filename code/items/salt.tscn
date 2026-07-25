@@ -1,11 +1,23 @@
 [gd_scene format=3 uid="uid://c6y850mxjcd5b"]
 
 [ext_resource type="Script" uid="uid://b8c5vl6vj6qp3" path="res://code/items/item.gd" id="1_g0lh4"]
+[ext_resource type="PackedScene" uid="uid://cs80pjouc6ji7" path="res://art/models/saltShaker2.blend" id="2_mxrxv"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_f1574"]
+size = Vector3(1, 1.2969971, 1)
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_mxrxv"]
 height = 0.8964844
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yw6ld"]
+transparency = 1
+albedo_color = Color(0.86, 1, 0.96033335, 0.4745098)
+roughness = 0.25
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_35xck"]
+albedo_color = Color(0.55777484, 0.5577749, 0.55777484, 1)
+metallic = 1.0
+roughness = 0.62
 
 [node name="Salt" type="Node3D" unique_id=2142078425]
 script = ExtResource("1_g0lh4")
@@ -15,8 +27,21 @@ item_type = 1
 transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=1598683196]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.14849854, 0)
 shape = SubResource("BoxShape3D_f1574")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=596977599]
 transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0.000292968, 0)
+visible = false
 mesh = SubResource("CylinderMesh_mxrxv")
+
+[node name="saltShaker2" parent="." unique_id=848309624 instance=ExtResource("2_mxrxv")]
+transform = Transform3D(0.03, 0, 0, 0, 0.03, 0, 0, 0, 0.03, 0, 0, 0)
+
+[node name="Glass" parent="saltShaker2" index="0" unique_id=1382550776]
+material_override = SubResource("StandardMaterial3D_yw6ld")
+
+[node name="cap" parent="saltShaker2" index="1" unique_id=1869420544]
+material_override = SubResource("StandardMaterial3D_35xck")
+
+[editable path="saltShaker2"]
