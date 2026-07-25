@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://brphdgf41xmjk" path="res://code/book_content/page_demon.gd" id="1_x6a4i"]
 [ext_resource type="Texture2D" uid="uid://ba5726xsa4ogm" path="res://art/demo/paper.png" id="2_8f1ai"]
 [ext_resource type="Texture2D" uid="uid://dg0jl46u7t3k5" path="res://art/krita/book_border.png" id="3_8g4h1"]
-[ext_resource type="Texture2D" uid="uid://dqx7pdjk0ow3n" path="res://art/demo/demon2.png" id="3_el2mx"]
+[ext_resource type="FontFile" uid="uid://cp0kxlhni6f60" path="res://art/fonts/LittleTroubleGirlBv-EVg.ttf" id="5_8g4h1"]
 [ext_resource type="Texture2D" uid="uid://ncfl4vlcjdnc" path="res://art/krita/arrow.png" id="5_el2mx"]
 
 [node name="DemonPage" type="Control" unique_id=1729994615]
@@ -36,12 +36,25 @@ patch_margin_bottom = 129
 axis_stretch_horizontal = 2
 axis_stretch_vertical = 2
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=21442704]
-modulate = Color(0, 0, 0, 1)
-position = Vector2(233, 291)
-texture = ExtResource("3_el2mx")
-
 [node name="Arrow" type="Sprite2D" parent="." unique_id=387173363]
 position = Vector2(378, 530)
 scale = Vector2(0.4140625, 0.4140625)
 texture = ExtResource("5_el2mx")
+
+[node name="Label" type="Label" parent="." unique_id=1734477481]
+layout_mode = 0
+offset_left = 45.0
+offset_top = 33.0
+offset_right = 409.0
+offset_bottom = 88.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 1
+theme_override_fonts/font = ExtResource("5_8g4h1")
+theme_override_font_sizes/font_size = 22
+text = "A DEMONS NAME IS A DEMONS NATURE
+IT'S NATURE IS ITS NAME
+
+DETERMINE IT'S NATURE TO
+EXORCISE THE DEMON"
+horizontal_alignment = 1

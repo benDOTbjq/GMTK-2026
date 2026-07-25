@@ -3,8 +3,9 @@ extends Node
 
 const IS_PRINT_DEBUG := false
 const INCLUSION_FREQUENCY_RANGE := Vector2(10, 300) # seconds
-const MAX_VOL_MUSIC := 0.5
-const MAX_VOL_AMB := 0.5
+const MAX_VOL_MUSIC := 0.7
+const MAX_VOL_AMB := 0.7
+const MAX_VOL_UI := 0.5
 
 const AMB_MAIN_01: AudioStream = preload("uid://csdd2e7l3pyhe")
 const AMB_BICYCLE_CREAK: AudioStream = preload("uid://cbxyntt4q036w")
@@ -40,12 +41,16 @@ const UI_SIDE_WHOOSH_01: AudioStream = preload("uid://bogjfni3e0fg0")
 const UI_SIDE_WHOOSH_02: AudioStream = preload("uid://d14vsrp826wur")
 const UI_SIDE_WHOOSH_03: AudioStream = preload("uid://bwgaa5uycbquj")
 const UI_SIDE_WHOOSH_04: AudioStream = preload("uid://cap12bckduird")
+const UI_DIALOGUE_01: AudioStream = preload("uid://bpthv82l2noyy")
+const UI_DIALOGUE_02: AudioStream = preload("uid://ckmlrc3sc01cc")
+
 const SFX_LU: Dictionary[ID.SFX, Array] = {
 	ID.SFX.BOOK_OPEN: [UI_BOOK_OPEN],
 	ID.SFX.BOOK_CLOSE: [UI_BOOK_CLOSE],
 	ID.SFX.PAGE_LEFT: [UI_FLIP_PAGE_LEFT_01, UI_FLIP_PAGE_LEFT_02, UI_FLIP_PAGE_LEFT_03],
 	ID.SFX.PAGE_RIGHT: [UI_FLIP_PAGE_RIGHT_01, UI_FLIP_PAGE_RIGHT_02, UI_FLIP_PAGE_RIGHT_03],
 	ID.SFX.WOOSH: [UI_SIDE_WHOOSH_01, UI_SIDE_WHOOSH_02, UI_SIDE_WHOOSH_03, UI_SIDE_WHOOSH_04],
+	ID.SFX.VOICE: [UI_DIALOGUE_01, UI_DIALOGUE_02],
 }
 
 const MUSIC_MAIN: AudioStream = preload("uid://021ktgycle2k")
@@ -142,6 +147,7 @@ func _play_oneshot(sfx_group: Array, bus: StringName) -> void:
 	var player = AudioStreamPlayer.new()
 	player.stream = sfx_group[randi_range(0, sfx_group.size()-1)]
 	player.bus = bus
+	player.volume_linear = MAX_VOL_UI
 	add_child(player)
 	player.play()
 	player.finished.connect(player.queue_free)

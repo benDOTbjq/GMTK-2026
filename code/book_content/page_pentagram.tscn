@@ -79,5 +79,13 @@ theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 1
 theme_override_fonts/font = ExtResource("5_tmw5n")
 theme_override_font_sizes/font_size = 22
-text = "THE LIGHTS MUST NOT GO OUT"
+text = "THE LIGHT IS YOUR LIFE
+"
 horizontal_alignment = 1
+
+[node name="DemoCandle7" type="Sprite2D" parent="." unique_id=483842726]
+modulate = Color(0.1237021, 0.12370213, 0.12370212, 1)
+position = Vector2(223.99995, 403)
+rotation = -0.7055034
+scale = Vector2(0.118, 0.124)
+texture = ExtResource("2_7qh8y")

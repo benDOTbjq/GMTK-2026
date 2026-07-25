@@ -45,6 +45,7 @@ enum SFX {
 	PAGE_LEFT,
 	PAGE_RIGHT,
 	WOOSH,
+	VOICE,
 }
 
 enum Ambience {

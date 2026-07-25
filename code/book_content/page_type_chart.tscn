@@ -3,6 +3,13 @@
 [ext_resource type="Texture2D" uid="uid://ba5726xsa4ogm" path="res://art/demo/paper.png" id="1_jh1fo"]
 [ext_resource type="Texture2D" uid="uid://dg0jl46u7t3k5" path="res://art/krita/book_border.png" id="2_m11b2"]
 [ext_resource type="FontFile" uid="uid://cp0kxlhni6f60" path="res://art/fonts/LittleTroubleGirlBv-EVg.ttf" id="3_m11b2"]
+[ext_resource type="Texture2D" uid="uid://obcu3jsir058" path="res://art/krita/salt.png" id="4_6b2lx"]
+[ext_resource type="Texture2D" uid="uid://bwfnrohpftqem" path="res://art/krita/check.png" id="4_18i12"]
+[ext_resource type="Texture2D" uid="uid://ra283o5h0awc" path="res://art/krita/dash.png" id="5_vepob"]
+[ext_resource type="Texture2D" uid="uid://ct45gtaddtpqn" path="res://art/krita/cross.png" id="6_gebbs"]
+[ext_resource type="Texture2D" uid="uid://bvty8ppmda4cu" path="res://art/krita/iron.png" id="8_mctmo"]
+[ext_resource type="Texture2D" uid="uid://dnbaqay13grud" path="res://art/krita/prayer_2.png" id="9_gebbs"]
+[ext_resource type="Texture2D" uid="uid://ccwu4aufb21fh" path="res://art/krita/water.png" id="10_mctmo"]
 
 [sub_resource type="GDScript" id="GDScript_3qlbe"]
 
@@ -38,10 +45,10 @@ axis_stretch_vertical = 2
 
 [node name="Label3" type="Label" parent="." unique_id=55427950]
 layout_mode = 0
-offset_left = 26.0
-offset_top = 142.0
-offset_right = 112.0
-offset_bottom = 500.0
+offset_left = 33.0
+offset_top = 176.0
+offset_right = 119.0
+offset_bottom = 534.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_constants/line_spacing = 23
 theme_override_fonts/font = ExtResource("3_m11b2")
@@ -67,16 +74,15 @@ theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 1
 theme_override_fonts/font = ExtResource("3_m11b2")
 theme_override_font_sizes/font_size = 22
-text = "DEMONIC ILKS, AND HOW TO
- SUPPRESS THEM"
+text = "DEMONIC REFERENCE"
 horizontal_alignment = 1
 
 [node name="Label2" type="Label" parent="." unique_id=1996572721]
 layout_mode = 0
-offset_left = 106.0
-offset_top = 100.0
-offset_right = 410.0
-offset_bottom = 126.0
+offset_left = 119.0
+offset_top = 135.0
+offset_right = 423.0
+offset_bottom = 161.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_m11b2")
 theme_override_font_sizes/font_size = 22
@@ -84,10 +90,10 @@ text = "WATER     IRON      SALT      PRAYER"
 
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1065937412]
 layout_mode = 0
-offset_left = 127.0
-offset_top = 137.0
-offset_right = 409.0
-offset_bottom = 385.0
+offset_left = 140.0
+offset_top = 172.0
+offset_right = 422.0
+offset_bottom = 531.0
 theme_override_constants/separation = 17
 
 [node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer" unique_id=1507716317]
@@ -97,22 +103,50 @@ theme_override_constants/separation = 42
 [node name="ColorRect" type="ColorRect" parent="VBoxContainer/HBoxContainer" unique_id=426730951]
 custom_minimum_size = Vector2(30, 30)
 layout_mode = 2
-color = Color(0.8, 0.088000014, 0.088000014, 1)
+color = Color(0, 0, 0, 0)
+
+[node name="Check" type="Sprite2D" parent="VBoxContainer/HBoxContainer/ColorRect" unique_id=750097618]
+position = Vector2(15, 14)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("4_18i12")
+hframes = 2
+vframes = 2
 
 [node name="ColorRect2" type="ColorRect" parent="VBoxContainer/HBoxContainer" unique_id=1153281072]
 custom_minimum_size = Vector2(30, 30)
 layout_mode = 2
-color = Color(0.49, 0.1617, 0.22188835, 1)
+color = Color(0, 0, 0, 0)
+
+[node name="Dash" type="Sprite2D" parent="VBoxContainer/HBoxContainer/ColorRect2" unique_id=1220149992]
+position = Vector2(15, 15)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("5_vepob")
+hframes = 2
+vframes = 2
 
 [node name="ColorRect3" type="ColorRect" parent="VBoxContainer/HBoxContainer" unique_id=1471116322]
 custom_minimum_size = Vector2(30, 30)
 layout_mode = 2
-color = Color(0.29, 0.29, 0.29, 1)
+color = Color(0.2901961, 0.2901961, 0.2901961, 0)
+
+[node name="Dash" type="Sprite2D" parent="VBoxContainer/HBoxContainer/ColorRect3" unique_id=560938307]
+position = Vector2(15, 15)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_gebbs")
+hframes = 2
+vframes = 2
 
 [node name="ColorRect4" type="ColorRect" parent="VBoxContainer/HBoxContainer" unique_id=1389292787]
 custom_minimum_size = Vector2(30, 30)
 layout_mode = 2
-color = Color(0.49, 0.1617, 0.22188835, 1)
+color = Color(0, 0, 0, 0)
+
+[node name="Dash" type="Sprite2D" parent="VBoxContainer/HBoxContainer/ColorRect4" unique_id=1926170014]
+position = Vector2(15, 15)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("5_vepob")
+hframes = 2
+vframes = 2
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer" unique_id=246993177]
 layout_mode = 2
@@ -121,22 +155,54 @@ theme_override_constants/separation = 42
 [node name="ColorRect" type="ColorRect" parent="VBoxContainer/HBoxContainer2" unique_id=359918663]
 custom_minimum_size = Vector2(30, 30)
 layout_mode = 2
-color = Color(0.29, 0.29, 0.29, 1)
+color = Color(0.2901961, 0.2901961, 0.2901961, 0)
+
+[node name="Dash" type="Sprite2D" parent="VBoxContainer/HBoxContainer2/ColorRect" unique_id=1571534642]
+position = Vector2(15, 15)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_gebbs")
+hframes = 2
+vframes = 2
+frame = 1
 
 [node name="ColorRect2" type="ColorRect" parent="VBoxContainer/HBoxContainer2" unique_id=330518093]
 custom_minimum_size = Vector2(30, 30)
 layout_mode = 2
-color = Color(0.49, 0.1617, 0.22188835, 1)
+color = Color(0, 0, 0, 0)
+
+[node name="Dash" type="Sprite2D" parent="VBoxContainer/HBoxContainer2/ColorRect2" unique_id=99648668]
+position = Vector2(15, 15)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("5_vepob")
+hframes = 2
+vframes = 2
+frame = 1
 
 [node name="ColorRect3" type="ColorRect" parent="VBoxContainer/HBoxContainer2" unique_id=26930493]
 custom_minimum_size = Vector2(30, 30)
 layout_mode = 2
-color = Color(0.49, 0.1617, 0.22188835, 1)
+color = Color(0, 0, 0, 0)
+
+[node name="Dash" type="Sprite2D" parent="VBoxContainer/HBoxContainer2/ColorRect3" unique_id=1227440655]
+position = Vector2(15, 15)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("5_vepob")
+hframes = 2
+vframes = 2
+frame = 2
 
 [node name="ColorRect4" type="ColorRect" parent="VBoxContainer/HBoxContainer2" unique_id=968112339]
 custom_minimum_size = Vector2(30, 30)
 layout_mode = 2
-color = Color(0.8, 0.088000014, 0.088000014, 1)
+color = Color(0, 0, 0, 0)
+
+[node name="Check" type="Sprite2D" parent="VBoxContainer/HBoxContainer2/ColorRect4" unique_id=1550189795]
+position = Vector2(15, 14)
+scale = Vector2(0.5078125, 0.5078125)
+texture = ExtResource("4_18i12")
+hframes = 2
+vframes = 2
+frame = 1
 
 [node name="HBoxContainer3" type="HBoxContainer" parent="VBoxContainer" unique_id=50711564]
 layout_mode = 2
@@ -145,22 +211,54 @@ theme_override_constants/separation = 42
 [node name="ColorRect" type="ColorRect" parent="VBoxContainer/HBoxContainer3" unique_id=1325056625]
 custom_minimum_size = Vector2(30, 30)
 layout_mode = 2
-color = Color(0.8, 0.088000014, 0.088000014, 1)
+color = Color(0, 0, 0, 0)
+
+[node name="Check" type="Sprite2D" parent="VBoxContainer/HBoxContainer3/ColorRect" unique_id=64920102]
+position = Vector2(15, 14)
+scale = Vector2(0.5078125, 0.5078125)
+texture = ExtResource("4_18i12")
+hframes = 2
+vframes = 2
+frame = 3
 
 [node name="ColorRect2" type="ColorRect" parent="VBoxContainer/HBoxContainer3" unique_id=79545997]
 custom_minimum_size = Vector2(30, 30)
 layout_mode = 2
-color = Color(0.29, 0.29, 0.29, 1)
+color = Color(0.2901961, 0.2901961, 0.2901961, 0)
+
+[node name="Dash" type="Sprite2D" parent="VBoxContainer/HBoxContainer3/ColorRect2" unique_id=353480919]
+position = Vector2(15, 15)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_gebbs")
+hframes = 2
+vframes = 2
+frame = 3
 
 [node name="ColorRect3" type="ColorRect" parent="VBoxContainer/HBoxContainer3" unique_id=1025392253]
 custom_minimum_size = Vector2(30, 30)
 layout_mode = 2
-color = Color(0.49, 0.1617, 0.22188835, 1)
+color = Color(0, 0, 0, 0)
+
+[node name="Dash" type="Sprite2D" parent="VBoxContainer/HBoxContainer3/ColorRect3" unique_id=182073196]
+position = Vector2(15, 15)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("5_vepob")
+hframes = 2
+vframes = 2
+frame = 3
 
 [node name="ColorRect4" type="ColorRect" parent="VBoxContainer/HBoxContainer3" unique_id=1877095251]
 custom_minimum_size = Vector2(30, 30)
 layout_mode = 2
-color = Color(0.49, 0.1617, 0.22188835, 1)
+color = Color(0, 0, 0, 0)
+
+[node name="Dash" type="Sprite2D" parent="VBoxContainer/HBoxContainer3/ColorRect4" unique_id=442990498]
+position = Vector2(15, 15)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("5_vepob")
+hframes = 2
+vframes = 2
+frame = 1
 
 [node name="HBoxContainer4" type="HBoxContainer" parent="VBoxContainer" unique_id=1600945668]
 layout_mode = 2
@@ -169,22 +267,54 @@ theme_override_constants/separation = 42
 [node name="ColorRect" type="ColorRect" parent="VBoxContainer/HBoxContainer4" unique_id=1825310161]
 custom_minimum_size = Vector2(30, 30)
 layout_mode = 2
-color = Color(0.49, 0.1617, 0.22188835, 1)
+color = Color(0, 0, 0, 0)
+
+[node name="Dash" type="Sprite2D" parent="VBoxContainer/HBoxContainer4/ColorRect" unique_id=1071669218]
+position = Vector2(15, 15)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("5_vepob")
+hframes = 2
+vframes = 2
+frame = 3
 
 [node name="ColorRect2" type="ColorRect" parent="VBoxContainer/HBoxContainer4" unique_id=1210670496]
 custom_minimum_size = Vector2(30, 30)
 layout_mode = 2
-color = Color(0.49, 0.1617, 0.22188835, 1)
+color = Color(0, 0, 0, 0)
+
+[node name="Dash" type="Sprite2D" parent="VBoxContainer/HBoxContainer4/ColorRect2" unique_id=952866791]
+position = Vector2(15, 15)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("5_vepob")
+hframes = 2
+vframes = 2
+frame = 1
 
 [node name="ColorRect3" type="ColorRect" parent="VBoxContainer/HBoxContainer4" unique_id=1669949424]
 custom_minimum_size = Vector2(30, 30)
 layout_mode = 2
-color = Color(0.8, 0.088000014, 0.088000014, 1)
+color = Color(0, 0, 0, 0)
+
+[node name="Check" type="Sprite2D" parent="VBoxContainer/HBoxContainer4/ColorRect3" unique_id=323404030]
+position = Vector2(15, 14)
+scale = Vector2(0.5078125, 0.5078125)
+texture = ExtResource("4_18i12")
+hframes = 2
+vframes = 2
+frame = 2
 
 [node name="ColorRect4" type="ColorRect" parent="VBoxContainer/HBoxContainer4" unique_id=1914952651]
 custom_minimum_size = Vector2(30, 30)
 layout_mode = 2
-color = Color(0.29, 0.29, 0.29, 1)
+color = Color(0.2901961, 0.2901961, 0.2901961, 0)
+
+[node name="Dash" type="Sprite2D" parent="VBoxContainer/HBoxContainer4/ColorRect4" unique_id=1030256981]
+position = Vector2(15, 15)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_gebbs")
+hframes = 2
+vframes = 2
+frame = 2
 
 [node name="HBoxContainer5" type="HBoxContainer" parent="VBoxContainer" unique_id=143271881]
 layout_mode = 2
@@ -193,22 +323,53 @@ theme_override_constants/separation = 42
 [node name="ColorRect" type="ColorRect" parent="VBoxContainer/HBoxContainer5" unique_id=1218259413]
 custom_minimum_size = Vector2(30, 30)
 layout_mode = 2
-color = Color(0.49, 0.1617, 0.22188835, 1)
+color = Color(0, 0, 0, 0)
+
+[node name="Dash" type="Sprite2D" parent="VBoxContainer/HBoxContainer5/ColorRect" unique_id=1900963014]
+position = Vector2(15, 15)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("5_vepob")
+hframes = 2
+vframes = 2
+frame = 1
 
 [node name="ColorRect2" type="ColorRect" parent="VBoxContainer/HBoxContainer5" unique_id=1402252904]
 custom_minimum_size = Vector2(30, 30)
 layout_mode = 2
-color = Color(0.8, 0.088000014, 0.088000014, 1)
+color = Color(0, 0, 0, 0)
+
+[node name="Check" type="Sprite2D" parent="VBoxContainer/HBoxContainer5/ColorRect2" unique_id=447955236]
+position = Vector2(15, 14)
+scale = Vector2(0.5078125, 0.5078125)
+texture = ExtResource("4_18i12")
+hframes = 2
+vframes = 2
+frame = 2
 
 [node name="ColorRect3" type="ColorRect" parent="VBoxContainer/HBoxContainer5" unique_id=1656686574]
 custom_minimum_size = Vector2(30, 30)
 layout_mode = 2
-color = Color(0.49, 0.1617, 0.22188835, 1)
+color = Color(0, 0, 0, 0)
+
+[node name="Dash" type="Sprite2D" parent="VBoxContainer/HBoxContainer5/ColorRect3" unique_id=747190803]
+position = Vector2(15, 15)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("5_vepob")
+hframes = 2
+vframes = 2
 
 [node name="ColorRect4" type="ColorRect" parent="VBoxContainer/HBoxContainer5" unique_id=944387469]
 custom_minimum_size = Vector2(30, 30)
 layout_mode = 2
-color = Color(0.29, 0.29, 0.29, 1)
+color = Color(0.2901961, 0.2901961, 0.2901961, 0)
+
+[node name="Dash" type="Sprite2D" parent="VBoxContainer/HBoxContainer5/ColorRect4" unique_id=1044556967]
+position = Vector2(15, 15)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_gebbs")
+hframes = 2
+vframes = 2
+frame = 1
 
 [node name="HBoxContainer6" type="HBoxContainer" parent="VBoxContainer" unique_id=928415619]
 layout_mode = 2
@@ -217,22 +378,54 @@ theme_override_constants/separation = 42
 [node name="ColorRect" type="ColorRect" parent="VBoxContainer/HBoxContainer6" unique_id=2130723966]
 custom_minimum_size = Vector2(30, 30)
 layout_mode = 2
-color = Color(0.29, 0.29, 0.29, 1)
+color = Color(0.2901961, 0.2901961, 0.2901961, 0)
+
+[node name="Dash" type="Sprite2D" parent="VBoxContainer/HBoxContainer6/ColorRect" unique_id=865953026]
+position = Vector2(15, 15)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_gebbs")
+hframes = 2
+vframes = 2
+frame = 2
 
 [node name="ColorRect2" type="ColorRect" parent="VBoxContainer/HBoxContainer6" unique_id=1062021373]
 custom_minimum_size = Vector2(30, 30)
 layout_mode = 2
-color = Color(0.8, 0.088000014, 0.088000014, 1)
+color = Color(0, 0, 0, 0)
+
+[node name="Check" type="Sprite2D" parent="VBoxContainer/HBoxContainer6/ColorRect2" unique_id=975472850]
+position = Vector2(15, 14)
+scale = Vector2(0.5078125, 0.5078125)
+texture = ExtResource("4_18i12")
+hframes = 2
+vframes = 2
+frame = 1
 
 [node name="ColorRect3" type="ColorRect" parent="VBoxContainer/HBoxContainer6" unique_id=705012754]
 custom_minimum_size = Vector2(30, 30)
 layout_mode = 2
-color = Color(0.49, 0.1617, 0.22188835, 1)
+color = Color(0, 0, 0, 0)
+
+[node name="Dash" type="Sprite2D" parent="VBoxContainer/HBoxContainer6/ColorRect3" unique_id=2000005325]
+position = Vector2(15, 15)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("5_vepob")
+hframes = 2
+vframes = 2
+frame = 1
 
 [node name="ColorRect4" type="ColorRect" parent="VBoxContainer/HBoxContainer6" unique_id=1825618831]
 custom_minimum_size = Vector2(30, 30)
 layout_mode = 2
-color = Color(0.49, 0.1617, 0.22188835, 1)
+color = Color(0, 0, 0, 0)
+
+[node name="Dash" type="Sprite2D" parent="VBoxContainer/HBoxContainer6/ColorRect4" unique_id=492805024]
+position = Vector2(15, 15)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("5_vepob")
+hframes = 2
+vframes = 2
+frame = 1
 
 [node name="HBoxContainer7" type="HBoxContainer" parent="VBoxContainer" unique_id=1805870073]
 layout_mode = 2
@@ -241,22 +434,53 @@ theme_override_constants/separation = 42
 [node name="ColorRect" type="ColorRect" parent="VBoxContainer/HBoxContainer7" unique_id=1191917774]
 custom_minimum_size = Vector2(30, 30)
 layout_mode = 2
-color = Color(0.49, 0.1617, 0.22188835, 1)
+color = Color(0, 0, 0, 0)
+
+[node name="Dash" type="Sprite2D" parent="VBoxContainer/HBoxContainer7/ColorRect" unique_id=425243541]
+position = Vector2(15, 15)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("5_vepob")
+hframes = 2
+vframes = 2
+frame = 2
 
 [node name="ColorRect2" type="ColorRect" parent="VBoxContainer/HBoxContainer7" unique_id=1479762200]
 custom_minimum_size = Vector2(30, 30)
 layout_mode = 2
-color = Color(0.29, 0.29, 0.29, 1)
+color = Color(0.2901961, 0.2901961, 0.2901961, 0)
+
+[node name="Dash" type="Sprite2D" parent="VBoxContainer/HBoxContainer7/ColorRect2" unique_id=984542628]
+position = Vector2(15, 15)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_gebbs")
+hframes = 2
+vframes = 2
 
 [node name="ColorRect3" type="ColorRect" parent="VBoxContainer/HBoxContainer7" unique_id=1189802284]
 custom_minimum_size = Vector2(30, 30)
 layout_mode = 2
-color = Color(0.8, 0.088000014, 0.088000014, 1)
+color = Color(0, 0, 0, 0)
+
+[node name="Check" type="Sprite2D" parent="VBoxContainer/HBoxContainer7/ColorRect3" unique_id=1290937380]
+position = Vector2(15, 14)
+scale = Vector2(0.5078125, 0.5078125)
+texture = ExtResource("4_18i12")
+hframes = 2
+vframes = 2
+frame = 3
 
 [node name="ColorRect4" type="ColorRect" parent="VBoxContainer/HBoxContainer7" unique_id=46201716]
 custom_minimum_size = Vector2(30, 30)
 layout_mode = 2
-color = Color(0.49, 0.1617, 0.22188835, 1)
+color = Color(0, 0, 0, 0)
+
+[node name="Dash" type="Sprite2D" parent="VBoxContainer/HBoxContainer7/ColorRect4" unique_id=1640432110]
+position = Vector2(15, 15)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("5_vepob")
+hframes = 2
+vframes = 2
+frame = 1
 
 [node name="HBoxContainer8" type="HBoxContainer" parent="VBoxContainer" unique_id=2133012559]
 layout_mode = 2
@@ -265,19 +489,216 @@ theme_override_constants/separation = 42
 [node name="ColorRect" type="ColorRect" parent="VBoxContainer/HBoxContainer8" unique_id=2137777689]
 custom_minimum_size = Vector2(30, 30)
 layout_mode = 2
-color = Color(0.49, 0.1617, 0.22188835, 1)
+color = Color(0, 0, 0, 0)
+
+[node name="Dash" type="Sprite2D" parent="VBoxContainer/HBoxContainer8/ColorRect" unique_id=2010427270]
+position = Vector2(15, 15)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("5_vepob")
+hframes = 2
+vframes = 2
 
 [node name="ColorRect2" type="ColorRect" parent="VBoxContainer/HBoxContainer8" unique_id=704146950]
 custom_minimum_size = Vector2(30, 30)
 layout_mode = 2
-color = Color(0.49, 0.1617, 0.22188835, 1)
+color = Color(0, 0, 0, 0)
+
+[node name="Dash" type="Sprite2D" parent="VBoxContainer/HBoxContainer8/ColorRect2" unique_id=841676493]
+position = Vector2(15, 15)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("5_vepob")
+hframes = 2
+vframes = 2
+frame = 1
 
 [node name="ColorRect3" type="ColorRect" parent="VBoxContainer/HBoxContainer8" unique_id=1533871077]
 custom_minimum_size = Vector2(30, 30)
 layout_mode = 2
-color = Color(0.29, 0.29, 0.29, 1)
+color = Color(0.2901961, 0.2901961, 0.2901961, 0)
+
+[node name="Dash" type="Sprite2D" parent="VBoxContainer/HBoxContainer8/ColorRect3" unique_id=308586835]
+position = Vector2(15, 15)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_gebbs")
+hframes = 2
+vframes = 2
+frame = 3
 
 [node name="ColorRect4" type="ColorRect" parent="VBoxContainer/HBoxContainer8" unique_id=1124406173]
 custom_minimum_size = Vector2(30, 30)
 layout_mode = 2
-color = Color(0.8, 0.088000014, 0.088000014, 1)
+color = Color(0, 0, 0, 0)
+
+[node name="Check" type="Sprite2D" parent="VBoxContainer/HBoxContainer8/ColorRect4" unique_id=2009573861]
+position = Vector2(15, 14)
+scale = Vector2(0.5078125, 0.5078125)
+texture = ExtResource("4_18i12")
+hframes = 2
+vframes = 2
+
+[node name="Salt" type="Sprite2D" parent="." unique_id=1884583340]
+position = Vector2(292, 101)
+scale = Vector2(0.17000003, 0.17000003)
+texture = ExtResource("4_6b2lx")
+
+[node name="NinePatchRect3" type="NinePatchRect" parent="." unique_id=1677540323]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 183.0
+offset_top = 159.0
+offset_right = -34.97296
+offset_bottom = 602.2433
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.37, 0.37)
+texture = ExtResource("2_m11b2")
+region_rect = Rect2(-2, 2, 254, 237)
+patch_margin_left = 35
+patch_margin_top = 31
+patch_margin_right = 42
+patch_margin_bottom = 129
+axis_stretch_horizontal = 2
+axis_stretch_vertical = 2
+
+[node name="NinePatchRect4" type="NinePatchRect" parent="." unique_id=571142110]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 329.0
+offset_top = 159.0
+offset_right = 102.918945
+offset_bottom = 602.2433
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.37, 0.37)
+texture = ExtResource("2_m11b2")
+region_rect = Rect2(-2, 2, 254, 237)
+patch_margin_left = 35
+patch_margin_top = 31
+patch_margin_right = 42
+patch_margin_bottom = 129
+axis_stretch_horizontal = 2
+axis_stretch_vertical = 2
+
+[node name="NinePatchRect5" type="NinePatchRect" parent="." unique_id=1637849949]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 118.00003
+offset_top = 202.0
+offset_right = 462.1892
+offset_bottom = -238.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.37, 0.37)
+texture = ExtResource("2_m11b2")
+region_rect = Rect2(-2, 2, 254, 237)
+patch_margin_left = 35
+patch_margin_top = 31
+patch_margin_right = 42
+patch_margin_bottom = 129
+axis_stretch_horizontal = 2
+axis_stretch_vertical = 2
+
+[node name="NinePatchRect6" type="NinePatchRect" parent="." unique_id=1595113736]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 117.0
+offset_top = 294.0
+offset_right = 461.1892
+offset_bottom = -146.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.37, 0.37)
+texture = ExtResource("2_m11b2")
+region_rect = Rect2(-2, 2, 254, 237)
+patch_margin_left = 35
+patch_margin_top = 31
+patch_margin_right = 42
+patch_margin_bottom = 129
+axis_stretch_horizontal = 2
+axis_stretch_vertical = 2
+
+[node name="NinePatchRect7" type="NinePatchRect" parent="." unique_id=1975008255]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 119.0
+offset_top = 393.0
+offset_right = 463.1892
+offset_bottom = -47.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.37, 0.37)
+texture = ExtResource("2_m11b2")
+region_rect = Rect2(-2, 2, 254, 237)
+patch_margin_left = 35
+patch_margin_top = 31
+patch_margin_right = 42
+patch_margin_bottom = 129
+axis_stretch_horizontal = 2
+axis_stretch_vertical = 2
+
+[node name="NinePatchRect8" type="NinePatchRect" parent="." unique_id=1824360195]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 119.00001
+offset_top = 487.00003
+offset_right = 463.1892
+offset_bottom = 47.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.37, 0.37)
+texture = ExtResource("2_m11b2")
+region_rect = Rect2(-2, 2, 254, 237)
+patch_margin_left = 35
+patch_margin_top = 31
+patch_margin_right = 42
+patch_margin_bottom = 129
+axis_stretch_horizontal = 2
+axis_stretch_vertical = 2
+
+[node name="NinePatchRect9" type="NinePatchRect" parent="." unique_id=1990616530]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 119.00001
+offset_top = 159.0
+offset_right = 463.1892
+offset_bottom = 605.48645
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.37, 0.37)
+texture = ExtResource("2_m11b2")
+region_rect = Rect2(-2, 2, 254, 237)
+patch_margin_left = 35
+patch_margin_top = 31
+patch_margin_right = 42
+patch_margin_bottom = 129
+axis_stretch_horizontal = 2
+axis_stretch_vertical = 2
+
+[node name="Salt2" type="Sprite2D" parent="." unique_id=29503552]
+position = Vector2(222, 102)
+scale = Vector2(0.17000003, 0.17000003)
+texture = ExtResource("8_mctmo")
+
+[node name="Salt3" type="Sprite2D" parent="." unique_id=106979468]
+position = Vector2(371, 97.99999)
+scale = Vector2(0.14499998, 0.14499998)
+texture = ExtResource("9_gebbs")
+
+[node name="Salt4" type="Sprite2D" parent="." unique_id=1578629318]
+position = Vector2(151, 99)
+scale = Vector2(0.17000003, 0.17000003)
+texture = ExtResource("10_mctmo")

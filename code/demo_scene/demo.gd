@@ -107,6 +107,7 @@ func clear_curr_demon() -> void:
 	
 
 func show_dialog(text: String) -> void:
+	AudioManager.oneshot(ID.SFX.VOICE)
 	%DialogBox.visible = true
 	%BubbleText.text = text
 

@@ -1,0 +1,322 @@
+[gd_scene format=3 uid="uid://dt2vt4lnhrgr7"]
+
+[ext_resource type="Script" uid="uid://crott6oclptni" path="res://code/book_content/page_type_selector.gd" id="1_58hv5"]
+[ext_resource type="Texture2D" uid="uid://ba5726xsa4ogm" path="res://art/demo/paper.png" id="2_tovg8"]
+[ext_resource type="Texture2D" uid="uid://dg0jl46u7t3k5" path="res://art/krita/book_border.png" id="3_bin24"]
+[ext_resource type="Texture2D" uid="uid://ncfl4vlcjdnc" path="res://art/krita/arrow.png" id="4_vn6tn"]
+[ext_resource type="FontFile" uid="uid://cp0kxlhni6f60" path="res://art/fonts/LittleTroubleGirlBv-EVg.ttf" id="5_qe8ij"]
+[ext_resource type="FontFile" uid="uid://ygfruv4fno1r" path="res://art/fonts/PentagramsSalemica-B978.ttf" id="6_77adb"]
+
+[node name="NamePage" type="Control" unique_id=1775937355]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 1.0
+offset_right = 446.0
+offset_bottom = 600.0
+script = ExtResource("1_58hv5")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=938953683]
+layout_mode = 0
+offset_left = 6.0
+offset_top = 7.0
+offset_right = 896.0
+offset_bottom = 1207.0
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_tovg8")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="." unique_id=1687516742]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_bin24")
+region_rect = Rect2(-2, 2, 254, 237)
+patch_margin_left = 35
+patch_margin_top = 31
+patch_margin_right = 42
+patch_margin_bottom = 129
+axis_stretch_horizontal = 2
+axis_stretch_vertical = 2
+
+[node name="Arrow" type="Sprite2D" parent="." unique_id=1038585223]
+position = Vector2(79, 536)
+scale = Vector2(-0.414, 0.414)
+texture = ExtResource("4_vn6tn")
+
+[node name="InfButton" type="TextureButton" parent="." unique_id=1546444223]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 47.0
+offset_top = 52.0
+offset_right = -234.0
+offset_bottom = -476.0
+grow_horizontal = 2
+grow_vertical = 2
+offset_transform_enabled = true
+offset_transform_scale = Vector2(0.8, 0.8)
+toggle_mode = true
+
+[node name="Label" type="Label" parent="InfButton" unique_id=1276053103]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_constants/line_spacing = 23
+theme_override_fonts/font = ExtResource("5_qe8ij")
+theme_override_font_sizes/font_size = 35
+text = "INFERNAL"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CelButton" type="TextureButton" parent="." unique_id=307732483]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 43.0
+offset_top = 198.0
+offset_right = -238.0
+offset_bottom = -330.0
+grow_horizontal = 2
+grow_vertical = 2
+offset_transform_enabled = true
+offset_transform_scale = Vector2(0.8, 0.8)
+toggle_mode = true
+
+[node name="Label" type="Label" parent="CelButton" unique_id=2095875491]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_constants/line_spacing = 23
+theme_override_fonts/font = ExtResource("5_qe8ij")
+theme_override_font_sizes/font_size = 35
+text = "CELESTIAL"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CarButton" type="TextureButton" parent="." unique_id=1594589727]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 220.0
+offset_top = 59.0
+offset_right = -61.0
+offset_bottom = -469.0
+grow_horizontal = 2
+grow_vertical = 2
+offset_transform_enabled = true
+offset_transform_scale = Vector2(0.8, 0.8)
+toggle_mode = true
+
+[node name="Label" type="Label" parent="CarButton" unique_id=254624533]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_constants/line_spacing = 23
+theme_override_fonts/font = ExtResource("5_qe8ij")
+theme_override_font_sizes/font_size = 35
+text = "CARNAL"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SpeButton" type="TextureButton" parent="." unique_id=1528541032]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 226.0
+offset_top = 129.0
+offset_right = -55.0
+offset_bottom = -399.0
+grow_horizontal = 2
+grow_vertical = 2
+offset_transform_enabled = true
+offset_transform_scale = Vector2(0.8, 0.8)
+toggle_mode = true
+
+[node name="Label" type="Label" parent="SpeButton" unique_id=1127772610]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_constants/line_spacing = 23
+theme_override_fonts/font = ExtResource("5_qe8ij")
+theme_override_font_sizes/font_size = 35
+text = "SPECTRAL"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AbyButton" type="TextureButton" parent="." unique_id=1838848445]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 45.0
+offset_top = 128.0
+offset_right = -236.0
+offset_bottom = -400.0
+grow_horizontal = 2
+grow_vertical = 2
+offset_transform_enabled = true
+offset_transform_scale = Vector2(0.8, 0.8)
+toggle_mode = true
+
+[node name="Label" type="Label" parent="AbyButton" unique_id=1358607749]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_constants/line_spacing = 23
+theme_override_fonts/font = ExtResource("5_qe8ij")
+theme_override_font_sizes/font_size = 35
+text = "ABYSSAL"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="FaeButton" type="TextureButton" parent="." unique_id=613455809]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 46.0
+offset_top = 269.0
+offset_right = -235.0
+offset_bottom = -259.0
+grow_horizontal = 2
+grow_vertical = 2
+offset_transform_enabled = true
+offset_transform_scale = Vector2(0.8, 0.8)
+toggle_mode = true
+
+[node name="Label" type="Label" parent="FaeButton" unique_id=405154371]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_constants/line_spacing = 23
+theme_override_fonts/font = ExtResource("5_qe8ij")
+theme_override_font_sizes/font_size = 35
+text = "FAEIC"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LucButton" type="TextureButton" parent="." unique_id=1253211429]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 231.0
+offset_top = 270.0
+offset_right = -50.0
+offset_bottom = -258.0
+grow_horizontal = 2
+grow_vertical = 2
+offset_transform_enabled = true
+offset_transform_scale = Vector2(0.8, 0.8)
+toggle_mode = true
+
+[node name="Label" type="Label" parent="LucButton" unique_id=1843652204]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_constants/line_spacing = 23
+theme_override_fonts/font = ExtResource("5_qe8ij")
+theme_override_font_sizes/font_size = 35
+text = "LUCIFERIAN"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="FerButton" type="TextureButton" parent="." unique_id=1298970762]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 225.0
+offset_top = 197.0
+offset_right = -56.0
+offset_bottom = -331.0
+grow_horizontal = 2
+grow_vertical = 2
+offset_transform_enabled = true
+offset_transform_scale = Vector2(0.8, 0.8)
+toggle_mode = true
+
+[node name="Label" type="Label" parent="FerButton" unique_id=848656571]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_constants/line_spacing = 23
+theme_override_fonts/font = ExtResource("5_qe8ij")
+theme_override_font_sizes/font_size = 35
+text = "FERRIC"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="NinePatchRect2" type="NinePatchRect" parent="." unique_id=288864102]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 29.0
+offset_top = 352.0
+offset_right = -35.0
+offset_bottom = -88.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_bin24")
+region_rect = Rect2(-2, 2, 254, 237)
+patch_margin_left = 35
+patch_margin_top = 31
+patch_margin_right = 42
+patch_margin_bottom = 129
+axis_stretch_horizontal = 2
+axis_stretch_vertical = 2
+
+[node name="NameLabel" type="Label" parent="NinePatchRect2" unique_id=301331482]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+offset_transform_enabled = true
+theme_override_colors/font_color = Color(0.8209349, 3.2247603e-06, 9.62615e-08, 1)
+theme_override_fonts/font = ExtResource("6_77adb")
+theme_override_font_sizes/font_size = 47
+text = "tharexal"
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true

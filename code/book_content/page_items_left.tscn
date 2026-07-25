@@ -1,0 +1,185 @@
+[gd_scene format=3 uid="uid://b6vi4dhin2lw1"]
+
+[ext_resource type="Texture2D" uid="uid://ba5726xsa4ogm" path="res://art/demo/paper.png" id="1_2mrpo"]
+[ext_resource type="Texture2D" uid="uid://dg0jl46u7t3k5" path="res://art/krita/book_border.png" id="2_itj5h"]
+[ext_resource type="Texture2D" uid="uid://obcu3jsir058" path="res://art/krita/salt.png" id="3_enlpp"]
+[ext_resource type="FontFile" uid="uid://cp0kxlhni6f60" path="res://art/fonts/LittleTroubleGirlBv-EVg.ttf" id="4_et5aa"]
+[ext_resource type="Texture2D" uid="uid://bvty8ppmda4cu" path="res://art/krita/iron.png" id="5_et5aa"]
+
+[node name="LeftItemsPage" type="Control" unique_id=1729994615]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 445.0
+offset_bottom = 600.0
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1002869572]
+layout_mode = 0
+offset_right = 890.0
+offset_bottom = 1200.0
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_2mrpo")
+
+[node name="NinePatchRect4" type="NinePatchRect" parent="." unique_id=79823848]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 1.0
+offset_bottom = -288.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_itj5h")
+region_rect = Rect2(-2, 2, 254, 237)
+patch_margin_left = 35
+patch_margin_top = 31
+patch_margin_right = 42
+patch_margin_bottom = 129
+axis_stretch_horizontal = 2
+axis_stretch_vertical = 2
+
+[node name="NinePatchRect3" type="NinePatchRect" parent="." unique_id=1441289921]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1.0
+offset_top = 283.0
+offset_right = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_itj5h")
+region_rect = Rect2(-2, 2, 254, 237)
+patch_margin_left = 35
+patch_margin_top = 31
+patch_margin_right = 42
+patch_margin_bottom = 129
+axis_stretch_horizontal = 2
+axis_stretch_vertical = 2
+
+[node name="NinePatchRect2" type="NinePatchRect" parent="." unique_id=325578354]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_itj5h")
+region_rect = Rect2(-2, 2, 254, 237)
+patch_margin_left = 35
+patch_margin_top = 31
+patch_margin_right = 42
+patch_margin_bottom = 129
+axis_stretch_horizontal = 2
+axis_stretch_vertical = 2
+
+[node name="Salt" type="Sprite2D" parent="." unique_id=1683979955]
+position = Vector2(101.00001, 104)
+scale = Vector2(0.36499998, 0.36499998)
+texture = ExtResource("3_enlpp")
+
+[node name="Label2" type="Label" parent="." unique_id=457848072]
+layout_mode = 0
+offset_left = 6.0
+offset_top = 190.0
+offset_right = 242.0
+offset_bottom = 274.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 1
+theme_override_fonts/font = ExtResource("4_et5aa")
+theme_override_font_sizes/font_size = 22
+text = "RESISTANT DEMONS:
+INFERNAL 
+CELESTIAL"
+horizontal_alignment = 1
+
+[node name="Label" type="Label" parent="." unique_id=1184988878]
+custom_minimum_size = Vector2(250, 171)
+layout_mode = 0
+offset_left = 160.0
+offset_top = 37.0
+offset_right = 410.0
+offset_bottom = 179.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 1
+theme_override_fonts/font = ExtResource("4_et5aa")
+theme_override_font_sizes/font_size = 22
+text = "Salt
+BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH
+
+"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Label3" type="Label" parent="." unique_id=1514797748]
+layout_mode = 0
+offset_left = 201.0
+offset_top = 190.0
+offset_right = 437.0
+offset_bottom = 274.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 1
+theme_override_fonts/font = ExtResource("4_et5aa")
+theme_override_font_sizes/font_size = 22
+text = "SUSEPTABLE DEMONS:
+CARNAL
+ LUCIFERIAN"
+horizontal_alignment = 1
+
+[node name="Salt2" type="Sprite2D" parent="." unique_id=101509746]
+position = Vector2(354, 386.00003)
+scale = Vector2(0.36499998, 0.36499998)
+texture = ExtResource("5_et5aa")
+
+[node name="Label4" type="Label" parent="." unique_id=544808639]
+layout_mode = 0
+offset_left = 9.0
+offset_top = 477.25
+offset_right = 245.0
+offset_bottom = 561.25
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 1
+theme_override_fonts/font = ExtResource("4_et5aa")
+theme_override_font_sizes/font_size = 22
+text = "RESISTANT DEMONS:
+FERRIC
+LUCIFERIAN"
+horizontal_alignment = 1
+
+[node name="Label5" type="Label" parent="." unique_id=2017148548]
+custom_minimum_size = Vector2(171, 171)
+layout_mode = 0
+offset_left = 34.0
+offset_top = 319.0
+offset_right = 284.0
+offset_bottom = 490.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 1
+theme_override_fonts/font = ExtResource("4_et5aa")
+theme_override_font_sizes/font_size = 22
+text = "Iron
+BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH
+
+"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Label6" type="Label" parent="." unique_id=1356301303]
+layout_mode = 0
+offset_left = 204.0
+offset_top = 477.25
+offset_right = 440.0
+offset_bottom = 561.25
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 1
+theme_override_fonts/font = ExtResource("4_et5aa")
+theme_override_font_sizes/font_size = 22
+text = "SUSEPTABLE DEMONS:
+FAEIC
+ABYSSAL"
+horizontal_alignment = 1
