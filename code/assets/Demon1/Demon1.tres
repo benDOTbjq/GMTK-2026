@@ -6,7 +6,6 @@
 [resource]
 script = ExtResource("1_3757p")
 name = "Eye guy"
-type1 = 0
-type2 = 4
+type1 = 4
 shadow_anim = ExtResource("2_q0rgc")
 metadata/_custom_type_script = "uid://cjjomclguhq3d"

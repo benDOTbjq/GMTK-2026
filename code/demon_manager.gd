@@ -41,11 +41,15 @@ static func check_item_effectivness(item_type: ID.Item, demon_type_1: ID.DemonTy
 	assert(demon_type_2 != demon_type_1 and demon_type_2 != ID.DemonType.ENUM_COUNT)
 	assert(item_type != ID.Item.ENUM_COUNT)
 	
-	var curr_effectivness = EFFECTIVENESS_CHART[demon_type_1 * ID.Item.ENUM_COUNT + item_type]
-	if demon_type_2 != ID.DemonType.NONE and demon_type_2 != demon_type_1 and demon_type_2 != ID.DemonType.ENUM_COUNT:
-		curr_effectivness += EFFECTIVENESS_CHART[demon_type_2 * ID.Item.ENUM_COUNT + item_type]
+	var type1_effectivness = EFFECTIVENESS_CHART[demon_type_1 * ID.Item.ENUM_COUNT + item_type]
+	if demon_type_2 == ID.DemonType.NONE or demon_type_2 == demon_type_1 or demon_type_2 == ID.DemonType.ENUM_COUNT:
+		return type1_effectivness
 	
-	return curr_effectivness
+	var type2_effectivness = EFFECTIVENESS_CHART[demon_type_2 * ID.Item.ENUM_COUNT + item_type]
+	if type1_effectivness != 0 and type1_effectivness + type2_effectivness == 0:
+		return 3
+	
+	return type1_effectivness + type2_effectivness
 
 
 static func get_random_demon() -> Dictionary:

@@ -27,13 +27,10 @@ const PAGE_ORDER: Array[Array] = [
 	[ID.Page.CANDLE, ID.Page.NOISE_DEMON],
 ]
 
-
-
 var _book_index := 0
 var _pages: Dictionary[ID.Page, Node]
 var _is_closed := true
 var _is_mid_turn := false
-
 
 var _prev_left_texture: Texture
 var _prev_right_texture: Texture

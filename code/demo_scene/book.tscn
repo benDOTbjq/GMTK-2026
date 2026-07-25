@@ -52,13 +52,13 @@ script = ExtResource("1_lhl48")
 unique_name_in_owner = true
 transform = Transform3D(0.98827046, -0.1512665, -0.020977203, 0.09229596, 0.7010574, -0.70710677, 0.12166779, 0.69687665, 0.7067956, 0.015, 0.79, 0.679)
 
-[node name="BackCover" parent="book_without_bend" index="0" unique_id=1250319587]
+[node name="BackCover" parent="book_without_bend" index="0" unique_id=1856246999]
 material_override = ExtResource("2_lhl48")
 
-[node name="BackPages" parent="book_without_bend/BackCover" index="0" unique_id=680765196]
+[node name="BackPages" parent="book_without_bend/BackCover" index="0" unique_id=856396500]
 material_override = SubResource("StandardMaterial3D_6uyjs")
 
-[node name="RightPage" parent="book_without_bend/BackCover/BackPages" index="0" unique_id=1079685822]
+[node name="RightPage" parent="book_without_bend/BackCover/BackPages" index="0" unique_id=2136516766]
 material_override = SubResource("StandardMaterial3D_6uyjs")
 
 [node name="RightContentMesh" type="MeshInstance3D" parent="book_without_bend/BackCover/BackPages/RightPage" index="0" unique_id=1964212754]
@@ -73,17 +73,20 @@ mesh = SubResource("PlaneMesh_hf5ca")
 transform = Transform3D(1.0000001, 8.0768725e-15, 1.110223e-16, 4.3021142e-16, 1.0000007, -2.9802322e-08, -1.3877788e-15, 4.917383e-07, 1, 1.0472288, 0.031229142, -0.013089049)
 shape = SubResource("BoxShape3D_dd5g0")
 
-[node name="FrontCover" parent="book_without_bend" index="1" unique_id=1437763936]
+[node name="BookMark" parent="book_without_bend" index="1" unique_id=1382621809]
+visible = false
+
+[node name="FrontCover" parent="book_without_bend" index="2" unique_id=1161711389]
 transform = Transform3D(5.07996e-08, 0.19819538, -0.7396749, 6.466448e-08, 0.7396749, 0.19819538, 0.76576835, -7.560895e-08, 3.233222e-08, -0.0014808737, 0.022822363, -0.177374)
 material_override = ExtResource("2_lhl48")
 
-[node name="Binder" parent="book_without_bend/FrontCover" index="0" unique_id=2005945912]
+[node name="Binder" parent="book_without_bend/FrontCover" index="0" unique_id=326434133]
 material_override = ExtResource("2_lhl48")
 
-[node name="FrontPages" parent="book_without_bend/FrontCover" index="1" unique_id=986245109]
+[node name="FrontPages" parent="book_without_bend/FrontCover" index="1" unique_id=1215014643]
 material_override = SubResource("StandardMaterial3D_6uyjs")
 
-[node name="LeftPage" parent="book_without_bend/FrontCover/FrontPages" index="0" unique_id=285538585]
+[node name="LeftPage" parent="book_without_bend/FrontCover/FrontPages" index="0" unique_id=1250679183]
 visible = false
 material_override = SubResource("StandardMaterial3D_6uyjs")
 
@@ -103,9 +106,6 @@ shape = SubResource("BoxShape3D_dd5g0")
 transform = Transform3D(4.371139e-08, 0, 1, 0, 1, 0, 1, 0, -4.371139e-08, -0.019302383, -0.02442242, 0.23273702)
 material_override = SubResource("StandardMaterial3D_bxstq")
 mesh = SubResource("PlaneMesh_dd5g0")
-
-[node name="BookMark" parent="book_without_bend" index="2" unique_id=2071093577]
-visible = false
 
 [node name="PageHinge" type="Node3D" parent="book_without_bend" unique_id=1821950050]
 unique_name_in_owner = true

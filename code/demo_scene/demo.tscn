@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://lgxc7t0ec02q" path="res://code/demo_scene/demo.gd" id="1_evhee"]
 [ext_resource type="PackedScene" uid="uid://c2pqtofk3wvcv" path="res://code/demo_scene/gui.tscn" id="1_r7dlf"]
 [ext_resource type="Material" uid="uid://cn14b4opohaks" path="res://art/demo/wall_material_3d.tres" id="2_l8igb"]
-[ext_resource type="Script" uid="uid://qrf1rlx5jtf0" path="res://camera_manager.gd" id="3_66w8o"]
+[ext_resource type="Script" uid="uid://qrf1rlx5jtf0" path="res://code/camera_manager.gd" id="3_66w8o"]
 [ext_resource type="Material" uid="uid://cpuc3ai6intc4" path="res://art/demo/desk_material_3d.tres" id="5_66w8o"]
 [ext_resource type="PackedScene" uid="uid://dajacxx26fmq5" path="res://code/demo_scene/candle.tscn" id="5_vj5s7"]
 [ext_resource type="PackedScene" uid="uid://gux10n6r380o" path="res://art/demo/shelf.blend" id="6_evhee"]
@@ -13,14 +13,21 @@
 [ext_resource type="PackedScene" uid="uid://chjgxglbqk6av" path="res://code/demo_scene/book.tscn" id="10_j4l0e"]
 [ext_resource type="Texture2D" uid="uid://dqx7pdjk0ow3n" path="res://art/demo/demon2.png" id="10_l86f5"]
 [ext_resource type="PackedScene" uid="uid://b8o800umenslp" path="res://code/items/prayer.tscn" id="10_yow40"]
+[ext_resource type="PackedScene" uid="uid://cfgapcpo22lvr" path="res://code/assets/Demon2/demon_2.tscn" id="13_itnku"]
 [ext_resource type="Texture2D" uid="uid://box5yypbtqhvy" path="res://art/demo/pentagram.png" id="15_yow40"]
+[ext_resource type="PackedScene" uid="uid://ckvmbxhcp0htg" path="res://code/assets/Demon3/demon_3.tscn" id="16_0qsy3"]
 [ext_resource type="PackedScene" uid="uid://b7toxkh2meyy7" path="res://art/models/table_2.blend" id="16_62h6r"]
 [ext_resource type="Texture2D" uid="uid://d0qnre8ct0f4r" path="res://art/models/textures/table texture.png" id="16_yow40"]
+[ext_resource type="SpriteFrames" uid="uid://bihgnek2nrlgt" path="res://art/animated/SpeechBubble.tres" id="17_751wy"]
 [ext_resource type="PackedScene" uid="uid://b057xcw0k5vsu" path="res://code/assets/Demon1/demon_1.tscn" id="17_yow40"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_dd5g0"]
 flip_faces = true
 size = Vector3(3.41, 2.101255, 3.47)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3m7r3"]
+albedo_color = Color(0.68235296, 0.68235296, 0.68235296, 1)
+albedo_texture = ExtResource("16_yow40")
 
 [sub_resource type="Animation" id="Animation_l86f5"]
 length = 0.001
@@ -119,10 +126,6 @@ _data = {
 &"spawn_shadow": SubResource("Animation_7c3sw")
 }
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3m7r3"]
-albedo_color = Color(0.68235296, 0.68235296, 0.68235296, 1)
-albedo_texture = ExtResource("16_yow40")
-
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ba4mq"]
 albedo_color = Color(0, 0, 0, 1)
 
@@ -190,64 +193,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.48603225, 0.71016115, -0.4
 [node name="Prayer" parent="." unique_id=1745770253 instance=ExtResource("10_yow40")]
 transform = Transform3D(0.7294886, 0, -0.683993, 0, 1, 0, 0.683993, 0, 0.7294886, -0.351371, 0.6649166, -0.1681098)
 
-[node name="shelf" parent="." unique_id=283854252 instance=ExtResource("6_evhee")]
-transform = Transform3D(-0.03997668, 0, -0.0013657645, 0, 0.04, 0, 0.0013657645, 0, -0.03997668, -1.201, 0.083, 0.676)
-metadata/_edit_group_ = true
-
-[node name="Camera" parent="shelf" index="0" unique_id=24330502]
-visible = false
-
-[node name="Cube" parent="shelf" index="1" unique_id=1014540750]
-surface_material_override/0 = ExtResource("5_66w8o")
-
-[node name="Cube_001" parent="shelf" index="2" unique_id=1566596279]
-surface_material_override/0 = ExtResource("5_66w8o")
-
-[node name="Cube_002" parent="shelf" index="3" unique_id=462678666]
-transform = Transform3D(0.99999994, 0, -3.7252903e-09, 0, 0.9999999, 0, 3.7252903e-09, 0, 0.99999994, -2.6532593, 132.97162, 15.585922)
-surface_material_override/0 = ExtResource("5_66w8o")
-
-[node name="Cube_003" parent="shelf" index="4" unique_id=1794131730]
-surface_material_override/0 = ExtResource("5_66w8o")
-
-[node name="Cube_004" parent="shelf" index="5" unique_id=1334408828]
-surface_material_override/0 = ExtResource("5_66w8o")
-
-[node name="Cube_005" parent="shelf" index="6" unique_id=1710932948]
-surface_material_override/0 = ExtResource("5_66w8o")
-
-[node name="Cube_006" parent="shelf" index="7" unique_id=916998628]
-surface_material_override/0 = ExtResource("5_66w8o")
-
-[node name="Cylinder" parent="shelf" index="8" unique_id=1889606387]
-surface_material_override/0 = ExtResource("5_66w8o")
-
-[node name="Cylinder_001" parent="shelf" index="9" unique_id=1039939425]
-surface_material_override/0 = ExtResource("5_66w8o")
-
-[node name="Light" parent="shelf" index="10" unique_id=1612252235]
-visible = false
-
-[node name="Demon1" parent="." unique_id=382449128 instance=ExtResource("17_yow40")]
-transform = Transform3D(0.99999994, 0, -3.7252903e-09, 0, 1, 0, 3.7252903e-09, 0, 0.99999994, -1.2436424, 1.2512342, 0.33401012)
-
-[node name="DemonWallSprite" type="Sprite3D" parent="." unique_id=832143614]
-transform = Transform3D(0.515, 3.2740104e-08, 0, -3.2740104e-08, 0.515, 0, 0, 0, 0.515, -0.73712057, -0.71418333, -1.734)
-modulate = Color(0, 0, 0, 0)
-texture = ExtResource("10_l86f5")
-
-[node name="DemonTableSprite" type="Sprite3D" parent="." unique_id=182461250]
-transform = Transform3D(-0.235, 6.3277525e-08, -3.3661204e-15, 0, -1.831805e-08, -0.51, -3.5484014e-08, -0.41906813, 2.2292808e-08, 0.37744203, 0.653195, -0.19590388)
-centered = false
-modulate = Color(0, 0, 0, 1)
-region_enabled = true
-region_rect = Rect2(0, 350.1314, 293, 150.96783)
-
-[node name="Book" parent="." unique_id=699787762 instance=ExtResource("10_j4l0e")]
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1708346685]
-libraries/ = SubResource("AnimationLibrary_48qym")
-
 [node name="table_2" parent="." unique_id=2080304563 instance=ExtResource("16_62h6r")]
 transform = Transform3D(-0.07, 0, -5.6824803e-09, 0, 0.07, 0, 6.119594e-09, 0, -0.065, -0.7175339, -0.019176781, -0.3742509)
 
@@ -287,9 +232,64 @@ material_override = ExtResource("5_66w8o")
 [node name="Cube_012" parent="table_2" index="11" unique_id=969317016]
 material_override = ExtResource("5_66w8o")
 
-[node name="Floor" type="MeshInstance3D" parent="." unique_id=802155739]
-material_override = SubResource("StandardMaterial3D_ba4mq")
-mesh = SubResource("PlaneMesh_dd5g0")
+[node name="shelf" parent="." unique_id=283854252 instance=ExtResource("6_evhee")]
+transform = Transform3D(-0.03997668, 0, -0.0013657645, 0, 0.04, 0, 0.0013657645, 0, -0.03997668, -1.201, 0.083, 0.676)
+metadata/_edit_group_ = true
+
+[node name="Camera" parent="shelf" index="0" unique_id=24330502]
+visible = false
+
+[node name="Cube" parent="shelf" index="1" unique_id=1014540750]
+surface_material_override/0 = ExtResource("5_66w8o")
+
+[node name="Cube_001" parent="shelf" index="2" unique_id=1566596279]
+surface_material_override/0 = ExtResource("5_66w8o")
+
+[node name="Cube_002" parent="shelf" index="3" unique_id=462678666]
+transform = Transform3D(0.99999994, 0, -3.7252903e-09, 0, 0.9999999, 0, 3.7252903e-09, 0, 0.99999994, -2.6532593, 132.97162, 15.585922)
+surface_material_override/0 = ExtResource("5_66w8o")
+
+[node name="Cube_003" parent="shelf" index="4" unique_id=1794131730]
+surface_material_override/0 = ExtResource("5_66w8o")
+
+[node name="Cube_004" parent="shelf" index="5" unique_id=1334408828]
+surface_material_override/0 = ExtResource("5_66w8o")
+
+[node name="Cube_005" parent="shelf" index="6" unique_id=1710932948]
+surface_material_override/0 = ExtResource("5_66w8o")
+
+[node name="Cube_006" parent="shelf" index="7" unique_id=916998628]
+surface_material_override/0 = ExtResource("5_66w8o")
+
+[node name="Cylinder" parent="shelf" index="8" unique_id=1889606387]
+surface_material_override/0 = ExtResource("5_66w8o")
+
+[node name="Cylinder_001" parent="shelf" index="9" unique_id=1039939425]
+surface_material_override/0 = ExtResource("5_66w8o")
+
+[node name="Light" parent="shelf" index="10" unique_id=1612252235]
+visible = false
+
+[node name="Demon1" parent="." unique_id=2101668566 instance=ExtResource("17_yow40")]
+transform = Transform3D(0.99999994, 0, -3.7252903e-09, 0, 1, 0, 3.7252903e-09, 0, 0.99999994, -1.2436424, 1.2512342, 0.33401012)
+
+[node name="Demon2" parent="." unique_id=382449128 instance=ExtResource("13_itnku")]
+transform = Transform3D(0.99999994, 0, 3.5527137e-14, 0, 1, 0, 0, 0, 0.99999994, -1.2860665, 1.2444785, 0.6831267)
+
+[node name="Demon3" parent="." unique_id=1066151336 instance=ExtResource("16_0qsy3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.2223879, 1.2482697, 1.0636308)
+
+[node name="DemonWallSprite" type="Sprite3D" parent="." unique_id=832143614]
+transform = Transform3D(0.515, 3.2740104e-08, 0, -3.2740104e-08, 0.515, 0, 0, 0, 0.515, -0.73712057, -0.71418333, -1.734)
+modulate = Color(0, 0, 0, 0)
+texture = ExtResource("10_l86f5")
+
+[node name="DemonTableSprite" type="Sprite3D" parent="." unique_id=182461250]
+transform = Transform3D(-0.235, 6.3277525e-08, -3.3661204e-15, 0, -1.831805e-08, -0.51, -3.5484014e-08, -0.41906813, 2.2292808e-08, 0.37744203, 0.653195, -0.19590388)
+centered = false
+modulate = Color(0, 0, 0, 1)
+region_enabled = true
+region_rect = Rect2(0, 350.1314, 293, 150.96783)
 
 [node name="PentagramSprite3D" type="Sprite3D" parent="." unique_id=544607708]
 transform = Transform3D(0.05, 0, 0, 0, -2.1855695e-09, 0.05, 0, -0.05, -2.1855695e-09, 0.013845459, 0.65403533, -0.32554013)
@@ -299,9 +299,33 @@ shaded = true
 double_sided = false
 texture = ExtResource("15_yow40")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=760469804]
+[node name="DialogBox" type="AnimatedSprite3D" parent="." unique_id=2040687098]
+unique_name_in_owner = true
+transform = Transform3D(0.08, 0, 0, 0, 0.08, 0, 0, 0, 0.08, 0.823, 1.258, -0.8)
+visible = false
+billboard = 1
+sprite_frames = ExtResource("17_751wy")
+autoplay = "default"
+frame_progress = 0.2394351
+
+[node name="BubbleText" type="Label3D" parent="DialogBox" unique_id=1108420805]
+unique_name_in_owner = true
+transform = Transform3D(12.5, 0, 0, 0, 12.5, 0, 0, 0, 12.5, 0, 0, 0)
+pixel_size = 0.0015
+billboard = 1
+text = "This is a test text
+"
+autowrap_mode = 1
+
+[node name="Book" parent="." unique_id=699787762 instance=ExtResource("10_j4l0e")]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1708346685]
+libraries/ = SubResource("AnimationLibrary_48qym")
+
+[node name="Floor" type="MeshInstance3D" parent="." unique_id=802155739]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.61672604, 0)
 material_override = SubResource("StandardMaterial3D_ba4mq")
 mesh = SubResource("PlaneMesh_dd5g0")
 
-[editable path="shelf"]
 [editable path="table_2"]
+[editable path="shelf"]

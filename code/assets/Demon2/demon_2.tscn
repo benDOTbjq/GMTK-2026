@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://cfgapcpo22lvr"]
+
+[ext_resource type="Script" uid="uid://daso0pu1o4uts" path="res://code/assets/artifact.gd" id="1_nbwyu"]
+[ext_resource type="Resource" uid="uid://buup5x4bgcx04" path="res://code/assets/Demon2/Demon2.tres" id="2_nsjmk"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_f1574"]
+radius = 0.05
+height = 0.2
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_f1574"]
+radius = 0.05
+height = 0.2
+
+[node name="Demon2" type="Node3D" unique_id=382449128]
+script = ExtResource("1_nbwyu")
+demon_info = ExtResource("2_nsjmk")
+
+[node name="Area3D" type="Area3D" parent="." unique_id=291581058]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1028492, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=1207200027]
+shape = SubResource("CapsuleShape3D_f1574")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1991364005]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1028492, 0)
+mesh = SubResource("CapsuleMesh_f1574")

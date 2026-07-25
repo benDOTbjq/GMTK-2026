@@ -1,0 +1,26 @@
+[gd_resource type="SpriteFrames" format=3 uid="uid://bihgnek2nrlgt"]
+
+[ext_resource type="Texture2D" uid="uid://ky0pa8cc3xs1" path="res://art/animated/SpeechBubble1.png" id="1_fowan"]
+[ext_resource type="Texture2D" uid="uid://bl72utpdn663f" path="res://art/animated/SpeechBubble2.png" id="2_lgwi4"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bhott"]
+atlas = ExtResource("1_fowan")
+region = Rect2(0, 0, 1280, 720)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xsksm"]
+atlas = ExtResource("2_lgwi4")
+region = Rect2(0, 0, 1280, 720)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bhott")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xsksm")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
