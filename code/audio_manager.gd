@@ -3,6 +3,8 @@ extends Node
 
 const IS_PRINT_DEBUG := false
 const INCLUSION_FREQUENCY_RANGE := Vector2(10, 300) # seconds
+const MAX_VOL_MUSIC := 0.5
+const MAX_VOL_AMB := 0.5
 
 const AMB_MAIN_01: AudioStream = preload("uid://csdd2e7l3pyhe")
 const AMB_BICYCLE_CREAK: AudioStream = preload("uid://cbxyntt4q036w")
@@ -47,12 +49,14 @@ const SFX_LU: Dictionary[ID.SFX, Array] = {
 }
 
 const MUSIC_MAIN: AudioStream = preload("uid://021ktgycle2k")
+const MUSIC_TITLE: AudioStream = preload("uid://c6mop3b2wchgt")
 
 const AMBIENCE_LOOP_LU: Dictionary[ID.Ambience, AudioStream] = {
-	ID.Ambience.DEFAULT: AMB_MAIN_01
+	ID.Ambience.DEFAULT: AMB_MAIN_01,
 }
-const MUSIC_LOOP_LU: Dictionary[ID.Ambience, AudioStream] = {
-	ID.Ambience.DEFAULT: MUSIC_MAIN
+const MUSIC_LOOP_LU: Dictionary[ID.Music, AudioStream] = {
+	ID.Music.DEFAULT: MUSIC_MAIN,
+	ID.Music.TITLE: MUSIC_TITLE,
 }
 
 
@@ -60,6 +64,7 @@ var _ambience_loop_player: AudioStreamPlayer
 var _music_loop_player: AudioStreamPlayer
 var _ambience_inclusion_timer: Timer
 var _current_ambience_id := ID.Ambience.NULL
+var _current_music_id := ID.Music.NULL
 
 
 
@@ -69,26 +74,62 @@ func oneshot(id: ID.SFX) -> void:
 	_play_oneshot(SFX_LU[id], &"UI")
 
 
-func set_ambience(id: ID.Ambience) -> void:
+func set_ambience(id: ID.Ambience, trans_time := 2.0) -> void:
+	if id == _current_ambience_id:
+		return
+	
+	var new_ambience_loop_player: AudioStreamPlayer
+	if id != ID.Ambience.NULL:
+		new_ambience_loop_player = AudioStreamPlayer.new()
+		new_ambience_loop_player.bus = &"Ambience"
+		new_ambience_loop_player.stream = AMBIENCE_LOOP_LU[id]
+		new_ambience_loop_player.autoplay = true
+		new_ambience_loop_player.volume_linear = 0
+		add_child(new_ambience_loop_player)
+	
+	var t := create_tween()
+	t.set_parallel()
+	if _ambience_loop_player != null:
+		t.tween_property(_ambience_loop_player, "volume_linear", 0.0, trans_time)
+	if id != ID.Ambience.NULL:
+		t.tween_property(new_ambience_loop_player, "volume_linear", MAX_VOL_AMB, trans_time)
+	await t.finished
+	
+	if _ambience_loop_player != null:
+		_ambience_loop_player.queue_free()
+	_ambience_loop_player = new_ambience_loop_player if id != ID.Ambience.NULL else null
 	_current_ambience_id = id
-	_ambience_loop_player.stream = AMBIENCE_LOOP_LU[id]
-	_music_loop_player.volume_linear = 0.5
-	_ambience_loop_player.play()
-	_music_loop_player.stream = MUSIC_LOOP_LU[id]
-	_music_loop_player.volume_linear = 0.25
-	_music_loop_player.play()
 	_ambience_inclusion_timer.start(randf_range(INCLUSION_FREQUENCY_RANGE.x, INCLUSION_FREQUENCY_RANGE.y))
 
 
+func set_music(id: ID.Music, trans_time := 2.0) -> void:
+	if id == _current_music_id:
+		return
+	
+	var new_music_loop_player: AudioStreamPlayer
+	if id != ID.Music.NULL:
+		new_music_loop_player = AudioStreamPlayer.new()
+		new_music_loop_player.bus = &"Music"
+		new_music_loop_player.stream = MUSIC_LOOP_LU[id]
+		new_music_loop_player.autoplay = true
+		new_music_loop_player.volume_linear = 0
+		add_child(new_music_loop_player)
+	
+	var t := create_tween()
+	t.set_parallel()
+	if _music_loop_player != null:
+		t.tween_property(_music_loop_player, "volume_linear", 0.0, trans_time)
+	if id != ID.Music.NULL:
+		t.tween_property(new_music_loop_player, "volume_linear", MAX_VOL_MUSIC, trans_time)
+	await t.finished
+	
+	if _music_loop_player != null:
+		_music_loop_player.queue_free()
+	_music_loop_player = new_music_loop_player if id != ID.Music.NULL else null
+	_current_music_id = id
+
+
 func _ready() -> void:
-	_music_loop_player = AudioStreamPlayer.new()
-	_music_loop_player.bus = &"Muisc"
-	add_child(_music_loop_player)
-	
-	_ambience_loop_player = AudioStreamPlayer.new()
-	_ambience_loop_player.bus = &"Ambience"
-	add_child(_ambience_loop_player)
-	
 	_ambience_inclusion_timer = Timer.new()
 	add_child(_ambience_inclusion_timer)
 	_ambience_inclusion_timer.timeout.connect(func() -> void:

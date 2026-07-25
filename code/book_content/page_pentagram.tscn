@@ -1,7 +1,9 @@
 [gd_scene format=3 uid="uid://c3wknpva8pa1s"]
 
-[ext_resource type="Texture2D" uid="uid://cuvhx0lhhb7su" path="res://art/demo/demo_table_ortho.png" id="1_vo0jo"]
+[ext_resource type="Texture2D" uid="uid://ba5726xsa4ogm" path="res://art/demo/paper.png" id="1_267v8"]
 [ext_resource type="Texture2D" uid="uid://box5yypbtqhvy" path="res://art/demo/pentagram.png" id="2_7qh8y"]
+[ext_resource type="Texture2D" uid="uid://dg0jl46u7t3k5" path="res://art/krita/book_border.png" id="2_yq7sq"]
+[ext_resource type="Texture2D" uid="uid://ncfl4vlcjdnc" path="res://art/krita/arrow.png" id="4_yq7sq"]
 
 [sub_resource type="SphereMesh" id="SphereMesh_dd5g0"]
 
@@ -18,15 +20,28 @@ anchors_preset = 0
 offset_right = 445.0
 offset_bottom = 600.0
 
-[node name="NinePatchRect" type="NinePatchRect" parent="." unique_id=1251917766]
+[node name="TextureRect" type="TextureRect" parent="." unique_id=672408210]
+layout_mode = 0
+offset_right = 890.0
+offset_bottom = 1200.0
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_267v8")
+
+[node name="NinePatchRect2" type="NinePatchRect" parent="." unique_id=216974713]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("1_vo0jo")
-region_rect = Rect2(254.57397, 127.11743, 634.01746, 459.0022)
+texture = ExtResource("2_yq7sq")
+region_rect = Rect2(-2, 2, 254, 237)
+patch_margin_left = 35
+patch_margin_top = 31
+patch_margin_right = 42
+patch_margin_bottom = 129
+axis_stretch_horizontal = 2
+axis_stretch_vertical = 2
 
 [node name="DemoCandle1" type="Sprite2D" parent="." unique_id=423587913]
 position = Vector2(217, 228.49998)
@@ -38,3 +53,8 @@ position = Vector2(94, 162)
 scale = Vector2(24.527212, 26.500002)
 mesh = SubResource("SphereMesh_dd5g0")
 texture = SubResource("GradientTexture1D_ba4mq")
+
+[node name="Arrow" type="Sprite2D" parent="." unique_id=308447771]
+position = Vector2(378, 530)
+scale = Vector2(0.4140625, 0.4140625)
+texture = ExtResource("4_yq7sq")

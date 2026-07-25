@@ -24,7 +24,8 @@ enum Item {
 enum CameraMode {
 	TABLE,
 	SHELF,
-	BOOK
+	BOOK,
+	TITLE,
 }
 
 enum Page {
@@ -49,6 +50,12 @@ enum SFX {
 enum Ambience {
 	NULL,
 	DEFAULT,
+}
+
+enum Music {
+	NULL,
+	DEFAULT,
+	TITLE,
 }
 
 

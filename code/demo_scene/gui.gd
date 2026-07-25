@@ -6,8 +6,8 @@ var _current_demon: Dictionary
 @onready var menu_button: Button = %MenuButton
 @onready var table_button: Button = %TableButton
 @onready var book_button: Button = %BookButton
-@onready var book_prev_button: Button = %BookPrevButton
-@onready var book_next_button: Button = %BookNextButton
+@onready var book_prev_button: TextureButton = %BookPrevButton
+@onready var book_next_button: TextureButton = %BookNextButton
 
 @onready var water_button: Button = %WaterButton
 @onready var salt_button: Button = %SaltButton
@@ -23,10 +23,6 @@ func _ready() -> void:
 	reset_button.pressed.connect(_reset_demon)
 	check_button.pressed.connect(_test_demon)
 	
-	water_button.pressed.connect(_test_item.bind(ID.Item.HOLY_WATER))
-	salt_button.pressed.connect(_test_item.bind(ID.Item.SALT))
-	iron_button.pressed.connect(_test_item.bind(ID.Item.IRON))
-	prayer_button.pressed.connect(_test_item.bind(ID.Item.PRAYER))
 
 
 func _reset_demon() -> void:

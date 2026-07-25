@@ -28,10 +28,13 @@ func _ready() -> void:
 	gui.book_button.pressed.connect(book.open)
 	gui.menu_button.pressed.connect(book.close)
 	gui.table_button.pressed.connect(book.close)
+	gui.table_button.pressed.connect(AudioManager.set_ambience.bind(ID.Ambience.DEFAULT))
+	gui.table_button.pressed.connect(AudioManager.set_music.bind(ID.Music.NULL))
 	
 	book.set_content(ID.Page.TYPE_CHART, ID.Page.DEMON)
 	book.close()
-	AudioManager.set_ambience(ID.Ambience.DEFAULT)
+	AudioManager.set_music(ID.Music.TITLE)
+
 
 func _process(delta: float) -> void:
 	if %DialogBox.visible:
@@ -53,6 +56,7 @@ func _process(delta: float) -> void:
 			wall_sprite.texture = curr_demon_info.shadow_anim.get_frame_texture("default", shadow_frame_id)
 			table_sprite.texture = curr_demon_info.shadow_anim.get_frame_texture("default", shadow_frame_id)
 
+
 func setup_demon(artifact: Artifact) -> void:
 	curr_demon_info = artifact.demon_info
 	curr_actions = curr_demon_info.actions
@@ -63,6 +67,8 @@ func setup_demon(artifact: Artifact) -> void:
 	wall_sprite.texture = frame
 	table_sprite.texture = frame
 	animation_player.play("spawn_shadow")
+	AudioManager.set_music(ID.Music.DEFAULT)
+
 
 func use_item(item: ID.Item) -> void:
 	if items_used.has(item):
@@ -87,11 +93,13 @@ func use_item(item: ID.Item) -> void:
 	if curr_actions <= 0:
 		show_dialog("you lost")
 
+
 func guess_demon(type1: ID.DemonType, type2: ID.DemonType) -> void:
 	if type1 == curr_demon_info.type1 and type2 == curr_demon_info.type2:
 		animation_player.play_backwards("spawn_shadow")
 	else:
 		curr_actions -= 2
+
 
 func clear_curr_demon() -> void:
 	if curr_demon_info == null:

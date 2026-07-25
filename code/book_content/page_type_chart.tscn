@@ -1,6 +1,8 @@
 [gd_scene format=3 uid="uid://da2kt5b4ih837"]
 
-[ext_resource type="Texture2D" uid="uid://cuvhx0lhhb7su" path="res://art/demo/demo_table_ortho.png" id="2_m11b2"]
+[ext_resource type="Texture2D" uid="uid://ba5726xsa4ogm" path="res://art/demo/paper.png" id="1_jh1fo"]
+[ext_resource type="Texture2D" uid="uid://dg0jl46u7t3k5" path="res://art/krita/book_border.png" id="2_m11b2"]
+[ext_resource type="FontFile" uid="uid://cp0kxlhni6f60" path="res://art/fonts/LittleTroubleGirlBv-EVg.ttf" id="3_m11b2"]
 
 [sub_resource type="GDScript" id="GDScript_3qlbe"]
 
@@ -11,8 +13,14 @@ offset_right = 445.0
 offset_bottom = 600.0
 script = SubResource("GDScript_3qlbe")
 
-[node name="NinePatchRect" type="NinePatchRect" parent="." unique_id=998436768]
-modulate = Color(0.22788814, 0.36029342, 0.7671009, 1)
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1383326906]
+layout_mode = 0
+offset_right = 890.0
+offset_bottom = 1200.0
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_jh1fo")
+
+[node name="NinePatchRect2" type="NinePatchRect" parent="." unique_id=1222813057]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -20,39 +28,58 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("2_m11b2")
-region_rect = Rect2(254.57397, 127.11743, 634.01746, 459.0022)
+region_rect = Rect2(-2, 2, 254, 237)
+patch_margin_left = 35
+patch_margin_top = 31
+patch_margin_right = 42
+patch_margin_bottom = 129
+axis_stretch_horizontal = 2
+axis_stretch_vertical = 2
 
 [node name="Label3" type="Label" parent="." unique_id=55427950]
 layout_mode = 0
-offset_left = 16.0
-offset_top = 143.0
-offset_right = 102.0
-offset_bottom = 501.0
+offset_left = 26.0
+offset_top = 142.0
+offset_right = 112.0
+offset_bottom = 500.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_constants/line_spacing = 23
-text = "Infernal
-Spectral
-Ferric
-Carnal
-Faeic
-Abyssal
-Luciferian
-Celestial"
+theme_override_fonts/font = ExtResource("3_m11b2")
+theme_override_font_sizes/font_size = 19
+text = "INFERNAL
+SPECTRRAL
+FERRIC
+CARNAL
+FAEIC
+ABYSSAL
+LUCIFERIAN
+CELESTIAL"
 horizontal_alignment = 2
 
 [node name="Label" type="Label" parent="." unique_id=216784744]
 layout_mode = 0
-offset_left = 75.0
-offset_top = 40.0
-offset_right = 379.0
-offset_bottom = 63.0
-text = "Demonic ilks, And how to suppress them"
+offset_left = 45.0
+offset_top = 33.0
+offset_right = 409.0
+offset_bottom = 88.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 1
+theme_override_fonts/font = ExtResource("3_m11b2")
+theme_override_font_sizes/font_size = 22
+text = "DEMONIC ILKS, AND HOW TO
+ SUPPRESS THEM"
+horizontal_alignment = 1
 
 [node name="Label2" type="Label" parent="." unique_id=1996572721]
 layout_mode = 0
-offset_left = 124.0
-offset_top = 92.0
-offset_right = 428.0
-offset_bottom = 115.0
+offset_left = 106.0
+offset_top = 100.0
+offset_right = 410.0
+offset_bottom = 126.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_m11b2")
+theme_override_font_sizes/font_size = 22
 text = "WATER     IRON      SALT      PRAYER"
 
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1065937412]
