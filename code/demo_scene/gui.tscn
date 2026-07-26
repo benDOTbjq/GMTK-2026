@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://c2pqtofk3wvcv"]
 
 [ext_resource type="Script" uid="uid://cvjuur7or20y0" path="res://code/demo_scene/gui.gd" id="1_vu16a"]
+[ext_resource type="FontFile" uid="uid://ygfruv4fno1r" path="res://art/fonts/PentagramsSalemica-B978.ttf" id="2_h0h8g"]
 
 [node name="GUI" type="Control" unique_id=945604540]
 layout_mode = 3
@@ -51,10 +52,10 @@ text = "Check"
 [node name="MenuButton" type="TextureButton" parent="." unique_id=1595045551]
 unique_name_in_owner = true
 layout_mode = 0
-offset_left = 11.0
-offset_top = 11.0
+offset_left = -1.0
+offset_top = 1.0
 offset_right = 174.0
-offset_bottom = 708.0
+offset_bottom = 718.0
 mouse_default_cursor_shape = 2
 
 [node name="BookOpenButton" type="TextureButton" parent="." unique_id=1883474421]
@@ -63,7 +64,7 @@ layout_mode = 0
 offset_left = 216.0
 offset_top = 480.0
 offset_right = 1026.0
-offset_bottom = 714.0
+offset_bottom = 721.0
 mouse_default_cursor_shape = 16
 
 [node name="BookCloseButton" type="TextureButton" parent="." unique_id=1315195315]
@@ -125,3 +126,39 @@ offset_top = 568.51
 offset_right = 1067.4854
 offset_bottom = 668.51013
 mouse_default_cursor_shape = 2
+
+[node name="EndScreen" type="ColorRect" parent="." unique_id=970300712]
+unique_name_in_owner = true
+visible = false
+layout_mode = 0
+offset_right = 1277.0
+offset_bottom = 722.0
+color = Color(0, 0, 0, 1)
+
+[node name="EndMessage" type="Label" parent="EndScreen" unique_id=523816710]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+offset_left = 535.0
+offset_top = 193.0
+offset_right = 766.0
+offset_bottom = 315.0
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_h0h8g")
+theme_override_font_sizes/font_size = 50
+text = "YOU WIN"
+
+[node name="Reload" type="Button" parent="EndScreen" unique_id=2012652071]
+unique_name_in_owner = true
+visible = false
+layout_mode = 0
+offset_left = 587.0
+offset_top = 480.0
+offset_right = 697.0
+offset_bottom = 538.0
+mouse_default_cursor_shape = 2
+theme_override_colors/font_color = Color(0.8784314, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_h0h8g")
+theme_override_font_sizes/font_size = 20
+text = "TRY AGAIN"
+flat = true

@@ -174,7 +174,7 @@ func use_item(item: ID.Item) -> void:
 	items_used.append(item)
 	
 	if curr_actions <= 0:
-		show_dialog("you lost")
+		gui._show_end_screen(false)
 	
 	update_candles()
 
@@ -193,7 +193,7 @@ func guess_demon(combined_type_id: int) -> void:
 		update_candles()
 		
 		if curr_actions <= 0:
-			show_dialog("you lost", false)
+			gui._show_end_screen(false)
 		else:
 			show_dialog("...That wasn't the\nright name.", false)
 
