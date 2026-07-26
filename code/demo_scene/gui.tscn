@@ -55,6 +55,7 @@ offset_left = 11.0
 offset_top = 11.0
 offset_right = 212.0
 offset_bottom = 708.0
+mouse_default_cursor_shape = 2
 
 [node name="BookOpenButton" type="TextureButton" parent="." unique_id=1883474421]
 unique_name_in_owner = true
@@ -63,6 +64,7 @@ offset_left = 216.0
 offset_top = 480.0
 offset_right = 1026.0
 offset_bottom = 714.0
+mouse_default_cursor_shape = 16
 
 [node name="BookCloseButton" type="TextureButton" parent="." unique_id=1315195315]
 unique_name_in_owner = true
@@ -71,19 +73,22 @@ offset_left = 4.0
 offset_top = 2.0
 offset_right = 1274.0
 offset_bottom = 183.0
+mouse_default_cursor_shape = 2
 
 [node name="TableButton" type="TextureButton" parent="." unique_id=1825790555]
 unique_name_in_owner = true
 layout_mode = 0
-offset_left = 1026.0
+offset_left = 1088.0
 offset_top = 9.0
 offset_right = 1270.0
 offset_bottom = 714.0
+mouse_default_cursor_shape = 2
 
 [node name="TitleButton" type="TextureButton" parent="." unique_id=1524777345]
 layout_mode = 0
 offset_right = 1277.0
 offset_bottom = 722.0
+mouse_default_cursor_shape = 2
 
 [node name="SaltButton" type="TextureButton" parent="." unique_id=948180172]
 unique_name_in_owner = true
@@ -92,6 +97,7 @@ offset_left = 210.0
 offset_top = 561.0
 offset_right = 310.0
 offset_bottom = 686.0
+mouse_default_cursor_shape = 2
 
 [node name="PrayerButton" type="TextureButton" parent="." unique_id=558208180]
 unique_name_in_owner = true
@@ -100,6 +106,7 @@ offset_left = 368.215
 offset_top = 558.915
 offset_right = 468.215
 offset_bottom = 658.915
+mouse_default_cursor_shape = 2
 
 [node name="IronButton" type="TextureButton" parent="." unique_id=440348595]
 unique_name_in_owner = true
@@ -108,6 +115,7 @@ offset_left = 794.125
 offset_top = 551.49
 offset_right = 894.125
 offset_bottom = 651.49
+mouse_default_cursor_shape = 2
 
 [node name="WaterButton" type="TextureButton" parent="." unique_id=637778396]
 unique_name_in_owner = true
@@ -116,3 +124,4 @@ offset_left = 967.485
 offset_top = 568.51
 offset_right = 1067.4854
 offset_bottom = 668.51013
+mouse_default_cursor_shape = 2

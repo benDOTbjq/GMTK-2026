@@ -70,7 +70,7 @@ const DEMON_NAMES_LU: Dictionary[int, String] = {
 @onready var name_label: Label = $NinePatchRect2/NameLabel
 @onready var name_button: TextureButton = $NinePatchRect2/NameButton
 
-@onready var _start_positions: Dictionary[TextureButton, Vector2] = {
+@onready var _start_positions: Dictionary[BaseButton, Vector2] = {
 	inf_button: inf_button.position,
 	cel_button: cel_button.position,
 	car_button: car_button.position,
@@ -80,7 +80,7 @@ const DEMON_NAMES_LU: Dictionary[int, String] = {
 	luc_button: luc_button.position,
 	fer_button: fer_button.position,
 }
-@onready var _button_types: Dictionary[TextureButton, Demon] = {
+@onready var _button_types: Dictionary[BaseButton, Demon] = {
 	inf_button: Demon.INFERNAL,
 	cel_button: Demon.CELESTIAL,
 	car_button: Demon.CARNAL,
@@ -91,7 +91,7 @@ const DEMON_NAMES_LU: Dictionary[int, String] = {
 	fer_button: Demon.FERRIC,
 }
 
-@onready var _selected_buttons: Dictionary[TextureButton, int] = {}
+var _selected_buttons: Array[BaseButton] = []
 
 @onready var noise = FastNoiseLite.new()
 @export var noise_speed := 0.1
@@ -101,10 +101,9 @@ var _noise_y := 0.0
 var _last_combined_type_id := 0
 
 func update_name() -> void:
-	
 	_last_combined_type_id = 0
-	for demon in _selected_buttons.values():
-		_last_combined_type_id |= demon
+	for button in _selected_buttons:
+		_last_combined_type_id |= _button_types[button]
 	var next_name = DEMON_NAMES_LU.get(_last_combined_type_id, "")
 	var t1 := create_tween()
 	t1.set_ease(Tween.EASE_IN).set_trans(Tween.TRANS_QUAD).set_parallel()
@@ -123,20 +122,17 @@ func update_name() -> void:
 func _ready() -> void:
 	update_name()
 	for button: TextureButton in _start_positions.keys():
-		button.mouse_entered.connect(func() -> void:
-			if _selected_buttons.size() > 1:
-				return
-			var t := create_tween()
-			t.set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_QUAD)
-			t.tween_property(button, "offset_transform_scale", Vector2.ONE, 0.1)
-			AudioManager.oneshot(ID.SFX.NAME_HOVER)
-		)
+		button.mouse_entered.connect(_button_hover.bind(button, true))
+		button.mouse_exited.connect(_button_hover.bind(button, false))
 		button.pressed.connect(func() -> void:
 			if button.button_pressed:
-				if _selected_buttons.size() > 1:
-					button.button_pressed = false
-					return
-				_selected_buttons[button] = _button_types[button]
+				_selected_buttons.push_back(button)
+				if _selected_buttons.size() > 2:
+					var old_button: BaseButton = _selected_buttons.pop_front()
+					old_button.button_pressed = false
+					_button_hover(old_button, false)
+					_button_colour(old_button)
+				
 				AudioManager.oneshot(ID.SFX.NAME_SELECT)
 			else:
 				_selected_buttons.erase(button)
@@ -145,13 +141,22 @@ func _ready() -> void:
 			t.set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_QUAD)
 			t.tween_property(button.get_node(^"Label"), "theme_override_colors/font_color", (Color.CRIMSON if button.button_pressed else Color.BLACK ), 0.2)
 		)
-		button.mouse_exited.connect(func() -> void:
-			if _selected_buttons.has(button):
-				return
-			var t := create_tween()
-			t.set_ease(Tween.EASE_IN_OUT).set_trans(Tween.TRANS_QUAD)
-			t.tween_property(button, "offset_transform_scale", Vector2.ONE*0.8, 0.1)
-		)
+		
+		
+func _button_colour(button: BaseButton) -> void:
+	var t := create_tween()
+	t.set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_QUAD)
+	t.tween_property(button.get_node(^"Label"), "theme_override_colors/font_color", (Color.CRIMSON if button.button_pressed else Color.BLACK ), 0.2)
+
+
+func _button_hover(button: BaseButton, is_hover: bool) -> void:
+	is_hover = is_hover or button.button_pressed
+	var t := create_tween()
+	t.set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_QUAD)
+	t.tween_property(button, "offset_transform_scale", Vector2.ONE*(1.0 if is_hover else 0.8), 0.1)
+	if is_hover:
+		AudioManager.oneshot(ID.SFX.NAME_HOVER)
+
 
 func _process(delta: float) -> void:
 	name_label.position = 100.0 * delta * Vector2(randf_range(-1, 1), randf_range(-1, 1))
