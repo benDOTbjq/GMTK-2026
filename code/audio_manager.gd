@@ -8,13 +8,13 @@ const MAX_VOL_AMB := 0.7
 const MAX_VOL_UI := 0.5
 
 const AMB_MAIN_01: AudioStream = preload("uid://csdd2e7l3pyhe")
-const AMB_BICYCLE_CREAK: AudioStream = preload("uid://cbxyntt4q036w")
-const AMB_CAR_DRIVE_BY: AudioStream = preload("uid://cex37rnwuu23c")
+const AMB_BICYCLE_CREAK: AudioStream = preload("uid://dr0dlftu4ggb4")
+const AMB_CAR_DRIVE_BY: AudioStream = preload("uid://dg28h5tibfccf")
 const AMB_COCKROACH_01: AudioStream = preload("uid://cc2xxtlmol70j")
 const AMB_COCKROACH_02: AudioStream = preload("uid://qb3bamvgw53y")
-const AMB_DOG_BARK: AudioStream = preload("uid://dx5vsq4r1au4a")
-const AMB_DOOR_KNOCK: AudioStream = preload("uid://b3pcskyowvj5")
-const AMB_DOOR_OPEN_CLOSE: AudioStream = preload("uid://dhnbk3rt8eod6")
+const AMB_DOG_BARK: AudioStream = preload("uid://bmslkoglt82dt")
+const AMB_DOOR_KNOCK: AudioStream = preload("uid://bk6u32w5ygd51")
+const AMB_DOOR_OPEN_CLOSE: AudioStream = preload("uid://dls7s5w2gjuxu")
 const AMB_OVERHEAD_FOOTSTEPS: AudioStream = preload("uid://6twy5kl2cxnh")
 const AMBIENCE_INCLUSIONS_LU: Dictionary[ID.Ambience, Array] = {
 	ID.Ambience.DEFAULT: [
@@ -99,6 +99,10 @@ const SFX_LU: Dictionary[ID.SFX, Array] = {
 	ID.SFX.CANDLE_IGNIGHT: [UI_CANDLE_MATCH],
 	ID.SFX.EXORCISE_SUCCESS: [UI_SUCCESSFUL_EXORCISM],
 	ID.SFX.EXORCISE_FAIL: [UI_FAILED_EXORCISM],
+}
+const SFX_VOL_LU: Dictionary[AudioStream, float] = {
+	UI_NAME_HOVER: 0.1,
+	UI_NAME_SELECT: 0.1,
 }
 
 const SFX_ITEMS: Dictionary[ID.Item, Array] = {
@@ -231,7 +235,7 @@ func _play_oneshot(sfx_group: Array, bus: StringName, index: int = -1) -> void:
 	var player = AudioStreamPlayer.new()
 	player.stream = sfx_group[randi_range(0, sfx_group.size()-1)] if index == -1 else sfx_group[index]
 	player.bus = bus
-	player.volume_linear = MAX_VOL_UI
+	player.volume_linear = MAX_VOL_UI * SFX_VOL_LU.get(player.stream, 1.0)
 	add_child(player)
 	player.play()
 	player.finished.connect(player.queue_free)

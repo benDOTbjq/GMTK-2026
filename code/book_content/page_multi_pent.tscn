@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://ncfl4vlcjdnc" path="res://art/krita/arrow.png" id="4_mhgwa"]
 [ext_resource type="Texture2D" uid="uid://c2vhxegt5tihs" path="res://art/demo/big_pentagram.png" id="5_2olhy"]
 [ext_resource type="FontFile" uid="uid://cp0kxlhni6f60" path="res://art/fonts/LittleTroubleGirlBv-EVg.ttf" id="6_msf70"]
-[ext_resource type="Texture2D" uid="uid://cg3epuw16obey" path="res://art/demo/demo_candle_1.png" id="7_ffa7t"]
+[ext_resource type="Texture2D" uid="uid://cmgql4hnmwbv" path="res://art/krita/shelves.png" id="7_2olhy"]
 
 [node name="MultiPentPage" type="Control" unique_id=1775937355]
 layout_mode = 3
@@ -46,10 +46,10 @@ texture = ExtResource("5_2olhy")
 
 [node name="Label" type="Label" parent="." unique_id=370033358]
 layout_mode = 0
-offset_left = 45.0
-offset_top = 33.0
-offset_right = 409.0
-offset_bottom = 88.0
+offset_left = 39.0
+offset_top = 55.0
+offset_right = 403.0
+offset_bottom = 110.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 1
@@ -60,7 +60,7 @@ THE ARTIFACT"
 horizontal_alignment = 1
 
 [node name="Arrow2" type="Sprite2D" parent="." unique_id=2050024227]
-position = Vector2(148.99997, 437)
+position = Vector2(194, 463.00003)
 rotation = 2.2724445
 scale = Vector2(-0.414, 0.414)
 texture = ExtResource("4_mhgwa")
@@ -68,8 +68,8 @@ texture = ExtResource("4_mhgwa")
 [node name="DemoCandle1" type="Sprite2D" parent="." unique_id=175957898]
 modulate = Color(0, 0, 0, 1)
 position = Vector2(97.000015, 509)
-scale = Vector2(0.1, 0.1)
-texture = ExtResource("7_ffa7t")
+scale = Vector2(0.26, 0.26)
+texture = ExtResource("7_2olhy")
 
 [node name="BackButton" type="TextureButton" parent="." unique_id=546218795]
 layout_mode = 1

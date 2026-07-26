@@ -2,9 +2,10 @@ extends Node3D
 class_name Artifact
 
 @export var demon_info : DemonInfo
-@export var mesh: Node3D
+@export var mesh: Node
 
 @onready var despawn_particles: CPUParticles3D = $DespawnParticles
+
 
 func _ready() -> void:
 	$Area3D.input_event.connect(_on_area_3d_input_event)
