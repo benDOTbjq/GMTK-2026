@@ -5,8 +5,8 @@
 [ext_resource type="Texture2D" uid="uid://dg0jl46u7t3k5" path="res://art/krita/book_border.png" id="2_mhgwa"]
 [ext_resource type="Texture2D" uid="uid://ncfl4vlcjdnc" path="res://art/krita/arrow.png" id="4_mhgwa"]
 [ext_resource type="Texture2D" uid="uid://c2vhxegt5tihs" path="res://art/demo/big_pentagram.png" id="5_2olhy"]
-[ext_resource type="FontFile" uid="uid://cp0kxlhni6f60" path="res://art/fonts/LittleTroubleGirlBv-EVg.ttf" id="6_msf70"]
 [ext_resource type="Texture2D" uid="uid://cmgql4hnmwbv" path="res://art/krita/shelves.png" id="7_2olhy"]
+[ext_resource type="FontFile" uid="uid://b1ekst8cbisew" path="res://art/fonts/JustAnotherHand-7XwR.ttf" id="7_msf70"]
 
 [node name="MultiPentPage" type="Control" unique_id=1775937355]
 layout_mode = 3
@@ -40,39 +40,19 @@ axis_stretch_vertical = 2
 
 [node name="BigPentagram" type="Sprite2D" parent="." unique_id=169943049]
 modulate = Color(0.1237021, 0.12370213, 0.12370212, 1)
-position = Vector2(336, 498)
-scale = Vector2(0.6020446, 0.6020446)
+position = Vector2(233, 302)
+scale = Vector2(1.759027, 1.759027)
 texture = ExtResource("5_2olhy")
 
-[node name="Label" type="Label" parent="." unique_id=370033358]
-layout_mode = 0
-offset_left = 39.0
-offset_top = 55.0
-offset_right = 403.0
-offset_bottom = 110.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 1
-theme_override_fonts/font = ExtResource("6_msf70")
-theme_override_font_sizes/font_size = 22
-text = "BEGINNERS GUIDE TO DEMON EXORCISM
-Exorcising demons, but its easy!
-
-Start by simply placing your possessed item
-in the penagram.
-
-figure out the rest idk
-
-"
-horizontal_alignment = 1
-
 [node name="Arrow2" type="Sprite2D" parent="." unique_id=2050024227]
+visible = false
 position = Vector2(203.99998, 516)
 rotation = 3.4367204
 scale = Vector2(-0.38819453, 0.38819453)
 texture = ExtResource("4_mhgwa")
 
 [node name="DemoCandle1" type="Sprite2D" parent="." unique_id=175957898]
+visible = false
 modulate = Color(0, 0, 0, 1)
 position = Vector2(97.000015, 509)
 scale = Vector2(0.26, 0.26)
@@ -92,3 +72,51 @@ offset_top = 439.0
 offset_right = 156.0
 offset_bottom = 574.0
 mouse_default_cursor_shape = 2
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=590271514]
+layout_mode = 0
+offset_left = 38.0
+offset_top = 86.99999
+offset_right = 174.0
+offset_bottom = 223.0
+rotation = -0.12065924
+scale = Vector2(1.7384638, 1.7384638)
+color = Color(0.95, 0.9368583, 0.1615, 1)
+
+[node name="Label" type="Label" parent="ColorRect" unique_id=370033358]
+layout_mode = 0
+offset_left = -9.778748
+offset_top = 2.8761024
+offset_right = 281.02716
+offset_bottom = 231.8761
+scale = Vector2(0.54, 0.54)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 1
+theme_override_fonts/font = ExtResource("7_msf70")
+theme_override_font_sizes/font_size = 22
+text = "BEGINNERS GUIDE TO DEMON
+EXORCISM
+"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="ColorRect" unique_id=1751432307]
+layout_mode = 0
+offset_left = -9.778748
+offset_top = 2.8761024
+offset_right = 281.02716
+offset_bottom = 231.8761
+scale = Vector2(0.54, 0.54)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 1
+theme_override_fonts/font = ExtResource("7_msf70")
+theme_override_font_sizes/font_size = 31
+text = "
+
+Exorcising demons, but
+its easy!
+Start by simply picking
+ a possessed artifact
+from the shelf to your left."
+horizontal_alignment = 1

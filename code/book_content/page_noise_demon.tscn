@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://c8msnl5jm2kan" path="res://code/book_content/page.gd" id="1_nvre0"]
 [ext_resource type="Texture2D" uid="uid://dg0jl46u7t3k5" path="res://art/krita/book_border.png" id="2_0pha8"]
 [ext_resource type="FontFile" uid="uid://cp0kxlhni6f60" path="res://art/fonts/LittleTroubleGirlBv-EVg.ttf" id="4_bjqdn"]
+[ext_resource type="FontFile" uid="uid://b1ekst8cbisew" path="res://art/fonts/JustAnotherHand-7XwR.ttf" id="6_3y10m"]
 [ext_resource type="Texture2D" uid="uid://dmw3x6rt0paxe" path="res://art/krita/candle2.png" id="6_keo6s"]
 
 [node name="NoiseDemonPage" type="Control" unique_id=1729994615]
@@ -88,4 +89,65 @@ theme_override_fonts/font = ExtResource("4_bjqdn")
 theme_override_font_sizes/font_size = 22
 text = "THE LIGHT IS YOUR LIFE
 "
+horizontal_alignment = 1
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1919619915]
+layout_mode = 0
+offset_left = 71.00001
+offset_top = 89.000015
+offset_right = 207.0
+offset_bottom = 225.00002
+rotation = 0.09092135
+scale = Vector2(1.7384638, 1.7384638)
+color = Color(0.95, 0.9368583, 0.1615, 1)
+
+[node name="Label2" type="Label" parent="ColorRect" unique_id=162211925]
+layout_mode = 0
+offset_left = -9.581678
+offset_top = 2.6063974
+offset_right = 281.22424
+offset_bottom = 244.6064
+scale = Vector2(0.54, 0.54)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 1
+theme_override_fonts/font = ExtResource("6_3y10m")
+theme_override_font_sizes/font_size = 31
+text = " To exorcise the Demons you just
+ need to figure out what type it is.
+
+Try using some items on it
+and see how it reacts!
+
+"
+horizontal_alignment = 1
+
+[node name="ColorRect2" type="ColorRect" parent="." unique_id=1535279486]
+layout_mode = 0
+offset_left = 108.0
+offset_top = 314.0
+offset_right = 244.0
+offset_bottom = 450.0
+rotation = 0.07636425
+scale = Vector2(1.7384638, 1.7384638)
+color = Color(0.95, 0.9368583, 0.1615, 1)
+
+[node name="Label2" type="Label" parent="ColorRect2" unique_id=846867252]
+layout_mode = 0
+offset_left = -12.057409
+offset_top = 6.369671
+offset_right = 278.7485
+offset_bottom = 235.36967
+scale = Vector2(0.54, 0.54)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 1
+theme_override_fonts/font = ExtResource("6_3y10m")
+theme_override_font_sizes/font_size = 31
+text = "Weak to Water? might 
+be INFERNAL
+
+Does Iron make it stronger?
+ might 
+be FERRIC"
 horizontal_alignment = 1

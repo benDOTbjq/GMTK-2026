@@ -9,17 +9,14 @@
 [node name="NamePage" type="Control" unique_id=1775937355]
 layout_mode = 3
 anchors_preset = 0
-offset_left = 1.0
-offset_right = 446.0
+offset_right = 445.0
 offset_bottom = 600.0
 script = ExtResource("1_58hv5")
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=938953683]
 layout_mode = 0
-offset_left = 6.0
-offset_top = 7.0
-offset_right = 896.0
-offset_bottom = 1207.0
+offset_right = 890.0
+offset_bottom = 1200.0
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("2_tovg8")
 

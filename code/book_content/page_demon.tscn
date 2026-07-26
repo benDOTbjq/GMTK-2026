@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://bibw601528uir" path="res://art/krita/prayer_3.png" id="7_lx6ck"]
 [ext_resource type="Texture2D" uid="uid://obcu3jsir058" path="res://art/krita/salt.png" id="8_6hyxj"]
 [ext_resource type="Texture2D" uid="uid://bvty8ppmda4cu" path="res://art/krita/iron.png" id="9_sr4c6"]
+[ext_resource type="FontFile" uid="uid://b1ekst8cbisew" path="res://art/fonts/JustAnotherHand-7XwR.ttf" id="10_lx6ck"]
 
 [node name="DemonPage" type="Control" unique_id=1729994615]
 layout_mode = 3
@@ -45,31 +46,6 @@ position = Vector2(378, 530)
 scale = Vector2(0.4140625, 0.4140625)
 texture = ExtResource("5_el2mx")
 
-[node name="Label" type="Label" parent="." unique_id=1734477481]
-layout_mode = 0
-offset_left = 44.0
-offset_top = 34.0
-offset_right = 411.0
-offset_bottom = 350.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 1
-theme_override_fonts/font = ExtResource("5_8g4h1")
-theme_override_font_sizes/font_size = 22
-text = "DEMON INDENTIFICATION
-To exorcise the Demons, identify their nature
-
-A Demons nature may not be obvious
-But it's reactions will reveal it
-
-Identify A Demons nature through testing
-
-They will resist every action
-Every action Counts Down
-
-Choose Your's Carefully"
-horizontal_alignment = 1
-
 [node name="NextButton" type="TextureButton" parent="." unique_id=865483280]
 layout_mode = 1
 anchors_preset = 11
@@ -99,3 +75,55 @@ texture = ExtResource("8_6hyxj")
 position = Vector2(268.50003, 462.99997)
 scale = Vector2(0.20800005, 0.20800005)
 texture = ExtResource("9_sr4c6")
+
+[node name="Label2" type="Label" parent="." unique_id=1569905885]
+layout_mode = 0
+offset_left = 41.0
+offset_top = 40.0
+offset_right = 408.0
+offset_bottom = 472.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 1
+theme_override_fonts/font = ExtResource("5_8g4h1")
+theme_override_font_sizes/font_size = 22
+text = "DEMON INDENTIFICATION
+
+To exorcise the Demons, 
+identify their nature
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin sit amet nunc varius, eleifend nisi quis, fermentum purus. Sed eleifend lorem id lectus tincidunt, sit amet pharetra nunc ullamcorper. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin sit amet nunc "
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1664922354]
+layout_mode = 0
+offset_left = 78.0
+offset_top = 166.0
+offset_right = 214.0
+offset_bottom = 302.0
+rotation = -0.12065924
+scale = Vector2(1.7384638, 1.7384638)
+color = Color(0.95, 0.9368583, 0.1615, 1)
+
+[node name="Label2" type="Label" parent="ColorRect" unique_id=1879613865]
+layout_mode = 0
+offset_left = -10.2437315
+offset_top = -11.092404
+offset_right = 280.56216
+offset_bottom = 230.9076
+scale = Vector2(0.54, 0.54)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 1
+theme_override_fonts/font = ExtResource("10_lx6ck")
+theme_override_font_sizes/font_size = 31
+text = "
+Just don't give it too much
+things it likes or you might 
+die or something!
+
+I wasn't paying too much 
+attention lol
+                          Good Luck!"
+horizontal_alignment = 1
