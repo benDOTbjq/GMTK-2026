@@ -94,19 +94,19 @@ mouse_default_cursor_shape = 2
 [node name="SaltButton" type="TextureButton" parent="." unique_id=948180172]
 unique_name_in_owner = true
 layout_mode = 0
-offset_left = 210.0
-offset_top = 561.0
-offset_right = 310.0
-offset_bottom = 686.0
+offset_left = 281.865
+offset_top = 552.815
+offset_right = 381.865
+offset_bottom = 677.815
 mouse_default_cursor_shape = 2
 
 [node name="PrayerButton" type="TextureButton" parent="." unique_id=558208180]
 unique_name_in_owner = true
 layout_mode = 0
-offset_left = 368.215
-offset_top = 558.915
-offset_right = 468.215
-offset_bottom = 658.915
+offset_left = 388.02
+offset_top = 520.03
+offset_right = 488.02
+offset_bottom = 620.03
 mouse_default_cursor_shape = 2
 
 [node name="IronButton" type="TextureButton" parent="." unique_id=440348595]
