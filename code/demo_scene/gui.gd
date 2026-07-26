@@ -22,7 +22,6 @@ var _current_demon: Dictionary
 func _ready() -> void:
 	_current_demon = DemonManager.get_random_demon()
 	reset_button.pressed.connect(_reset_demon)
-	check_button.pressed.connect(_test_demon)
 	
 	title_button.pressed.connect(Bus.set_view.emit.bind(ID.CameraMode.TABLE))
 	table_button.pressed.connect(Bus.set_view.emit.bind(ID.CameraMode.TABLE))
@@ -39,9 +38,6 @@ func _ready() -> void:
 func _reset_demon() -> void:
 	_current_demon = DemonManager.get_random_demon()
 	label.text = ""
-
-func _test_demon() -> void:
-	($"../" as Level).guess_demon(ID.DemonType.LUCIFERIAN, ID.DemonType.NONE)
 
 func _print_demon() -> void:
 	label.text = (

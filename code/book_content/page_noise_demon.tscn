@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://ba5726xsa4ogm" path="res://art/demo/paper.png" id="1_bjqdn"]
 [ext_resource type="Script" uid="uid://c8msnl5jm2kan" path="res://code/book_content/page.gd" id="1_nvre0"]
 [ext_resource type="Texture2D" uid="uid://dg0jl46u7t3k5" path="res://art/krita/book_border.png" id="2_0pha8"]
+[ext_resource type="FontFile" uid="uid://cp0kxlhni6f60" path="res://art/fonts/LittleTroubleGirlBv-EVg.ttf" id="4_bjqdn"]
 
 [node name="NoiseDemonPage" type="Control" unique_id=1729994615]
 layout_mode = 3
@@ -40,3 +41,27 @@ anchors_preset = 9
 anchor_bottom = 1.0
 offset_right = 94.0
 grow_vertical = 2
+
+[node name="Label" type="Label" parent="." unique_id=825000594]
+layout_mode = 0
+offset_left = 42.0
+offset_top = 100.0
+offset_right = 406.0
+offset_bottom = 416.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 1
+theme_override_fonts/font = ExtResource("4_bjqdn")
+theme_override_font_sizes/font_size = 22
+text = "A DEMONS NAME.
+
+A DEMONS NATURE.
+
+These Are The Same.
+
+
+
+Determine It's Nature To
+
+Exorcise The DEMON"
+horizontal_alignment = 1

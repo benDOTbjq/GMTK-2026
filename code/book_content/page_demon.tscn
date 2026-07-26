@@ -43,20 +43,21 @@ texture = ExtResource("5_el2mx")
 
 [node name="Label" type="Label" parent="." unique_id=1734477481]
 layout_mode = 0
-offset_left = 45.0
-offset_top = 33.0
-offset_right = 409.0
-offset_bottom = 88.0
+offset_left = 42.0
+offset_top = 100.0
+offset_right = 406.0
+offset_bottom = 416.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 1
 theme_override_fonts/font = ExtResource("5_8g4h1")
 theme_override_font_sizes/font_size = 22
-text = "A DEMONS NAME IS A DEMONS NATURE
-IT'S NATURE IS ITS NAME
+text = "A DEMON may be of
+ONE or TWO Natures
 
-DETERMINE IT'S NATURE TO
-EXORCISE THE DEMON"
+They will RESIST every ACTION
+
+Choose Your's Carefully"
 horizontal_alignment = 1
 
 [node name="NextButton" type="TextureButton" parent="." unique_id=865483280]

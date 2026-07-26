@@ -166,6 +166,16 @@ shelf_rotation = Vector3(-0.32383546, 1.3941991, -0.015034148)
 book_rotation = Vector3(-0.7380256, -0.004113991, 0)
 title_rotation = Vector3(-90, 0, 0)
 
+[node name="NameLabel3D" type="Label3D" parent="Camera3D" unique_id=1786655803]
+unique_name_in_owner = true
+transform = Transform3D(0.09, 0, 0, 0, 0.09, 0, 0, 0, 0.09, 0, 0.025999993, -0.23399997)
+modulate = Color(0.8862745, 0, 0, 1)
+text = "TEMPUS MALUM"
+font = ExtResource("21_tlgjb")
+font_size = 76
+outline_size = 0
+uppercase = true
+
 [node name="Candle1" parent="." unique_id=875324991 instance=ExtResource("5_vj5s7")]
 transform = Transform3D(-0.9995888, 0, 0.02867559, 0, 1, 0, -0.02867559, 0, -0.9995888, -0.63987017, 0.7911453, -0.724443)
 flickerAdvance = 0.7
@@ -343,15 +353,6 @@ libraries/ = SubResource("AnimationLibrary_48qym")
 [node name="TitleLabel3D" type="Label3D" parent="." unique_id=238390125]
 unique_name_in_owner = true
 transform = Transform3D(0.38, 0, 0, 0, -1.6610327e-08, 0.38, 0, -0.38, -1.6610327e-08, 0.019, 0.66, 0.05683428)
-modulate = Color(0.8862745, 0, 0, 1)
-text = "TEMPUS MALUM"
-font = ExtResource("21_tlgjb")
-font_size = 76
-outline_size = 0
-
-[node name="TitleLabel3D2" type="Label3D" parent="." unique_id=1786655803]
-transform = Transform3D(0.38, 0, 0, 0, 0.38, 0, 0, 0, 0.38, 0.019, 1.230223, 0.056834254)
-visible = false
 modulate = Color(0.8862745, 0, 0, 1)
 text = "TEMPUS MALUM"
 font = ExtResource("21_tlgjb")

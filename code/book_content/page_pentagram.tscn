@@ -44,7 +44,7 @@ texture = ExtResource("4_yq7sq")
 
 [node name="DemoCandle3" type="Sprite2D" parent="." unique_id=1990273940]
 modulate = Color(0.1237021, 0.12370213, 0.12370212, 1)
-position = Vector2(84, 288)
+position = Vector2(110.00001, 299)
 rotation = -0.13875149
 scale = Vector2(0.118, 0.124)
 texture = ExtResource("2_7qh8y")
@@ -58,16 +58,23 @@ texture = ExtResource("2_7qh8y")
 
 [node name="DemoCandle5" type="Sprite2D" parent="." unique_id=1029814087]
 modulate = Color(0.1237021, 0.12370213, 0.12370212, 1)
-position = Vector2(290, 162)
+position = Vector2(309, 151)
 rotation = -0.005697012
 scale = Vector2(0.118, 0.124)
 texture = ExtResource("2_7qh8y")
 
 [node name="DemoCandle6" type="Sprite2D" parent="." unique_id=1174123746]
 modulate = Color(0.1237021, 0.12370213, 0.12370212, 1)
-position = Vector2(360, 286)
+position = Vector2(345.99997, 297)
 rotation = 0.39490885
 scale = Vector2(0.118, 0.124)
+texture = ExtResource("2_7qh8y")
+
+[node name="DemoCandle7" type="Sprite2D" parent="." unique_id=483842726]
+modulate = Color(0.1237021, 0.12370213, 0.12370212, 1)
+position = Vector2(230.99998, 409.99997)
+rotation = -0.70550346
+scale = Vector2(0.118, 0.124000005)
 texture = ExtResource("2_7qh8y")
 
 [node name="Label" type="Label" parent="." unique_id=1668114297]
@@ -84,13 +91,6 @@ theme_override_font_sizes/font_size = 22
 text = "THE LIGHT IS YOUR LIFE
 "
 horizontal_alignment = 1
-
-[node name="DemoCandle7" type="Sprite2D" parent="." unique_id=483842726]
-modulate = Color(0.1237021, 0.12370213, 0.12370212, 1)
-position = Vector2(223.99995, 403)
-rotation = -0.7055034
-scale = Vector2(0.118, 0.124)
-texture = ExtResource("2_7qh8y")
 
 [node name="NextButton" type="TextureButton" parent="." unique_id=455211487]
 layout_mode = 1

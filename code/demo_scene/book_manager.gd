@@ -24,10 +24,10 @@ const PAGE_ITEMS_LEFT = preload("uid://b6vi4dhin2lw1")
 const PAGE_ITEMS_RIGHT = preload("uid://br53hbh38f47v")
 
 const PAGE_ORDER: Array[Array] = [
-	[ID.Page.TYPE_CHART, ID.Page.DEMON],
-	[ID.Page.ITEMS_RIGHT, ID.Page.ITEMS_LEFT],
 	[ID.Page.MULTIPENT, ID.Page.PENTAGRAM],
-	[ID.Page.NOISE_DEMON, ID.Page.NAME],
+	[ID.Page.NOISE_DEMON, ID.Page.DEMON],
+	[ID.Page.ITEMS_RIGHT, ID.Page.ITEMS_LEFT],
+	[ID.Page.TYPE_CHART, ID.Page.NAME],
 ]
 
 var _book_index := 0
@@ -54,6 +54,9 @@ var _prev_right_texture: Texture
 
 @onready var _left_viewport_texture: ViewportTexture = left_sub_viewport.get_texture()
 @onready var _right_viewport_texture: ViewportTexture = right_sub_viewport.get_texture()
+
+@onready var back_button: TextureButton = $LeftSubViewport/BackButton
+@onready var next_button: TextureButton = $RightSubViewport/NextButton
 
 
 func _ready() -> void:

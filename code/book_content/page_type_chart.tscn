@@ -701,3 +701,10 @@ texture = ExtResource("9_gebbs")
 position = Vector2(157.00002, 94)
 scale = Vector2(0.12900002, 0.12900002)
 texture = ExtResource("10_mctmo")
+
+[node name="BackButton" type="TextureButton" parent="." unique_id=961866759]
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_right = 94.0
+grow_vertical = 2

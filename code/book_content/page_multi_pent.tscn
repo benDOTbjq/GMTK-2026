@@ -38,11 +38,6 @@ patch_margin_bottom = 129
 axis_stretch_horizontal = 2
 axis_stretch_vertical = 2
 
-[node name="Arrow" type="Sprite2D" parent="." unique_id=2077943293]
-position = Vector2(79, 536)
-scale = Vector2(-0.414, 0.414)
-texture = ExtResource("4_mhgwa")
-
 [node name="BigPentagram" type="Sprite2D" parent="." unique_id=169943049]
 modulate = Color(0.1237021, 0.12370213, 0.12370212, 1)
 position = Vector2(220, 247)
@@ -65,14 +60,14 @@ THE ARTIFACT"
 horizontal_alignment = 1
 
 [node name="Arrow2" type="Sprite2D" parent="." unique_id=2050024227]
-position = Vector2(263.00003, 425.00003)
-rotation = 1.5836792
+position = Vector2(148.99997, 437)
+rotation = 2.2724445
 scale = Vector2(-0.414, 0.414)
 texture = ExtResource("4_mhgwa")
 
 [node name="DemoCandle1" type="Sprite2D" parent="." unique_id=175957898]
 modulate = Color(0, 0, 0, 1)
-position = Vector2(271, 466)
+position = Vector2(97.000015, 509)
 scale = Vector2(0.1, 0.1)
 texture = ExtResource("7_ffa7t")
 

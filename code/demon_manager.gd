@@ -12,6 +12,18 @@ const DEMON_TYPE_EFFECTIVENESS : Dictionary[ID.DemonType, Vector4i] = {
 	ID.DemonType.FAEIC: Vector4i(0, 0, 1, -1),
 }
 
+const DEMON_COMBINATION_ID : Dictionary[ID.DemonType, int] = {
+	ID.DemonType.NONE:0,
+	ID.DemonType.INFERNAL:1,
+	ID.DemonType.CELESTIAL:2,
+	ID.DemonType.CARNAL:4,
+	ID.DemonType.SPECTRAL:8,
+	ID.DemonType.ABYSSAL:16,
+	ID.DemonType.FAEIC:32,
+	ID.DemonType.LUCIFERIAN:64,
+	ID.DemonType.FERRIC:128,
+}
+
 const TYPE_TO_STRING : Dictionary[ID.DemonType, String] = {
 	ID.DemonType.FERRIC: "FERRIC",
 	ID.DemonType.CELESTIAL: "CELESTIAL",
@@ -64,3 +76,8 @@ static func get_random_demon() -> Dictionary:
 		if demon.item_effectiveness[i] == 0 and DEMON_TYPE_EFFECTIVENESS[demon.type_1][i] != 0:
 			demon.item_effectiveness[i] = 3
 	return demon
+
+
+
+static func get_combined_type_id(type_1: ID.DemonType, type_2: ID.DemonType) -> int:
+	return DEMON_COMBINATION_ID[type_1] | DEMON_COMBINATION_ID[type_2]

@@ -117,10 +117,13 @@ func update_name() -> void:
 	t2.tween_property(name_label, "offset_transform_scale", Vector2.ONE, 0.3)
 	t2.tween_property(name_label, "modulate:a", 1.0, 0.6)
 	
-	name_button.pressed.connect(Bus.name_selected.emit.bind(_last_combined_type_id))
+	
 
 func _ready() -> void:
 	update_name()
+	name_button.pressed.connect(func() -> void:
+		if not name_label.text.is_empty():
+			Bus.name_selected.emit(_last_combined_type_id, name_label.text))
 	for button: TextureButton in _start_positions.keys():
 		button.mouse_entered.connect(_button_hover.bind(button, true))
 		button.mouse_exited.connect(_button_hover.bind(button, false))

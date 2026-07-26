@@ -12,6 +12,11 @@ class_name Level
 @onready var title_label_3d: Label3D = %TitleLabel3D
 
 @export var candles: Array[Candle] = []
+@onready var name_label_3d: Label3D = %NameLabel3D
+
+var name_start_transform := Transform3D(Vector3(0.089284, 0.007715, 0.008302), Vector3(0.000562, 0.062834, -0.064433), Vector3(-0.011319, 0.063972, 0.062285), Vector3(0.164, 0.9, 0.632))
+var name_mid_transform := Transform3D(Vector3(0.09, 0.0, 0.0), Vector3(0.0, 0.09, 0.0), Vector3(0.0, 0.0, 0.09), Vector3(0.0, 0.026, -0.234))
+
 
 var curr_view := ID.CameraMode.TITLE
 var curr_artifact: Artifact = null
@@ -29,10 +34,27 @@ var items_used: Array[ID.Item]
 func _ready() -> void:
 	Bus.set_view.connect(_view_state_change)
 	Bus.use_item.connect(use_item)
-	book.set_content(ID.Page.TYPE_CHART, ID.Page.DEMON)
 	book.close()
 	AudioManager.set_music(ID.Music.TITLE, 0.0)
+	Bus.name_selected.connect(_guess_name)
+	name_label_3d.visible = false
 
+
+func _guess_name(combined_type_id: int, name: String) -> void:
+	if curr_demon_info == null:
+		show_dialog("Not yet")
+		return
+	name_label_3d.visible = true
+	name_label_3d.text = name
+	name_label_3d.global_transform = name_start_transform
+	camera_3d.update_camera_mode(ID.CameraMode.TABLE, true)
+	var t = create_tween()
+	t.set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_CUBIC)
+	t.tween_property(name_label_3d, "transform", name_mid_transform, 1.5)
+	await t.finished
+	name_label_3d.visible = false
+	guess_demon(combined_type_id)
+	_view_state_change(ID.CameraMode.TABLE)
 
 func _view_state_change(next_view: ID.CameraMode) -> void:
 	if next_view == curr_view:
@@ -118,6 +140,7 @@ func setup_demon(artifact: Artifact) -> void:
 
 func use_item(item: ID.Item) -> void:
 	if curr_demon_info == null:
+		show_dialog("Not yet")
 		return
 	
 	if items_used.has(item):
@@ -154,8 +177,8 @@ func use_item(item: ID.Item) -> void:
 		if i < curr_actions: candles[i].turn_on()
 		else: candles[i].turn_off()
 
-func guess_demon(type1: ID.DemonType, type2: ID.DemonType) -> void:
-	if type1 == curr_demon_info.type1 and type2 == curr_demon_info.type2:
+func guess_demon(combined_type_id: int) -> void:
+	if combined_type_id == DemonManager.get_combined_type_id(curr_demon_info.type1, curr_demon_info.type2):
 		animation_player.play_backwards("spawn_shadow")
 		curr_artifact.despawn()
 		curr_artifact = null
@@ -174,6 +197,7 @@ func clear_curr_demon() -> void:
 
 func show_dialog(text: String) -> void:
 	AudioManager.oneshot(ID.SFX.VOICE)
+	dialog_box_alive_time = 0
 	%DialogBox.visible = true
 	%BubbleText.text = text
 
@@ -187,3 +211,4 @@ func _exit_title() -> void:
 	AudioManager.set_music(ID.Music.NULL)
 	await t.finished
 	title_label_3d.queue_free()
+	%DialogBox.reparent(camera_3d)

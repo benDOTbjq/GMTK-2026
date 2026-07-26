@@ -2,6 +2,7 @@ extends Camera3D
 class_name CameraManager
 
 @export var mode_transition_time: float = .75
+@export var mode_transition_slow_time: float = 1.5
 @export var table_rotation: Vector3
 @export var shelf_rotation: Vector3
 @export var book_rotation: Vector3
@@ -29,7 +30,7 @@ func _process(delta: float) -> void:
 func shake_camera(strength: float) -> void:
 	curr_shake_strengh = strength
 
-func update_camera_mode(new_mode: ID.CameraMode):
+func update_camera_mode(new_mode: ID.CameraMode, is_slow := false):
 	if new_mode == _last_mode:
 		return
 	
@@ -40,7 +41,7 @@ func update_camera_mode(new_mode: ID.CameraMode):
 		ID.CameraMode.BOOK: target_rotation = Basis.from_euler(book_rotation)
 	var tween = create_tween()
 	tween.set_ease(Tween.EASE_IN_OUT).set_trans(Tween.TRANS_CUBIC)
-	tween.tween_property(self, "basis", target_rotation, mode_transition_time)
+	tween.tween_property(self, "basis", target_rotation, mode_transition_slow_time if is_slow else mode_transition_time)
 	if _last_mode == ID.CameraMode.TITLE:
 		tween.parallel()
 		tween.tween_property(self, "position", _default_position, mode_transition_time)
