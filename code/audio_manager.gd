@@ -107,6 +107,10 @@ const SFX_VOL_LU: Dictionary[AudioStream, float] = {
 	UI_CANDLE_EXTINGUISH_01: 0.5,
 	UI_CANDLE_EXTINGUISH_02: 0.5,
 	UI_CANDLE_EXTINGUISH_03: 0.5,
+	UI_SIDE_WHOOSH_01: 0.2, 
+	UI_SIDE_WHOOSH_02: 0.2, 
+	UI_SIDE_WHOOSH_03: 0.2, 
+	UI_SIDE_WHOOSH_04: 0.2,
 }
 
 const SFX_ITEMS: Dictionary[ID.Item, Array] = {
