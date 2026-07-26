@@ -71,7 +71,7 @@ func _show_end_screen(did_win: bool) -> void:
 	AudioServer.set_bus_mute(AudioServer.get_bus_index("Master"), true)
 	AudioManager.loop(ID.SFXLoop.PENAGRAM, false)
 	black_screen.show()
-	end_message.text = "YOU WIN" if did_win else "YOU LOST"
+	end_message.text = "YOU WIN" if did_win else "YOU DIED"
 	reload_button.text = "GO AGAIN" if did_win else "TRY AGAIN"
 	var t = get_tree().create_tween()
 	t.tween_callback(%EndMessage.show.bind()).set_delay(1.0)
