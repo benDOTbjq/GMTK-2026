@@ -163,6 +163,3 @@ func _shake():
 	for button: TextureButton in _start_positions.keys():
 		button.position.x = _start_positions[button].x + amplitude * noise.get_noise_2d(_start_positions[button].x, _noise_y)
 		button.position.y = _start_positions[button].y + amplitude * noise.get_noise_2d(_start_positions[button].y ,_noise_y)
-
-	
-	
