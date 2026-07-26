@@ -99,7 +99,8 @@ func use_item(item: ID.Item) -> void:
 		show_dialog("You already used this item")
 		return
 	
-	var effectiveness = DemonManager.check_item_effectivness(item, curr_demon_info.type1, curr_demon_info.type2)	
+	var effectiveness = DemonManager.check_item_effectivness(item, curr_demon_info.type1, curr_demon_info.type2)
+	AudioManager.play_item(item, effectiveness)
 	if effectiveness == 3:
 		show_dialog("The demon is strangely uneffected")
 		effectiveness = 0

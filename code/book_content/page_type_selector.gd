@@ -119,8 +119,7 @@ func update_name() -> void:
 	t2.tween_property(name_label, "modulate:a", 1.0, 0.6)
 	
 	name_button.pressed.connect(Bus.name_selected.emit.bind(_last_combined_type_id))
-	
-	
+
 func _ready() -> void:
 	update_name()
 	for button: TextureButton in _start_positions.keys():

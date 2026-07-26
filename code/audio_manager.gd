@@ -50,6 +50,35 @@ const UI_SUMMON_03: AudioStream = preload("uid://dkjxq8jsojism")
 const UI_NAME_HOVER: AudioStream = preload("uid://d1one3gjcmesg")
 const UI_NAME_SELECT: AudioStream = preload("uid://bstltd1aiuioh")
 
+const PLY_ITEM_IRON_STRANGE: AudioStream = preload("uid://bio7vym865rsf")
+const PLY_ITEM_IRON_SUPER_EFFECTIVE: AudioStream = preload("uid://bewlfh2skqk4w")
+const PLY_ITEM_IRON_EFFECTIVE: AudioStream = preload("uid://fj4rkb03well")
+const PLY_ITEM_IRON_UNAFFECTED: AudioStream = preload("uid://dk5w2ys0mpvmn")
+const PLY_ITEM_IRON_INEFFECTIVE: AudioStream = preload("uid://c3yi5wxituie0")
+const PLY_ITEM_IRON_SUPER_INEFFECTIVE: AudioStream = preload("uid://br68d8grylepb")
+
+const PLY_ITEM_WATER_STRANGE: AudioStream = preload("uid://703s1xiicu40")
+const PLY_ITEM_WATER_SUPER_EFFECTIVE: AudioStream = preload("uid://ch0fyp4wijf7j")
+const PLY_ITEM_WATER_EFFECTIVE: AudioStream = preload("uid://ceiva74t3vkqe")
+const PLY_ITEM_WATER_UNAFFECTED: AudioStream = preload("uid://c23lcyau1fnqc")
+const PLY_ITEM_WATER_INEFFECTIVE: AudioStream = preload("uid://deklfye3q1gkp")
+const PLY_ITEM_WATER_SUPER_INEFFECTIVE: AudioStream = preload("uid://bor0y8ilwpjxi")
+
+const PLY_ITEM_SALT_STRANGE: AudioStream = preload("uid://cj4gbjo3r3727")
+const PLY_ITEM_SALT_SUPER_EFFECTIVE: AudioStream = preload("uid://dgh627k7gosgv")
+const PLY_ITEM_SALT_EFFECTIVE: AudioStream = preload("uid://bauctfqywcuqv")
+const PLY_ITEM_SALT_UNAFFECTED: AudioStream = preload("uid://topbcknsnvri")
+const PLY_ITEM_SALT_INEFFECTIVE: AudioStream = preload("uid://2k5roi7uk5n2")
+const PLY_ITEM_SALT_SUPER_INEFFECTIVE: AudioStream = preload("uid://bor0y8ilwpjxi")
+
+const PLY_ITEM_PRAYER_STRANGE: AudioStream = preload("uid://3orh7gpgjkv7")
+const PLY_ITEM_PRAYER_SUPER_EFFECTIVE: AudioStream = preload("uid://diluj64pd3hj1")
+const PLY_ITEM_PRAYER_EFFECTIVE: AudioStream = preload("uid://blnv47o3anrg5")
+const PLY_ITEM_PRAYER_UNAFFECTED: AudioStream = preload("uid://dlpmcmk7dl482")
+const PLY_ITEM_PRAYER_INEFFECTIVE: AudioStream = preload("uid://dg641ea4bvkgq")
+const PLY_ITEM_PRAYER_SUPER_INEFFECTIVE: AudioStream = preload("uid://c41118m3uhgby")
+
+
 const SFX_LU: Dictionary[ID.SFX, Array] = {
 	ID.SFX.BOOK_OPEN: [UI_BOOK_OPEN],
 	ID.SFX.BOOK_CLOSE: [UI_BOOK_CLOSE],
@@ -60,6 +89,13 @@ const SFX_LU: Dictionary[ID.SFX, Array] = {
 	ID.SFX.SUMMON: [UI_SUMMON_01, UI_SUMMON_02, UI_SUMMON_03],
 	ID.SFX.NAME_HOVER: [UI_NAME_HOVER],
 	ID.SFX.NAME_SELECT: [UI_NAME_SELECT],
+}
+
+const SFX_ITEMS: Dictionary[ID.Item, Array] = {
+	ID.Item.HOLY_WATER: [PLY_ITEM_WATER_SUPER_INEFFECTIVE, PLY_ITEM_WATER_INEFFECTIVE, PLY_ITEM_WATER_UNAFFECTED, PLY_ITEM_WATER_EFFECTIVE, PLY_ITEM_WATER_SUPER_EFFECTIVE, PLY_ITEM_WATER_STRANGE],
+	ID.Item.SALT: [PLY_ITEM_SALT_SUPER_INEFFECTIVE, PLY_ITEM_SALT_INEFFECTIVE, PLY_ITEM_SALT_UNAFFECTED, PLY_ITEM_SALT_EFFECTIVE, PLY_ITEM_SALT_SUPER_EFFECTIVE, PLY_ITEM_SALT_STRANGE],
+	ID.Item.IRON: [PLY_ITEM_IRON_SUPER_INEFFECTIVE, PLY_ITEM_IRON_INEFFECTIVE, PLY_ITEM_IRON_UNAFFECTED, PLY_ITEM_IRON_EFFECTIVE, PLY_ITEM_IRON_SUPER_EFFECTIVE, PLY_ITEM_IRON_STRANGE],
+	ID.Item.PRAYER: [PLY_ITEM_PRAYER_SUPER_INEFFECTIVE, PLY_ITEM_PRAYER_INEFFECTIVE, PLY_ITEM_PRAYER_UNAFFECTED, PLY_ITEM_PRAYER_EFFECTIVE, PLY_ITEM_PRAYER_SUPER_EFFECTIVE, PLY_ITEM_PRAYER_STRANGE],
 }
 
 const SFX_LOOP_LU: Dictionary[ID.SFXLoop, AudioStream] = {
@@ -114,6 +150,8 @@ func oneshot(id: ID.SFX) -> void:
 		print("oneshot():", ID.SFX_STRING[id])
 	_play_oneshot(SFX_LU[id], &"UI")
 
+func play_item(item: ID.Item, effectivness: int):
+	_play_oneshot(SFX_ITEMS[item], &"UI", effectivness + 2)
 
 func set_ambience(id: ID.Ambience, trans_time := 2.0) -> void:
 	if id == _current_ambience_id:
@@ -179,9 +217,9 @@ func _ready() -> void:
 	)
 	
 
-func _play_oneshot(sfx_group: Array, bus: StringName) -> void:
+func _play_oneshot(sfx_group: Array, bus: StringName, index: int = -1) -> void:
 	var player = AudioStreamPlayer.new()
-	player.stream = sfx_group[randi_range(0, sfx_group.size()-1)]
+	player.stream = sfx_group[randi_range(0, sfx_group.size()-1)] if index == -1 else sfx_group[index]
 	player.bus = bus
 	player.volume_linear = MAX_VOL_UI
 	add_child(player)
