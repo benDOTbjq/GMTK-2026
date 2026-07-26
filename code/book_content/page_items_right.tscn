@@ -90,9 +90,9 @@ theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 1
 theme_override_fonts/font = ExtResource("4_5st3o")
 theme_override_font_sizes/font_size = 22
-text = "RESISTANT DEMONS:
-INFERNAL 
-CELESTIAL"
+text = "EMPOWERS:
+ABBYSAL 
+SPECTRAL"
 horizontal_alignment = 1
 
 [node name="Label" type="Label" parent="." unique_id=1184988878]
@@ -122,9 +122,10 @@ theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 1
 theme_override_fonts/font = ExtResource("4_5st3o")
 theme_override_font_sizes/font_size = 22
-text = "SUSEPTABLE DEMONS:
-CARNAL
- LUCIFERIAN"
+text = "WEAKENS:
+FERRIC
+INFERNAL
+ "
 horizontal_alignment = 1
 
 [node name="Salt2" type="Sprite2D" parent="." unique_id=101509746]
@@ -143,9 +144,9 @@ theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 1
 theme_override_fonts/font = ExtResource("4_5st3o")
 theme_override_font_sizes/font_size = 22
-text = "RESISTANT DEMONS:
-FERRIC
-LUCIFERIAN"
+text = "EMPOWERS:
+FAEIC
+CARNAL"
 horizontal_alignment = 1
 
 [node name="Label5" type="Label" parent="." unique_id=2017148548]
@@ -175,9 +176,9 @@ theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 1
 theme_override_fonts/font = ExtResource("4_5st3o")
 theme_override_font_sizes/font_size = 22
-text = "SUSEPTABLE DEMONS:
-FAEIC
-ABYSSAL"
+text = "WEAKENS:
+CELESTIAL
+SPECRAL"
 horizontal_alignment = 1
 
 [node name="BackButton" type="TextureButton" parent="." unique_id=384561348]

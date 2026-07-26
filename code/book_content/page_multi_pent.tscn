@@ -77,3 +77,11 @@ anchors_preset = 9
 anchor_bottom = 1.0
 offset_right = 94.0
 grow_vertical = 2
+
+[node name="ShelfButton" type="TextureButton" parent="." unique_id=164883620]
+layout_mode = 0
+offset_left = 36.0
+offset_top = 439.0
+offset_right = 156.0
+offset_bottom = 574.0
+mouse_default_cursor_shape = 2
