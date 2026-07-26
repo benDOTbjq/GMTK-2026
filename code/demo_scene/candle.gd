@@ -5,11 +5,10 @@ class_name Candle
 @onready var particle_spawner: CPUParticles3D = $CPUParticles3D
 
 @export_range(0.0, 1.0) var flickerAdvance : float
-var original_range: float
+@export var lit_range: float = 0.5
 
 func _ready() -> void:
-	original_range = omni_range
-	animationPlayer.advance(flickerAdvance)
+	pass
 
 func turn_off():
 	animationPlayer.pause()
@@ -17,6 +16,7 @@ func turn_off():
 	particle_spawner.emitting = false
 
 func turn_on():
+	animationPlayer.advance(flickerAdvance)
 	animationPlayer.play("flicker")
-	omni_range = original_range
+	omni_range = lit_range
 	particle_spawner.emitting = true

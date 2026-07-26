@@ -138,10 +138,7 @@ func setup_demon(artifact: Artifact) -> void:
 	AudioManager.loop(ID.SFXLoop.PENAGRAM)
 	AudioManager.oneshot(ID.SFX.SUMMON)
 	
-	for i in candles.size():
-		if i < curr_actions: candles[i].turn_on()
-		else: candles[i].turn_off()
-	
+	update_candles()
 
 
 func use_item(item: ID.Item) -> void:
@@ -179,9 +176,7 @@ func use_item(item: ID.Item) -> void:
 	if curr_actions <= 0:
 		show_dialog("you lost")
 	
-	for i in candles.size():
-		if i < curr_actions: candles[i].turn_on()
-		else: candles[i].turn_off()
+	update_candles()
 
 func guess_demon(combined_type_id: int) -> void:
 	if combined_type_id == DemonManager.get_combined_type_id(curr_demon_info.type1, curr_demon_info.type2):
@@ -189,14 +184,13 @@ func guess_demon(combined_type_id: int) -> void:
 		curr_artifact.despawn()
 		curr_artifact = null
 		curr_demon_info = null
+		curr_actions = 0
 		AudioManager.set_music(ID.Music.NULL)
 		AudioManager.loop(ID.SFXLoop.PENAGRAM, false)
 	else:
 		curr_actions -= 2
 		camera_3d.shake_camera(0.2)
-		for i in candles.size():
-			if i < curr_actions: candles[i].turn_on()
-			else: candles[i].turn_off()
+		update_candles()
 		
 		if curr_actions <= 0:
 			show_dialog("you lost")
@@ -207,7 +201,6 @@ func guess_demon(combined_type_id: int) -> void:
 func clear_curr_demon() -> void:
 	if curr_demon_info == null:
 		return
-	
 
 func show_dialog(text: String) -> void:
 	AudioManager.oneshot(ID.SFX.VOICE)
@@ -215,6 +208,14 @@ func show_dialog(text: String) -> void:
 	%DialogBox.visible = true
 	%BubbleText.text = text
 
+func update_candles() -> void:
+	var t = create_tween()
+	t.set_parallel(true)
+	for i in candles.size():
+		if i < curr_actions:
+			t.tween_callback(candles[i].turn_on.bind()).set_delay(0.2 * i + 0.5)
+		else:
+			t.tween_callback(candles[i].turn_off.bind()).set_delay(0.2 * i + 0.5)
 
 func _exit_title() -> void:
 	var t = create_tween()
