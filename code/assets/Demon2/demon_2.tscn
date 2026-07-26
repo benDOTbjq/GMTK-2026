@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://bv8602viq6ng7" path="res://art/models/Hand.blend" id="4_pyx55"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_4t3m4"]
-size = Vector3(0.17675781, 0.14428711, 0.31640625)
+size = Vector3(0.1743164, 0.09051514, 0.31555176)
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_fitxp"]
 radius = 0.05
@@ -21,7 +21,7 @@ demon_info = ExtResource("2_nsjmk")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1028492, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=1937620365]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.02635934, -0.02381435, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.042228483, -0.06467739, -0.015686035)
 shape = SubResource("BoxShape3D_4t3m4")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1434153163]

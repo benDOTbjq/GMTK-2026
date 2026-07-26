@@ -5,8 +5,9 @@
 [ext_resource type="PackedScene" uid="uid://b0bstieegqvxr" path="res://code/assets/despawn_particles.tscn" id="3_4ykkk"]
 [ext_resource type="PackedScene" uid="uid://dyudfcug3yu23" path="res://art/models/collar.blend" id="4_ymwsc"]
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_ymwsc"]
-size = Vector3(0.28930664, 0.14453125, 0.31860352)
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_3p53s"]
+height = 0.052490234
+radius = 0.12988281
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_f1574"]
 radius = 0.05
@@ -20,8 +21,8 @@ demon_info = ExtResource("2_dpy6c")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1028492, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=1207200027]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.032923847, -0.037817225, -0.02620539)
-shape = SubResource("BoxShape3D_ymwsc")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0006047785, -0.08121814, -0.02620539)
+shape = SubResource("CylinderShape3D_3p53s")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1991364005]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1028492, 0)

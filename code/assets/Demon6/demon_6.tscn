@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://b0oy8hdag2b4d" path="res://art/models/shell.blend" id="4_jfkv1"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_bd1b1"]
-size = Vector3(0.20605469, 0.26843262, 0.38305664)
+size = Vector3(0.17285156, 0.26068115, 0.3199463)
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_f1574"]
 radius = 0.05
@@ -20,7 +20,7 @@ demon_info = ExtResource("2_wqf0j")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1028492, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=1207200027]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.029846191, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.021484375, -0.025970459, -0.009460449)
 shape = SubResource("BoxShape3D_bd1b1")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1991364005]

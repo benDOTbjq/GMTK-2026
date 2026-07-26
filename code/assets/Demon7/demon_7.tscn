@@ -5,8 +5,8 @@
 [ext_resource type="PackedScene" uid="uid://b0bstieegqvxr" path="res://code/assets/despawn_particles.tscn" id="3_mh75f"]
 [ext_resource type="PackedScene" uid="uid://bvj1pc6aeo1tj" path="res://art/models/medellion.blend" id="4_u8kqw"]
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_5vpd0"]
-size = Vector3(0.34472656, 0.23242188, 0.30969238)
+[sub_resource type="SphereShape3D" id="SphereShape3D_jfkv1"]
+radius = 0.087886155
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_f1574"]
 radius = 0.05
@@ -20,8 +20,8 @@ demon_info = ExtResource("2_7cgvc")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1028492, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=1207200027]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.026794434)
-shape = SubResource("BoxShape3D_5vpd0")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.03767772, -0.026794434)
+shape = SubResource("SphereShape3D_jfkv1")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1991364005]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1028492, 0)
@@ -33,7 +33,7 @@ mesh = SubResource("CapsuleMesh_f1574")
 [node name="medellion" parent="." unique_id=1829248838 instance=ExtResource("4_u8kqw")]
 transform = Transform3D(0.04, 0, 0, 0, 0.04, 0, 0, 0, 0.04, 0, 0, 0)
 
-[node name="Cube" parent="medellion" index="1" unique_id=518102373]
+[node name="Cube" parent="medellion" index="2" unique_id=1774795080]
 visible = false
 
 [editable path="medellion"]

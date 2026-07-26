@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://dgji2pg6pxboa" path="res://art/models/glove.blend" id="4_gokva"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_gokva"]
-size = Vector3(0.21484375, 0.17016602, 0.3828125)
+size = Vector3(0.17773438, 0.11138916, 0.33972168)
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_f1574"]
 radius = 0.05
@@ -25,7 +25,7 @@ demon_info = ExtResource("2_0vg7o")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1028492, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=1207200027]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.030562207, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00390625, -0.057936475, 0.007751465)
 shape = SubResource("BoxShape3D_gokva")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1991364005]
@@ -38,7 +38,7 @@ mesh = SubResource("CapsuleMesh_f1574")
 [node name="glove" parent="." unique_id=616523561 instance=ExtResource("4_gokva")]
 transform = Transform3D(0.08, 0, 0, 0, 0.08, 0, 0, 0, 0.08, 0, 0, 0)
 
-[node name="Cube_002" parent="glove" index="0" unique_id=1162059653]
+[node name="Cube_002" parent="glove" index="0" unique_id=186053030]
 surface_material_override/0 = SubResource("StandardMaterial3D_cqvtq")
 
 [editable path="glove"]
