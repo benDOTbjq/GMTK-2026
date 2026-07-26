@@ -28,6 +28,7 @@
 [ext_resource type="PackedScene" uid="uid://btjr8y1a0l4de" path="res://code/assets/Demon8/demon_8.tscn" id="21_2whko"]
 [ext_resource type="FontFile" uid="uid://ygfruv4fno1r" path="res://art/fonts/PentagramsSalemica-B978.ttf" id="21_tlgjb"]
 [ext_resource type="PackedScene" uid="uid://52h1antwm00j" path="res://code/assets/Demon9/demon_9.tscn" id="22_e0yoc"]
+[ext_resource type="FontFile" uid="uid://cp0kxlhni6f60" path="res://art/fonts/LittleTroubleGirlBv-EVg.ttf" id="29_i0ugd"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ie5d1"]
 albedo_color = Color(1, 1, 0, 1)
@@ -148,7 +149,7 @@ candles = [NodePath("Candle1"), NodePath("Candle4"), NodePath("Candle2"), NodePa
 unique_name_in_owner = true
 
 [node name="StickyNote" type="MeshInstance3D" parent="." unique_id=946548864]
-transform = Transform3D(0.07486783, 0, -0.0044501442, 0, 0.07499998, 0, 0.0044501442, 0, 0.07486783, -0.62842077, 0.65813, -0.0043869615)
+transform = Transform3D(0.042977195, 0, -0.0025545647, 0, 0.043053057, 0, 0.0025545647, 0, 0.042977195, -0.62842077, 0.65813, -0.0043869615)
 mesh = SubResource("PlaneMesh_f1574")
 
 [node name="Sprite3D" type="Sprite3D" parent="StickyNote" unique_id=1939297183]
@@ -232,71 +233,71 @@ transform = Transform3D(0.7294886, 0, -0.683993, 0, 1, 0, 0.683993, 0, 0.7294886
 [node name="table_2" parent="." unique_id=2080304563 instance=ExtResource("16_62h6r")]
 transform = Transform3D(-0.07, 0, -5.6824803e-09, 0, 0.07, 0, 6.119594e-09, 0, -0.065, -0.7175339, -0.019176781, -0.3742509)
 
-[node name="Circle" parent="table_2" index="0" unique_id=1357563002]
-visible = false
-
-[node name="Cube" parent="table_2" index="1" unique_id=943679891]
+[node name="Cube" parent="table_2" index="0" unique_id=572463431]
 material_override = ExtResource("5_66w8o")
 
-[node name="Cube_001" parent="table_2" index="2" unique_id=532489587]
+[node name="Cube_001" parent="table_2" index="1" unique_id=1328067129]
 material_override = ExtResource("5_66w8o")
 
-[node name="Cube_002" parent="table_2" index="3" unique_id=1519886662]
+[node name="Cube_002" parent="table_2" index="2" unique_id=2119885429]
 material_override = ExtResource("5_66w8o")
 
-[node name="Cube_004" parent="table_2" index="4" unique_id=1083846571]
+[node name="Cube_004" parent="table_2" index="3" unique_id=642828185]
 material_override = ExtResource("5_66w8o")
 
-[node name="Cube_005" parent="table_2" index="5" unique_id=1009735514]
+[node name="Cube_005" parent="table_2" index="4" unique_id=1879019003]
 material_override = ExtResource("5_66w8o")
 
-[node name="Cube_006" parent="table_2" index="6" unique_id=1094997055]
+[node name="Cube_006" parent="table_2" index="5" unique_id=1088791303]
 material_overlay = SubResource("StandardMaterial3D_3m7r3")
 
-[node name="Cube_007" parent="table_2" index="7" unique_id=1505763213]
+[node name="Cube_007" parent="table_2" index="6" unique_id=1155408655]
 material_override = ExtResource("5_66w8o")
 
-[node name="Cube_008" parent="table_2" index="8" unique_id=1152092328]
+[node name="Cube_008" parent="table_2" index="7" unique_id=1499020514]
 material_override = ExtResource("5_66w8o")
 
-[node name="Cube_010" parent="table_2" index="9" unique_id=554977233]
+[node name="Cube_010" parent="table_2" index="8" unique_id=1079369363]
 material_override = ExtResource("5_66w8o")
 
-[node name="Cube_011" parent="table_2" index="10" unique_id=1894900698]
+[node name="Cube_011" parent="table_2" index="9" unique_id=1761003529]
 material_override = ExtResource("5_66w8o")
 
-[node name="Cube_012" parent="table_2" index="11" unique_id=969317016]
+[node name="Cube_012" parent="table_2" index="10" unique_id=1867982522]
 material_override = ExtResource("5_66w8o")
+
+[node name="Circle" parent="table_2" index="11" unique_id=637293099]
+visible = false
 
 [node name="shelf" parent="." unique_id=283854252 instance=ExtResource("6_evhee")]
 transform = Transform3D(-0.03997668, 0, -0.0013657645, 0, 0.04, 0, 0.0013657645, 0, -0.03997668, -1.201, 0.083, 0.676)
 
-[node name="Cube" parent="shelf" index="0" unique_id=177932622]
+[node name="Cube" parent="shelf" index="0" unique_id=84826382]
 surface_material_override/0 = ExtResource("5_66w8o")
 
-[node name="Cube_001" parent="shelf" index="1" unique_id=1048949857]
+[node name="Cube_001" parent="shelf" index="1" unique_id=174749858]
 surface_material_override/0 = ExtResource("5_66w8o")
 
-[node name="Cube_002" parent="shelf" index="2" unique_id=1177739213]
+[node name="Cube_002" parent="shelf" index="2" unique_id=1471184040]
 transform = Transform3D(0.99999994, 0, -3.7252903e-09, 0, 0.9999999, 0, 3.7252903e-09, 0, 0.99999994, -2.6532593, 132.97162, 15.585922)
 surface_material_override/0 = ExtResource("5_66w8o")
 
-[node name="Cube_003" parent="shelf" index="3" unique_id=804948525]
+[node name="Cube_003" parent="shelf" index="3" unique_id=1526511918]
 surface_material_override/0 = ExtResource("5_66w8o")
 
-[node name="Cube_004" parent="shelf" index="4" unique_id=1066684501]
+[node name="Cube_004" parent="shelf" index="4" unique_id=1495235982]
 surface_material_override/0 = ExtResource("5_66w8o")
 
-[node name="Cube_005" parent="shelf" index="5" unique_id=1047121329]
+[node name="Cube_005" parent="shelf" index="5" unique_id=1828431112]
 surface_material_override/0 = ExtResource("5_66w8o")
 
-[node name="Cube_006" parent="shelf" index="6" unique_id=895394728]
+[node name="Cylinder" parent="shelf" index="7" unique_id=672734545]
 surface_material_override/0 = ExtResource("5_66w8o")
 
-[node name="Cylinder" parent="shelf" index="7" unique_id=867081593]
+[node name="Cylinder_001" parent="shelf" index="8" unique_id=597785202]
 surface_material_override/0 = ExtResource("5_66w8o")
 
-[node name="Cylinder_001" parent="shelf" index="8" unique_id=1914111816]
+[node name="Cube_006" parent="shelf" index="9" unique_id=561065678]
 surface_material_override/0 = ExtResource("5_66w8o")
 
 [node name="Demon1" parent="." unique_id=2101668566 instance=ExtResource("17_yow40")]
@@ -379,6 +380,47 @@ text = "TEMPUS MALUM"
 font = ExtResource("21_tlgjb")
 font_size = 76
 outline_size = 0
+
+[node name="StickyNote2" type="MeshInstance3D" parent="." unique_id=1373161545]
+transform = Transform3D(0.0030719042, 0.053726044, 0.0008727404, 0.014708639, -1.67082e-10, -0.05177201, -0.051680796, 0.003193474, -0.014682723, -1.0631683, 1.2330921, 1.2852676)
+mesh = SubResource("PlaneMesh_f1574")
+
+[node name="Sprite3D2" type="Sprite3D" parent="StickyNote2" unique_id=1999371460]
+transform = Transform3D(0.15793002, -0.13070236, -6.361418e-09, 8.7704577e-10, -8.91781e-09, 0.20499998, -0.13070235, -0.15793, -6.311015e-09, 0.49884444, 0.007816508, 0.5216037)
+texture = ExtResource("4_i0ugd")
+
+[node name="Label3D" type="Label3D" parent="StickyNote2" unique_id=1625064793]
+transform = Transform3D(0.99985963, -0.016764179, 0, -7.3278694e-10, -4.3705253e-08, 1, -0.016764179, -0.99985963, -4.371139e-08, -0.17636846, 0.006556345, -0.29727626)
+modulate = Color(0, 0, 0, 1)
+outline_modulate = Color(0.8561512, 0.8335906, 0.19263056, 1)
+text = "EASIER
+DEMONS"
+font = ExtResource("29_i0ugd")
+font_size = 98
+outline_size = 0
+
+[node name="StickyNote3" type="MeshInstance3D" parent="." unique_id=903724559]
+transform = Transform3D(0.0037917816, 0.066316344, 0.0010772605, 0.018155497, -2.0623642e-10, -0.06390439, -0.0637918, 0.00394184, -0.01812351, -1.0612494, 0.7655944, 1.2617111)
+mesh = SubResource("PlaneMesh_f1574")
+
+[node name="Sprite3D2" type="Sprite3D" parent="StickyNote3" unique_id=376905430]
+transform = Transform3D(0.14005831, 0.14969523, -6.3614185e-09, 8.954627e-09, 3.334833e-10, 0.20499998, 0.14969525, -0.14005831, -6.3110135e-09, -0.014665723, 0.007818101, 0.55045134)
+texture = ExtResource("4_i0ugd")
+
+[node name="Label3D" type="Label3D" parent="StickyNote3" unique_id=261576224]
+transform = Transform3D(1.0609618, -0.0054314435, -3.7252903e-09, 3.7252903e-09, -5.029142e-08, 1.0609756, -0.0054314137, -1.0609617, -4.4703484e-08, -0.8388237, 0.006558259, -0.16763662)
+modulate = Color(0, 0, 0, 1)
+outline_modulate = Color(0.8561512, 0.8335906, 0.19263056, 1)
+text = "HARDER
+DEMONS"
+font = ExtResource("29_i0ugd")
+font_size = 98
+outline_size = 0
+horizontal_alignment = 0
+
+[node name="Sprite3D3" type="Sprite3D" parent="StickyNote3" unique_id=2037053737]
+transform = Transform3D(0.13675603, -0.15271798, -6.3614185e-09, -4.5776882e-10, -8.949132e-09, 0.20499998, -0.15271798, -0.13675603, -6.3110126e-09, 0.4719791, 0.0078166695, 0.5965598)
+texture = ExtResource("4_i0ugd")
 
 [editable path="table_2"]
 [editable path="shelf"]

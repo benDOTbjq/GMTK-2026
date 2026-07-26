@@ -40,8 +40,8 @@ axis_stretch_vertical = 2
 
 [node name="BigPentagram" type="Sprite2D" parent="." unique_id=169943049]
 modulate = Color(0.1237021, 0.12370213, 0.12370212, 1)
-position = Vector2(220, 247)
-scale = Vector2(1.266, 1.266)
+position = Vector2(336, 498)
+scale = Vector2(0.6020446, 0.6020446)
 texture = ExtResource("5_2olhy")
 
 [node name="Label" type="Label" parent="." unique_id=370033358]
@@ -55,14 +55,21 @@ theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 1
 theme_override_fonts/font = ExtResource("6_msf70")
 theme_override_font_sizes/font_size = 22
-text = "THE RITUAL BEGINS WITH
-THE ARTIFACT"
+text = "BEGINNERS GUIDE TO DEMON EXORCISM
+Exorcising demons, but its easy!
+
+Start by simply placing your possessed item
+in the penagram.
+
+figure out the rest idk
+
+"
 horizontal_alignment = 1
 
 [node name="Arrow2" type="Sprite2D" parent="." unique_id=2050024227]
-position = Vector2(194, 463.00003)
-rotation = 2.2724445
-scale = Vector2(-0.414, 0.414)
+position = Vector2(203.99998, 516)
+rotation = 3.4367204
+scale = Vector2(-0.38819453, 0.38819453)
 texture = ExtResource("4_mhgwa")
 
 [node name="DemoCandle1" type="Sprite2D" parent="." unique_id=175957898]
