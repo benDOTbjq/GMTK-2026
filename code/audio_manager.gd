@@ -49,6 +49,12 @@ const UI_SUMMON_02: AudioStream = preload("uid://bscwkfxlj6es1")
 const UI_SUMMON_03: AudioStream = preload("uid://dkjxq8jsojism")
 const UI_NAME_HOVER: AudioStream = preload("uid://d1one3gjcmesg")
 const UI_NAME_SELECT: AudioStream = preload("uid://bstltd1aiuioh")
+const UI_CANDLE_EXTINGUISH_01: AudioStream = preload("uid://6xhweqpt6rrb")
+const UI_CANDLE_EXTINGUISH_02: AudioStream = preload("uid://b2lhgc7360ixp")
+const UI_CANDLE_EXTINGUISH_03: AudioStream = preload("uid://bsvf70xxdtm7p")
+const UI_CANDLE_MATCH: AudioStream = preload("uid://bhlkwrp44l7di")
+const UI_FAILED_EXORCISM: AudioStream = preload("uid://dedcwx7s8x86y")
+const UI_SUCCESSFUL_EXORCISM: AudioStream = preload("uid://c0xlmlvvjtodl")
 
 const PLY_ITEM_IRON_STRANGE: AudioStream = preload("uid://bio7vym865rsf")
 const PLY_ITEM_IRON_SUPER_EFFECTIVE: AudioStream = preload("uid://bewlfh2skqk4w")
@@ -89,6 +95,10 @@ const SFX_LU: Dictionary[ID.SFX, Array] = {
 	ID.SFX.SUMMON: [UI_SUMMON_01, UI_SUMMON_02, UI_SUMMON_03],
 	ID.SFX.NAME_HOVER: [UI_NAME_HOVER],
 	ID.SFX.NAME_SELECT: [UI_NAME_SELECT],
+	ID.SFX.CANDLE_EXTINGUISH: [UI_CANDLE_EXTINGUISH_01, UI_CANDLE_EXTINGUISH_02, UI_CANDLE_EXTINGUISH_03],
+	ID.SFX.CANDLE_IGNIGHT: [UI_CANDLE_MATCH],
+	ID.SFX.EXORCISE_SUCCESS: [UI_SUCCESSFUL_EXORCISM],
+	ID.SFX.EXORCISE_FAIL: [UI_FAILED_EXORCISM],
 }
 
 const SFX_ITEMS: Dictionary[ID.Item, Array] = {
@@ -142,7 +152,7 @@ func loop(id: ID.SFXLoop, start := true) -> void:
 		t.tween_property(_current_sfx_loops[id], "volume_linear", 0.0, 2.0)
 		await t.finished
 		_current_sfx_loops[id].queue_free()
-		_current_sfx_loops[id] = null
+		_current_sfx_loops.erase(id)
 
 
 func oneshot(id: ID.SFX) -> void:

@@ -3,13 +3,13 @@
 [ext_resource type="Script" uid="uid://daso0pu1o4uts" path="res://code/assets/artifact.gd" id="1_p28ub"]
 [ext_resource type="Resource" uid="uid://cqmqioiv6odkh" path="res://code/assets/Demon1/Demon1.tres" id="2_oumg7"]
 [ext_resource type="PackedScene" uid="uid://b0bstieegqvxr" path="res://code/assets/despawn_particles.tscn" id="3_msrov"]
-[ext_resource type="PackedScene" uid="uid://clawnwijyiac2" path="res://art/models/beads.blend" id="4_t86wq"]
+[ext_resource type="PackedScene" uid="uid://g7b4lxwsdbwe" path="res://art/models/Horn.blend" id="4_t86wq"]
 
-[sub_resource type="CylinderShape3D" id="CylinderShape3D_pyx55"]
-height = 0.05999756
-radius = 0.118652344
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ep5g2"]
+radius = 0.08496094
+height = 0.517334
 
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_f1574"]
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_e5hqa"]
 radius = 0.05
 height = 0.2
 
@@ -17,30 +17,24 @@ height = 0.2
 script = ExtResource("1_p28ub")
 demon_info = ExtResource("2_oumg7")
 
-[node name="Area3D" type="Area3D" parent="." unique_id=291581058]
+[node name="Area3D" type="Area3D" parent="." unique_id=1856601345]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1028492, 0)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=1207200027]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.006378174, -0.08688356, 0.014221191)
-shape = SubResource("CylinderShape3D_pyx55")
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=863485514]
+transform = Transform3D(0.03628649, 0.81698, 0.5755232, -0.9990151, 0.04437165, 0, -0.025536913, -0.57495636, 0.81778544, -0.030781243, -0.04934544, 0.032574896)
+shape = SubResource("CapsuleShape3D_ep5g2")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1991364005]
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="." unique_id=234527023]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1028492, 0)
 visible = false
-mesh = SubResource("CapsuleMesh_f1574")
+mesh = SubResource("CapsuleMesh_e5hqa")
 
-[node name="DespawnParticles" parent="." unique_id=1660351049 instance=ExtResource("3_msrov")]
+[node name="DespawnParticles2" parent="." unique_id=1660351049 instance=ExtResource("3_msrov")]
 
-[node name="beads" parent="." unique_id=1435455742 instance=ExtResource("4_t86wq")]
-transform = Transform3D(0.065, 0, 0, 0, 0.065, 0, 0, 0, 0.065, 0, 0, 0)
+[node name="Horn" parent="." unique_id=304229136 instance=ExtResource("4_t86wq")]
+transform = Transform3D(0.044698115, 0.002378499, 0.00462837, 0.0051832716, -0.016802108, -0.04142249, -0.00046126597, 0.041677713, -0.016963352, 0, 0.06293361, 0.019341469)
 
-[node name="Camera" parent="beads" index="1" unique_id=308437848]
-visible = false
+[node name="Cylinder" parent="Horn" index="0" unique_id=1447831791]
+transform = Transform3D(-0.45615554, 0.8655498, -0.20675245, -0.88144404, -0.47141054, -0.028795958, -0.122389436, 0.16910529, 0.9779698, -0.84241766, 0.48679808, 0.2224015)
 
-[node name="Light" parent="beads" index="3" unique_id=97637864]
-visible = false
-
-[node name="Sphere" parent="beads" index="4" unique_id=1724525740]
-visible = false
-
-[editable path="beads"]
+[editable path="Horn"]

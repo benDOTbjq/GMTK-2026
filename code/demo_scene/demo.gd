@@ -44,6 +44,10 @@ func _guess_name(combined_type_id: int, demon_name: String) -> void:
 	if curr_demon_info == null:
 		show_dialog("Not yet")
 		return
+	if combined_type_id == DemonManager.get_combined_type_id(curr_demon_info.type1, curr_demon_info.type2):
+		AudioManager.oneshot(ID.SFX.EXORCISE_SUCCESS)
+	else:
+		AudioManager.oneshot(ID.SFX.EXORCISE_FAIL)
 	name_label_3d.visible = true
 	name_label_3d.text = demon_name
 	name_label_3d.global_transform = name_start_transform
@@ -188,6 +192,14 @@ func guess_demon(combined_type_id: int) -> void:
 	else:
 		curr_actions -= 2
 		camera_3d.shake_camera(0.2)
+		for i in candles.size():
+			if i < curr_actions: candles[i].turn_on()
+			else: candles[i].turn_off()
+		
+		if curr_actions <= 0:
+			show_dialog("you lost")
+		else:
+			show_dialog("...That wasn't the\nright name.")
 
 
 func clear_curr_demon() -> void:

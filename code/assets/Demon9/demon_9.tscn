@@ -3,10 +3,10 @@
 [ext_resource type="Script" uid="uid://daso0pu1o4uts" path="res://code/assets/artifact.gd" id="1_ku43n"]
 [ext_resource type="Resource" uid="uid://ci6quuot5jog4" path="res://code/assets/Demon9/Demon9.tres" id="2_toxtg"]
 [ext_resource type="PackedScene" uid="uid://b0bstieegqvxr" path="res://code/assets/despawn_particles.tscn" id="3_ixw8u"]
+[ext_resource type="PackedScene" uid="uid://bwnvl41w5ii86" path="res://art/models/doll.blend" id="4_4romy"]
 
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_f1574"]
-radius = 0.05
-height = 0.2
+[sub_resource type="BoxShape3D" id="BoxShape3D_4romy"]
+size = Vector3(0.22753906, 0.1484375, 0.359375)
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_f1574"]
 radius = 0.05
@@ -20,10 +20,15 @@ demon_info = ExtResource("2_toxtg")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1028492, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=1207200027]
-shape = SubResource("CapsuleShape3D_f1574")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.03857422, -0.030107766, 0)
+shape = SubResource("BoxShape3D_4romy")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1991364005]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1028492, 0)
+visible = false
 mesh = SubResource("CapsuleMesh_f1574")
 
 [node name="DespawnParticles" parent="." unique_id=1660351049 instance=ExtResource("3_ixw8u")]
+
+[node name="doll" parent="." unique_id=1039626371 instance=ExtResource("4_4romy")]
+transform = Transform3D(0.03, 0, 0, 0, 0.03, 0, 0, 0, 0.03, 0, 0.0010821, 0.042458933)

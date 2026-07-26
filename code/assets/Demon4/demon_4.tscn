@@ -3,12 +3,13 @@
 [ext_resource type="Script" uid="uid://daso0pu1o4uts" path="res://code/assets/artifact.gd" id="1_trf51"]
 [ext_resource type="Resource" uid="uid://bya4w6hmfhq06" path="res://code/assets/Demon4/Demon4.tres" id="2_plquf"]
 [ext_resource type="PackedScene" uid="uid://b0bstieegqvxr" path="res://code/assets/despawn_particles.tscn" id="3_h3jop"]
+[ext_resource type="PackedScene" uid="uid://clawnwijyiac2" path="res://art/models/beads.blend" id="4_bnccl"]
 
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_f1574"]
-radius = 0.05
-height = 0.2
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_k2n5a"]
+height = 0.05999756
+radius = 0.118652344
 
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_f1574"]
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_3gqjg"]
 radius = 0.05
 height = 0.2
 
@@ -16,14 +17,24 @@ height = 0.2
 script = ExtResource("1_trf51")
 demon_info = ExtResource("2_plquf")
 
-[node name="Area3D" type="Area3D" parent="." unique_id=291581058]
+[node name="Area3D" type="Area3D" parent="." unique_id=1358769065]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1028492, 0)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=1207200027]
-shape = SubResource("CapsuleShape3D_f1574")
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=85923997]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.006378174, -0.08688356, 0.014221191)
+shape = SubResource("CylinderShape3D_k2n5a")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1991364005]
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="." unique_id=1896428134]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1028492, 0)
-mesh = SubResource("CapsuleMesh_f1574")
+visible = false
+mesh = SubResource("CapsuleMesh_3gqjg")
 
-[node name="DespawnParticles" parent="." unique_id=1660351049 instance=ExtResource("3_h3jop")]
+[node name="DespawnParticles2" parent="." unique_id=1660351049 instance=ExtResource("3_h3jop")]
+
+[node name="beads" parent="." unique_id=1262990208 instance=ExtResource("4_bnccl")]
+transform = Transform3D(0.065, 0, 0, 0, 0.065, 0, 0, 0, 0.065, 0, 0, 0)
+
+[node name="Sphere" parent="beads" index="1" unique_id=1356158925]
+visible = false
+
+[editable path="beads"]
