@@ -1,12 +1,10 @@
 [gd_scene format=3 uid="uid://mw7bq6yywg32"]
 
 [ext_resource type="Script" uid="uid://b8c5vl6vj6qp3" path="res://code/items/item.gd" id="1_260aw"]
+[ext_resource type="PackedScene" uid="uid://bfit3nkymloa7" path="res://art/models/nail.blend" id="2_ustvv"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_f1574"]
-size = Vector3(1, 0.1807251, 1)
-
-[sub_resource type="BoxMesh" id="BoxMesh_ustvv"]
-size = Vector3(1, 0.121154785, 1)
+size = Vector3(0.85424805, 0.27896118, 1.095459)
 
 [node name="Iron" type="Node3D" unique_id=2142078425]
 script = ExtResource("1_260aw")
@@ -16,9 +14,14 @@ item_type = 2
 transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=1598683196]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.09628296, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.034057613, 0.145401, -0.2183838)
 shape = SubResource("BoxShape3D_f1574")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=596977599]
-transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0.008090211, 0)
-mesh = SubResource("BoxMesh_ustvv")
+[node name="nail" parent="." unique_id=383810766 instance=ExtResource("2_ustvv")]
+transform = Transform3D(0.0007954379, -0.004936322, 0, 0.004936322, 0.0007954379, 0, 0, 0, 0.005, 0.03633663, 0.001985656, 0)
+
+[node name="nail2" parent="." unique_id=1870475059 instance=ExtResource("2_ustvv")]
+transform = Transform3D(-0.00077239744, 0.0047933375, -0.0011947021, 0.004936322, 0.0007954379, 0, 0.00019006226, -0.0011794869, -0.004855171, -0.027551897, 0.001985656, 0.027613409)
+
+[node name="nail3" parent="." unique_id=1995146167 instance=ExtResource("2_ustvv")]
+transform = Transform3D(-0.000590197, 0.0036626395, -0.003352124, 0.004936322, 0.0007954379, -1.808692e-11, 0.0005332813, -0.0033094329, -0.0037098872, -0.02599334, 0.001985656, -0.018306449)

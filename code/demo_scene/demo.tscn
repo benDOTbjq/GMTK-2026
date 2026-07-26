@@ -197,7 +197,7 @@ flickerAdvance = 0.7
 transform = Transform3D(0.82214403, 0, -0.56927955, 0, 1, 0, 0.56927955, 0, 0.82214403, 0.58649147, 0.7091613, -0.10521427)
 
 [node name="Iron" parent="." unique_id=130706337 instance=ExtResource("8_ybmms")]
-transform = Transform3D(0.9060377, 0, 0.42319703, 0, 1, 0, -0.42319703, 0, 0.9060377, 0.34599212, 0.6569317, -0.18596372)
+transform = Transform3D(0.9060377, 0, 0.42319703, 0, 1, 0, -0.42319703, 0, 0.9060377, 0.34658065, 0.6569317, -0.18644643)
 
 [node name="Salt" parent="." unique_id=215769566 instance=ExtResource("9_62h6r")]
 transform = Transform3D(0.93616486, 0, -0.35156134, 0, 1, 0, 0.35156134, 0, 0.93616486, -0.54222417, 0.6965359, -0.05212462)
@@ -311,7 +311,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.1960418, 0.48922306, 1.099
 
 [node name="DemonWallSprite" type="Sprite3D" parent="." unique_id=832143614]
 transform = Transform3D(0.515, 3.2740104e-08, 0, -3.2740104e-08, 0.515, 0, 0, 0, 0.515, -0.73712057, -0.71418333, -1.734)
-modulate = Color(1, 1, 1, 0.4)
+modulate = Color(1, 1, 1, 0)
 
 [node name="DemonTableSprite" type="Sprite3D" parent="." unique_id=182461250]
 transform = Transform3D(-0.285, 5.284853e-08, -1.3530484e-15, 0, -1.5298985e-08, -0.205, -4.3033804e-08, -0.35, 8.960835e-09, 0.9572227, 0.65319496, -0.142593)
@@ -331,7 +331,6 @@ texture = ExtResource("18_0qsy3")
 [node name="DialogBox" type="AnimatedSprite3D" parent="." unique_id=2040687098]
 unique_name_in_owner = true
 transform = Transform3D(0.08, 0, 0, 0, 0.08, 0, 0, 0, 0.08, 0.823, 1.258, -0.8)
-visible = false
 billboard = 1
 sprite_frames = ExtResource("17_751wy")
 autoplay = "default"
@@ -344,7 +343,10 @@ pixel_size = 0.0015
 billboard = 1
 text = "This is a test text
 "
-autowrap_mode = 1
+font = ExtResource("21_tlgjb")
+font_size = 63
+line_spacing = -90.0
+autowrap_mode = 2
 
 [node name="Book" parent="." unique_id=699787762 instance=ExtResource("10_j4l0e")]
 

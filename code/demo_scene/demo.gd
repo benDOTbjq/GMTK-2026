@@ -19,6 +19,9 @@ var shadow_frame_id: int = 0
 var shadow_frame_time: float = 0
 var dialog_box_alive_time: float = 0
 
+var shadow_shake_strengh: float = 0.0
+var shadow_shake_fade: float = 5.0
+
 var curr_actions: int = -1
 var items_used: Array[ID.Item]
 
@@ -62,7 +65,13 @@ func _process(delta: float) -> void:
 			shadow_frame_id = (shadow_frame_id + 1) % total
 			wall_sprite.texture = curr_demon_info.shadow_anim.get_frame_texture("default", shadow_frame_id)
 			table_sprite.texture = curr_demon_info.shadow_anim.get_frame_texture("default", shadow_frame_id)
-
+	
+	if shadow_shake_strengh > 0:
+		shadow_shake_strengh = lerpf(shadow_shake_strengh, 0 , delta * shadow_shake_fade)
+		var table_shake = Vector3(randf_range(-shadow_shake_strengh, shadow_shake_strengh), 0.0, randf_range(-shadow_shake_strengh, shadow_shake_strengh))
+		var wall_shake = Vector3(randf_range(-shadow_shake_strengh, shadow_shake_strengh), randf_range(-shadow_shake_strengh, shadow_shake_strengh), 0.0)
+		table_sprite.position = Vector3(0.957, 0.653, -0.143) + table_shake
+		wall_sprite.position = Vector3(0.0, 0.699, -1.734) + wall_shake
 
 func setup_demon(artifact: Artifact) -> void:
 	curr_artifact = artifact
@@ -90,22 +99,24 @@ func use_item(item: ID.Item) -> void:
 		show_dialog("You already used this item")
 		return
 	
-	var effectiveness = DemonManager.check_item_effectivness(item, curr_demon_info.type1, curr_demon_info.type2)
+	var effectiveness = DemonManager.check_item_effectivness(item, curr_demon_info.type1, curr_demon_info.type2)	
 	if effectiveness == 3:
 		show_dialog("The demon is strangely uneffected")
 		effectiveness = 0
-	else:
-		match effectiveness:
-			-2: show_dialog("The demon is extremely empowered")
-			-1: show_dialog("The demon is empowered")
-			0: show_dialog("The demon is unaffected")
-			1: show_dialog("The demon is weakened")
-			2: show_dialog("The demon is extremely weakened")
-	
-	if effectiveness == -1:
-		camera_3d.shake_camera(0.1)
+	elif effectiveness == 0:
+		show_dialog("The demon is unaffected")
 	elif effectiveness == -2:
 		camera_3d.shake_camera(0.2)
+		show_dialog("The demon is extremely empowered")
+	elif effectiveness == -1:
+		camera_3d.shake_camera(0.1)
+		show_dialog("The demon is empowered")
+	elif effectiveness == 1:
+		shadow_shake_strengh = 0.1
+		show_dialog("The demon is weakened")
+	elif effectiveness == 2:
+		shadow_shake_strengh = 0.2
+		show_dialog("The demon is extremely weakened")
 	
 	curr_actions += effectiveness - 1
 	items_used.append(item)
