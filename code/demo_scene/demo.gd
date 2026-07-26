@@ -31,6 +31,8 @@ var shadow_shake_fade: float = 5.0
 var curr_actions: int = -1
 var items_used: Array[ID.Item]
 
+var demons_number: int = 9
+
 func _ready() -> void:
 	Bus.set_view.connect(_view_state_change)
 	Bus.use_item.connect(use_item)
@@ -189,6 +191,10 @@ func guess_demon(combined_type_id: int) -> void:
 		curr_actions = 0
 		AudioManager.set_music(ID.Music.NULL)
 		AudioManager.loop(ID.SFXLoop.PENAGRAM, false)
+		
+		demons_number -= 1
+		if demons_number <= 0:
+			gui._show_end_screen(true)
 	else:
 		curr_actions -= 2
 		camera_3d.shake_camera(0.2)

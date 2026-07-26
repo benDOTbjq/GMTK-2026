@@ -148,6 +148,20 @@ theme_override_fonts/font = ExtResource("2_h0h8g")
 theme_override_font_sizes/font_size = 50
 text = "YOU WIN"
 
+[node name="ThankYou" type="Label" parent="EndScreen" unique_id=229930384]
+unique_name_in_owner = true
+visible = false
+layout_mode = 0
+offset_left = 468.0
+offset_top = 277.0
+offset_right = 832.0
+offset_bottom = 399.0
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_h0h8g")
+theme_override_font_sizes/font_size = 30
+text = "THANKS YOU FOR PLAYING"
+horizontal_alignment = 1
+
 [node name="Reload" type="Button" parent="EndScreen" unique_id=2012652071]
 unique_name_in_owner = true
 visible = false

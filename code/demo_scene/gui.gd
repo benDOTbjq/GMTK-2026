@@ -75,6 +75,8 @@ func _show_end_screen(did_win: bool) -> void:
 	reload_button.text = "GO AGAIN" if did_win else "TRY AGAIN"
 	var t = get_tree().create_tween()
 	t.tween_callback(%EndMessage.show.bind()).set_delay(1.0)
+	if did_win:
+		t.tween_callback(%ThankYou.show.bind()).set_delay(1.0)
 	t.tween_callback(%Reload.show.bind()).set_delay(1.0)
 
 func _reload_level():
