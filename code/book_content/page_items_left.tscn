@@ -98,19 +98,16 @@ horizontal_alignment = 1
 [node name="Label" type="Label" parent="." unique_id=1184988878]
 custom_minimum_size = Vector2(250, 171)
 layout_mode = 0
-offset_left = 160.0
+offset_left = 158.0
 offset_top = 37.0
-offset_right = 410.0
-offset_bottom = 179.0
+offset_right = 408.0
+offset_bottom = 208.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 1
 theme_override_fonts/font = ExtResource("4_et5aa")
-theme_override_font_sizes/font_size = 22
-text = "Salt
-BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH
-
-"
+theme_override_font_sizes/font_size = 109
+text = "Salt"
 horizontal_alignment = 1
 autowrap_mode = 2
 
@@ -162,11 +159,8 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 1
 theme_override_fonts/font = ExtResource("4_et5aa")
-theme_override_font_sizes/font_size = 22
-text = "Iron
-BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH
-
-"
+theme_override_font_sizes/font_size = 109
+text = "Iron"
 horizontal_alignment = 1
 autowrap_mode = 2
 

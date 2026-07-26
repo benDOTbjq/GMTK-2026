@@ -98,19 +98,16 @@ horizontal_alignment = 1
 [node name="Label" type="Label" parent="." unique_id=1184988878]
 custom_minimum_size = Vector2(250, 171)
 layout_mode = 0
-offset_left = 160.0
-offset_top = 37.0
-offset_right = 410.0
-offset_bottom = 179.0
+offset_left = 164.0
+offset_top = 48.0
+offset_right = 414.0
+offset_bottom = 219.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 1
 theme_override_fonts/font = ExtResource("4_5st3o")
-theme_override_font_sizes/font_size = 22
-text = "Water
-BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH
-
-"
+theme_override_font_sizes/font_size = 90
+text = "Water"
 horizontal_alignment = 1
 autowrap_mode = 2
 
@@ -154,19 +151,16 @@ horizontal_alignment = 1
 [node name="Label5" type="Label" parent="." unique_id=2017148548]
 custom_minimum_size = Vector2(171, 171)
 layout_mode = 0
-offset_left = 34.0
-offset_top = 319.0
-offset_right = 284.0
-offset_bottom = 490.0
+offset_left = 36.0
+offset_top = 334.0
+offset_right = 286.0
+offset_bottom = 505.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 1
 theme_override_fonts/font = ExtResource("4_5st3o")
-theme_override_font_sizes/font_size = 22
-text = "Prayer
-BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH
-
-"
+theme_override_font_sizes/font_size = 88
+text = "Prayer"
 horizontal_alignment = 1
 autowrap_mode = 2
 
