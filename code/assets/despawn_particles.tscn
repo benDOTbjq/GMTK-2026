@@ -19,8 +19,8 @@ colors = PackedColorArray(0, 0, 0, 1, 1, 1, 1, 0)
 
 [node name="DespawnParticles" type="CPUParticles3D" unique_id=1660351049]
 emitting = false
-amount = 30
-lifetime = 0.5
+amount = 50
+lifetime = 0.75
 one_shot = true
 mesh = SubResource("QuadMesh_t86wq")
 emission_shape = 1

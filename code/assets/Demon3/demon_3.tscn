@@ -12,9 +12,10 @@ size = Vector3(0.23168945, 0.092666626, 0.17425537)
 radius = 0.05
 height = 0.2
 
-[node name="Demon3" type="Node3D" unique_id=382449128]
+[node name="Demon3" type="Node3D" unique_id=382449128 node_paths=PackedStringArray("mesh")]
 script = ExtResource("1_20ff2")
 demon_info = ExtResource("2_svxga")
+mesh = NodePath("Book")
 
 [node name="Area3D" type="Area3D" parent="." unique_id=291581058]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1028492, 0)
@@ -32,11 +33,5 @@ mesh = SubResource("CapsuleMesh_f1574")
 
 [node name="Book" parent="." unique_id=845276988 instance=ExtResource("4_468fy")]
 transform = Transform3D(0.045, 0, 0, 0, 0.045, 0, 0, 0, 0.045, -0.014499013, 0, -0.020696478)
-
-[node name="Camera" parent="Book" index="0" unique_id=2122751683]
-visible = false
-
-[node name="Light" parent="Book" index="2" unique_id=1960077634]
-visible = false
 
 [editable path="Book"]

@@ -13,9 +13,10 @@ radius = 0.118652344
 radius = 0.05
 height = 0.2
 
-[node name="Demon4" type="Node3D" unique_id=382449128]
+[node name="Demon4" type="Node3D" unique_id=382449128 node_paths=PackedStringArray("mesh")]
 script = ExtResource("1_trf51")
 demon_info = ExtResource("2_plquf")
+mesh = NodePath("beads")
 
 [node name="Area3D" type="Area3D" parent="." unique_id=1358769065]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1028492, 0)
@@ -34,7 +35,7 @@ mesh = SubResource("CapsuleMesh_3gqjg")
 [node name="beads" parent="." unique_id=1262990208 instance=ExtResource("4_bnccl")]
 transform = Transform3D(0.065, 0, 0, 0, 0.065, 0, 0, 0, 0.065, 0, 0, 0)
 
-[node name="Sphere" parent="beads" index="1" unique_id=1356158925]
+[node name="Sphere" parent="beads" index="2" unique_id=1664355862]
 visible = false
 
 [editable path="beads"]

@@ -12,10 +12,11 @@ size = Vector3(0.1743164, 0.09051514, 0.31555176)
 radius = 0.05
 height = 0.2
 
-[node name="Demon2" type="Node3D" unique_id=382449128]
+[node name="Demon2" type="Node3D" unique_id=382449128 node_paths=PackedStringArray("mesh")]
 transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, 0, 0, 0)
 script = ExtResource("1_nbwyu")
 demon_info = ExtResource("2_nsjmk")
+mesh = NodePath("Hand")
 
 [node name="Area3D" type="Area3D" parent="." unique_id=1205942728]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1028492, 0)

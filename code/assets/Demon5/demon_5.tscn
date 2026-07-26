@@ -13,9 +13,10 @@ radius = 0.12988281
 radius = 0.05
 height = 0.2
 
-[node name="Demon5" type="Node3D" unique_id=382449128]
+[node name="Demon5" type="Node3D" unique_id=382449128 node_paths=PackedStringArray("mesh")]
 script = ExtResource("1_j2661")
 demon_info = ExtResource("2_dpy6c")
+mesh = NodePath("collar")
 
 [node name="Area3D" type="Area3D" parent="." unique_id=291581058]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1028492, 0)

@@ -13,9 +13,10 @@ height = 0.517334
 radius = 0.05
 height = 0.2
 
-[node name="Demon1" type="Node3D" unique_id=382449128]
+[node name="Demon1" type="Node3D" unique_id=382449128 node_paths=PackedStringArray("mesh")]
 script = ExtResource("1_p28ub")
 demon_info = ExtResource("2_oumg7")
+mesh = NodePath("Horn")
 
 [node name="Area3D" type="Area3D" parent="." unique_id=1856601345]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1028492, 0)
@@ -34,7 +35,7 @@ mesh = SubResource("CapsuleMesh_e5hqa")
 [node name="Horn" parent="." unique_id=304229136 instance=ExtResource("4_t86wq")]
 transform = Transform3D(0.044698115, 0.002378499, 0.00462837, 0.0051832716, -0.016802108, -0.04142249, -0.00046126597, 0.041677713, -0.016963352, 0, 0.06293361, 0.019341469)
 
-[node name="Cylinder" parent="Horn" index="0" unique_id=1447831791]
+[node name="Cylinder" parent="Horn" index="0" unique_id=518033860]
 transform = Transform3D(-0.45615554, 0.8655498, -0.20675245, -0.88144404, -0.47141054, -0.028795958, -0.122389436, 0.16910529, 0.9779698, -0.84241766, 0.48679808, 0.2224015)
 
 [editable path="Horn"]

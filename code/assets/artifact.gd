@@ -2,9 +2,9 @@ extends Node3D
 class_name Artifact
 
 @export var demon_info : DemonInfo
+@export var mesh: Node3D
 
 @onready var despawn_particles: CPUParticles3D = $DespawnParticles
-@onready var mesh: MeshInstance3D = $MeshInstance3D
 
 func _ready() -> void:
 	$Area3D.input_event.connect(_on_area_3d_input_event)
@@ -29,6 +29,6 @@ func _on_area_3d_input_event(_camera: Node, event: InputEvent, _event_position: 
 
 func despawn() -> void:
 	despawn_particles.emitting = true
-	mesh.hide()
-	await get_tree().create_timer(1.5).timeout
-	queue_free()
+	var t = get_tree().create_tween()
+	t.tween_callback(mesh.hide.bind()).set_delay(0.5)
+	t.tween_callback(mesh.queue_free.bind()).set_delay(0.5)

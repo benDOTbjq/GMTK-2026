@@ -17,9 +17,10 @@ albedo_color = Color(0.32913828, 0.32913813, 0.3291381, 1)
 metallic = 1.0
 roughness = 0.5
 
-[node name="Demon8" type="Node3D" unique_id=382449128]
+[node name="Demon8" type="Node3D" unique_id=382449128 node_paths=PackedStringArray("mesh")]
 script = ExtResource("1_fp3kh")
 demon_info = ExtResource("2_0vg7o")
+mesh = NodePath("glove")
 
 [node name="Area3D" type="Area3D" parent="." unique_id=291581058]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1028492, 0)
