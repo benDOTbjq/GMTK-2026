@@ -123,7 +123,11 @@ func _ready() -> void:
 	update_name()
 	name_button.pressed.connect(func() -> void:
 		if not name_label.text.is_empty():
-			Bus.name_selected.emit(_last_combined_type_id, name_label.text))
+			name_label.visible = false
+			Bus.name_selected.emit(_last_combined_type_id, name_label.text)
+			await create_tween().tween_interval(1.5).finished
+			name_label.visible = true)
+			
 	for button: TextureButton in _start_positions.keys():
 		button.mouse_entered.connect(_button_hover.bind(button, true))
 		button.mouse_exited.connect(_button_hover.bind(button, false))

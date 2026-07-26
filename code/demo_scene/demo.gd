@@ -38,6 +38,8 @@ func _ready() -> void:
 	AudioManager.set_music(ID.Music.TITLE, 0.0)
 	Bus.name_selected.connect(_guess_name)
 	name_label_3d.visible = false
+	for candle in candles:
+		candle.turn_on(true)
 
 
 func _guess_name(combined_type_id: int, demon_name: String) -> void:
@@ -232,3 +234,5 @@ func _exit_title() -> void:
 	await t.finished
 	title_label_3d.queue_free()
 	%DialogBox.reparent(camera_3d)
+	for candle in candles:
+		candle.turn_off(true)

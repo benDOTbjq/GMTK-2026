@@ -44,6 +44,7 @@ func _reset_demon() -> void:
 	_current_demon = DemonManager.get_random_demon()
 	label.text = ""
 
+
 func _print_demon() -> void:
 	label.text = (
 		DemonManager.TYPE_TO_STRING[_current_demon.type_1] + 
@@ -68,6 +69,7 @@ func _test_item(item_id: ID.Item) -> void:
 
 func _show_end_screen(did_win: bool) -> void:
 	AudioServer.set_bus_mute(AudioServer.get_bus_index("Master"), true)
+	AudioManager.loop(ID.SFXLoop.PENAGRAM, false)
 	black_screen.show()
 	end_message.text = "YOU WIN" if did_win else "YOU LOST"
 	reload_button.text = "GO AGAIN" if did_win else "TRY AGAIN"
