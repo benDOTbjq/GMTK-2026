@@ -29,7 +29,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1028492, 0)
 visible = false
 mesh = SubResource("CapsuleMesh_3gqjg")
 
-[node name="DespawnParticles2" parent="." unique_id=1660351049 instance=ExtResource("3_h3jop")]
+[node name="DespawnParticles" parent="." unique_id=1660351049 instance=ExtResource("3_h3jop")]
 
 [node name="beads" parent="." unique_id=1262990208 instance=ExtResource("4_bnccl")]
 transform = Transform3D(0.065, 0, 0, 0, 0.065, 0, 0, 0, 0.065, 0, 0, 0)

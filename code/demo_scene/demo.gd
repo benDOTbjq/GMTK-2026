@@ -87,6 +87,8 @@ func _view_state_change(next_view: ID.CameraMode) -> void:
 			gui.prayer_button.visible = true
 			gui.iron_button.visible = true
 			gui.water_button.visible = true
+		ID.CameraMode.SHELF:
+			gui.book_open_button.visible = false
 			
 	if next_view != ID.CameraMode.BOOK and curr_view != ID.CameraMode.BOOK:
 		AudioManager.oneshot(ID.SFX.WOOSH)

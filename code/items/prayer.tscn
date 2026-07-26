@@ -3,10 +3,13 @@
 [ext_resource type="Script" uid="uid://b8c5vl6vj6qp3" path="res://code/items/item.gd" id="1_n1csb"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_f1574"]
-size = Vector3(0.73327637, 0.32006836, 1)
+size = Vector3(0.73327637, 0.32006836, 1.1962891)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_260aw"]
+albedo_color = Color(0.3, 0.17750001, 0.09, 1)
 
 [sub_resource type="BoxMesh" id="BoxMesh_f1574"]
-size = Vector3(0.16845703, 0.18115234, 1)
+size = Vector3(0.16845703, 0.18115234, 1.1391602)
 
 [sub_resource type="BoxMesh" id="BoxMesh_n1csb"]
 size = Vector3(0.70584106, 0.18115234, 0.15527344)
@@ -19,13 +22,15 @@ item_type = 3
 transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=1598683196]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0018920889, 0.015991218, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0018920889, 0.015991218, 0.09814453)
 shape = SubResource("BoxShape3D_f1574")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=596977599]
-transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0.000567134, 0, 0)
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0.000567134, 0, 0.006958008)
+material_override = SubResource("StandardMaterial3D_260aw")
 mesh = SubResource("BoxMesh_f1574")
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="." unique_id=1535634125]
 transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, -0.00028924365, 0, -0.015113306)
+material_override = SubResource("StandardMaterial3D_260aw")
 mesh = SubResource("BoxMesh_n1csb")
