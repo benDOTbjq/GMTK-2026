@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://c8msnl5jm2kan" path="res://code/book_content/page.gd" id="1_nvre0"]
 [ext_resource type="Texture2D" uid="uid://dg0jl46u7t3k5" path="res://art/krita/book_border.png" id="2_0pha8"]
 [ext_resource type="FontFile" uid="uid://cp0kxlhni6f60" path="res://art/fonts/LittleTroubleGirlBv-EVg.ttf" id="4_bjqdn"]
+[ext_resource type="Texture2D" uid="uid://box5yypbtqhvy" path="res://art/demo/pentagram.png" id="5_3y10m"]
 
 [node name="NoiseDemonPage" type="Control" unique_id=1729994615]
 layout_mode = 3
@@ -42,26 +43,52 @@ anchor_bottom = 1.0
 offset_right = 94.0
 grow_vertical = 2
 
-[node name="Label" type="Label" parent="." unique_id=825000594]
+[node name="DemoCandle3" type="Sprite2D" parent="." unique_id=1001272694]
+modulate = Color(0.1237021, 0.12370213, 0.12370212, 1)
+position = Vector2(110.00001, 299)
+rotation = -0.13875149
+scale = Vector2(0.118, 0.124)
+texture = ExtResource("5_3y10m")
+
+[node name="DemoCandle4" type="Sprite2D" parent="." unique_id=598138124]
+modulate = Color(0.1237021, 0.12370213, 0.12370212, 1)
+position = Vector2(146.99998, 160)
+rotation = -0.005697012
+scale = Vector2(0.118, 0.124)
+texture = ExtResource("5_3y10m")
+
+[node name="DemoCandle5" type="Sprite2D" parent="." unique_id=1323730438]
+modulate = Color(0.1237021, 0.12370213, 0.12370212, 1)
+position = Vector2(309, 151)
+rotation = -0.005697012
+scale = Vector2(0.118, 0.124)
+texture = ExtResource("5_3y10m")
+
+[node name="DemoCandle6" type="Sprite2D" parent="." unique_id=661040095]
+modulate = Color(0.1237021, 0.12370213, 0.12370212, 1)
+position = Vector2(345.99997, 297)
+rotation = 0.39490885
+scale = Vector2(0.118, 0.124)
+texture = ExtResource("5_3y10m")
+
+[node name="DemoCandle7" type="Sprite2D" parent="." unique_id=751101883]
+modulate = Color(0.1237021, 0.12370213, 0.12370212, 1)
+position = Vector2(230.99998, 409.99997)
+rotation = -0.70550346
+scale = Vector2(0.118, 0.124000005)
+texture = ExtResource("5_3y10m")
+
+[node name="Label" type="Label" parent="." unique_id=1717566680]
 layout_mode = 0
-offset_left = 42.0
-offset_top = 100.0
-offset_right = 406.0
-offset_bottom = 416.0
+offset_left = 45.0
+offset_top = 33.0
+offset_right = 409.0
+offset_bottom = 88.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 1
 theme_override_fonts/font = ExtResource("4_bjqdn")
 theme_override_font_sizes/font_size = 22
-text = "A DEMONS NAME.
-
-A DEMONS NATURE.
-
-These Are The Same.
-
-
-
-Determine It's Nature To
-
-Exorcise The DEMON"
+text = "THE LIGHT IS YOUR LIFE
+"
 horizontal_alignment = 1

@@ -40,12 +40,12 @@ func _ready() -> void:
 	name_label_3d.visible = false
 
 
-func _guess_name(combined_type_id: int, name: String) -> void:
+func _guess_name(combined_type_id: int, demon_name: String) -> void:
 	if curr_demon_info == null:
 		show_dialog("Not yet")
 		return
 	name_label_3d.visible = true
-	name_label_3d.text = name
+	name_label_3d.text = demon_name
 	name_label_3d.global_transform = name_start_transform
 	camera_3d.update_camera_mode(ID.CameraMode.TABLE, true)
 	var t = create_tween()

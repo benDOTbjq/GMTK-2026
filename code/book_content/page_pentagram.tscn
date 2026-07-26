@@ -2,7 +2,6 @@
 
 [ext_resource type="Texture2D" uid="uid://ba5726xsa4ogm" path="res://art/demo/paper.png" id="1_267v8"]
 [ext_resource type="Script" uid="uid://c8msnl5jm2kan" path="res://code/book_content/page.gd" id="1_nxrm6"]
-[ext_resource type="Texture2D" uid="uid://box5yypbtqhvy" path="res://art/demo/pentagram.png" id="2_7qh8y"]
 [ext_resource type="Texture2D" uid="uid://dg0jl46u7t3k5" path="res://art/krita/book_border.png" id="2_yq7sq"]
 [ext_resource type="Texture2D" uid="uid://ncfl4vlcjdnc" path="res://art/krita/arrow.png" id="4_yq7sq"]
 [ext_resource type="FontFile" uid="uid://cp0kxlhni6f60" path="res://art/fonts/LittleTroubleGirlBv-EVg.ttf" id="5_tmw5n"]
@@ -37,61 +36,6 @@ patch_margin_bottom = 129
 axis_stretch_horizontal = 2
 axis_stretch_vertical = 2
 
-[node name="Arrow" type="Sprite2D" parent="." unique_id=308447771]
-position = Vector2(378, 530)
-scale = Vector2(0.4140625, 0.4140625)
-texture = ExtResource("4_yq7sq")
-
-[node name="DemoCandle3" type="Sprite2D" parent="." unique_id=1990273940]
-modulate = Color(0.1237021, 0.12370213, 0.12370212, 1)
-position = Vector2(110.00001, 299)
-rotation = -0.13875149
-scale = Vector2(0.118, 0.124)
-texture = ExtResource("2_7qh8y")
-
-[node name="DemoCandle4" type="Sprite2D" parent="." unique_id=1025093062]
-modulate = Color(0.1237021, 0.12370213, 0.12370212, 1)
-position = Vector2(146.99998, 160)
-rotation = -0.005697012
-scale = Vector2(0.118, 0.124)
-texture = ExtResource("2_7qh8y")
-
-[node name="DemoCandle5" type="Sprite2D" parent="." unique_id=1029814087]
-modulate = Color(0.1237021, 0.12370213, 0.12370212, 1)
-position = Vector2(309, 151)
-rotation = -0.005697012
-scale = Vector2(0.118, 0.124)
-texture = ExtResource("2_7qh8y")
-
-[node name="DemoCandle6" type="Sprite2D" parent="." unique_id=1174123746]
-modulate = Color(0.1237021, 0.12370213, 0.12370212, 1)
-position = Vector2(345.99997, 297)
-rotation = 0.39490885
-scale = Vector2(0.118, 0.124)
-texture = ExtResource("2_7qh8y")
-
-[node name="DemoCandle7" type="Sprite2D" parent="." unique_id=483842726]
-modulate = Color(0.1237021, 0.12370213, 0.12370212, 1)
-position = Vector2(230.99998, 409.99997)
-rotation = -0.70550346
-scale = Vector2(0.118, 0.124000005)
-texture = ExtResource("2_7qh8y")
-
-[node name="Label" type="Label" parent="." unique_id=1668114297]
-layout_mode = 0
-offset_left = 45.0
-offset_top = 33.0
-offset_right = 409.0
-offset_bottom = 88.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 1
-theme_override_fonts/font = ExtResource("5_tmw5n")
-theme_override_font_sizes/font_size = 22
-text = "THE LIGHT IS YOUR LIFE
-"
-horizontal_alignment = 1
-
 [node name="NextButton" type="TextureButton" parent="." unique_id=455211487]
 layout_mode = 1
 anchors_preset = 11
@@ -102,3 +46,32 @@ offset_left = -94.0
 offset_right = -1.0
 grow_horizontal = 0
 grow_vertical = 2
+
+[node name="Label2" type="Label" parent="." unique_id=1310145049]
+layout_mode = 0
+offset_left = 42.0
+offset_top = 100.0
+offset_right = 406.0
+offset_bottom = 416.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 1
+theme_override_fonts/font = ExtResource("5_tmw5n")
+theme_override_font_sizes/font_size = 22
+text = "A DEMONS NAME.
+
+A DEMONS NATURE.
+
+These Are The Same.
+
+
+
+Determine It's Nature To
+
+Exorcise The DEMON"
+horizontal_alignment = 1
+
+[node name="Arrow" type="Sprite2D" parent="." unique_id=1996825815]
+position = Vector2(378, 530)
+scale = Vector2(0.4140625, 0.4140625)
+texture = ExtResource("4_yq7sq")
