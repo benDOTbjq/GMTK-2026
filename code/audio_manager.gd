@@ -103,6 +103,10 @@ const SFX_LU: Dictionary[ID.SFX, Array] = {
 const SFX_VOL_LU: Dictionary[AudioStream, float] = {
 	UI_NAME_HOVER: 0.1,
 	UI_NAME_SELECT: 0.1,
+	UI_CANDLE_MATCH: 0.1,
+	UI_CANDLE_EXTINGUISH_01: 0.5,
+	UI_CANDLE_EXTINGUISH_02: 0.5,
+	UI_CANDLE_EXTINGUISH_03: 0.5,
 }
 
 const SFX_ITEMS: Dictionary[ID.Item, Array] = {

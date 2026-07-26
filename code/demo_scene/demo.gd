@@ -153,22 +153,22 @@ func use_item(item: ID.Item) -> void:
 	var effectiveness = DemonManager.check_item_effectivness(item, curr_demon_info.type1, curr_demon_info.type2)
 	AudioManager.play_item(item, effectiveness)
 	if effectiveness == 3:
-		show_dialog("The demon is strangely uneffected")
+		show_dialog("The demon is strangely uneffected", false)
 		effectiveness = 0
 	elif effectiveness == 0:
-		show_dialog("The demon is unaffected")
+		show_dialog("The demon is unaffected", false)
 	elif effectiveness == -2:
 		camera_3d.shake_camera(0.2)
-		show_dialog("The demon is extremely empowered")
+		show_dialog("The demon is extremely empowered", false)
 	elif effectiveness == -1:
 		camera_3d.shake_camera(0.1)
-		show_dialog("The demon is empowered")
+		show_dialog("The demon is empowered", false)
 	elif effectiveness == 1:
 		shadow_shake_strengh = 0.1
-		show_dialog("The demon is weakened")
+		show_dialog("The demon is weakened", false)
 	elif effectiveness == 2:
 		shadow_shake_strengh = 0.2
-		show_dialog("The demon is extremely weakened")
+		show_dialog("The demon is extremely weakened", false)
 	
 	curr_actions += effectiveness - 1
 	items_used.append(item)
@@ -193,29 +193,34 @@ func guess_demon(combined_type_id: int) -> void:
 		update_candles()
 		
 		if curr_actions <= 0:
-			show_dialog("you lost")
+			show_dialog("you lost", false)
 		else:
-			show_dialog("...That wasn't the\nright name.")
+			show_dialog("...That wasn't the\nright name.", false)
 
 
 func clear_curr_demon() -> void:
 	if curr_demon_info == null:
 		return
 
-func show_dialog(text: String) -> void:
-	AudioManager.oneshot(ID.SFX.VOICE)
+func show_dialog(text: String, is_voice := true) -> void:
+	if is_voice:
+		AudioManager.oneshot(ID.SFX.VOICE)
 	dialog_box_alive_time = 0
 	%DialogBox.visible = true
 	%BubbleText.text = text
 
 func update_candles() -> void:
-	var t = create_tween()
-	t.set_parallel(true)
 	for i in candles.size():
+		var t = create_tween()
+		t.tween_interval(0.5)
+		await t.finished
+		
 		if i < curr_actions:
-			t.tween_callback(candles[i].turn_on.bind()).set_delay(0.2 * i + 0.5)
+			if not candles[i].is_on:
+				candles[i].turn_on()
 		else:
-			t.tween_callback(candles[i].turn_off.bind()).set_delay(0.2 * i + 0.5)
+			if candles[i].is_on:
+				candles[i].turn_off()
 
 func _exit_title() -> void:
 	var t = create_tween()
