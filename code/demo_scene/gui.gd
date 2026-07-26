@@ -3,25 +3,38 @@ class_name GUI extends Control
 
 var _current_demon: Dictionary
 
-@onready var menu_button: TextureButton = %MenuButton
-@onready var table_button: TextureButton = %TableButton
-@onready var book_open_button: TextureButton = %BookOpenButton
-@onready var book_close_button: TextureButton = %BookCloseButton
-@onready var title_button: TextureButton = $TitleButton
+@onready var menu_button: BaseButton = %MenuButton
+@onready var table_button: BaseButton = %TableButton
+@onready var book_open_button: BaseButton = %BookOpenButton
+@onready var book_close_button: BaseButton = %BookCloseButton
+@onready var title_button: BaseButton = $TitleButton
 
 @onready var reset_button: Button = %ResetButton
 @onready var check_button: Button = %CheckButton
 @onready var label: Label = %Label
+
+@onready var salt_button: BaseButton = %SaltButton
+@onready var prayer_button: BaseButton = %PrayerButton
+@onready var iron_button: BaseButton = %IronButton
+@onready var water_button: BaseButton = %WaterButton
 
 
 func _ready() -> void:
 	_current_demon = DemonManager.get_random_demon()
 	reset_button.pressed.connect(_reset_demon)
 	check_button.pressed.connect(_test_demon)
-	book_open_button.pressed.connect(book_open_button.set.bind(&"visible", false))
-	book_open_button.pressed.connect(book_close_button.set.bind(&"visible", true))
-	book_close_button.pressed.connect(book_close_button.set.bind(&"visible", false))
-	book_close_button.pressed.connect(book_open_button.set.bind(&"visible", true))
+	
+	title_button.pressed.connect(Bus.set_view.emit.bind(ID.CameraMode.TABLE))
+	table_button.pressed.connect(Bus.set_view.emit.bind(ID.CameraMode.TABLE))
+	menu_button.pressed.connect(Bus.set_view.emit.bind(ID.CameraMode.SHELF))
+	book_open_button.pressed.connect(Bus.set_view.emit.bind(ID.CameraMode.BOOK))
+	book_close_button.pressed.connect(Bus.set_view.emit.bind(ID.CameraMode.TABLE))
+	
+	salt_button.pressed.connect(Bus.use_item.emit.bind(ID.Item.SALT))
+	prayer_button.pressed.connect(Bus.use_item.emit.bind(ID.Item.PRAYER))
+	iron_button.pressed.connect(Bus.use_item.emit.bind(ID.Item.IRON))
+	water_button.pressed.connect(Bus.use_item.emit.bind(ID.Item.HOLY_WATER))
+
 
 func _reset_demon() -> void:
 	_current_demon = DemonManager.get_random_demon()

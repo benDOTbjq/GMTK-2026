@@ -13,6 +13,7 @@ class_name Level
 
 @export var candles: Array[Candle] = []
 
+var curr_view := ID.CameraMode.TITLE
 var curr_artifact: Artifact = null
 var curr_demon_info: DemonInfo = null
 var shadow_frame_id: int = 0
@@ -26,24 +27,45 @@ var curr_actions: int = -1
 var items_used: Array[ID.Item]
 
 func _ready() -> void:
-	gui.menu_button.pressed.connect(camera_3d.update_camera_mode.bind(ID.CameraMode.SHELF))
-	gui.table_button.pressed.connect(camera_3d.update_camera_mode.bind(ID.CameraMode.TABLE))
-	
-	gui.book_open_button.pressed.connect(camera_3d.update_camera_mode.bind(ID.CameraMode.BOOK))
-	gui.book_close_button.pressed.connect(camera_3d.update_camera_mode.bind(ID.CameraMode.TABLE))
-	gui.book_close_button.pressed.connect(book.close)
-	gui.title_button.pressed.connect(_exit_title)
-	gui.table_button.pressed.connect(book.close)
-	
-	
-	gui.book_open_button.pressed.connect(book.open)
-	gui.menu_button.pressed.connect(book.close)
-	
-	
-	
+	Bus.set_view.connect(_view_state_change)
+	Bus.use_item.connect(use_item)
 	book.set_content(ID.Page.TYPE_CHART, ID.Page.DEMON)
 	book.close()
 	AudioManager.set_music(ID.Music.TITLE, 0.0)
+
+
+func _view_state_change(next_view: ID.CameraMode) -> void:
+	if next_view == curr_view:
+		return
+	
+	gui.book_open_button.visible = true
+	gui.book_close_button.visible = false
+	gui.salt_button.visible = false
+	gui.prayer_button.visible = false
+	gui.iron_button.visible = false
+	gui.water_button.visible = false
+	
+	match curr_view:
+		ID.CameraMode.TITLE:
+			_exit_title()
+		ID.CameraMode.BOOK:
+			book.close()
+	
+	match next_view:
+		ID.CameraMode.BOOK:
+			book.open()
+			gui.book_open_button.visible = false
+			gui.book_close_button.visible = true
+		ID.CameraMode.TABLE:
+			gui.salt_button.visible = true
+			gui.prayer_button.visible = true
+			gui.iron_button.visible = true
+			gui.water_button.visible = true
+			
+	if next_view != ID.CameraMode.BOOK and curr_view != ID.CameraMode.BOOK:
+		AudioManager.oneshot(ID.SFX.WOOSH)
+	camera_3d.update_camera_mode(next_view)
+	curr_view = next_view
 
 
 func _process(delta: float) -> void:
@@ -95,6 +117,9 @@ func setup_demon(artifact: Artifact) -> void:
 
 
 func use_item(item: ID.Item) -> void:
+	if curr_demon_info == null:
+		return
+	
 	if items_used.has(item):
 		show_dialog("You already used this item")
 		return
@@ -160,6 +185,5 @@ func _exit_title() -> void:
 	gui.title_button.queue_free()
 	AudioManager.set_ambience(ID.Ambience.DEFAULT)
 	AudioManager.set_music(ID.Music.NULL)
-	camera_3d.update_camera_mode(ID.CameraMode.TABLE)
 	await t.finished
 	title_label_3d.queue_free()

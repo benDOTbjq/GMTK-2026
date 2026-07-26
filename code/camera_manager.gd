@@ -33,9 +33,6 @@ func update_camera_mode(new_mode: ID.CameraMode):
 	if new_mode == _last_mode:
 		return
 	
-	if _last_mode != ID.CameraMode.BOOK and new_mode != ID.CameraMode.BOOK:
-		AudioManager.oneshot(ID.SFX.WOOSH)
-	
 	var target_rotation
 	match new_mode:
 		ID.CameraMode.TABLE: target_rotation = Basis.from_euler(table_rotation)

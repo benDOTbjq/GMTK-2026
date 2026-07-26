@@ -27,61 +27,92 @@ theme_override_font_sizes/font_size = 56
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="MenuButton" type="TextureButton" parent="." unique_id=1842596615]
+[node name="ResetButton" type="Button" parent="Label" unique_id=1916803618]
+unique_name_in_owner = true
+visible = false
+layout_mode = 0
+offset_left = 1045.0
+offset_top = -28.0
+offset_right = 1120.0
+offset_bottom = 35.0
+text = "Reset"
+metadata/_edit_use_anchors_ = true
+
+[node name="CheckButton" type="Button" parent="Label" unique_id=1899476989]
+unique_name_in_owner = true
+visible = false
+layout_mode = 0
+offset_left = 1043.0
+offset_top = 46.0
+offset_right = 1118.0
+offset_bottom = 109.0
+text = "Check"
+
+[node name="MenuButton" type="TextureButton" parent="." unique_id=1595045551]
 unique_name_in_owner = true
 layout_mode = 0
 offset_left = 11.0
 offset_top = 11.0
-offset_right = 116.0
+offset_right = 212.0
 offset_bottom = 708.0
 
-[node name="BookOpenButton" type="TextureButton" parent="." unique_id=925750776]
+[node name="BookOpenButton" type="TextureButton" parent="." unique_id=1883474421]
 unique_name_in_owner = true
 layout_mode = 0
-offset_left = 184.0
-offset_top = 622.0
-offset_right = 1142.0
+offset_left = 216.0
+offset_top = 480.0
+offset_right = 1026.0
 offset_bottom = 714.0
 
-[node name="BookCloseButton" type="TextureButton" parent="." unique_id=597553540]
+[node name="BookCloseButton" type="TextureButton" parent="." unique_id=1315195315]
 unique_name_in_owner = true
-visible = false
 layout_mode = 0
-offset_left = 184.0
+offset_left = 4.0
 offset_top = 2.0
-offset_right = 1142.0
+offset_right = 1274.0
 offset_bottom = 183.0
 
-[node name="TableButton" type="TextureButton" parent="." unique_id=939871928]
+[node name="TableButton" type="TextureButton" parent="." unique_id=1825790555]
 unique_name_in_owner = true
 layout_mode = 0
-offset_left = 1165.0
+offset_left = 1026.0
 offset_top = 9.0
 offset_right = 1270.0
 offset_bottom = 714.0
-
-[node name="ResetButton" type="Button" parent="." unique_id=1916803618]
-unique_name_in_owner = true
-visible = false
-layout_mode = 0
-offset_left = 1056.0
-offset_top = 28.0
-offset_right = 1131.0
-offset_bottom = 91.0
-text = "Reset"
-metadata/_edit_use_anchors_ = true
-
-[node name="CheckButton" type="Button" parent="." unique_id=1899476989]
-unique_name_in_owner = true
-visible = false
-layout_mode = 0
-offset_left = 1054.0
-offset_top = 102.0
-offset_right = 1129.0
-offset_bottom = 165.0
-text = "Check"
 
 [node name="TitleButton" type="TextureButton" parent="." unique_id=1524777345]
 layout_mode = 0
 offset_right = 1277.0
 offset_bottom = 722.0
+
+[node name="SaltButton" type="TextureButton" parent="." unique_id=948180172]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 210.0
+offset_top = 561.0
+offset_right = 310.0
+offset_bottom = 686.0
+
+[node name="PrayerButton" type="TextureButton" parent="." unique_id=558208180]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 368.215
+offset_top = 558.915
+offset_right = 468.215
+offset_bottom = 658.915
+
+[node name="IronButton" type="TextureButton" parent="." unique_id=440348595]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 794.125
+offset_top = 551.49
+offset_right = 894.125
+offset_bottom = 651.49
+
+[node name="WaterButton" type="TextureButton" parent="." unique_id=637778396]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 967.485
+offset_top = 568.51
+offset_right = 1067.4854
+offset_bottom = 668.51013

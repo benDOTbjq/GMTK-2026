@@ -25,7 +25,7 @@ func _on_area_3d_input_event(_camera: Node, event: InputEvent, _event_position: 
 		t.tween_property(self, "position", Vector3(0.015, 0.659, -0.292), 0.5).set_trans(Tween.TRANS_CUBIC)
 		t.set_ease(Tween.EASE_IN_OUT)
 		t.tween_callback(get_parent().setup_demon.bind(self))
-		%Camera3D.update_camera_mode(ID.CameraMode.TABLE)
+		Bus.set_view.emit(ID.CameraMode.TABLE)
 
 func despawn() -> void:
 	despawn_particles.emitting = true
