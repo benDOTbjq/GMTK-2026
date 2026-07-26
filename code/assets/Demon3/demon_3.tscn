@@ -21,7 +21,7 @@ mesh = NodePath("Book")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1028492, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=1207200027]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.004760742, -0.09938812, 0.010406494)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.004760742, -0.090943344, 0.010406494)
 shape = SubResource("BoxShape3D_pyx55")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1991364005]
@@ -32,6 +32,6 @@ mesh = SubResource("CapsuleMesh_f1574")
 [node name="DespawnParticles" parent="." unique_id=1660351049 instance=ExtResource("3_bfnpy")]
 
 [node name="Book" parent="." unique_id=845276988 instance=ExtResource("4_468fy")]
-transform = Transform3D(0.045, 0, 0, 0, 0.045, 0, 0, 0, 0.045, -0.014499013, 0, -0.020696478)
+transform = Transform3D(0.045, 0, 0, 0, 0.045, 0, 0, 0, 0.045, -0.014499013, 0.0071005523, -0.020696478)
 
 [editable path="Book"]
