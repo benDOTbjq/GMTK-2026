@@ -2,9 +2,6 @@ extends Node3D
 
 @export var item_type: ID.Item
 
-@onready var mesh : MeshInstance3D = $MeshInstance3D
-var is_hovered : bool = false
-
 func _ready() -> void:
 	$Area3D.input_event.connect(_on_area_3d_input_event)
 	$Area3D.mouse_entered.connect(_on_area_3d_mouse_entered)
