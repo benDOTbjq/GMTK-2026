@@ -131,35 +131,95 @@ mouse_default_cursor_shape = 2
 unique_name_in_owner = true
 visible = false
 layout_mode = 0
-offset_right = 1277.0
+offset_right = 1282.0
 offset_bottom = 722.0
 color = Color(0, 0, 0, 1)
 
-[node name="EndMessage" type="Label" parent="EndScreen" unique_id=523816710]
+[node name="EndMessage" type="Control" parent="EndScreen" unique_id=276697051]
 unique_name_in_owner = true
 visible = false
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="EndMessageLabel1" type="Label" parent="EndScreen/EndMessage" unique_id=523816710]
 layout_mode = 1
 offset_left = 535.0
 offset_top = 193.0
-offset_right = 766.0
+offset_right = 635.0
 offset_bottom = 315.0
 theme_override_colors/font_color = Color(1, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_h0h8g")
 theme_override_font_sizes/font_size = 50
-text = "YOU WIN"
+text = "YOU"
 
-[node name="ThankYou" type="Label" parent="EndScreen" unique_id=229930384]
+[node name="EndMessageLabel2" type="Label" parent="EndScreen/EndMessage" unique_id=1158129332]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 651.0
+offset_top = 193.0
+offset_right = 751.0
+offset_bottom = 315.0
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_h0h8g")
+theme_override_font_sizes/font_size = 50
+text = "WIN"
+
+[node name="ThankYou" type="Control" parent="EndScreen" unique_id=1065017318]
 unique_name_in_owner = true
 visible = false
-layout_mode = 0
-offset_left = 468.0
+anchors_preset = 0
+offset_left = 485.0
 offset_top = 277.0
-offset_right = 832.0
-offset_bottom = 399.0
+offset_right = 821.0
+offset_bottom = 358.0
+
+[node name="Thank" type="Label" parent="EndScreen/ThankYou" unique_id=229930384]
+layout_mode = 0
+offset_left = -16.0
+offset_top = 9.0
+offset_right = 79.0
+offset_bottom = 83.0
 theme_override_colors/font_color = Color(1, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_h0h8g")
 theme_override_font_sizes/font_size = 30
-text = "THANKS YOU FOR PLAYING"
+text = "THANK"
+horizontal_alignment = 1
+
+[node name="You" type="Label" parent="EndScreen/ThankYou" unique_id=1499378519]
+layout_mode = 0
+offset_left = 67.0
+offset_top = 9.0
+offset_right = 162.0
+offset_bottom = 83.0
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_h0h8g")
+theme_override_font_sizes/font_size = 30
+text = "YOU"
+horizontal_alignment = 1
+
+[node name="For" type="Label" parent="EndScreen/ThankYou" unique_id=309615251]
+layout_mode = 0
+offset_left = 136.0
+offset_top = 9.0
+offset_right = 231.0
+offset_bottom = 83.0
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_h0h8g")
+theme_override_font_sizes/font_size = 30
+text = "FOR"
+horizontal_alignment = 1
+
+[node name="Playing" type="Label" parent="EndScreen/ThankYou" unique_id=1743002430]
+layout_mode = 0
+offset_left = 224.0
+offset_top = 8.0
+offset_right = 341.0
+offset_bottom = 82.0
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_h0h8g")
+theme_override_font_sizes/font_size = 30
+text = "PLAYING"
 horizontal_alignment = 1
 
 [node name="Reload" type="Button" parent="EndScreen" unique_id=2012652071]
@@ -168,11 +228,35 @@ visible = false
 layout_mode = 0
 offset_left = 587.0
 offset_top = 480.0
-offset_right = 697.0
-offset_bottom = 538.0
+offset_right = 710.0
+offset_bottom = 511.0
 mouse_default_cursor_shape = 2
 theme_override_colors/font_color = Color(0.8784314, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_h0h8g")
 theme_override_font_sizes/font_size = 20
-text = "TRY AGAIN"
 flat = true
+
+[node name="TryPlay" type="Label" parent="EndScreen/Reload" unique_id=738111616]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = -23.0
+offset_top = -10.0
+offset_right = 72.0
+offset_bottom = 64.0
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_h0h8g")
+theme_override_font_sizes/font_size = 20
+text = "TRY"
+horizontal_alignment = 1
+
+[node name="Again" type="Label" parent="EndScreen/Reload" unique_id=1838773738]
+layout_mode = 0
+offset_left = 36.0
+offset_top = -10.0
+offset_right = 131.0
+offset_bottom = 64.0
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_h0h8g")
+theme_override_font_sizes/font_size = 20
+text = "AGAIN"
+horizontal_alignment = 1

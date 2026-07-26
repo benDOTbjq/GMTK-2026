@@ -30,7 +30,6 @@ func _on_area_3d_input_event(_camera: Node, event: InputEvent, _event_position: 
 		t.set_parallel(false)
 		t.tween_callback(get_parent().setup_demon.bind(self))
 		Bus.set_view.emit(ID.CameraMode.TABLE)
-		rotation
 
 func despawn() -> void:
 	despawn_particles.emitting = true

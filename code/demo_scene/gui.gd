@@ -20,7 +20,9 @@ var _current_demon: Dictionary
 
 @onready var black_screen: ColorRect = %EndScreen
 @onready var reload_button: Button = %Reload
-@onready var end_message: Label = %EndMessage
+@onready var reload_button_try_play: Label = %TryPlay
+@onready var end_message: Control = %EndMessage
+@onready var end_message_label_2: Label = %EndMessageLabel2
 
 func _ready() -> void:
 	_current_demon = DemonManager.get_random_demon()
@@ -71,8 +73,8 @@ func _show_end_screen(did_win: bool) -> void:
 	AudioServer.set_bus_mute(AudioServer.get_bus_index("Master"), true)
 	AudioManager.loop(ID.SFXLoop.PENAGRAM, false)
 	black_screen.show()
-	end_message.text = "YOU WIN" if did_win else "YOU DIED"
-	reload_button.text = "GO AGAIN" if did_win else "TRY AGAIN"
+	end_message_label_2.text = "WIN" if did_win else "DIED"
+	reload_button_try_play.text = "PLAY" if did_win else "TRY"
 	var t = get_tree().create_tween()
 	t.tween_callback(%EndMessage.show.bind()).set_delay(1.0)
 	if did_win:
