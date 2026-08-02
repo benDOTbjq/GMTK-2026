@@ -6,9 +6,9 @@
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_dd5g0"]
 shader = ExtResource("2_c32ke")
-shader_parameter/enabled = true
-shader_parameter/dithering = false
-shader_parameter/colors = 18
+shader_parameter/enabled = false
+shader_parameter/dithering = true
+shader_parameter/colors = 26
 shader_parameter/dither_size = 1
 
 [node name="GUI" type="Control" unique_id=945604540]
