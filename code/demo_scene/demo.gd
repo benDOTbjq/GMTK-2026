@@ -150,37 +150,41 @@ func use_item(item: ID.Item) -> void:
 		show_dialog("Not yet")
 		return
 	
-	if items_used.has(item):
-		show_dialog("You already used this item")
-		return
-	
+	var is_used := items_used.has(item)
 	var effectiveness = DemonManager.check_item_effectivness(item, curr_demon_info.type1, curr_demon_info.type2)
-	AudioManager.play_item(item, effectiveness)
-	if effectiveness == 3:
-		show_dialog("The demon is strangely uneffected", false)
-		effectiveness = 0
-	elif effectiveness == 0:
-		show_dialog("The demon is unaffected", false)
-	elif effectiveness == -2:
-		camera_3d.shake_camera(0.2)
-		show_dialog("The demon is extremely empowered", false)
-	elif effectiveness == -1:
-		camera_3d.shake_camera(0.1)
-		show_dialog("The demon is empowered", false)
-	elif effectiveness == 1:
-		shadow_shake_strengh = 0.1
-		show_dialog("The demon is weakened", false)
-	elif effectiveness == 2:
-		shadow_shake_strengh = 0.2
-		show_dialog("The demon is extremely weakened", false)
 	
-	curr_actions += effectiveness - 1
-	items_used.append(item)
-	
-	if curr_actions <= 0:
-		gui._show_end_screen(false)
-	
-	update_candles()
+	if is_used: 
+		match effectiveness:
+			3: show_dialog("You already used this item.\nThe demon was strangely uneffected")
+			0: show_dialog("You already used this item.\nThe demon was unaffected")
+			-2: show_dialog("You already used this item.\nThe demon was extremely empowered")
+			-1: show_dialog("You already used this item.\nThe demon was empowered")
+			1: show_dialog("You already used this item.\nThe demon was weakened")
+			2: show_dialog("You already used this item.\nThe demon was extremely weakened")
+	else:
+		AudioManager.play_item(item, effectiveness)
+		match effectiveness:
+			3:
+				show_dialog("The demon is strangely uneffected", false)
+				effectiveness = 0
+			0:
+				show_dialog("The demon is unaffected", false)
+			-2:
+				camera_3d.shake_camera(0.2)
+				show_dialog("The demon is extremely empowered", false)
+			-1:
+				camera_3d.shake_camera(0.1)
+				show_dialog("The demon is empowered", false)
+			1:
+				shadow_shake_strengh = 0.1
+				show_dialog("The demon is weakened", false)
+			2:
+				shadow_shake_strengh = 0.2
+				show_dialog("The demon is extremely weakened", false)
+		curr_actions += effectiveness - 1
+		items_used.append(item)
+		update_candles(true)
+
 
 func guess_demon(combined_type_id: int) -> void:
 	if combined_type_id == DemonManager.get_combined_type_id(curr_demon_info.type1, curr_demon_info.type2):
@@ -198,17 +202,15 @@ func guess_demon(combined_type_id: int) -> void:
 	else:
 		curr_actions -= 2
 		camera_3d.shake_camera(0.2)
-		update_candles()
-		
-		if curr_actions <= 0:
-			gui._show_end_screen(false)
-		else:
-			show_dialog("...That wasn't the\nright name.", false)
+		show_dialog("...That wasn't the\nright name.", false)
+		book.close()
+		update_candles(true)
 
 
 func clear_curr_demon() -> void:
 	if curr_demon_info == null:
 		return
+
 
 func show_dialog(text: String, is_voice := true) -> void:
 	if is_voice:
@@ -217,18 +219,24 @@ func show_dialog(text: String, is_voice := true) -> void:
 	%DialogBox.visible = true
 	%BubbleText.text = text
 
-func update_candles() -> void:
+
+func update_candles(is_check_death := false) -> void:
+	gui.set_letterbox(true)
+	await create_tween().tween_interval(2.0).finished
 	for i in candles.size():
-		var t = create_tween()
-		t.tween_interval(0.5)
-		await t.finished
-		
 		if i < curr_actions:
 			if not candles[i].is_on:
 				candles[i].turn_on()
+				await create_tween().tween_interval(0.5).finished
 		else:
 			if candles[i].is_on:
 				candles[i].turn_off()
+				await create_tween().tween_interval(0.5).finished
+	if is_check_death and curr_actions <= 0:
+		gui._show_end_screen(false)
+	gui.set_letterbox(false)
+	
+
 
 func _exit_title() -> void:
 	var t = create_tween()

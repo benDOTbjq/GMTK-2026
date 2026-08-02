@@ -1,7 +1,15 @@
 [gd_scene format=3 uid="uid://c2pqtofk3wvcv"]
 
 [ext_resource type="Script" uid="uid://cvjuur7or20y0" path="res://code/demo_scene/gui.gd" id="1_vu16a"]
+[ext_resource type="Shader" uid="uid://ceph3phk7nm0j" path="res://code/demo_scene/psx.gdshader" id="2_c32ke"]
 [ext_resource type="FontFile" uid="uid://ygfruv4fno1r" path="res://art/fonts/PentagramsSalemica-B978.ttf" id="2_h0h8g"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_dd5g0"]
+shader = ExtResource("2_c32ke")
+shader_parameter/enabled = false
+shader_parameter/dithering = false
+shader_parameter/colors = 16
+shader_parameter/dither_size = 3
 
 [node name="GUI" type="Control" unique_id=945604540]
 layout_mode = 3
@@ -260,3 +268,38 @@ theme_override_fonts/font = ExtResource("2_h0h8g")
 theme_override_font_sizes/font_size = 20
 text = "AGAIN"
 horizontal_alignment = 1
+
+[node name="PSXFilter" type="ColorRect" parent="." unique_id=1054883302]
+material = SubResource("ShaderMaterial_dd5g0")
+layout_mode = 0
+offset_right = 1279.0
+offset_bottom = 717.0
+mouse_filter = 2
+
+[node name="Letterbox" type="Control" parent="." unique_id=647446235]
+unique_name_in_owner = true
+anchors_preset = 0
+offset_right = 1280.0
+offset_bottom = 720.0
+offset_transform_enabled = true
+offset_transform_scale = Vector2(1.16, 1.16)
+mouse_filter = 2
+
+[node name="ColorRect" type="ColorRect" parent="Letterbox" unique_id=1800036392]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 48.0
+grow_horizontal = 2
+color = Color(0.015686275, 0.015686275, 0.015686275, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="Letterbox" unique_id=1334755760]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -47.0
+grow_horizontal = 2
+grow_vertical = 0
+color = Color(0.015686275, 0.015686275, 0.015686275, 1)

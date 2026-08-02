@@ -57,7 +57,7 @@ light_color = Color(1, 0.7294118, 0, 1)
 light_energy = 0.11
 light_indirect_energy = 0.865
 omni_range = 0.0
-omni_attenuation = 1.8
+omni_attenuation = 2.0
 script = ExtResource("1_ja4eh")
 metadata/_edit_group_ = true
 

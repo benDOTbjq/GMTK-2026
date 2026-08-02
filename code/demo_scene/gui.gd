@@ -23,6 +23,16 @@ var _current_demon: Dictionary
 @onready var reload_button_try_play: Label = %TryPlay
 @onready var end_message: Control = %EndMessage
 @onready var end_message_label_2: Label = %EndMessageLabel2
+@onready var letterbox: Control = %Letterbox
+
+
+func set_letterbox(is_letterbox: bool) -> void:
+	letterbox.mouse_filter =Control.MOUSE_FILTER_STOP if is_letterbox else Control.MOUSE_FILTER_IGNORE
+	var t := create_tween()
+	t.set_ease(Tween.EASE_OUT if is_letterbox else Tween.EASE_IN)
+	t.set_trans(Tween.TRANS_CUBIC)
+	t.tween_property(letterbox, "offset_transform_scale", Vector2.ONE * (1.0 if is_letterbox else 1.16), 0.2)
+
 
 func _ready() -> void:
 	_current_demon = DemonManager.get_random_demon()
@@ -84,3 +94,4 @@ func _show_end_screen(did_win: bool) -> void:
 func _reload_level():
 	AudioServer.set_bus_mute(AudioServer.get_bus_index("Master"), false)
 	get_tree().reload_current_scene()
+	

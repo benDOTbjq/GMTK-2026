@@ -7,5 +7,6 @@
 script = ExtResource("1_qjfep")
 name = "Ghost"
 type1 = 3
+actions = 4
 shadow_anim = ExtResource("2_aa1n3")
 metadata/_custom_type_script = "uid://cjjomclguhq3d"
