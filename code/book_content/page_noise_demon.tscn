@@ -37,13 +37,6 @@ patch_margin_bottom = 129
 axis_stretch_horizontal = 2
 axis_stretch_vertical = 2
 
-[node name="BackButton" type="TextureButton" parent="." unique_id=1556647009]
-layout_mode = 1
-anchors_preset = 9
-anchor_bottom = 1.0
-offset_right = 94.0
-grow_vertical = 2
-
 [node name="DemoCandle3" type="Sprite2D" parent="." unique_id=1001272694]
 modulate = Color(0.1237021, 0.12370213, 0.12370212, 1)
 position = Vector2(100.00001, 298.00003)
@@ -151,3 +144,10 @@ Does Iron make it stronger?
  might 
 be FERRIC"
 horizontal_alignment = 1
+
+[node name="BackButton" type="TextureButton" parent="." unique_id=1556647009]
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_right = 445.0
+grow_vertical = 2

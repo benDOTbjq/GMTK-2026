@@ -58,14 +58,8 @@ position = Vector2(97.000015, 509)
 scale = Vector2(0.26, 0.26)
 texture = ExtResource("7_2olhy")
 
-[node name="BackButton" type="TextureButton" parent="." unique_id=546218795]
-layout_mode = 1
-anchors_preset = 9
-anchor_bottom = 1.0
-offset_right = 94.0
-grow_vertical = 2
-
 [node name="ShelfButton" type="TextureButton" parent="." unique_id=164883620]
+visible = false
 layout_mode = 0
 offset_left = 36.0
 offset_top = 439.0
@@ -120,3 +114,10 @@ Start by simply picking
  a possessed artifact
 from the shelf to your left."
 horizontal_alignment = 1
+
+[node name="BackButton" type="TextureButton" parent="." unique_id=546218795]
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_right = 444.0
+grow_vertical = 2

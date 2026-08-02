@@ -4,6 +4,6 @@
 
 [resource]
 albedo_texture = ExtResource("1_fgsn3")
-uv1_scale = Vector3(4, 4, 4)
+uv1_scale = Vector3(9.715, 4, 4)
 grow_amount = -0.32
 point_size = 128.0

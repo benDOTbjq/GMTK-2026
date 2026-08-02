@@ -6,10 +6,10 @@
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_dd5g0"]
 shader = ExtResource("2_c32ke")
-shader_parameter/enabled = false
+shader_parameter/enabled = true
 shader_parameter/dithering = false
-shader_parameter/colors = 16
-shader_parameter/dither_size = 3
+shader_parameter/colors = 18
+shader_parameter/dither_size = 1
 
 [node name="GUI" type="Control" unique_id=945604540]
 layout_mode = 3
@@ -57,7 +57,7 @@ offset_right = 1118.0
 offset_bottom = 109.0
 text = "Check"
 
-[node name="MenuButton" type="TextureButton" parent="." unique_id=1595045551]
+[node name="MenuButton" type="TextureButton" parent="." unique_id=368782869]
 unique_name_in_owner = true
 layout_mode = 0
 offset_left = -1.0
@@ -66,16 +66,16 @@ offset_right = 174.0
 offset_bottom = 718.0
 mouse_default_cursor_shape = 2
 
-[node name="BookOpenButton" type="TextureButton" parent="." unique_id=1883474421]
+[node name="BookOpenButton" type="TextureButton" parent="." unique_id=1374783698]
 unique_name_in_owner = true
 layout_mode = 0
 offset_left = 216.0
-offset_top = 480.0
+offset_top = 619.0
 offset_right = 1026.0
 offset_bottom = 721.0
 mouse_default_cursor_shape = 16
 
-[node name="BookCloseButton" type="TextureButton" parent="." unique_id=1315195315]
+[node name="BookCloseButton" type="TextureButton" parent="." unique_id=230100390]
 unique_name_in_owner = true
 layout_mode = 0
 offset_left = 4.0
@@ -84,7 +84,7 @@ offset_right = 1274.0
 offset_bottom = 183.0
 mouse_default_cursor_shape = 2
 
-[node name="TableButton" type="TextureButton" parent="." unique_id=1825790555]
+[node name="TableButton" type="TextureButton" parent="." unique_id=311510488]
 unique_name_in_owner = true
 layout_mode = 0
 offset_left = 1088.0
@@ -93,13 +93,13 @@ offset_right = 1270.0
 offset_bottom = 714.0
 mouse_default_cursor_shape = 2
 
-[node name="TitleButton" type="TextureButton" parent="." unique_id=1524777345]
+[node name="TitleButton" type="TextureButton" parent="." unique_id=1175971269]
 layout_mode = 0
 offset_right = 1277.0
 offset_bottom = 722.0
 mouse_default_cursor_shape = 2
 
-[node name="SaltButton" type="TextureButton" parent="." unique_id=948180172]
+[node name="SaltButton" type="TextureButton" parent="." unique_id=121980107]
 unique_name_in_owner = true
 layout_mode = 0
 offset_left = 281.865
@@ -108,7 +108,7 @@ offset_right = 381.865
 offset_bottom = 677.815
 mouse_default_cursor_shape = 2
 
-[node name="PrayerButton" type="TextureButton" parent="." unique_id=558208180]
+[node name="PrayerButton" type="TextureButton" parent="." unique_id=1197504827]
 unique_name_in_owner = true
 layout_mode = 0
 offset_left = 388.02
@@ -117,7 +117,7 @@ offset_right = 488.02
 offset_bottom = 620.03
 mouse_default_cursor_shape = 2
 
-[node name="IronButton" type="TextureButton" parent="." unique_id=440348595]
+[node name="IronButton" type="TextureButton" parent="." unique_id=1738734387]
 unique_name_in_owner = true
 layout_mode = 0
 offset_left = 794.125
@@ -126,7 +126,7 @@ offset_right = 894.125
 offset_bottom = 651.49
 mouse_default_cursor_shape = 2
 
-[node name="WaterButton" type="TextureButton" parent="." unique_id=637778396]
+[node name="WaterButton" type="TextureButton" parent="." unique_id=132130294]
 unique_name_in_owner = true
 layout_mode = 0
 offset_left = 967.485
@@ -291,6 +291,7 @@ anchors_preset = 10
 anchor_right = 1.0
 offset_bottom = 48.0
 grow_horizontal = 2
+mouse_filter = 2
 color = Color(0.015686275, 0.015686275, 0.015686275, 1)
 
 [node name="ColorRect2" type="ColorRect" parent="Letterbox" unique_id=1334755760]
@@ -302,4 +303,5 @@ anchor_bottom = 1.0
 offset_top = -47.0
 grow_horizontal = 2
 grow_vertical = 0
+mouse_filter = 2
 color = Color(0.015686275, 0.015686275, 0.015686275, 1)

@@ -678,5 +678,5 @@ texture = ExtResource("10_mctmo")
 layout_mode = 1
 anchors_preset = 9
 anchor_bottom = 1.0
-offset_right = 94.0
+offset_right = 445.0
 grow_vertical = 2
