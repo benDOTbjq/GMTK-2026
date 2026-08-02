@@ -3,6 +3,8 @@
 [ext_resource type="Script" uid="uid://cvjuur7or20y0" path="res://code/demo_scene/gui.gd" id="1_vu16a"]
 [ext_resource type="Shader" uid="uid://ceph3phk7nm0j" path="res://code/demo_scene/psx.gdshader" id="2_c32ke"]
 [ext_resource type="FontFile" uid="uid://ygfruv4fno1r" path="res://art/fonts/PentagramsSalemica-B978.ttf" id="2_h0h8g"]
+[ext_resource type="SpriteFrames" uid="uid://bihgnek2nrlgt" path="res://art/animated/SpeechBubble.tres" id="4_yrwqv"]
+[ext_resource type="FontFile" uid="uid://cp0kxlhni6f60" path="res://art/fonts/LittleTroubleGirlBv-EVg.ttf" id="5_6by82"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_dd5g0"]
 shader = ExtResource("2_c32ke")
@@ -93,12 +95,6 @@ offset_right = 1270.0
 offset_bottom = 714.0
 mouse_default_cursor_shape = 2
 
-[node name="TitleButton" type="TextureButton" parent="." unique_id=1175971269]
-layout_mode = 0
-offset_right = 1277.0
-offset_bottom = 722.0
-mouse_default_cursor_shape = 2
-
 [node name="SaltButton" type="TextureButton" parent="." unique_id=121980107]
 unique_name_in_owner = true
 layout_mode = 0
@@ -133,6 +129,12 @@ offset_left = 967.485
 offset_top = 568.51
 offset_right = 1067.4854
 offset_bottom = 668.51013
+mouse_default_cursor_shape = 2
+
+[node name="TitleButton" type="TextureButton" parent="." unique_id=1175971269]
+layout_mode = 0
+offset_right = 1277.0
+offset_bottom = 722.0
 mouse_default_cursor_shape = 2
 
 [node name="EndScreen" type="ColorRect" parent="." unique_id=970300712]
@@ -305,3 +307,29 @@ grow_horizontal = 2
 grow_vertical = 0
 mouse_filter = 2
 color = Color(0.015686275, 0.015686275, 0.015686275, 1)
+
+[node name="DialogBox" type="AnimatedSprite2D" parent="." unique_id=70914780]
+unique_name_in_owner = true
+visible = false
+position = Vector2(1033.6667, 193)
+scale = Vector2(0.38333333, 0.38333333)
+sprite_frames = ExtResource("4_yrwqv")
+autoplay = "default"
+frame_progress = 0.4894349
+
+[node name="BubbleText" type="Label" parent="DialogBox" unique_id=64336353]
+unique_name_in_owner = true
+top_level = true
+custom_minimum_size = Vector2(400, 0)
+offset_left = 836.0
+offset_top = 91.0
+offset_right = 1236.0
+offset_bottom = 296.0
+theme_override_fonts/font = ExtResource("5_6by82")
+theme_override_font_sizes/font_size = 41
+text = "You already used this item.
+The demon was strangely uneffected"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+uppercase = true

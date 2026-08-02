@@ -36,6 +36,7 @@ var demons_number: int = 9
 func _ready() -> void:
 	Bus.set_view.connect(_view_state_change)
 	Bus.use_item.connect(use_item)
+	Bus.show_dialog.connect(show_dialog)
 	book.close()
 	AudioManager.set_music(ID.Music.TITLE, 0.0)
 	Bus.name_selected.connect(_guess_name)
@@ -46,7 +47,6 @@ func _ready() -> void:
 
 func _guess_name(combined_type_id: int, demon_name: String) -> void:
 	if curr_demon_info == null:
-		show_dialog("Not yet")
 		return
 	if combined_type_id == DemonManager.get_combined_type_id(curr_demon_info.type1, curr_demon_info.type2):
 		AudioManager.oneshot(ID.SFX.EXORCISE_SUCCESS)
@@ -103,10 +103,10 @@ func _view_state_change(next_view: ID.CameraMode) -> void:
 
 
 func _process(delta: float) -> void:
-	if %DialogBox.visible:
+	if gui.dialog_box.visible:
 		dialog_box_alive_time += delta
 		if dialog_box_alive_time >= 5.0:
-			%DialogBox.visible = false
+			gui.dialog_box.visible = false
 			dialog_box_alive_time = 0
 	
 	if curr_demon_info != null:
@@ -133,16 +133,19 @@ func setup_demon(artifact: Artifact) -> void:
 	curr_artifact = artifact
 	curr_demon_info = artifact.demon_info
 	curr_actions = curr_demon_info.actions
-	shadow_frame_id = 0
 	items_used.clear()
 	
+	shadow_frame_id = 0
 	var frame = curr_demon_info.shadow_anim.get_frame_texture("default", shadow_frame_id)
 	wall_sprite.texture = frame
 	table_sprite.texture = frame
+
 	animation_player.play("spawn_shadow")
 	AudioManager.set_music(ID.Music.DEFAULT)
 	AudioManager.loop(ID.SFXLoop.PENAGRAM)
 	AudioManager.oneshot(ID.SFX.SUMMON)
+	
+	Bus.demon_active.emit(true)
 	
 	update_candles()
 
@@ -197,6 +200,7 @@ func guess_demon(combined_type_id: int) -> void:
 		curr_actions = 0
 		AudioManager.set_music(ID.Music.NULL)
 		AudioManager.loop(ID.SFXLoop.PENAGRAM, false)
+		Bus.demon_active.emit(false)
 		
 		demons_number -= 1
 		if demons_number <= 0:
@@ -218,8 +222,8 @@ func show_dialog(text: String, is_voice := true) -> void:
 	if is_voice:
 		AudioManager.oneshot(ID.SFX.VOICE)
 	dialog_box_alive_time = 0
-	%DialogBox.visible = true
-	%BubbleText.text = text
+	gui.dialog_box.visible = true
+	gui.bubble_text.text = text
 
 
 func update_candles(is_check_death := false) -> void:
@@ -249,6 +253,6 @@ func _exit_title() -> void:
 	AudioManager.set_music(ID.Music.NULL)
 	await t.finished
 	title_label_3d.queue_free()
-	%DialogBox.reparent(camera_3d)
+	gui.dialog_box.reparent(camera_3d)
 	for candle in candles:
 		candle.turn_off(true)

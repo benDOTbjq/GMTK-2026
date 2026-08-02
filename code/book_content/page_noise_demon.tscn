@@ -84,43 +84,12 @@ text = "THE LIGHT IS YOUR LIFE
 "
 horizontal_alignment = 1
 
-[node name="ColorRect" type="ColorRect" parent="." unique_id=1919619915]
-layout_mode = 0
-offset_left = 71.00001
-offset_top = 89.000015
-offset_right = 207.0
-offset_bottom = 225.00002
-rotation = 0.09092135
-scale = Vector2(1.7384638, 1.7384638)
-color = Color(0.95, 0.9368583, 0.1615, 1)
-
-[node name="Label2" type="Label" parent="ColorRect" unique_id=162211925]
-layout_mode = 0
-offset_left = -9.581678
-offset_top = 2.6063974
-offset_right = 281.22424
-offset_bottom = 244.6064
-scale = Vector2(0.54, 0.54)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 1
-theme_override_fonts/font = ExtResource("6_3y10m")
-theme_override_font_sizes/font_size = 31
-text = " To exorcise the Demons you just
- need to figure out what type it is.
-
-Try using some items on it
-and see how it reacts!
-
-"
-horizontal_alignment = 1
-
 [node name="ColorRect2" type="ColorRect" parent="." unique_id=1535279486]
 layout_mode = 0
-offset_left = 108.0
-offset_top = 314.0
-offset_right = 244.0
-offset_bottom = 450.0
+offset_left = 63.999992
+offset_top = 55.999996
+offset_right = 200.0
+offset_bottom = 192.0
 rotation = 0.07636425
 scale = Vector2(1.7384638, 1.7384638)
 color = Color(0.95, 0.9368583, 0.1615, 1)
@@ -137,12 +106,43 @@ theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 1
 theme_override_fonts/font = ExtResource("6_3y10m")
 theme_override_font_sizes/font_size = 31
-text = "Weak to Water? might 
-be INFERNAL
+text = "Weak to Water? might be 
+INFERNAL
 
 Does Iron make it stronger?
- might 
-be FERRIC"
+ might be FERRIC"
+horizontal_alignment = 1
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=430128900]
+layout_mode = 0
+offset_left = 128.0
+offset_top = 320.99997
+offset_right = 264.0
+offset_bottom = 456.99997
+rotation = -0.12065924
+scale = Vector2(1.7384638, 1.7384638)
+color = Color(0.95, 0.9368583, 0.1615, 1)
+
+[node name="Label2" type="Label" parent="ColorRect" unique_id=1607762311]
+layout_mode = 0
+offset_left = -11.247335
+offset_top = -12.372938
+offset_right = 279.55856
+offset_bottom = 264.62708
+scale = Vector2(0.54, 0.54)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 1
+theme_override_fonts/font = ExtResource("6_3y10m")
+theme_override_font_sizes/font_size = 31
+text = "
+Just don't give it too much
+things it likes or you might 
+die or something!
+
+I wasn't paying too much 
+attention lol
+"
 horizontal_alignment = 1
 
 [node name="BackButton" type="TextureButton" parent="." unique_id=1556647009]

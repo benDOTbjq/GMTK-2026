@@ -25,6 +25,9 @@ var _current_demon: Dictionary
 @onready var end_message_label_2: Label = %EndMessageLabel2
 @onready var letterbox: Control = %Letterbox
 
+@onready var dialog_box: AnimatedSprite2D = %DialogBox
+@onready var bubble_text: Label = %BubbleText
+
 
 func set_letterbox(is_letterbox: bool) -> void:
 	letterbox.mouse_filter =Control.MOUSE_FILTER_STOP if is_letterbox else Control.MOUSE_FILTER_IGNORE

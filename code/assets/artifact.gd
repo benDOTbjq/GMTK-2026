@@ -21,15 +21,18 @@ func _on_area_3d_mouse_exited() -> void:
 		Input.set_default_cursor_shape(Input.CURSOR_ARROW)
 
 func _on_area_3d_input_event(_camera: Node, event: InputEvent, _event_position: Vector3, _normal: Vector3, _shape_idx: int) -> void:
-	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed and get_parent().curr_demon_info == null:
-		var t = get_tree().create_tween()
-		t.set_parallel(true)
-		t.tween_property(self, "position", Vector3(0.015, 0.659, -0.292), 0.5).set_trans(Tween.TRANS_CUBIC)
-		t.tween_property(self, "rotation_degrees:y", -90, 0.5).set_trans(Tween.TRANS_CUBIC).as_relative()
-		t.set_ease(Tween.EASE_IN_OUT)
-		t.set_parallel(false)
-		t.tween_callback(get_parent().setup_demon.bind(self))
-		Bus.set_view.emit(ID.CameraMode.TABLE)
+	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
+		if get_parent().curr_demon_info != null:
+			get_parent().show_dialog("Finish what you started")
+		else:
+			var t = get_tree().create_tween()
+			t.set_parallel(true)
+			t.tween_property(self, "position", Vector3(0.015, 0.659, -0.292), 0.5).set_trans(Tween.TRANS_CUBIC)
+			t.tween_property(self, "rotation_degrees:y", -90, 0.5).set_trans(Tween.TRANS_CUBIC).as_relative()
+			t.set_ease(Tween.EASE_IN_OUT)
+			t.set_parallel(false)
+			t.tween_callback(get_parent().setup_demon.bind(self))
+			Bus.set_view.emit(ID.CameraMode.TABLE)
 
 func despawn() -> void:
 	despawn_particles.emitting = true

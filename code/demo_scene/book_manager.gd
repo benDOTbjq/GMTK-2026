@@ -71,6 +71,9 @@ func _ready() -> void:
 	
 	Bus.book_next.connect(next)
 	Bus.book_back.connect(back)
+	Bus.demon_active.connect(func(demon_active: bool) -> void:
+		_pages[ID.Page.NAME].is_demon_active = demon_active
+	)
 	
 	front_cover.rotation_degrees = Vector3(0, 90, 180)
 	@warning_ignore("int_as_enum_without_cast")

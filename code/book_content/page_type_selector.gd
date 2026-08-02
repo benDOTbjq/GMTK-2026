@@ -97,6 +97,7 @@ var _selected_buttons: Array[BaseButton] = []
 @export var noise_speed := 0.1
 @export var amplitude: float = 20
 
+var is_demon_active := false
 var _noise_y := 0.0
 var _last_combined_type_id := 0
 
@@ -123,6 +124,9 @@ func _ready() -> void:
 	update_name()
 	name_button.pressed.connect(func() -> void:
 		if not name_label.text.is_empty():
+			if not is_demon_active:
+				Bus.show_dialog.emit("Not yet", true)
+				return
 			name_label.visible = false
 			Bus.name_selected.emit(_last_combined_type_id, name_label.text)
 			await create_tween().tween_interval(1.5).finished

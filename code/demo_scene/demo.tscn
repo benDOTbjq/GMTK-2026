@@ -303,13 +303,13 @@ surface_material_override/0 = ExtResource("5_66w8o")
 surface_material_override/0 = ExtResource("5_66w8o")
 
 [node name="Demon1" parent="." unique_id=2101668566 instance=ExtResource("17_yow40")]
-transform = Transform3D(0.08181199, 0, -0.9966477, 0, 1, 0, 0.9966477, 0, 0.08181199, -1.2436424, 1.2512342, 0.2732495)
+transform = Transform3D(0.8759299, 0, 0.48243824, 0, 1, 0, -0.48243824, 0, 0.8759299, -1.2533453, 1.243394, 0.6643309)
 
 [node name="Demon2" parent="." unique_id=382449128 instance=ExtResource("13_itnku")]
-transform = Transform3D(-0.7497806, -0.003367247, -0.017822236, -0.0038677957, 0.7496939, 0.021074435, 0.01772035, 0.02116018, -0.749492, -1.2320613, 1.2465922, 0.676515)
+transform = Transform3D(-0.7497806, -0.003367247, -0.017822236, -0.0038677957, 0.7496939, 0.021074435, 0.01772035, 0.02116018, -0.749492, -1.2390026, 1.2503986, 1.0477346)
 
 [node name="Demon3" parent="." unique_id=1066151336 instance=ExtResource("16_0qsy3")]
-transform = Transform3D(0.8212655, 0, 0.57054615, 0, 1, 0, -0.57054615, 0, 0.8212655, -1.2223879, 1.282299, 1.0636308)
+transform = Transform3D(0.8212655, 0, 0.57054615, 0, 1, 0, -0.57054615, 0, 0.8212655, -1.2920219, 1.2547903, 0.27142602)
 
 [node name="Demon4" parent="." unique_id=1730033789 instance=ExtResource("17_hik4w")]
 transform = Transform3D(0.3582942, 0, -0.9336087, 0, 1, 0, 0.9336087, 0, 0.3582942, -1.2837745, 0.84666526, 0.2915734)

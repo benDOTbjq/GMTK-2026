@@ -67,41 +67,42 @@ scale = Vector2(0.20800005, 0.20800005)
 texture = ExtResource("9_sr4c6")
 
 [node name="Label2" type="Label" parent="." unique_id=1569905885]
+custom_minimum_size = Vector2(367, 0)
 layout_mode = 0
 offset_left = 41.0
 offset_top = 40.0
-offset_right = 408.0
+offset_right = 42.0
 offset_bottom = 472.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 1
 theme_override_fonts/font = ExtResource("5_8g4h1")
 theme_override_font_sizes/font_size = 22
-text = "DEMON INDENTIFICATION
+text = "COMPLEX DEMON INDENTIFICATION
 
-To exorcise the Demons, 
-identify their nature
+To exorcise these Demons, 
+identify BOTH their nature
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin sit amet nunc varius, eleifend nisi quis, fermentum purus. Sed eleifend lorem id lectus tincidunt, sit amet pharetra nunc ullamcorper. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin sit amet nunc "
+Lorem ipsum dolor sit amet, adipiscing DUEL elit. Proin sit amet nunc varius, CANCEL TYPES  quis, fermentum purus. ID STRANGE id lectus tincidunt, sit amet pharetra nunc ullamcorper. Lorem ipsum doloEXTREME, consectetur adipiscing elit. Proin sit amet nunc "
 horizontal_alignment = 1
 autowrap_mode = 2
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1664922354]
 layout_mode = 0
-offset_left = 78.0
-offset_top = 166.0
-offset_right = 214.0
-offset_bottom = 302.0
+offset_left = 66.0
+offset_top = 157.99998
+offset_right = 202.0
+offset_bottom = 294.0
 rotation = -0.12065924
 scale = Vector2(1.7384638, 1.7384638)
 color = Color(0.95, 0.9368583, 0.1615, 1)
 
 [node name="Label2" type="Label" parent="ColorRect" unique_id=1879613865]
 layout_mode = 0
-offset_left = -10.2437315
-offset_top = -11.092404
-offset_right = 280.56216
-offset_bottom = 230.9076
+offset_left = -11.247335
+offset_top = -12.372938
+offset_right = 279.55856
+offset_bottom = 264.62708
 scale = Vector2(0.54, 0.54)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
@@ -109,12 +110,11 @@ theme_override_constants/outline_size = 1
 theme_override_fonts/font = ExtResource("10_lx6ck")
 theme_override_font_sizes/font_size = 31
 text = "
-Just don't give it too much
-things it likes or you might 
-die or something!
+I feel like I'm forgetting
+ something important , but I'm 
+sure you'll figure it out!
 
-I wasn't paying too much 
-attention lol
+
                           Good Luck!"
 horizontal_alignment = 1
 

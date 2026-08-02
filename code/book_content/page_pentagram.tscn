@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://dg0jl46u7t3k5" path="res://art/krita/book_border.png" id="2_yq7sq"]
 [ext_resource type="Texture2D" uid="uid://ncfl4vlcjdnc" path="res://art/krita/arrow.png" id="4_yq7sq"]
 [ext_resource type="FontFile" uid="uid://cp0kxlhni6f60" path="res://art/fonts/LittleTroubleGirlBv-EVg.ttf" id="5_tmw5n"]
+[ext_resource type="FontFile" uid="uid://b1ekst8cbisew" path="res://art/fonts/JustAnotherHand-7XwR.ttf" id="6_nxrm6"]
 
 [node name="PentagramPage" type="Control" unique_id=1775937355]
 layout_mode = 3
@@ -64,6 +65,37 @@ horizontal_alignment = 1
 position = Vector2(378, 530)
 scale = Vector2(0.4140625, 0.4140625)
 texture = ExtResource("4_yq7sq")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=533274168]
+layout_mode = 0
+offset_left = 179.0
+offset_top = 139.0
+offset_right = 315.0
+offset_bottom = 275.0
+rotation = 0.09092135
+scale = Vector2(1.7384638, 1.7384638)
+color = Color(0.95, 0.9368583, 0.1615, 1)
+
+[node name="Label2" type="Label" parent="ColorRect" unique_id=1885855921]
+layout_mode = 0
+offset_left = -9.581678
+offset_top = 2.6063974
+offset_right = 281.22424
+offset_bottom = 244.6064
+scale = Vector2(0.54, 0.54)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 1
+theme_override_fonts/font = ExtResource("6_nxrm6")
+theme_override_font_sizes/font_size = 31
+text = " To exorcise the Demons you just
+ need to figure out what type it is.
+
+Try using some items on it
+and see how it reacts!
+
+"
+horizontal_alignment = 1
 
 [node name="NextButton" type="TextureButton" parent="." unique_id=455211487]
 layout_mode = 1
